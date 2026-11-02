@@ -77,13 +77,10 @@ if (typeof module !== "undefined" && module.exports) {
       const summary = document.createElement("p");
       summary.textContent = item.summary;
       link.append(kind, label, summary);
-      link.addEventListener("click", event => {
-        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
-        event.preventDefault();
+      link.addEventListener("click", () => {
         results.hidden = true;
         closeMenu();
         if (location.pathname === link.pathname && location.hash === link.hash) revealHash();
-        else location.assign(link.href);
       });
       results.append(link);
     }
