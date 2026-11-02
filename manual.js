@@ -24,6 +24,8 @@ if (typeof module !== "undefined" && module.exports) {
   const status = document.getElementById("search-status");
   const sidebar = document.getElementById("sidebar");
   const menu = document.getElementById("menu-button");
+  const functionHelp = document.getElementById("function-help");
+  let functionTrigger = null;
   const index = JSON.parse(document.getElementById("search-data").textContent);
   const normalize = normalizeManualSearch;
   const searchable = index.map(item => ({...item, key: normalize(item.label), text: normalize(item.label + " " + item.summary + " " + item.terms)}));
@@ -116,7 +118,37 @@ if (typeof module !== "undefined" && module.exports) {
   });
   document.addEventListener("click", event => {
     if (!event.target.closest(".search-wrap")) results.hidden = true;
+    const link = event.target.closest("a[data-function]");
+    if (!link || !functionHelp || typeof functionHelp.showModal !== "function") return;
+    const reference = document.getElementById(link.dataset.function);
+    const body = reference?.querySelector(".reference-body");
+    if (!body) return;
+    event.preventDefault();
+    functionTrigger = link;
+    const heading = reference.querySelector("summary code");
+    document.getElementById("function-help-title").textContent = heading?.textContent || link.textContent;
+    const content = document.getElementById("function-help-content");
+    content.replaceChildren(...[...body.childNodes].map(node => node.cloneNode(true)));
+    content.querySelectorAll("[id]").forEach(node => node.removeAttribute("id"));
+    document.getElementById("function-help-reference").href = "#" + link.dataset.function;
+    if (!functionHelp.open) functionHelp.showModal();
+    functionHelp.scrollTop = 0;
+    document.getElementById("function-help-close").focus({preventScroll:true});
   });
+  if (functionHelp) {
+    document.getElementById("function-help-close").addEventListener("click", () => functionHelp.close());
+    functionHelp.addEventListener("close", () => {
+      if (functionTrigger?.isConnected) functionTrigger.focus({preventScroll:true});
+      functionTrigger = null;
+    });
+    functionHelp.addEventListener("click", event => {
+      if (event.target === functionHelp) {
+        const rect = functionHelp.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) functionHelp.close();
+      }
+      if (event.target.closest("a[href]") && !event.target.closest("a[data-function]")) functionHelp.close();
+    });
+  }
   menu.addEventListener("click", () => {
     const open = sidebar.classList.toggle("open");
     menu.setAttribute("aria-expanded", String(open));
@@ -153,7 +185,7 @@ if (typeof module !== "undefined" && module.exports) {
 
   function preparePrint() {
     if (printState.length) return;
-    printState = [...document.querySelectorAll("details.api-reference")].map(detail => [detail, detail.open]);
+    printState = [...document.querySelectorAll("details.api-reference, details.context-api")].map(detail => [detail, detail.open]);
     printState.forEach(([detail]) => detail.open = true);
   }
   function restorePrint() {
