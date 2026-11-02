@@ -164,12 +164,37 @@ if (typeof module !== "undefined" && module.exports) {
     menu.setAttribute("aria-expanded", String(open));
   });
   sidebar.querySelectorAll("nav a").forEach(link => link.addEventListener("click", closeMenu));
+  sidebar.querySelectorAll(".toc-toggle").forEach(button => button.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(expanded));
+    button.setAttribute("aria-label", expanded ? "세부 목차 접기" : "세부 목차 펼치기");
+    document.getElementById(button.getAttribute("aria-controls")).hidden = !expanded;
+  }));
+  const sublinks = [...sidebar.querySelectorAll("a[data-section]")];
+  function markSubsection(ident) {
+    sublinks.forEach(link => {
+      const active = link.dataset.section === ident;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }
+  function revealCurrentContents() {
+    const current = sidebar.querySelector(".toc-group");
+    if (!current || !sidebar.clientHeight) return;
+    const offset = current.getBoundingClientRect().top - sidebar.getBoundingClientRect().top;
+    if (offset < 0 || offset > sidebar.clientHeight - 180) sidebar.scrollTop += offset - 12;
+  }
+  requestAnimationFrame(revealCurrentContents);
+  menu.addEventListener("click", revealCurrentContents);
+  window.addEventListener("hashchange", () => markSubsection(decodeURIComponent(location.hash.slice(1))));
+  markSubsection(decodeURIComponent(location.hash.slice(1)));
   window.addEventListener("hashchange", revealHash);
   if (location.hash) setTimeout(revealHash, 30);
 
   document.querySelectorAll(".expand-all,.collapse-all").forEach(button => button.addEventListener("click", () => {
     const section = document.getElementById(button.dataset.target);
-    section.querySelectorAll("details.api-reference").forEach(detail => detail.open = button.classList.contains("expand-all"));
+    section.querySelectorAll("details.api-reference, details.inventory-class").forEach(detail => detail.open = button.classList.contains("expand-all"));
   }));
   document.addEventListener("click", async event => {
     const button = event.target.closest(".copy-code");
@@ -195,7 +220,7 @@ if (typeof module !== "undefined" && module.exports) {
 
   function preparePrint() {
     if (printState.length) return;
-    printState = [...document.querySelectorAll("details.api-reference, details.context-api")].map(detail => [detail, detail.open]);
+    printState = [...document.querySelectorAll("details.api-reference, details.context-api, details.inventory-class")].map(detail => [detail, detail.open]);
     printState.forEach(([detail]) => detail.open = true);
   }
   function restorePrint() {
@@ -210,8 +235,11 @@ if (typeof module !== "undefined" && module.exports) {
     const observer = new IntersectionObserver(entries => {
       const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top);
       if (!visible.length) return;
-      document.querySelectorAll("nav a").forEach(link => link.classList.toggle("active", link.dataset.nav === visible[0].target.id));
+      markSubsection(visible[0].target.id);
     }, {rootMargin:"-90px 0px -55% 0px",threshold:0});
-    document.querySelectorAll("section.chapter").forEach(section => observer.observe(section));
+    sublinks.forEach(link => {
+      const section = document.getElementById(link.dataset.section);
+      if (section) observer.observe(section);
+    });
   }
 })();
