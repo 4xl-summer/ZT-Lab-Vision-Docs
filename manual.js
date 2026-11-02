@@ -27,6 +27,8 @@ if (typeof module !== "undefined" && module.exports) {
   const functionHelp = document.getElementById("function-help");
   let functionTrigger = null;
   const index = JSON.parse(document.getElementById("search-data").textContent);
+  const functionCards = JSON.parse(document.getElementById("function-data")?.textContent || "{}");
+  const legacyPages = JSON.parse(document.getElementById("page-map")?.textContent || "{}");
   const normalize = normalizeManualSearch;
   const searchable = index.map(item => ({...item, key: normalize(item.label), text: normalize(item.label + " " + item.summary + " " + item.terms)}));
   let searchTimer;
@@ -42,7 +44,10 @@ if (typeof module !== "undefined" && module.exports) {
     const ident = decodeURIComponent(location.hash.slice(1));
     if (!ident) return;
     const target = document.getElementById(ident);
-    if (!target) return;
+    if (!target) {
+      if (legacyPages[ident]) location.replace(legacyPages[ident] + "#" + encodeURIComponent(ident));
+      return;
+    }
     let parent = target;
     while (parent) {
       if (parent.tagName === "DETAILS") parent.open = true;
@@ -63,7 +68,7 @@ if (typeof module !== "undefined" && module.exports) {
     status.textContent = matches.length + "개 결과 · 상위 40개 표시";
     for (const item of matches.slice(0,40)) {
       const link = document.createElement("a");
-      link.href = "#" + item.id;
+      link.href = item.href;
       link.className = "search-result";
       const kind = document.createElement("small");
       kind.textContent = item.kind;
@@ -72,10 +77,13 @@ if (typeof module !== "undefined" && module.exports) {
       const summary = document.createElement("p");
       summary.textContent = item.summary;
       link.append(kind, label, summary);
-      link.addEventListener("click", () => {
+      link.addEventListener("click", event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
         results.hidden = true;
         closeMenu();
-        if (location.hash === link.hash) revealHash();
+        if (location.pathname === link.pathname && location.hash === link.hash) revealHash();
+        else location.assign(link.href);
       });
       results.append(link);
     }
@@ -120,7 +128,12 @@ if (typeof module !== "undefined" && module.exports) {
     if (!event.target.closest(".search-wrap")) results.hidden = true;
     const link = event.target.closest("a[data-function]");
     if (!link || !functionHelp || typeof functionHelp.showModal !== "function") return;
-    const reference = document.getElementById(link.dataset.function);
+    let reference = document.getElementById(link.dataset.function);
+    if (!reference && functionCards[link.dataset.function]) {
+      const template = document.createElement("template");
+      template.innerHTML = functionCards[link.dataset.function];
+      reference = template.content.firstElementChild;
+    }
     const body = reference?.querySelector(".reference-body");
     if (!body) return;
     event.preventDefault();
@@ -130,7 +143,7 @@ if (typeof module !== "undefined" && module.exports) {
     const content = document.getElementById("function-help-content");
     content.replaceChildren(...[...body.childNodes].map(node => node.cloneNode(true)));
     content.querySelectorAll("[id]").forEach(node => node.removeAttribute("id"));
-    document.getElementById("function-help-reference").href = "#" + link.dataset.function;
+    document.getElementById("function-help-reference").href = link.href;
     if (!functionHelp.open) functionHelp.showModal();
     functionHelp.scrollTop = 0;
     document.getElementById("function-help-close").focus({preventScroll:true});
