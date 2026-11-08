@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="../../"><meta name="manual-path" content="api/rust/threshold.html"><meta name="description" content="Rust 공개 Facade에서 즉시 실행되는 Gray8 마스크 생성 API."><title>Rust · ZImage::threshold · ZVision Manual</title><link rel="stylesheet" href="../../assets/manual.css"><script defer src="../../assets/manual.js"></script></head>
+<body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="../../index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav><div class="side-note">Rust · C# · Python<br>신규 HTML 매뉴얼 · 초기 버전</div></aside><div class="workspace"><header class="topbar"><div><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span></div><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header>
+<main id="main" class="main"><div class="crumb"><a href="../../index.html">매뉴얼 홈</a> / API Reference / <b>Rust · ZImage::threshold</b></div><header class="page-head"><div class="overline">API Reference · HTML REFERENCE</div><h1>Rust · ZImage::threshold</h1><p class="lede">Rust 공개 Facade에서 즉시 실행되는 Gray8 마스크 생성 API.</p><div class="tags"><span class="tag">독립 HTML 페이지</span><span class="tag">코드 검토 기준 2026-11-08</span><span class="tag">초기 콘텐츠</span></div></header><article class="doc">
+<h2 id="signature">공개 시그니처</h2>
+<div class="code"><div class="code-head"><span>Rust</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>impl ZImage {
+    pub fn threshold(&amp;self, threshold: f64) -&gt; ZResult&lt;Self&gt;;
+}</code></pre></div>
+<p>정식 공개 타입 <code>zvision::ZImage</code>; 입력을 빌리고 새 소유 <code>ZImage</code>를 결과로 반환합니다.</p>
+<h2 id="params">매개변수·반환</h2>
+<div class="table-wrap"><table><thead><tr><th>항목</th><th>자료형</th><th>설명</th></tr></thead><tbody><tr><td>threshold</td><td>f64</td><td>픽셀과 비교할 유한한 임계값; 기본값 없음</td></tr><tr><td>반환</td><td>ZResult&lt;ZImage&gt;</td><td>0 또는 255를 갖는 새로운 Gray8 이미지</td></tr></tbody></table></div>
+<p>입력은 7종 회색 형식으로 제한되며, 비유한 임계값이나 비유한 부동소수 픽셀·컬러 형식은 오류입니다. 원본 픽셀은 보존되며 ROI의 origin 역시 유지됩니다.</p>
+<h2 id="example">실제 사용 코드</h2>
+<div class="code"><div class="code-head"><span>Rust</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>use zvision::ZImage;
+
+fn main() -&gt; zvision::ZResult&lt;()&gt; {
+    let source = ZImage::from_vec_gray8(3, 1, vec![9, 10, 11])?;
+    let result = source.threshold(10.0)?;
+    assert_eq!(result.to_packed_vec()?, vec![0, 255, 255]);
+    Ok(())
+}</code></pre></div>
+<p><a href="../../guides/threshold.html">Threshold의 원리</a> · <a href="../../getting-started/first-image.html">첫 이미지 처리</a></p>
+<div class="note "><span class="note-mark">i</span><span>이 페이지는 최신 공개 API의 소스와 저장소 내 기존 테스트를 대조하여 작성한 초기 문서입니다. 현재 세션에서 Rust, C#, Python 예제를 새로 컴파일하거나 실행하지 않았으므로 별도의 실행 검증이 필요합니다.</span></div>
+</article><footer class="footer">ZVision 기술 매뉴얼 · 코드 기준 ce902e85c340 · 검증 범위는 본문 참조 · <a href="../../index.html">매뉴얼 홈</a></footer></main></div></div>
+<dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="API, 알고리즘, 개념 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>
