@@ -1,25 +1,51 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="../"><meta name="manual-path" content="concepts/share.html"><meta name="description" content="같은 픽셀 버퍼를 공유하는 소유 이미지와 독립 복사 결과를 비교합니다."><title>Share와 복사 · ZVision Manual</title><link rel="stylesheet" href="../assets/manual.css"><script defer src="../assets/manual.js"></script></head>
 <body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="../index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav><div class="side-note">Rust · C# · Python<br>신규 HTML 매뉴얼 · 초기 버전</div></aside><div class="workspace"><header class="topbar"><div><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span></div><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header>
-<main id="main" class="main"><div class="crumb"><a href="../index.html">매뉴얼 홈</a> / 핵심 개념 / <b>Share와 복사</b></div><header class="page-head"><div class="overline">핵심 개념 · HTML REFERENCE</div><h1>Share와 복사</h1><p class="lede">같은 픽셀 버퍼를 공유하는 소유 이미지와 독립 복사 결과를 비교합니다.</p><div class="tags"><span class="tag">독립 HTML 페이지</span><span class="tag">코드 검토 기준 2026-11-08</span><span class="tag">초기 콘텐츠</span></div></header><article class="doc">
-<h2 id="share">서로 다른 소유 객체, 같은 저장소</h2>
-<p><code>share()</code> / <code>Share()</code>는 픽셀 복사 없이 <strong>같은 픽셀 저장소를 소유하는 별도 이미지</strong>를 반환합니다. 따라서 원본을 해제해도 공유 이미지에서 데이터를 읽을 수 있습니다.</p>
-<div class="flow"><div class="flow-box"><strong>source</strong><small>ZImage 핸들 A</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-box"><strong>share()</strong><small>같은 저장소</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-box"><strong>shared</strong><small>ZImage 핸들 B</small></div></div>
-<div class="table-wrap"><table><thead><tr><th>방법</th><th>픽셀 복사</th><th>결과 성격</th></tr></thead><tbody><tr><td>Share</td><td>아니오</td><td>동일한 픽셀 영역을 공유하는 소유 이미지</td></tr><tr><td>ROI</td><td>아니오</td><td>선택된 부분만 바라보는 소유 이미지</td></tr><tr><td>Rust clone_deep()</td><td>예</td><td>독립적인 연속 픽셀 버퍼</td></tr><tr><td>C# ToArrayGray8()</td><td>예</td><td>독립적인 바이트 배열</td></tr></tbody></table></div>
-<h2 id="example">Rust 예제</h2>
-<div class="code"><div class="code-head"><span>Rust</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>use zvision::ZImage;
-
+<main id="main" class="main"><div class="crumb"><a href="../index.html">매뉴얼 홈</a> / 핵심 개념 / <b>Share와 복사</b></div><header class="page-head"><div class="overline">핵심 개념 · HTML REFERENCE</div><h1>Share와 복사</h1><p class="lede">같은 픽셀 버퍼를 공유하는 소유 이미지와 독립 복사 결과를 비교합니다.</p><div class="tags"><span class="tag">독립 HTML 페이지</span><span class="tag">코드 검토 기준 2026-11-08</span><span class="tag">설계 v1 적용 · 소스 대조</span></div></header><article class="doc">
+<h2 id="meaning">1. Share는 어떤 복사도 하지 않을까?</h2>
+<p><code>share()</code>/<code>Share()</code>는 픽셀 데이터를 복사하지 않고 같은 저장소를 참조하는 별도 소유 객체를 반환합니다. <code>roi()</code>도 특정 사각 영역만 가리키는 소유 객체입니다. 반면 Rust <code>clone_deep()</code>과 관리형 언어의 픽셀 배열 복사는 별도 데이터 저장소를 생성합니다.</p>
+<figure class="figure"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 270" role="img" aria-label="원본 ZImage와 ROI와 Share는 동일 픽셀 저장소 A를 공유하지만 Deep Copy는 독립 저장소 B를 갖는 메모리 관계도">
+<g fill="#dcecf7" stroke="#3978a0" stroke-width="2"><rect x="18" y="21" width="132" height="62" rx="11"/><rect x="174" y="21" width="132" height="62" rx="11"/><rect x="330" y="21" width="132" height="62" rx="11"/></g>
+<g fill="#18486b" font-size="17" font-weight="700"><text x="42" y="57">Original</text><text x="212" y="57">Share</text><text x="379" y="57">ROI</text></g>
+<g stroke="#168f82" stroke-width="3" fill="none"><path d="M82 83V132H276"/><path d="M240 83V132H276"/><path d="M395 83V132H276"/><path d="M276 132V151"/></g>
+<rect x="180" y="152" width="200" height="76" rx="12" fill="#c6eadd" stroke="#138779" stroke-width="2"/><text x="205" y="181" fill="#11564c" font-size="19" font-weight="700">Storage A</text><text x="205" y="204" fill="#11564c" font-size="13">참조된 한 살아 있음</text>
+<rect x="548" y="21" width="178" height="62" rx="11" fill="#f7e5c7" stroke="#b58437" stroke-width="2"/><text x="566" y="57" fill="#765220" font-size="17" font-weight="700">Deep Copy</text>
+<path d="M637 83V151" stroke="#b58437" stroke-width="3"/><rect x="537" y="152" width="200" height="76" rx="12" fill="#f7e5c7" stroke="#b58437" stroke-width="2"/><text x="559" y="181" fill="#765220" font-size="19" font-weight="700">Storage B</text><text x="559" y="204" fill="#765220" font-size="13">픽셀 독립 복사</text>
+</svg><figcaption>그림 2. Share/ROI는 새로운 소유 객체지만 저장소를 공유하며, Deep Copy는 별도 저장소를 사용합니다. 실제 메모리 주소를 뜻하지 않는 개념도입니다.</figcaption></figure>
+<h2 id="comparison">2. 복사·소유권 비교</h2>
+<div class="table-wrap"><table><thead><tr><th>연산</th><th>반환</th><th>픽셀 복사</th><th>원본 해제 후</th></tr></thead><tbody><tr><td>Share / share</td><td>새 소유 ZImage</td><td>없음</td><td>결과 이미지 유효</td></tr><tr><td>Roi / roi</td><td>새 소유 ZImage 영역 뷰</td><td>없음</td><td>결과 ROI 유효</td></tr><tr><td>Rust clone_deep</td><td>새 소유 ZImage</td><td>있음</td><td>독립 버퍼 유효</td></tr><tr><td>Python clone_deep</td><td>새 소유 ZImage</td><td>있음</td><td>독립 버퍼 유효</td></tr><tr><td>C# ToArrayGray8</td><td>byte[]</td><td>있음</td><td>배열 데이터 유효</td></tr></tbody></table></div>
+<div class="note"><span class="note-mark">i</span><span>C#에서는 다른 파일의 공개 확장/Query 메서드와 기본 ZImage 인스턴스 메서드를 혼동해서는 안 됩니다. <code>CloneDeep</code>의 호출 위치/확장 여부는 사용하는 SDK 버전의 실제 API를 확인합니다.</span></div>
+<h2 id="rust">3. Rust에서 저장소 공유와 깊은 복사를 직접 구분</h2>
+<div class="code"><div class="code-head"><span>Rust</span><button type="button" class="copy" aria-label="Rust 코드 복사">복사</button></div><pre><code>use zvision::ZImage;
 fn main() -&gt; zvision::ZResult&lt;()&gt; {
-    let original = ZImage::from_vec_gray8(3, 1, vec![9, 10, 11])?;
-    let shared = original.share();
-    assert!(original.shares_storage_with(&amp;shared));
-    drop(original);
+    let source = ZImage::from_vec_gray8(3, 1, vec![9, 10, 11])?;
+    let shared = source.share();
+    let copy = source.clone_deep()?;
+    assert!(source.shares_storage_with(&amp;shared));
+    assert!(!source.shares_storage_with(&amp;copy));
+    drop(source);
     assert_eq!(shared.to_packed_vec()?, vec![9, 10, 11]);
+    assert_eq!(copy.to_packed_vec()?, vec![9, 10, 11]);
     Ok(())
 }</code></pre></div>
-<h2 id="ownership">메모리 설계에서 주의할 점</h2>
-<p>공유는 복사 감소에 유리하지만 <strong>원본과 공유 이미지가 서로 다른 값을 갖도록 픽셀을 변경</strong>하고 싶을 때는 독립 저장소가 필요합니다. ZVision의 기본 모델은 불변 이미지 공유이며 공유 중인 데이터를 몰래 변경하지 않습니다.</p>
-<div class="note warn"><span class="note-mark">!</span><span>C#에 Rust의 clone_deep()과 동일한 이름의 메서드가 있다고 추정하지 마세요. 언어별 제공 API는 실제 Wrapper를 확인해 문서화해야 합니다.</span></div>
-<p><a href="../concepts/roi.html">ROI의 지역 좌표</a> · <a href="../guides/threshold.html">새 출력 이미지를 생성하는 Threshold</a></p>
-</article><footer class="footer">ZVision 기술 매뉴얼 · 코드 기준 ce902e85c340 · 검증 범위는 본문 참조 · <a href="../index.html">매뉴얼 홈</a></footer></main></div></div>
+<h2 id="cs">4. C#에서 수명 분리</h2>
+<div class="code"><div class="code-head"><span>C#</span><button type="button" class="copy" aria-label="C# 코드 복사">복사</button></div><pre><code>using System;
+using ZVision;
+
+var source = ZImage.FromGray8(3, 1, new byte[] { 9, 10, 11 });
+using var shared = source.Share();
+source.Dispose();
+Console.WriteLine(string.Join(&quot;,&quot;, shared.ToArrayGray8())); // 9,10,11</code></pre></div>
+<h2 id="python">5. Python의 같은 계약</h2>
+<div class="code"><div class="code-head"><span>Python</span><button type="button" class="copy" aria-label="Python 코드 복사">복사</button></div><pre><code>from zvision import ZImage
+
+with ZImage.from_gray8(3, 1, bytes([9, 10, 11])) as source:
+    with source.share() as shared:
+        with source.clone_deep() as copied:
+            assert shared.to_array_gray8() == [9, 10, 11]
+            assert copied.to_array_gray8() == [9, 10, 11]</code></pre></div>
+<h2 id="diagnostics">6. 실무 선택 기준</h2>
+<div class="table-wrap"><table><thead><tr><th>상황</th><th>선택</th><th>이유</th></tr></thead><tbody><tr><td>원본 전체를 여러 읽기 전용 단계에서 참조</td><td>Share</td><td>버퍼 중복 할당 방지</td></tr><tr><td>이미지 일부만 검사</td><td>ROI</td><td>픽셀 복사 없는 영역 선택</td></tr><tr><td>다른 저장소에서 독립 처리/보관</td><td>Deep Copy</td><td>스토리지 분리</td></tr><tr><td>외부 시리얼화/디버그 출력</td><td>Packed Array Copy</td><td>연속된 스냅샷</td></tr></tbody></table></div>
+<p>원본 메모리 유지가 의도보다 길어졌다면 ROI/Share가 아직 살아 있는지 확인하세요. 외부 스레드와 수정 가능한 데이터의 동시 사용 안전성은 별도 계약 확인 없이 추정해서는 안 됩니다.</p>
+<p>관련: <a href="../concepts/roi.html">ROI</a> · <a href="../concepts/lifetime.html">객체 수명</a> · <a href="../concepts/zimage.html">ZImage</a></p></article><footer class="footer">ZVision 기술 매뉴얼 · 코드 기준 ce902e85c340 · 검증 범위는 본문 참조 · <a href="../index.html">매뉴얼 홈</a></footer></main></div></div>
 <dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="API, 알고리즘, 개념 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>
