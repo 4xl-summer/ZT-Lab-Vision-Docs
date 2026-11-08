@@ -1,0 +1,20 @@
+{
+  "baseline_without_article": [],
+  "duplicate_precedence": [
+    {
+      "path": "reference/python/spatial3d-depthmap.html",
+      "kept": "reference",
+      "ignored": "reference overview"
+    },
+    {
+      "path": "reference/python/spatial3d-pointcloud.html",
+      "kept": "reference",
+      "ignored": "reference overview"
+    }
+  ],
+  "unmatched_symbols": [],
+  "generated_heading_ids": 38389,
+  "preserved_pages": [],
+  "duplicate_ids": [],
+  "unresolved_local_fragments": []
+}

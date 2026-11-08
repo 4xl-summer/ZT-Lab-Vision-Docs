@@ -1,0 +1,31 @@
+{
+  "source_revision": "ce902e85c3405eb63df40c699ddbdf70ee1d03bd",
+  "counts": {
+    "python_declared_exports": 917,
+    "python_other_sdk_package_attributes": 4,
+    "python_internal_return_types": 1,
+    "python_excluded_external_package_attributes": 4,
+    "csharp_reflected_types": 844,
+    "rust_rustdoc_declarations": 465,
+    "csharp_types_by_assembly": {
+      "ZVision": 823,
+      "ZVision.Display": 12,
+      "ZVision.Inspection": 9
+    },
+    "csharp_enum_storage_fields_excluded_by_assembly": {
+      "ZVision": 118,
+      "ZVision.Display": 1,
+      "ZVision.Inspection": 1
+    }
+  },
+  "scope": {
+    "python": "Runtime zvision.__all__ plus other accessible public package attributes, flagged by declared_export; public class attributes from dir/getattr_static, default environment; methods not called",
+    "csharp": "compiled assembly reflection",
+    "rust": "rendered rustdoc input and build features"
+  },
+  "limitations": [
+    "Unlinked entries do not yet have generated manual pages.",
+    "Null contract fields are unverified, not absent.",
+    "Language correspondence is not inferred from matching names."
+  ]
+}

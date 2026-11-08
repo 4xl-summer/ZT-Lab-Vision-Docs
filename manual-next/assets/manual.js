@@ -1,40 +1,302 @@
 "use strict";
-(()=>{const data=[["소개","index.html","매뉴얼 홈"],["시작하기","getting-started/index.html","시작 안내"],["시작하기","getting-started/first-image.html","첫 이미지 처리"],["시작하기","getting-started/sdk-setup.html","SDK 환경 준비","네이티브 빌드 Windows Rust CSharp Python"],["핵심 개념","concepts/index.html","개념 목차"],["핵심 개념","concepts/object-model.html","객체 모델"],["핵심 개념","concepts/roi.html","ROI와 좌표"],["핵심 개념","concepts/share.html","Share와 복사"],["핵심 개념","concepts/results.html","결과 객체"],["핵심 개념","concepts/query.html","ImageQuery · 지연 실행","query capture rust csharp python execute lazy immutable mutable builder 즉시 실행과 Query의 차이, Capture 중간 이미지, Rust 및 관리형 SDK의 Builder 의미."],["핵심 개념","concepts/pixel-formats.html","픽셀 형식과 알고리즘 지원 범위","pixel format RGB RGBA Gray16 GrayF32 stride image memory Gray·RGB 계열 14개 저장 형식과 변환·연산의 지원 형식을 구분하는 방법."],["핵심 개념","concepts/coordinate-systems.html","좌표계: Local · Global · World","ROI 로컬 픽셀, 원본 글로벌 위치, 월드 좌표와 3D 프레임의 차이."],["핵심 개념","concepts/zimage.html","ZImage 객체 상세","이미지 크기 origin stride pixel format"],["핵심 개념","concepts/lifetime.html","객체 수명과 메모리","Rust Drop C# Dispose Python close"],["알고리즘","guides/index.html","알고리즘 목차"],["알고리즘","guides/threshold.html","Threshold"],["알고리즘","guides/gaussian.html","Gaussian Blur"],["알고리즘","guides/morphology.html","Morphology · 열기와 닫기","binary morphology erode dilate open close Python close_binary 이진 침식·팽창과 합성 연산, 값 기반 Morphology를 구분하는 전처리 가이드."],["알고리즘","guides/canny.html","Canny · 에지 검출","edge detector canny sobel hysteresis nonmax suppression 평활화, Sobel 기울기, 비최대 억제, 이력 연결로 구성되는 Gray8 에지 처리."],["알고리즘","guides/blob-analysis.html","Blob Analysis · 연결 영역","connected component analysis binary blob centroid area connectivity 이진 마스크에서 연결 성분을 찾아 면적·경계·무게중심을 값 객체로 얻는 방법."],["알고리즘","guides/matching-ncc.html","NCC 템플릿 매칭","normalized cross correlation template matching model NCC MatchSpec score 학습한 템플릿에서 정규화 교차상관 기반 검색 모델을 만들고 위치·점수 스냅샷을 읽는 방법."],["알고리즘","guides/difference-inspection.html","AbsDiff · 차분 결함 검출","difference absdiff defect inspection reference frame compare 기준 영상과 현재 영상의 픽셀별 절대 차를 임계값으로 분리하는 검사 흐름."],["알고리즘","guides/metrology.html","기하 계측 모델","프로브·피팅 결과를 분리하는 선/원/타원/사각형 측정."],["알고리즘","guides/profile-caliper.html","Profile · Caliper","ROI 선분을 따라 스트립 강도를 측정하고 에지를 검출합니다."],["알고리즘","guides/calibration.html","PlanarCalibration · 보정","Homography로 전역 픽셀을 물리 평면 좌표로 변환합니다."],["알고리즘","guides/matching-alternatives.html","NCC 이외의 매칭","형상·특징점·불변/변형 모델 선택 가이드."],["3D / Spatial","guides/depth-map.html","DepthMap · 깊이 지도","결측을 유지하는 깊이 격자와 거리 단위·원점·프레임."],["3D / Spatial","guides/point-cloud.html","PointCloud · 점군","3D 점군 수명과 법선, 평면·원통 피팅, ICP 정합."],["검사 / Inspection","guides/inspection-framework.html","고수준 검사 · 정렬과 차분","기준 정렬·잔차·표면 결함 후보·판정을 분리한 검사 흐름."],["색상 / Color","guides/color-processing.html","HSV·Lab·DeltaE76","색상 공간 변환 및 화이트밸런스·교정·색차 검사."],["인식 / OCR","guides/recognition.html","바코드·OCR 인식","인식 문자열뿐 아니라 상태·실패 이유·좌표를 분석하는 방법."],["AI / Inference","guides/inference.html","AI 엔진과 결과","CPU RTen 모델, ROI 추론과 분류·검출·분할·이상 결과."],["취득 / Device","guides/acquisition.html","SimulatedCamera · 취득 모의","모의 카메라 상태와 트리거·프레임 소유권을 설명합니다."],["입출력 / IO","guides/image-io.html","이미지 파일 Load · Save","파일 시그니처 로드·확장자 저장·다중 TIFF 옵션."],["신호처리 / Frequency","guides/frequency.html","FFT · 주파수 필터","주파수 스펙트럼 생성과 필터·역변환."],["API Reference","api/index.html","API 목차"],["API Reference","api/rust/threshold.html","Rust · threshold"],["API Reference","api/csharp/threshold.html","C# · Threshold"],["API Reference","api/python/threshold.html","Python · threshold"],["API Reference","api/rust/blob-query.html","Rust · BlobQuery / BlobAnalysisResult","rust query blob find_blobs filter order_by execute 공개 ImageQuery의 연결 성분 종료 계획과 결과 접근 시그니처."],["API Reference","api/csharp/find-blobs.html","C# · ZImage.FindBlobs","csharp ZImage FindBlobs BlobAnalysisResult area centroid Gray8 이진 영상의 연결 성분을 독립 불변 결과로 만드는 메서드."],["API Reference","api/rust/match-model.html","Rust · MatchModel / MatchResult","rust MatchModel train_ncc MatchResult MatchSpec immutable snapshot 템플릿 학습 및 검색 수행 객체와 독립 읽기 전용 결과 객체의 실제 시그니처."],["API Reference","api/csharp/match-model.html","C# · MatchModel / MatchResult","csharp MatchModel TrainNcc Find MatchResult Best MatchSpec 학습된 NCC 모델을 소유하는 C# 타입, 검색 파라미터, 읽기 전용 결과 타입."],["API Reference","api/python/match-model.html","Python · MatchModel / MatchResult","python MatchModel MatchSpec find train_ncc result best matches Python 데이터클래스 검색 조건과 학습 모델 컨텍스트, 독립 결과 스냅샷."],["API Reference","api/rust/measurement-models.html","Rust · MeasurementModels","Line/Circle/Ellipse/Rectangle 모델과 옵션 Result."],["API Reference","api/rust/planar-calibration.html","Rust · PlanarCalibration","Homography 보정 및 픽셀/월드 변환 메서드."],["API Reference","api/rust/spatial3d.html","Rust · Spatial3D","DepthMap과 PointCloud의 생성·공유·기하 피팅 API."],["API Reference","api/csharp/spatial3d.html","C# · Spatial3D","DepthMap/PointCloud의 .NET 소유 핸들과 결과."],["API Reference","api/csharp/metrology.html","C# · Metrology","ProfileSpec과 CaliperSpec, 점군 피팅의 주요 공개 API."],["API Reference","api/csharp/inspection.html","C# · Inspection","정렬·잔차·표면 결함 결과 객체."],["실전 예제","examples/index.html","예제 목차"],["실전 예제","examples/roi-threshold.html","ROI 임계값 검사"],["실전 예제","examples/blob-inspection.html","작은 Blob 검사 · 3×1 마스크","blob test rust csharp python 4 connectivity area 세 픽셀의 단순한 입력으로 Threshold와 4-연결 Blob 분석의 면적을 확인합니다."],["실전 예제","examples/ncc-search.html","NCC 검출 · ROI 검색 좌표","NCC template train find roi position score model 기존 Rust Facade 테스트에 사용한 합성 템플릿으로 모델 학습과 전역 위치 계산을 재현합니다."],["실전 예제","examples/difference-spot.html","차분 기반 점 결함 검사 · 3×1","absdiff difference spot defect reference inspection 기준 이미지와 검사 이미지의 차이가 있는 한 픽셀을 AbsDiff와 Threshold로 분리합니다."],["Rust API 선언","reference/rust/index.html","Rust 공개 API 자동 색인"],["Rust API 선언","reference/rust/image-zimage.html","ZImage · image","query new_gray8 from_vec_gray8 pixel_format share shares_storage_with roi clone_deep to_packed_vec threshold"],["Rust API 선언","reference/rust/processing-shiftresult.html","ShiftResult · processing","acquire_image acquire_valid_mask"],["Rust API 선언","reference/rust/processing-zimage.html","ZImage · processing","crop_copy threshold_value lut shift linear_transform abs_diff erode_values dilate_values open_values close_values gaussian_blur sobel_x sobel_y gradient_magnitude median_filter adaptive_threshold_mean canny threshold_otsu_with histogram histogram_with statistics otsu_threshold otsu_threshold_with mask_union mask_intersection mask_difference warp_affine warp_projective undistort delta_e76 color_segment"],["Rust API 선언","reference/rust/domain_ops-planarcalibration.html","PlanarCalibration · domain_ops","new fit mapping unit pixel_to_world world_to_pixel evaluate"],["Rust API 선언","reference/rust/domain_ops-calibrationvalidation.html","CalibrationValidation · domain_ops","metrics residuals"],["Rust API 선언","reference/rust/domain_ops-zimage.html","ZImage · domain_ops","box_blur resize_nearest resize_bilinear to_gray to_hsv to_lab white_balance color_correct color_statistics"],["Rust API 선언","reference/rust/domain_ops-colorplanes.html","ColorPlanes · domain_ops","space acquire_channel to_rgb"],["Rust API 선언","reference/rust/domain_ops-variationmodel.html","VariationModel · domain_ops","train inspect_ops from_envelopes sample_count inspect model_images encode decode inspect_directional"],["Rust API 선언","reference/rust/domain_ops-variationresult.html","VariationResult · domain_ops","residual severity mask inspected_count defect_count mean_severity max_severity"],["Rust API 선언","reference/rust/domain_ops-multiregistration.html","MultiRegistration · domain_ops","run run_with_fixed_sources mosaic_geometry mosaic mosaic_feather mosaic_on_canvas matrices edge_results edge_optimized common_index image valid_count"],["Rust API 선언","reference/rust/domain_ops-registrationmosaic.html","RegistrationMosaic · domain_ops","geometry image valid_mask"],["Rust API 선언","reference/rust/domain_ops-variationdirectionalresult.html","VariationDirectionalResult · domain_ops","lower_threshold upper_threshold darker_mask brighter_mask"],["Rust API 선언","reference/rust/query-queryexecution.html","QueryExecution · query","output get_image acquire_output"],["Rust API 선언","reference/rust/query-blobanalysisresult.html","BlobAnalysisResult · query","blobs"],["Rust API 선언","reference/rust/query-profileresult.html","ProfileResult · query","samples"],["Rust API 선언","reference/rust/query-caliperresult.html","CaliperResult · query","edges"],["Rust API 선언","reference/rust/query-histogramresult.html","HistogramResult · query","channels"],["Rust API 선언","reference/rust/query-imagequery.html","ImageQuery · query","new threshold threshold_value open close box_blur capture find_blobs find_matches profile caliper histogram histogram_with statistics otsu_threshold_with otsu_threshold execute"],["Rust API 선언","reference/rust/query-blobquery.html","BlobQuery · query","filter order_by execute"],["Rust API 선언","reference/rust/query-matchquery.html","MatchQuery · query","execute"],["Rust API 선언","reference/rust/query-measurementquery.html","MeasurementQuery · query","execute"],["Rust API 선언","reference/rust/query-profilequery.html","ProfileQuery · query","execute"],["Rust API 선언","reference/rust/query-caliperquery.html","CaliperQuery · query","execute"],["Rust API 선언","reference/rust/query-histogramquery.html","HistogramQuery · query","execute"],["Rust API 선언","reference/rust/query-statisticsquery.html","StatisticsQuery · query","execute"],["Rust API 선언","reference/rust/query-otsuthresholdquery.html","OtsuThresholdQuery · query","execute"],["Rust API 선언","reference/rust/metrology-module.html","module · metrology","default_measurement_probes"],["Rust API 선언","reference/rust/metrology-ellipsemeasurementmodel.html","EllipseMeasurementModel · metrology","new measure"],["Rust API 선언","reference/rust/metrology-rectanglemeasurementmodel.html","RectangleMeasurementModel · metrology","new measure"],["Rust API 선언","reference/rust/metrology-linemeasurementmodel.html","LineMeasurementModel · metrology","new measure"],["Rust API 선언","reference/rust/metrology-circlemeasurementmodel.html","CircleMeasurementModel · metrology","new measure"],["Rust API 선언","reference/rust/metrology-ellipsemeasurementresult.html","EllipseMeasurementResult · metrology","status fit probes converged iterations condition_proxy"],["Rust API 선언","reference/rust/metrology-rectanglemeasurementresult.html","RectangleMeasurementResult · metrology","status fit probes converged iterations condition_proxy"],["Rust API 선언","reference/rust/metrology-linemeasurementresult.html","LineMeasurementResult · metrology","status fit converged refit_iterations probes"],["Rust API 선언","reference/rust/metrology-circlemeasurementresult.html","CircleMeasurementResult · metrology","status fit converged refit_iterations probes"],["Rust API 선언","reference/rust/metrology-arcprofileresult.html","ArcProfileResult · metrology","samples into_samples"],["Rust API 선언","reference/rust/metrology-zimage.html","ZImage · metrology","arc_profile"],["Rust API 선언","reference/rust/spatial3d-depthmap.html","DepthMap · spatial3d","new width height spacing origin unit frame values valid_count share roi median fill_holes to_point_cloud project bilateral fill_directional apply_calibration"],["Rust API 선언","reference/rust/spatial3d-pointcloud.html","PointCloud · spatial3d","new share clone_deep points unit frame valid_count transform estimate_normals fit_plane fit_plane_with_options fit_cylinder fit_cylinder_with_options rasterize outlier_mask normals_radius normals_organized normals_kdtree mesh_normals smooth_normals_radius register_icp register_icp_with_correspondence register_icp_with_overlap search_models"],["Rust API 선언","reference/rust/spatial3d-normals.html","Normals · spatial3d","values into_values smooth_mesh"],["Rust API 선언","reference/rust/spatial3d-pointmask.html","PointMask · spatial3d","values"],["Rust API 선언","reference/rust/spatial3d-search3dresults.html","Search3dResults · spatial3d","matches into_matches"],["Rust API 선언","reference/rust/spatial3d-spatialdepthcalibration.html","SpatialDepthCalibration · spatial3d","width height coefficients unit fit fit_model apply"],["Rust API 선언","reference/rust/advanced_matching-matchingreport.html","MatchingReport · advanced_matching","matches evaluated termination"],["Rust API 선언","reference/rust/advanced_matching-featuremodel.html","FeatureModel · advanced_matching","train find features to_bytes from_bytes find_feature_instances"],["Rust API 선언","reference/rust/advanced_matching-invariantfeaturemodel.html","InvariantFeatureModel · advanced_matching","train find options features to_bytes from_bytes"],["Rust API 선언","reference/rust/advanced_matching-extendedmatchmodel.html","ExtendedMatchModel · advanced_matching","train find sample_count reference find_extended_matches_coarse find_image_pyramid_matches find_extended_matches_with_prior find_projective_template_matches find_shear_template_matches find_masked_image_pyramid_matches find_relative_template_matches suppress_match_overlaps suppress_match_polygon_overlaps"],["Rust API 선언","reference/rust/advanced_matching-extendedshapemodel.html","ExtendedShapeModel · advanced_matching","train train_detailed train_with_grain train_aligned_samples train_contours find feature_count copy_shape_features shape_to_bytes shape_from_bytes diagnose_shape_match find_robust_shape_matches find_shape_matches_with_clutter find_shape_global_polarity refine_shape_pose find_shape_with_min_contrast find_shape_in_regions find_shape_with_edge_grain find_shape_image_pyramid_matches shape_region_diagnostics"],["Rust API 선언","reference/rust/advanced_matching-boundedtemplatemodel.html","BoundedTemplateModel · advanced_matching","train train_with_mask_offset find"],["Rust API 선언","reference/rust/advanced_matching-localdeformablemodel.html","LocalDeformableModel · advanced_matching","train find find_local_deformable_with_rate find_local_deformable_with_photometry find_local_deformable_with_policy find_local_deformable_curvature find_local_deformable_many find_local_deformable_many_with_photometry find_local_deformable_many_with_policy"],["Rust API 선언","reference/rust/advanced_matching-deformablematchmodel.html","DeformableMatchModel · advanced_matching","train variant_count find"],["Rust API 선언","reference/rust/advanced_matching-classifiedshapemodel.html","ClassifiedShapeModel · advanced_matching","train find"],["Rust API 선언","reference/rust/advanced_matching-connectedcontourmodel.html","ConnectedContourModel · advanced_matching","train copy_contours find"],["Rust API 선언","reference/rust/advanced_matching-matchmodel.html","MatchModel · advanced_matching","train_shape"],["Rust API 선언","reference/rust/advanced_matching-featurecollection.html","FeatureCollection · advanced_matching","new find"],["Rust API 선언","reference/rust/advanced_matching-shapecollection.html","ShapeCollection · advanced_matching","new find"],["Rust API 선언","reference/rust/advanced_matching-componentmodel.html","ComponentModel · advanced_matching","new find"],["Rust API 선언","reference/rust/advanced_matching-featureinstancecollection.html","FeatureInstanceCollection · advanced_matching","new find"],["Rust API 선언","reference/rust/advanced_domains-zimage.html","ZImage · advanced_domains","normalize_inspection inspect_bead_path"],["Rust API 선언","reference/rust/advanced_domains-onlinereference.html","OnlineReference · advanced_domains","new update reset count merge freeze encode decode"],["Rust API 선언","reference/rust/advanced_domains-onlinesnapshot.html","OnlineSnapshot · advanced_domains","count mean deviation mask"],["Rust API 선언","reference/rust/advanced_domains-beadreference.html","BeadReference · advanced_domains","inspect_ops learn path widths inspect encode decode validate_nominal_width inspect_quality inspect_quality_with_mode inspect_quality_scored"],["Rust API 선언","reference/rust/advanced_domains-beadreferenceresult.html","BeadReferenceResult · advanced_domains","inspection width_errors reference_failures reference_flags reference_runs"],["Rust API 선언","reference/rust/advanced_domains-gridwarpmap.html","GridWarpMap · advanced_domains","new point apply apply_rgb8_border"],["Rust API 선언","reference/rust/advanced_domains-calibratedimage.html","CalibratedImage · advanced_domains","attach acquire_image calibration roi copy warp"],["Rust API 선언","reference/rust/advanced_domains-edgequeryresult.html","EdgeQueryResult · advanced_domains","new count available get point_count points set_included delete bind_frame calculate_gradients gradients"],["Rust API 선언","reference/rust/advanced_domains-beadresult.html","BeadResult · advanced_domains","probes runs longest_gap_length passed gap_stats gap_stats_with_mode"],["Rust API 선언","reference/rust/recognition-barcoderead.html","BarcodeRead · recognition","status reasons format quarter_turns text backend_raw_bytes points contrast confidence"],["Rust API 선언","reference/rust/recognition-ocrread.html","OcrRead · recognition","status reasons text chars contrast confidence"],["Rust API 선언","reference/rust/recognition-preparedocrregion.html","PreparedOcrRegion · recognition","spec contrast prepared_edges_to_local prepared_edges_to_global acquire_image"],["Rust API 선언","reference/rust/recognition-ocrengine.html","OcrEngine · recognition","from_bytes read_text"],["Rust API 선언","reference/rust/recognition-zimage.html","ZImage · recognition","read_barcode prepare_ocr"],["Rust API 선언","reference/rust/recognition-aiengine.html","AiEngine · recognition","from_bytes spec run"],["Rust API 선언","reference/rust/recognition-airesult.html","AiResult · recognition","model_version region classification detections anomaly acquire_map"],["Rust API 선언","reference/rust/acquisition-acquiredframe.html","AcquiredFrame · acquisition","info acquire_image"],["Rust API 선언","reference/rust/acquisition-simulatedcamera.html","SimulatedCamera · acquisition","new info connect start stop disconnect fail recover trigger offer_frame offer expire_triggers try_get_frame"],["Rust API 선언","reference/rust/blob-advancedblobsnapshot.html","AdvancedBlobSnapshot · blob","width height labels blobs"],["Rust API 선언","reference/rust/blob-blobanalysiscontext.html","BlobAnalysisContext · blob","set_connectivity set_index_mode dirty has_current generation calculate get"],["Rust API 선언","reference/rust/composite-compositemodelbuilder.html","CompositeModelBuilder · composite","new build add_frame add_point add_line add_circle add_intersection add_circle_center add_measured_line add_measured_circle add_measured_ellipse add_measured_rectangle add_region_line add_region_circle add_tolerance"],["Rust API 선언","reference/rust/composite-compositemodel.html","CompositeModel · composite","new evaluate evaluate_in_unit evaluate_controlled to_archive from_archive evaluate_without_image"],["Rust API 선언","reference/rust/composite-compositeresult.html","CompositeResult · composite","features tolerances status"],["Rust API 선언","reference/rust/composite-unitcompositeresult.html","UnitCompositeResult · composite","unit features tolerances status"],["Rust API 선언","reference/rust/frequency-spectrum.html","Spectrum · frequency","dimensions source_dimensions origin normalization try_copy parts view filtered masked inverse_image inverse_values"],["Rust API 선언","reference/rust/frequency-generalspectrum.html","GeneralSpectrum · frequency","from_parts dimensions source_dimensions origin normalization parts inverse_complex"],["Rust API 선언","reference/rust/frequency-haarwavelet.html","HaarWavelet · frequency","coefficients with_coefficients shrunk inverse"],["Rust API 선언","reference/rust/frequency-orthogonalwavelet.html","OrthogonalWavelet · frequency","coefficients with_coefficients shrunk inverse"],["Rust API 선언","reference/rust/frequency-stationaryhaar.html","StationaryHaar · frequency","coefficients width height band_count with_coefficients shrunk inverse"],["Rust API 선언","reference/rust/frequency-zimage.html","ZImage · frequency","fft general_dft haar_wavelet wavelet_with_family orthogonal_wavelet_with_family wavelet_custom orthogonal_wavelet_custom wavelet_filter_bank orthogonal_wavelet_filter_bank wavelet_filter_bank_ex orthogonal_wavelet_filter_bank_ex stationary_haar stationary_haar_centered stationary_db2"],["Rust API 선언","reference/rust/frequency-stationarydb2.html","StationaryDb2 · frequency","coefficients width height band_count with_coefficients shrunk inverse"],["Rust API 선언","reference/rust/naming_preprocessing-zimage.html","ZImage · naming_preprocessing","bayer_to_rgb8 quantize_gray8 highpass_gray8 execute_preprocessing_pipeline flatfield_correct pixel_arithmetic copy_region_to_image gaussian_with_care_mask gaussian_with_output_selector histogram_with_care_mask rank_with_care_mask polar_unwrap polar_rewrap inpaint_anisotropic convolve_grayf64"],["Rust API 선언","reference/rust/naming_preprocessing-focusstackresult.html","FocusStackResult · naming_preprocessing","fused_image index_map focus_stack_gray8"],["Rust API 선언","reference/rust/naming_preprocessing-exposurefusionresult.html","ExposureFusionResult · naming_preprocessing","radiance validity fuse_exposures_gray8"],["Rust API 선언","reference/rust/naming_preprocessing-caregaussianresult.html","CareGaussianResult · naming_preprocessing","filtered_image computed_mask subsample shifted"],["Rust API 선언","reference/rust/naming_inspection-advancedplanes.html","AdvancedPlanes · naming_inspection","lightness second third to_lab to_rgb channel"],["Rust API 선언","reference/rust/naming_inspection-advancedmatches.html","AdvancedMatches · naming_inspection","indices distances"],["Rust API 선언","reference/rust/naming_inspection-zimage.html","ZImage · naming_inspection","glcm_texture to_advanced_planes match_advanced_colors"],["Rust API 선언","reference/rust/processing_query-imagequery.html","ImageQuery · processing_query","resize_nearest resize_bilinear lut linear_transform threshold_otsu_with gaussian_blur adaptive_threshold_mean canny warp_affine warp_projective undistort white_balance color_correct delta_e76 color_segment"],["Rust API 선언","reference/rust/ssim-ssimresult.html","SsimResult · ssim","score included defect_count map defect_mask"],["Rust API 선언","reference/rust/ssim-zimage.html","ZImage · ssim","ssim"],["Rust API 선언","reference/rust/image_io-zimage.html","ZImage · image_io","load load_tiff_page save save_with_options save_tiff_pages"],["Rust API 선언","reference/rust/image_io-matchmodel.html","MatchModel · image_io","load save read_ocr_model"],["Rust API 선언","reference/rust/recognition_advanced-fontocrmodel.html","FontOcrModel · recognition_advanced","train algorithm read read_angles read_angle_range"],["Rust API 선언","reference/rust/recognition_advanced-zimage.html","ZImage · recognition_advanced","segment_font read_barcode_regions read_multiple_barcodes read_multiple_barcodes_range diagnose_qr_ecc_modules diagnose_qr_ecc_image diagnose_datamatrix_ecc_modules diagnose_datamatrix_ecc_image barcode_grid_quality barcode_decode_stability estimate_qr_module_size estimate_datamatrix_module_size controlled_ecc_decode prepare_ai_image prepare_ai_image_with_padding check_font_layout decode_ai_boxes decode_ai_yolo decode_ai_yolo_tensor"],["Rust API 선언","reference/rust/recognition_snapshots-fontocrread.html","FontOcrRead · recognition_snapshots","lines score accepted"],["Rust API 선언","reference/rust/recognition_snapshots-fontangleread.html","FontAngleRead · recognition_snapshots","rotation_degrees lines score accepted source_corners"],["Rust API 선언","reference/rust/recognition_snapshots-fontlayoutcheck.html","FontLayoutCheck · recognition_snapshots","per_glyph accepted"],["Rust API 선언","reference/rust/recognition_snapshots-qreccdiagnostics.html","QrEccDiagnostics · recognition_snapshots","text version error_correction_level blocks corrected_codewords accepted"],["Rust API 선언","reference/rust/recognition_snapshots-datamatrixeccdiagnostics.html","DataMatrixEccDiagnostics · recognition_snapshots","text version blocks corrected_codewords accepted"],["Rust API 선언","reference/rust/recognition_snapshots-controlledeccresult.html","ControlledEccResult · recognition_snapshots","format text version error_correction_level correction_enabled blocks corrected_codewords accepted"],["Rust API 선언","reference/rust/recognition_snapshots-barcodestability.html","BarcodeStability · recognition_snapshots","baseline offsets matches score"],["Rust API 선언","reference/rust/recognition_snapshots-barcodereadview.html","BarcodeReadView · recognition_snapshots","status reasons format quarter_turns text backend_raw_bytes points contrast confidence"],["Rust API 선언","reference/rust/recognition_snapshots-multibarcodereads.html","MultiBarcodeReads · recognition_snapshots","len is_empty get iter"],["Rust API 선언","reference/rust/recognition_snapshots-multibarcodereadview.html","MultiBarcodeReadView · recognition_snapshots","format text raw_bytes points rotation_degrees length_accepted error_correction_level"],["Rust API 선언","reference/rust/recognition_snapshots-barcoderegionresults.html","BarcodeRegionResults · recognition_snapshots","len is_empty get iter"],["Rust API 선언","reference/rust/recognition_snapshots-barcoderegionview.html","BarcodeRegionView · recognition_snapshots","region read length_accepted metrics"],["Rust API 선언","reference/rust/recognition_snapshots-fontsegments.html","FontSegments · recognition_snapshots","lines"],["Rust API 선언","reference/rust/recognition_snapshots-aidetections.html","AiDetections · recognition_snapshots","detections"],["C# API 선언","reference/csharp/index.html","C# 공개 API 자동 색인"],["C# API 선언","reference/csharp/zimage-zvisionexception.html","ZVisionException · ZImage","StatusCode Operation IsInvalid"],["C# API 선언","reference/csharp/zimage-zimage.html","ZImage · ZImage","FromGray8 FromGray16 FromGrayF32 FromRgb8 FromBgr8 FromRgba8 FromBgra8 FromGrayI16 FromGrayI32 FromGrayU32 FromRgb16 FromBgr16 FromRgbF32 FromGrayF64 Info Share Roi Threshold Threshold BoxBlur GaussianBlur SobelX SobelY GradientMagnitude MedianFilter AdaptiveThresholdMean Canny ResizeNearest ResizeBilinear AbsDiff MaskUnion MaskIntersection MaskDifference RegionTopology RegionMoments FindContours SubpixelContours ConvexShapes LinearTransform ThresholdValue ToGray Histogram OtsuThreshold ThresholdOtsu ErodeValues DilateValues OpenValues CloseValues ToArrayGray8 ToArrayGray16 ToArrayGrayF32 ToArrayRgb8 ToArrayBgr8 ToArrayRgba8 ToArrayBgra8 ToArrayGrayI16 ToArrayGrayI32 ToArrayGrayU32 ToArrayRgb16 ToArrayBgr16 ToArrayRgbF32 ToArrayGrayF64 Dispose"],["C# API 선언","reference/csharp/query-shiftresult.html","ShiftResult · Query","Dispose"],["C# API 선언","reference/csharp/query-zimage.html","ZImage · Query","CloneDeep Invert StretchContrast EqualizeHistogram CropCopy Lut Erode Dilate Open Close Statistics FindBlobs Shift Query"],["C# API 선언","reference/csharp/query-querybuilder.html","QueryBuilder · Query","Dispose"],["C# API 선언","reference/csharp/query-imagequery.html","ImageQuery · Query","Clone ThresholdValue Threshold Threshold ToGray LinearTransform BoxBlur GaussianBlur SobelX SobelY GradientMagnitude MedianFilter AdaptiveThresholdMean Canny ResizeNearest ResizeBilinear AbsDiff MaskUnion MaskIntersection MaskDifference RegionTopology RegionMoments FindContours SubpixelContours ConvexShapes Invert StretchContrast EqualizeHistogram ThresholdOtsu ThresholdOtsu Erode Dilate Open Close ErodeValues DilateValues OpenValues CloseValues Lut Capture FindBlobs Histogram Statistics Histogram OtsuThreshold"],["C# API 선언","reference/csharp/query-blobquery.html","BlobQuery · Query","Clone Where"],["C# API 선언","reference/csharp/query-histogramquery.html","HistogramQuery · Query","Clone"],["C# API 선언","reference/csharp/query-statisticsquery.html","StatisticsQuery · Query","Clone"],["C# API 선언","reference/csharp/query-otsuthresholdquery.html","OtsuThresholdQuery · Query","Clone GetImage Dispose"],["C# API 선언","reference/csharp/typedquery-blobanalysisresult.html","BlobAnalysisResult · TypedQuery","Blobs"],["C# API 선언","reference/csharp/typedquery-profileresult.html","ProfileResult · TypedQuery","Samples"],["C# API 선언","reference/csharp/typedquery-caliperresult.html","CaliperResult · TypedQuery","Edges"],["C# API 선언","reference/csharp/typedquery-histogramresult.html","HistogramResult · TypedQuery","Channels"],["C# API 선언","reference/csharp/typedquery-queryexecution.html","QueryExecution · TypedQuery","Output GetImage Dispose"],["C# API 선언","reference/csharp/typedquery-imagequeryexecution.html","ImageQueryExecution · TypedQuery","AcquireOutput GetImage Dispose"],["C# API 선언","reference/csharp/typedquery-profilequery.html","ProfileQuery · TypedQuery","Clone Execute"],["C# API 선언","reference/csharp/typedquery-caliperquery.html","CaliperQuery · TypedQuery","Clone Execute"],["C# API 선언","reference/csharp/typedquery-imagequery.html","ImageQuery · TypedQuery","Execute"],["C# API 선언","reference/csharp/typedquery-blobquery.html","BlobQuery · TypedQuery","Execute"],["C# API 선언","reference/csharp/typedquery-matchquery.html","MatchQuery · TypedQuery","Execute"],["C# API 선언","reference/csharp/typedquery-histogramquery.html","HistogramQuery · TypedQuery","Execute"],["C# API 선언","reference/csharp/typedquery-statisticsquery.html","StatisticsQuery · TypedQuery","Execute"],["C# API 선언","reference/csharp/typedquery-otsuthresholdquery.html","OtsuThresholdQuery · TypedQuery","Execute"],["C# API 선언","reference/csharp/matching-matchspec.html","MatchSpec · Matching","MatchSpec"],["C# API 선언","reference/csharp/matching-matchresult.html","MatchResult · Matching","Matches Best"],["C# API 선언","reference/csharp/matching-matchmodel.html","MatchModel · Matching","TrainNcc TrainShape Load Save Info Find Dispose"],["C# API 선언","reference/csharp/matching-matchquery.html","MatchQuery · Matching","Clone"],["C# API 선언","reference/csharp/matching-imagequery.html","ImageQuery · Matching","FindMatches Matches"],["C# API 선언","reference/csharp/metrology-profilespec.html","ProfileSpec · Metrology","ProfileSpec"],["C# API 선언","reference/csharp/metrology-caliperspec.html","CaliperSpec · Metrology","CaliperSpec"],["C# API 선언","reference/csharp/metrology-linefit.html","LineFit · Metrology","LineFit"],["C# API 선언","reference/csharp/metrology-circlefit.html","CircleFit · Metrology","CircleFit"],["C# API 선언","reference/csharp/metrology-ellipsefit.html","EllipseFit · Metrology","EllipseFit"],["C# API 선언","reference/csharp/metrology-repeatabilitymetrics.html","RepeatabilityMetrics · Metrology","Passed"],["C# API 선언","reference/csharp/metrology-metrology.html","Metrology · Metrology","FitLine FitCircle FitEllipse PointDistance PointLineDistance LineDistance LineAngle PointCircleDistance CircleDistance PointEllipseDistance EvaluateRepeatability"],["C# API 선언","reference/csharp/metrology-zimage.html","ZImage · Metrology","Profile Caliper MeasureDistance"],["C# API 선언","reference/csharp/metrology-measurementquery.html","MeasurementQuery · Metrology","Clone"],["C# API 선언","reference/csharp/metrology-imagequery.html","ImageQuery · Metrology","Profile Caliper ProfileSamples CaliperEdges"],["C# API 선언","reference/csharp/calibration-affine2.html","Affine2 · Calibration","Affine2"],["C# API 선언","reference/csharp/calibration-homography.html","Homography · Calibration","Homography Identity FromPoints Inverse Then"],["C# API 선언","reference/csharp/calibration-lensmodel.html","LensModel · Calibration","LensModel"],["C# API 선언","reference/csharp/calibration-planarcalibration.html","PlanarCalibration · Calibration","PlanarCalibration Fit Evaluate"],["C# API 선언","reference/csharp/calibration-calibrationmetrics.html","CalibrationMetrics · Calibration","Passed"],["C# API 선언","reference/csharp/calibration-calibrationvalidation.html","CalibrationValidation · Calibration","Metrics Residuals"],["C# API 선언","reference/csharp/calibration-unitconversion.html","UnitConversion · Calibration","ConvertLength"],["C# API 선언","reference/csharp/calibration-zimage.html","ZImage · Calibration","Origin WarpAffine WarpProjective Undistort"],["C# API 선언","reference/csharp/calibration-imagequery.html","ImageQuery · Calibration","WarpAffine WarpProjective Undistort"],["C# API 선언","reference/csharp/spatial3d-point3.html","Point3 · Spatial3d","Point3"],["C# API 선언","reference/csharp/spatial3d-depthcalibration.html","DepthCalibration · Spatial3d","DepthCalibration Fit Apply Evaluate"],["C# API 선언","reference/csharp/spatial3d-rigidtransform3.html","RigidTransform3 · Spatial3d","RigidTransform3"],["C# API 선언","reference/csharp/spatial3d-depthmap.html","DepthMap · Spatial3d","Dispose FromValues Info ToValues Share Roi Median FillHoles ToPointCloud"],["C# API 선언","reference/csharp/spatial3d-pointcloud.html","PointCloud · Spatial3d","Dispose FromPoints Info Share Transform FitPlane FitCylinder"],["C# API 선언","reference/csharp/recognition-barcodespec.html","BarcodeSpec · Recognition","TryRotate BarcodeSpec"],["C# API 선언","reference/csharp/recognition-ocrregionspec.html","OcrRegionSpec · Recognition","LightText Normalize OcrRegionSpec"],["C# API 선언","reference/csharp/recognition-ocrspec.html","OcrSpec · Recognition","Region MinContrast MinLength MaxLength AllowedChars OcrSpec"],["C# API 선언","reference/csharp/recognition-ocrchar.html","OcrChar · Recognition","Codepoint Corners"],["C# API 선언","reference/csharp/recognition-barcoderead.html","BarcodeRead · Recognition","Status Reasons Format QuarterTurns Text BackendRawBytes Points Contrast Confidence"],["C# API 선언","reference/csharp/recognition-ocrread.html","OcrRead · Recognition","Status Reasons Text Chars Contrast Confidence"],["C# API 선언","reference/csharp/recognition-ocrengine.html","OcrEngine · Recognition","Load ReadText Dispose"],["C# API 선언","reference/csharp/recognition-recognitionquery.html","RecognitionQuery · Recognition","Clone"],["C# API 선언","reference/csharp/recognition-zimage.html","ZImage · Recognition","ReadBarcode PrepareOcr"],["C# API 선언","reference/csharp/recognition-imagequery.html","ImageQuery · Recognition","ReadBarcode PrepareOcr ReadText"],["C# API 선언","reference/csharp/recognition-preparedocrresult.html","PreparedOcrResult · Recognition","Info Image Dispose Barcode Text PreparedOcr"],["C# API 선언","reference/csharp/inference-aitask.html","AiTask · Inference","Rect AiModelSpec AiRunOptions Default"],["C# API 선언","reference/csharp/inference-aiengine.html","AiEngine · Inference","FromBytes Spec Run Dispose"],["C# API 선언","reference/csharp/inference-airesult.html","AiResult · Inference","Info Scores Detections Map Dispose"],["C# API 선언","reference/csharp/acquisition-cameraspec.html","CameraSpec · Acquisition","CameraSpec"],["C# API 선언","reference/csharp/acquisition-frameinfo.html","FrameInfo · Acquisition","FrameInfo"],["C# API 선언","reference/csharp/acquisition-clockmap.html","ClockMap · Acquisition","ClockMap"],["C# API 선언","reference/csharp/acquisition-clockcomparison.html","ClockComparison · Acquisition","WithinTolerance"],["C# API 선언","reference/csharp/acquisition-acquisition.html","Acquisition · Acquisition","CompareFrameTimes"],["C# API 선언","reference/csharp/acquisition-simulatedcamera.html","SimulatedCamera · Acquisition","Create Connect Start Stop Disconnect Fail Recover Info Trigger OfferFrame ExpireTriggers TryGetFrame Dispose"],["C# API 선언","reference/csharp/acquisition-acquiredframe.html","AcquiredFrame · Acquisition","Info Image Dispose"],["C# API 선언","reference/csharp/acquisition-simulatedplc.html","SimulatedPlc · Acquisition","Create Info Command Dispose"],["Python API 선언","reference/python/index.html","Python 공개 API 색인"],["Python API 선언","reference/python/image-zimage.html","ZImage · image","ssim arc_profile load save from_gray8 from_gray16 from_buffer_gray16 from_buffer_grayf32 info read_pixels share roi threshold box_blur gaussian_blur sobel_x sobel_y gradient_magnitude median_filter adaptive_threshold_mean canny origin local_to_global global_to_local warp_affine warp_projective undistort resize_nearest resize_bilinear abs_diff mask_union mask_intersection mask_difference profile caliper measure_distance region_topology region_moments find_contours subpixel_contours convex_shapes linear_transform threshold_value to_gray histogram otsu_threshold threshold_otsu erode_values dilate_values open_values close_values clone_deep crop_copy lut invert stretch_contrast equalize_histogram erode dilate open close_binary statistics find_blobs shift align_reference inspection_difference surface_defects to_hsv to_lab white_balance color_correct delta_e76 color_segment color_statistics read_barcode prepare_ocr query to_array_gray8 to_array_gray16 to_buffer_gray16 to_buffer_grayf32 from_grayf32 to_array_grayf32 from_rgb8 to_array_rgb8 from_bgr8 to_array_bgr8 from_rgba8 to_array_rgba8 from_bgra8 to_array_bgra8 from_grayi16 to_array_grayi16 from_grayi32 to_array_grayi32 from_grayu32 to_array_grayu32 from_rgb16 to_array_rgb16 from_bgr16 to_array_bgr16 from_rgbf32 to_array_rgbf32 from_grayf64 to_array_grayf64 close"],["Python API 선언","reference/python/query-statistics.html","Statistics · query","close"],["Python API 선언","reference/python/query-shiftresult.html","ShiftResult · query","close"],["Python API 선언","reference/python/query-queryresult.html","QueryResult · query","output matches get_image clone"],["Python API 선언","reference/python/query-imagequery.html","ImageQuery · query","execute read_barcode prepare_ocr read_text to_hsv to_lab white_balance color_correct delta_e76 color_segment color_statistics threshold threshold_value to_gray linear_transform box_blur gaussian_blur sobel_x sobel_y gradient_magnitude median_filter adaptive_threshold_mean canny warp_affine warp_projective undistort resize_nearest resize_bilinear abs_diff mask_union mask_intersection mask_difference region_topology region_moments find_contours subpixel_contours convex_shapes lut capture threshold_otsu align_reference inspection_difference surface_defects find_matches profile caliper find_blobs histogram statistics otsu_threshold"],["Python API 선언","reference/python/query-matchquery.html","MatchQuery · query","execute"],["Python API 선언","reference/python/query-profilequery.html","ProfileQuery · query","execute"],["Python API 선언","reference/python/query-caliperquery.html","CaliperQuery · query","execute"],["Python API 선언","reference/python/query-topologyquery.html","TopologyQuery · query","execute"],["Python API 선언","reference/python/query-momentsquery.html","MomentsQuery · query","execute"],["Python API 선언","reference/python/query-contourquery.html","ContourQuery · query","execute"],["Python API 선언","reference/python/query-subpixelcontourquery.html","SubpixelContourQuery · query","execute"],["Python API 선언","reference/python/query-convexshapequery.html","ConvexShapeQuery · query","execute"],["Python API 선언","reference/python/query-blobquery.html","BlobQuery · query","execute where order_by"],["Python API 선언","reference/python/query-histogramquery.html","HistogramQuery · query","execute"],["Python API 선언","reference/python/query-statisticsquery.html","StatisticsQuery · query","execute"],["Python API 선언","reference/python/query-otsuthresholdquery.html","OtsuThresholdQuery · query","execute"],["Python API 선언","reference/python/typed_query-queryexecution.html","QueryExecution · typed_query","output get_image close"],["Python API 선언","reference/python/typed_query-imagequeryexecution.html","ImageQueryExecution · typed_query","acquire_output get_image close"],["Python API 선언","reference/python/matching-matchresult.html","MatchResult · matching","best"],["Python API 선언","reference/python/matching-matchmodel.html","MatchModel · matching","train_ncc train_shape load find save info"],["Python API 선언","reference/python/spatial3d-rigidtransform3.html","RigidTransform3 · spatial3d","fit evaluate"],["Python API 선언","reference/python/spatial3d-depthcalibration.html","DepthCalibration · spatial3d","fit apply evaluate"],["Python API 선언","reference/python/spatial3d-depthmap.html","DepthMap · spatial3d","from_values info to_values share from_points info to_points share estimate_normals fit_plane fit_cylinder"],["Python API 선언","reference/python/recognition-ocrengine.html","OcrEngine · recognition","load read_text"],["Python API 선언","reference/python/recognition-preparedocrresult.html","PreparedOcrResult · recognition","info image"],["Python API 선언","reference/python/recognition-barcodequery.html","BarcodeQuery · recognition","execute"],["Python API 선언","reference/python/recognition-preparedocrquery.html","PreparedOcrQuery · recognition","execute"],["Python API 선언","reference/python/recognition-ocrquery.html","OcrQuery · recognition","execute"],["Python API 선언","reference/python/acquisition-simulatedcamera.html","SimulatedCamera · acquisition","create info connect offer_frame expire_triggers try_get_frame"],["Python API 선언","reference/python/acquisition-acquiredframe.html","AcquiredFrame · acquisition","info image"],["Python API 선언","reference/python/acquisition-simulatedplc.html","SimulatedPlc · acquisition","create command info"],["Python API 선언","reference/python/inspection-alignmentresult.html","AlignmentResult · inspection","info"],["Python API 선언","reference/python/inspection-differenceresult.html","DifferenceResult · inspection","info"],["Python API 선언","reference/python/inspection-surfacedefectresult.html","SurfaceDefectResult · inspection","defects judge"],["Python API 선언","reference/python/inspection-decisionresult.html","DecisionResult · inspection","info rejections"],["Python API 선언","reference/python/inspection-alignmentquery.html","AlignmentQuery · inspection","execute"],["Python API 선언","reference/python/inspection-differencequery.html","DifferenceQuery · inspection","execute"],["Python API 선언","reference/python/inspection-surfacedefectsquery.html","SurfaceDefectsQuery · inspection","execute"],["Python API 선언","reference/python/color-colorplanesresult.html","ColorPlanesResult · color","info get_channel to_rgb"],["Python API 선언","reference/python/color-colorfitresult.html","ColorFitResult · color","info residuals"],["Python API 선언","reference/python/color-colorquery.html","ColorQuery · color","execute"],["Python API 선언","reference/python/color-colorstatisticsquery.html","ColorStatisticsQuery · color","execute"],["문서 상태","reference/index.html","문서 Reference"],["문서 상태","reference/coverage.html","API 커버리지·검증 상태"]];
-const root=document.querySelector('meta[name="manual-root"]')?.content||"./",path=document.querySelector('meta[name="manual-path"]')?.content||"index.html";
-const navEl=document.getElementById("site-nav");
-if(navEl){
- let last="", groupWrap=null;
- for(const [group,p,label] of data){
-   if(group!==last){
-     last=group;
-     const btn=document.createElement("button");
-     btn.type="button";btn.className="nav-h nav-toggle";
-     const groupItems=data.filter(row=>row[0]===group);
-     const isCurrent=groupItems.some(row=>row[1]===path);
-     btn.setAttribute("aria-expanded",String(isCurrent));
-     btn.textContent=group+" ("+groupItems.length+")";
-     const panel=document.createElement("div");
-     panel.className="nav-group";
-     panel.hidden=!isCurrent;
-     btn.addEventListener("click",()=>{
-       panel.hidden=!panel.hidden;
-       btn.setAttribute("aria-expanded",String(!panel.hidden));
-     });
-     groupWrap=panel;
-     navEl.append(btn,panel);
-   }
-   const a=document.createElement("a");
-   a.className="nav-a"+(p===path?" active":"");
-   a.href=root+p;a.textContent=label;
-   groupWrap.append(a);
- }
-}
-document.getElementById("menu-toggle")?.addEventListener("click",()=>document.body.classList.toggle("nav-open"));
-document.addEventListener("click",e=>{if(document.body.classList.contains("nav-open")&&!e.target.closest(".sidebar")&&!e.target.closest("#menu-toggle"))document.body.classList.remove("nav-open");});
-let theme="light";try{theme=localStorage.getItem("zvision-html-theme")|| (matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");}catch(_){}document.documentElement.dataset.theme=theme;document.getElementById("theme-toggle")?.addEventListener("click",()=>{const t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;try{localStorage.setItem("zvision-html-theme",t);}catch(_){}});
-document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(b.closest(".code").querySelector("code").textContent);b.textContent="복사됨";}catch(_){b.textContent="선택하여 복사";}setTimeout(()=>b.textContent="복사",1600);}));
-const d=document.getElementById("search-dialog"),i=document.getElementById("search-input"),out=document.getElementById("search-results");
-function render(){out.replaceChildren();const q=i.value.trim().normalize("NFKC").toLowerCase();for(const [group,p,label] of data.filter(r=>(r.join(" ")).normalize("NFKC").toLowerCase().includes(q)).slice(0,25)){const li=document.createElement("li"),a=document.createElement("a"),sm=document.createElement("small");a.href=root+p;a.textContent=label;sm.textContent=group+" · "+p;a.append(sm);li.append(a);out.append(li);}}
-function open(){if(!d.open){d.showModal();i.value="";render();i.focus();}}document.getElementById("search-open")?.addEventListener("click",open);document.getElementById("search-close")?.addEventListener("click",()=>d.close());d?.addEventListener("click",e=>{if(e.target===d)d.close();});i?.addEventListener("input",render);
-document.addEventListener("keydown",e=>{const editable=e.target.closest("input,textarea,[contenteditable]");if(((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k")||(e.key==="/"&&!editable&&!e.altKey&&!e.ctrlKey&&!e.metaKey)){e.preventDefault();open();}});
+(() => {
+  const data = window.MANUAL_DATA || {pages: [], apis: []};
+  const pages = Array.isArray(data.pages) ? data.pages : [];
+  let apis = Array.isArray(data.apis) ? data.apis : [];
+  let apiLoadPromise = null;
+  let apiLoadState = data.apiIndex ? 'idle' : 'ready';
+  const root = document.querySelector('meta[name="manual-root"]')?.content || './';
+  const current = document.querySelector('meta[name="manual-path"]')?.content || 'index.html';
+  const normal = value => String(value ?? '').normalize('NFKC').toLocaleLowerCase();
+  const kindName = value => ({method:'메서드',classmethod:'클래스 메서드',staticmethod:'정적 메서드',property:'프로퍼티',attribute:'속성',field:'필드',enum_member:'열거값',constructor:'생성자',class:'클래스',struct:'구조체',enum:'열거형',function:'함수',rustdoc:'Rust 선언',rustdoc_heading:'Rust 멤버',other:'기타',constant:'상수',trait:'트레이트',type_alias:'타입 별칭',associated_type:'연관 타입',operator:'연산자',interface:'인터페이스',delegate:'델리게이트',union:'공용체'}[normal(value)] || value);
+  const href = path => root + String(path || '');
+  const make = (tag, cls, text) => {
+    const el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (text != null) el.textContent = text;
+    return el;
+  };
+  const languageOfPath = path => {
+    const m = String(path).match(/^(?:api|reference)\/(rust|csharp|python)\//i);
+    return m ? m[1] : '';
+  };
+  const languageLabel = value => ({rust: 'Rust', csharp: 'C#', python: 'Python'}[normal(value).replace(/[^a-z]/g, '')] || value);
+  const languageKey = value => {
+    const s = normal(value).replace(/\s+/g, '');
+    return s === 'c#' || s === 'cs' || s === '.net' ? 'csharp' : s;
+  };
+
+  // Link to existing section IDs when a heading is contained in a section.
+  const headings = [...document.querySelectorAll('.doc h2, .doc h3')];
+  let autoId = 0;
+  const currentHeadings = headings.map(h => {
+    let id = h.id;
+    if (!id) {
+      const parent = h.closest('section[id]');
+      if (parent && parent.querySelector('h2, h3') === h) id = parent.id;
+    }
+    if (!id) {
+      do { id = 'contents-' + (++autoId); } while (document.getElementById(id));
+      h.id = id;
+    }
+    return {id, text: h.textContent.trim(), level: h.tagName};
+  }).filter(h => h.text);
+
+  const nav = document.getElementById('site-nav');
+  if (nav) {
+    const groups = new Map();
+    const references = new Map();
+    for (const page of pages) {
+      if (!page || !page.path || !page.title) continue;
+      const lang = page.path.startsWith('reference/') ? languageOfPath(page.path) : '';
+      if (lang) {
+        if (!references.has(lang)) references.set(lang, []);
+        references.get(lang).push(page);
+      } else {
+        const key = page.group || '기타';
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(page);
+      }
+    }
+    const appendPage = (parent, page) => {
+      const link = make('a', 'nav-a' + (page.path === current ? ' active' : ''), page.title);
+      link.href = href(page.path);
+      if (page.path === current) link.setAttribute('aria-current', 'page');
+      parent.append(link);
+      if (page.path === current && currentHeadings.length) {
+        const list = make('div', 'nav-toc');
+        list.setAttribute('aria-label', '이 페이지 목차');
+        for (const heading of currentHeadings) {
+          const item = make('a', 'nav-toc-link ' + heading.level.toLowerCase(), heading.text);
+          item.href = '#' + encodeURIComponent(heading.id);
+          list.append(item);
+        }
+        parent.append(list);
+      }
+    };
+    const appendGroup = (name, items) => {
+      const detail = make('details', 'nav-details');
+      detail.open = items.some(p => p.path === current);
+      const summary = make('summary', 'nav-summary', `${name} (${items.length})`);
+      const content = make('div', 'nav-group');
+      for (const p of items) appendPage(content, p);
+      detail.append(summary, content);
+      nav.append(detail);
+    };
+    for (const [group, items] of groups) appendGroup(group, items);
+    if (references.size) {
+      const outer = make('details', 'nav-details nav-reference');
+      outer.open = [...references.values()].some(items => items.some(p => p.path === current));
+      outer.append(make('summary', 'nav-summary', '언어별 API 선언'));
+      for (const [lang, items] of references) {
+        const inner = make('details', 'nav-details nav-language');
+        inner.open = items.some(p => p.path === current);
+        inner.append(make('summary', 'nav-summary', `${languageLabel(lang)} (${items.length})`));
+        const content = make('div', 'nav-group');
+        for (const p of items) appendPage(content, p);
+        inner.append(content);
+        outer.append(inner);
+      }
+      nav.append(outer);
+    }
+  }
+
+  const sidebar = document.querySelector('.sidebar');
+  const menu = document.getElementById('menu-toggle');
+  if (menu && sidebar) {
+    sidebar.id ||= 'manual-sidebar';
+    menu.setAttribute('aria-controls', sidebar.id);
+    menu.setAttribute('aria-label', '목차 열기');
+    const mobile = matchMedia('(max-width: 940px)');
+    const setMenu = open => {
+      document.body.classList.toggle('nav-open', open);
+      sidebar.inert = mobile.matches && !open;
+      if (mobile.matches && !open) sidebar.setAttribute('aria-hidden', 'true');
+      else sidebar.removeAttribute('aria-hidden');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-label', open ? '목차 닫기' : '목차 열기');
+    };
+    setMenu(false);
+    mobile.addEventListener('change', () => setMenu(false));
+    menu.addEventListener('click', () => setMenu(!document.body.classList.contains('nav-open')));
+    document.addEventListener('click', e => {
+      if (document.body.classList.contains('nav-open') && !sidebar.contains(e.target) && !menu.contains(e.target)) setMenu(false);
+    });
+    sidebar.addEventListener('click', e => {
+      if (e.target.closest('a') && matchMedia('(max-width: 940px)').matches) setMenu(false);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.body.classList.contains('nav-open')) { setMenu(false); menu.focus(); }
+    });
+  }
+
+  const themeButton = document.getElementById('theme-toggle');
+  let theme = 'light';
+  try { theme = localStorage.getItem('zvision-html-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch (_) {}
+  const setTheme = value => {
+    document.documentElement.dataset.theme = value === 'dark' ? 'dark' : 'light';
+    themeButton?.setAttribute('aria-label', value === 'dark' ? '밝은 테마로 변경' : '어두운 테마로 변경');
+    themeButton?.setAttribute('aria-pressed', String(value === 'dark'));
+  };
+  setTheme(theme);
+  themeButton?.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    try { localStorage.setItem('zvision-html-theme', next); } catch (_) {}
+  });
+
+  document.addEventListener('click', async e => {
+    const button = e.target.closest('.copy');
+    if (!button) return;
+    const code = button.closest('.code')?.querySelector('pre code');
+    if (!code) return;
+    const old = button.textContent;
+    try { await navigator.clipboard.writeText(code.textContent); button.textContent = '복사됨'; }
+    catch (_) { button.textContent = '코드를 선택하여 복사'; }
+    setTimeout(() => { button.textContent = old; }, 1800);
+  });
+  const topButtons = document.querySelector('.top-btns');
+  if (topButtons && !document.getElementById('print-page')) {
+    const button = make('button', 'control', '인쇄');
+    button.type = 'button'; button.id = 'print-page';
+    button.addEventListener('click', () => window.print());
+    topButtons.append(button);
+  }
+  function revealHash() {
+    if (!location.hash) return;
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
+    let target = document.getElementById(id);
+    if (!target) return;
+    if (target.dataset.legacyTarget) target = document.getElementById(target.dataset.legacyTarget) || target;
+    for (let node = target.parentElement; node; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
+    if (target.tagName === 'DETAILS') target.open = true;
+    requestAnimationFrame(() => target.scrollIntoView({block: 'start'}));
+  }
+  window.addEventListener('hashchange', revealHash);
+  revealHash();
+  let printOpened = [];
+  window.addEventListener('beforeprint', () => {
+    printOpened = [...document.querySelectorAll('.doc details:not([open])')];
+    printOpened.forEach(item => { item.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    printOpened.forEach(item => { item.open = false; });
+    printOpened = [];
+  });
+
+  const dialog = document.getElementById('search-dialog');
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const trigger = document.getElementById('search-open');
+  if (!dialog || !input || !results || !trigger) return;
+  let previousFocus = null;
+  const filters = make('div', 'search-filters');
+  const langLabel = make('label', '', '언어 ');
+  const lang = make('select'); lang.id = 'search-language'; lang.setAttribute('aria-label', '언어');
+  const kindLabel = make('label', '', '종류 ');
+  const kind = make('select'); kind.id = 'search-kind'; kind.setAttribute('aria-label', '종류');
+  langLabel.append(lang); kindLabel.append(kind); filters.append(langLabel, kindLabel);
+  const status = make('p', 'search-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
+  results.before(filters, status);
+  const addOption = (select, value, text) => { const option = make('option', '', text); option.value = value; select.append(option); };
+  addOption(lang, '', '모든 언어'); addOption(kind, '', '모든 종류');
+  const languages = new Map();
+  const kinds = new Set(['페이지', 'API', '멤버']);
+  for (const p of pages) { const l = languageOfPath(p.path); if (l) languages.set(l, languageLabel(l)); }
+  function populateFilters() {
+    for (const api of apis) {
+      const l = languageKey(api.language); if (l) languages.set(l, languageLabel(api.language));
+      if (api.kind) kinds.add(kindName(api.kind));
+      for (const member of api.members || []) if (member.kind) kinds.add(kindName(member.kind));
+    }
+    const selectedLanguage = lang.value, selectedKind = kind.value;
+    lang.replaceChildren(); kind.replaceChildren();
+    addOption(lang, '', '모든 언어'); addOption(kind, '', '모든 종류');
+    [...languages].sort((a, b) => a[1].localeCompare(b[1])).forEach(([v, label]) => addOption(lang, v, label));
+    [...kinds].sort((a, b) => a.localeCompare(b)).forEach(k => addOption(kind, k, k));
+    lang.value = selectedLanguage; kind.value = selectedKind;
+  }
+  populateFilters();
+  function loadApis() {
+    if (!data.apiIndex || apiLoadState === 'ready') return Promise.resolve();
+    if (apiLoadPromise) return apiLoadPromise;
+    apiLoadState = 'loading';
+    apiLoadPromise = fetch(href(data.apiIndex) + (data.version ? '?v=' + encodeURIComponent(data.version) : ''))
+      .then(response => { if (!response.ok) throw new Error('API index unavailable'); return response.json(); })
+      .then(index => {
+        if (!Array.isArray(index)) throw new Error('Invalid API index');
+        apis = index;
+        apiLoadState = 'ready';
+        populateFilters();
+      })
+      .catch(() => { apiLoadState = 'error'; })
+      .finally(() => { apiLoadPromise = null; if (dialog.open) render(); });
+    return apiLoadPromise;
+  }
+  const limit = 40;
+  function render() {
+    const terms = normal(input.value).trim().split(/\s+/u).filter(Boolean);
+    results.replaceChildren();
+    const loadNote = apiLoadState === 'loading' ? ' API 색인을 불러오는 중입니다.' : apiLoadState === 'error' ? ' API 색인을 불러오지 못했습니다. 페이지 검색만 가능합니다. 검색창을 다시 열어 재시도하세요.' : '';
+    if (!terms.length) { status.textContent = '검색어를 입력하세요. 공백으로 여러 단어를 함께 찾습니다.' + loadNote; return; }
+    const found = [];
+    let count = 0;
+    function consider(name, language, type, link, context, description, keywords='') {
+      type = kindName(type);
+      if (!link || (lang.value && languageKey(language) !== lang.value) || (kind.value && type !== kind.value)) return;
+      const n = normal(name), ctx = normal(context), text = normal([name, language, type, context, description, keywords].join(' '));
+      if (!terms.every(t => text.includes(t))) return;
+      count++;
+      const joined = terms.join(' ');
+      const score = n === joined ? 0 : n.startsWith(joined) ? 1 : n.includes(joined) ? 2 : ctx.includes(joined) ? 3 : 4;
+      const record = {name, language, type, link, context, description, score};
+      // Keep only 40 best records rather than creating a second full member index.
+      let pos = found.findIndex(item => score < item.score);
+      if (pos < 0) pos = found.length;
+      if (pos < limit) { found.splice(pos, 0, record); if (found.length > limit) found.pop(); }
+    }
+    for (const p of pages) consider(p.title, languageOfPath(p.path), '페이지', p.path, p.group, p.description);
+    for (const api of apis) {
+      consider(api.name, api.language, api.kind || 'API', api.href, '', api.summary || '', api.keywords);
+      for (const member of api.members || []) consider(member.name, api.language, member.kind || '멤버', member.href, api.name, member.summary || member.signature || '', member.keywords);
+    }
+    const fragment = document.createDocumentFragment();
+    for (const r of found) {
+      const li = make('li'); const a = make('a', '', r.name); a.href = href(r.link);
+      const meta = make('small', '', [languageLabel(r.language), r.type, r.context, r.description].filter(Boolean).join(' · '));
+      a.append(meta); li.append(a); fragment.append(li);
+    }
+    results.append(fragment);
+    status.textContent = (count ? `${count}개 중 ${found.length}개 표시` : '일치하는 결과가 없습니다.') + loadNote;
+  }
+  let timer;
+  function queueRender() { clearTimeout(timer); timer = setTimeout(render, 100); }
+  input.addEventListener('input', queueRender); lang.addEventListener('change', render); kind.addEventListener('change', render);
+  function openSearch() {
+    if (dialog.open) { input.focus(); return; }
+    previousFocus = document.activeElement;
+    input.value = ''; lang.value = ''; kind.value = '';
+    loadApis(); render();
+    if (typeof dialog.showModal === 'function') dialog.showModal(); else dialog.setAttribute('open', '');
+    input.focus();
+  }
+  function closeSearch() {
+    if (typeof dialog.close === 'function' && dialog.open) dialog.close();
+    else { dialog.removeAttribute('open'); previousFocus?.focus(); }
+  }
+  trigger.addEventListener('click', openSearch);
+  document.getElementById('search-close')?.addEventListener('click', closeSearch);
+  dialog.addEventListener('close', () => previousFocus?.focus());
+  dialog.addEventListener('click', e => { if (e.target === dialog) closeSearch(); });
+  dialog.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { e.preventDefault(); closeSearch(); }
+    if (e.key === 'ArrowDown' && e.target === input) { const first = results.querySelector('a'); if (first) { e.preventDefault(); first.focus(); } }
+  });
+  document.addEventListener('keydown', e => {
+    const editable = e.target.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])');
+    if (((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') || (e.key === '/' && !editable && !e.altKey && !e.ctrlKey && !e.metaKey)) {
+      e.preventDefault(); openSearch();
+    }
+  });
 })();

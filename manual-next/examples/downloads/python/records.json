@@ -1,0 +1,112 @@
+[
+  {
+    "id": "threshold-gray8",
+    "inputs": "Gray8 [0,6,7,8], threshold 7",
+    "expected": "[0,0,255,255] from inclusive >=; C# byte and double overloads agree"
+  },
+  {
+    "id": "threshold-grayf32",
+    "inputs": "GrayF32 [-1,6.5,7,9], threshold 7",
+    "expected": "[0,0,255,255] from inclusive >="
+  },
+  {
+    "id": "roi-query",
+    "inputs": "3x2 [10,20,30;40,50,60], ROI (1,0,2,2)",
+    "expected": "origin (1,0), row-major [20,30,50,60]; share, clone and captured query image have same values"
+  },
+  {
+    "id": "image-io",
+    "inputs": "same 3x2 Gray8 image, PNG temporary file",
+    "expected": "round-trip pixel equality"
+  },
+  {
+    "id": "blob",
+    "inputs": "3x3 ring, 4-connectivity",
+    "expected": "one connected component of eight foreground pixels"
+  },
+  {
+    "id": "match-inspection",
+    "inputs": "2x2 [2,17;41,93], self-reference, identity search",
+    "expected": "one match, four valid pixels, passing zero-defect decision"
+  },
+  {
+    "id": "ncc-literal",
+    "inputs": "3x2 [3,17,1;8,2,25], 4x2 shifted source; also mask selecting indices 0,1,3,5",
+    "expected": "unmasked six samples, score 1 and center (2,.5); masked four samples; constant source empty; saved model same count; snapshot survives close"
+  },
+  {
+    "id": "profile-caliper",
+    "inputs": "1x9 [0,0,0,80,80,80,0,0,0]",
+    "expected": "nine profile samples, two edges, first edge halfway at 2.5"
+  },
+  {
+    "id": "color",
+    "inputs": "RGB red and blue primaries",
+    "expected": "HSV hue 0 and 240 degrees; Lab produces two channel samples"
+  },
+  {
+    "id": "dft",
+    "inputs": "2x2 ones, backward normalization",
+    "expected": "DC 4, other complex coefficients 0, inverse values 1"
+  },
+  {
+    "id": "spatial-depth",
+    "inputs": "2x2 depths [1,null;3,4], spacing (2,3), origin (10,20,30), ROI x=1",
+    "expected": "ROI origin x=12; null preserved, second point z=34"
+  },
+  {
+    "id": "camera-plc",
+    "inputs": "simulated 2x2 frame and request/publish/ack sequence",
+    "expected": "captured pixels equal input, one acknowledged PLC transaction"
+  },
+  {
+    "id": "blob-connectivity",
+    "inputs": "2x2 diagonal foreground",
+    "expected": "4-connected gives two components; 8-connected gives one area 2 centered at (.5,.5)"
+  },
+  {
+    "id": "spatial-fit",
+    "inputs": "25 points z=x+2y+3; translation (2,-3,4) fit on four noncoplanar points",
+    "expected": "25 plane inliers; held-out (2,3,4) maps to (4,0,8), error <1e-8"
+  },
+  {
+    "id": "planar-heldout",
+    "inputs": "four affine world/pixel pairs and held-out pixel (110,220) world reference (12.3,42.4)",
+    "expected": "predicted (12,42), world residual .5 mm, pixel residual sqrt(13), tolerance .49 fails and .51 passes"
+  },
+  {
+    "id": "line-circle",
+    "inputs": "four points on y=2; four cardinal points on radius 2 around (10,10)",
+    "expected": "line y=2, circle center (10,10), radius 2"
+  },
+  {
+    "id": "aligned-inspection",
+    "inputs": "5x5 reference motif in 7x7 normal, translated, illuminated, spot and missing scenes",
+    "expected": "normal/moved/lighting zero defects; spot one; missing alignment unavailable, in both languages"
+  },
+  {
+    "id": "modbus-loopback",
+    "inputs": "local TCP peer implements FC06 and FC03, address 5 in both languages",
+    "expected": "write 1234, read 1234; no real device"
+  },
+  {
+    "id": "invalid-arguments",
+    "inputs": "out-of-bounds ROI, connectivity 6, zero-width DFT",
+    "expected": "each operation rejects input"
+  },
+  {
+    "id": "font-ocr",
+    "inputs": "synthetic black T in 5x5 white canvas; one labeled 3x3 cell",
+    "expected": "one T glyph after train/read"
+  },
+  {
+    "id": "ownership-query",
+    "inputs": "[1,7,9], shared image and ROI, cloned query with thresholds 7 and 9",
+    "expected": "after source and execution close, acquired views survive; branch masks [0,255,255], [0,0,255]; accessing closed source raises"
+  },
+  {
+    "id": "ai-demo",
+    "inputs": "original generated demo models with 8x8 black and white Gray8; environment ZVISION_MANUAL_MODELS",
+    "expected": "classification class 0/1, softmax 0.7310586; detection box (1,1,6,6) score .9; segmentation class map 0/1; anomaly map/score 0/1"
+  }
+]

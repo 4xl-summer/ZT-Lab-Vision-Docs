@@ -1,57 +1,19 @@
 #!/usr/bin/env node
 "use strict";
-const fs=require("node:fs"),path=require("node:path");
-const root=path.resolve(__dirname,"..");
-const failures=[],warnings=[],pages=[];
-function walk(d){for(const f of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,f.name);if(f.isDirectory())walk(p);else if(f.name.endsWith(".html"))pages.push(p);}}
-walk(root);
-const manifest=fs.readFileSync(path.join(root,"assets","manual.js"),"utf8");
-const match=manifest.match(/const data=(\[[\s\S]*?\]);\s*\nconst root=/);
-if(!match){failures.push("Cannot parse navigation JSON from manual.js");} 
-let entries=[];try{if(match)entries=JSON.parse(match[1]);}catch(e){failures.push("Navigation JSON invalid: "+e.message)}
-const byRel=new Map(pages.map(p=>[path.relative(root,p).replaceAll(path.sep,"/"),p]));
-const linked=new Set(),titles=new Map();
-for(const page of pages){
-  const rel=path.relative(root,page).replaceAll(path.sep,"/"),html=fs.readFileSync(page,"utf8");
-  const h1=(html.match(/<h1\b/gi)||[]).length;
-  if(h1!==1)failures.push(rel+": expected exactly 1 h1, got "+h1);
-  const ti=html.match(/<title>([^<]*)<\/title>/i)?.[1];if(!ti)failures.push(rel+": missing title");
-  else{if(titles.has(ti))failures.push(rel+": duplicate title with "+titles.get(ti));titles.set(ti,rel)}
-  if(!/<meta name="description" content="/.test(html))warnings.push(rel+": missing description");
-  const rootAttr=html.match(/<meta name="manual-root" content="([^"]+)"/)?.[1];
-  if(!rootAttr)failures.push(rel+": missing manual-root");
-  const pathAttr=html.match(/<meta name="manual-path" content="([^"]+)"/)?.[1];
-  if(pathAttr!==rel)failures.push(rel+": incorrect manual-path "+pathAttr);
-  if(html.includes("@ROOT@"))failures.push(rel+": unresolved @ROOT@");
-  const ids=new Set();
-  for(const m of html.matchAll(/\bid="([^"]+)"/g)){
-    if(ids.has(m[1]))failures.push(rel+": duplicate id "+m[1]);ids.add(m[1]);
-  }
-  for(const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){
-    let uri=m[1];
-    if(/^(https?:|mailto:|data:|tel:)/.test(uri))continue;
-    if(uri.startsWith("#")){if(!ids.has(uri.slice(1)))failures.push(rel+": absent anchor "+uri);continue;}
-    const [target,fragment]=uri.split("#");
-    if(!target)continue;
-    const resolved=path.resolve(path.dirname(page),target);
-    if(!resolved.startsWith(root+path.sep)&&resolved!==root){failures.push(rel+": link leaves manual: "+uri);continue;}
-    if(!fs.existsSync(resolved)){failures.push(rel+": broken link "+uri);continue;}
-    if(fragment){let other=fs.readFileSync(resolved,"utf8");if(!other.includes('id="'+fragment+'"'))failures.push(rel+": broken target anchor "+uri)}
-    if(resolved.endsWith(".html"))linked.add(path.relative(root,resolved).replaceAll(path.sep,"/"));
-  }
-  for(const m of html.matchAll(/<img\b[^>]*>/gi))if(!/\balt="/.test(m[0]))failures.push(rel+": image missing alt");
-  for(const m of html.matchAll(/<svg\b[^>]*>/gi))if(!/\baria-label="/.test(m[0])&&!/\b<svg[^>]*aria-labelledby="/.test(m[0]))warnings.push(rel+": SVG missing accessible label");
-}
-const navSet=new Set();
-for(const row of entries){
-  if(!Array.isArray(row)||row.length<3){failures.push("Bad nav entry "+JSON.stringify(row));continue;}
-  const target=row[1];
-  if(navSet.has(target))failures.push("Duplicate nav target "+target);
-  navSet.add(target);
-  if(!byRel.has(target))failures.push("Nav points to absent HTML "+target);
-}
-for(const rel of byRel.keys())if(!navSet.has(rel))failures.push("HTML page not in navigation: "+rel);
-console.log("HTML manual QA: "+pages.length+" pages, "+entries.length+" nav entries, "+linked.size+" linked target pages");
-console.log("Warnings: "+warnings.length);warnings.slice(0,40).forEach(x=>console.warn("WARN "+x));
-if(failures.length){failures.forEach(x=>console.error("FAIL "+x));process.exit(1)}
-console.log("PASS — HTML structure, links, anchors, navigation, unique titles");
+// Usage: node scripts/validate.cjs [manual-root]. Validates generated files locally.
+const fs = require("node:fs"), path = require("node:path");
+const root = path.resolve(process.argv[2] || path.join(__dirname, ".."));
+const errors = [], warnings = [], pages = new Map(), assetCache = new Map();
+function walk(dir) { for (const ent of fs.readdirSync(dir, {withFileTypes:true})) { const f=path.join(dir, ent.name); if(ent.isDirectory()) walk(f); else if(ent.name.endsWith(".html")) { const rel=path.relative(root,f).split(path.sep).join("/"); const html=fs.readFileSync(f,"utf8"); const ids=new Set(); for(const m of html.matchAll(/\bid="([^"]*)"/g)) { if(ids.has(m[1])) errors.push(`${rel}: duplicate id ${m[1]}`); ids.add(m[1]); } pages.set(rel,{html,ids}); } } }
+function localTarget(from, href) { if (/^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(href)) return null; const [beforeHash,fragRaw] = href.split("#",2); const p=beforeHash.split("?",1)[0]; let fragment, decoded; try {fragment=decodeURIComponent(fragRaw||""); decoded=decodeURIComponent(p);} catch {errors.push(`${from}: invalid URL encoding ${href}`);return null;} if(decoded.startsWith("/")){errors.push(`${from}: absolute site path ${href}`);return null;} const dest=decoded ? path.posix.normalize(path.posix.join(path.posix.dirname(from),decoded)) : from; if(dest===".." || dest.startsWith("../")){errors.push(`${from}: link escapes manual ${href}`);return null;} return {dest,fragment}; }
+function check(from,href){const t=localTarget(from,href);if(!t)return;const page=pages.get(t.dest);if(page){if(t.fragment&&!page.ids.has(t.fragment))errors.push(`${from}: missing anchor ${href}`);return;}if(!assetCache.has(t.dest))assetCache.set(t.dest,fs.existsSync(path.join(root,...t.dest.split("/"))));if(!assetCache.get(t.dest)) errors.push(`${from}: missing target ${href}`);}
+function navJSON() { const f=path.join(root,"assets","manual-data.js"); let text; try{text=fs.readFileSync(f,"utf8");}catch(e){errors.push(`manual-data.js: ${e.message}`);return null;} const m=text.match(/window\.MANUAL_DATA\s*=\s*([\s\S]*?)\s*;?\s*$/); if(!m){errors.push("manual-data.js: missing assignment");return null;} try{return JSON.parse(m[1].replace(/;\s*$/, ""));}catch(e){errors.push(`manual-data.js: invalid JSON ${e.message}`);return null;} }
+try{walk(root);}catch(e){console.error(`FAIL ${e.message}`);process.exit(2);}
+const nav=navJSON(), targets=[];
+function strings(x){ if(typeof x==="string"){if(/\.html(?:[#?].*)?$/.test(x))targets.push(x.split(/[?#]/,1)[0].replace(/^\.\//,""));} else if(Array.isArray(x))x.forEach(strings);else if(x&&typeof x==="object")Object.values(x).forEach(strings); }
+if(nav)strings(nav.pages || (Array.isArray(nav)?nav:[]));
+const navset=new Set();for(const p of targets){if(navset.has(p))errors.push(`duplicate navigation target ${p}`);navset.add(p);if(!pages.has(p))errors.push(`navigation target absent ${p}`);}
+const titles=new Map();for(const [rel,{html,ids}] of pages){if(!navset.has(rel))errors.push(`${rel}: not in navigation`);const h1=(html.match(/<h1\b/gi)||[]).length;if(h1!==1)errors.push(`${rel}: expected one h1, got ${h1}`);const title=html.match(/<title>([^<]+)<\/title>/i)?.[1];if(!title)errors.push(`${rel}: missing title`);else if(titles.has(title))errors.push(`${rel}: duplicate title with ${titles.get(title)}`);else titles.set(title,rel);const m=html.match(/<meta\s+name="manual-path"\s+content="([^"]+)"/i);if(m?.[1]!==rel)errors.push(`${rel}: incorrect manual-path`);if(!/<meta\s+name="manual-root"\s+content="[^"]+"/i.test(html))errors.push(`${rel}: missing manual-root`);if(html.includes("@ROOT@"))errors.push(`${rel}: unresolved @ROOT@`);for(const x of html.matchAll(/\b(?:href|src)="([^"]+)"/g))check(rel,x[1]);for(const x of html.matchAll(/<img\b[^>]*>/gi))if(!/\balt=/.test(x[0]))errors.push(`${rel}: img missing alt`);for(const x of html.matchAll(/<svg\b[^>]*>/gi))if(!/\baria-(?:label|labelledby)=/.test(x[0]))warnings.push(`${rel}: SVG missing accessible label`);}
+let apiEntries=0,apiLinks=0;
+if(nav && typeof nav.apiIndex==="string") { const index=path.posix.normalize(nav.apiIndex);if(index===".."||index.startsWith("../")||index.startsWith("/"))errors.push("apiIndex escapes manual");else try{const data=JSON.parse(fs.readFileSync(path.join(root,...index.split("/")),"utf8"));if(!Array.isArray(data))throw Error("expected array");apiEntries=data.length;for(const item of data){for(const entry of [item,...(Array.isArray(item.members)?item.members:[])]){if(!entry || typeof entry.href!=="string"){errors.push(`${index}: missing href`);continue;}check("index.html",entry.href);apiLinks++;}}}catch(e){errors.push(`${index}: ${e.message}`);}}
+console.log(`HTML manual QA: ${pages.size} pages, ${targets.length} nav entries, ${apiEntries} API entries, ${apiLinks} API links`);console.log(`Warnings: ${warnings.length}; Errors: ${errors.length}`);warnings.slice(0,100).forEach(x=>console.warn(`WARN ${x}`));errors.forEach(x=>console.error(`FAIL ${x}`));if(errors.length)process.exit(1);console.log("PASS — HTML structure, links, anchors, navigation, API search and unique titles");

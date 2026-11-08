@@ -1,0 +1,199 @@
+[
+  {
+    "case": "rust-threshold",
+    "mask": [
+      0,
+      255,
+      255
+    ],
+    "nan_error": true,
+    "color_error": true
+  },
+  {
+    "case": "rust-roi-query",
+    "origin": [
+      1,
+      0
+    ],
+    "capture": [
+      0,
+      255
+    ],
+    "deep_independent": true,
+    "clone_branch": [
+      255,
+      255
+    ]
+  },
+  {
+    "case": "rust-blob-connectivity",
+    "four": 2,
+    "eight": 1
+  },
+  {
+    "case": "rust-dft",
+    "dc": 4,
+    "inverse": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "case": "rust-calibration-heldout",
+    "predicted": [
+      12,
+      42
+    ],
+    "world_residual": 0.5
+  },
+  {
+    "case": "rust-depth-cloud",
+    "roi_origin": [
+      12,
+      20,
+      30
+    ],
+    "point": [
+      14,
+      20,
+      33
+    ],
+    "transformed": [
+      15,
+      22,
+      36
+    ],
+    "plane_inliers": 25
+  },
+  {
+    "case": "rust-matching",
+    "position": [
+      2,
+      0.5
+    ],
+    "score": 1,
+    "mask_samples": 4,
+    "empty": true,
+    "restored": true
+  },
+  {
+    "case": "rust-color",
+    "hsv_roundtrip": [
+      255,
+      0,
+      0
+    ],
+    "lab_roundtrip_tolerance": 1
+  },
+  {
+    "case": "rust-gaussian",
+    "values": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "invalid_kernel": true
+  },
+  {
+    "case": "rust-canny",
+    "mask": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "invalid_thresholds": true
+  },
+  {
+    "case": "rust-simulated-io",
+    "frame_id": 1,
+    "queue_empty": true,
+    "plc_idle": true
+  },
+  {
+    "case": "rust-ai-fixtures",
+    "dark_class": 0,
+    "bright_class": 1,
+    "detection": true,
+    "segmentation_map": true,
+    "anomaly_map": true
+  },
+  {
+    "case": "rust-font-ocr",
+    "label": "A",
+    "accepted": true
+  },
+  {
+    "case": "rust-profile-caliper",
+    "profile": [
+      0,
+      0,
+      0,
+      100,
+      100,
+      100,
+      100
+    ],
+    "edge_x": 2.5
+  },
+  {
+    "case": "rust-measurement-models",
+    "line_y": 23.5,
+    "circle_center": [
+      30,
+      30
+    ],
+    "circle_radius_approx": 15
+  },
+  {
+    "case": "rust-morphology",
+    "eroded": [
+      0,
+      0,
+      0,
+      0,
+      255,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "case": "rust-alignment",
+    "found": true,
+    "valid_count": 9,
+    "blank_found": false
+  },
+  {
+    "case": "rust-tiff-pages",
+    "page_1": [
+      3,
+      4
+    ],
+    "page_2_error": true
+  },
+  {
+    "case": "rust-fft",
+    "dc": 4,
+    "inverse": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "case": "rust-aligned-difference",
+    "inspected": 9,
+    "defect_pixels": 1
+  }
+]

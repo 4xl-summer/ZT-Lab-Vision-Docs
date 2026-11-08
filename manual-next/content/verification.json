@@ -1,0 +1,2247 @@
+{
+  "source_revision": "ce902e85c3405eb63df40c699ddbdf70ee1d03bd",
+  "docs_base_revision": "a35287c836ac10244cbf8fa50eec1abd16670cf6",
+  "recorded_utc": "2026-11-08T16:20:40.137338+00:00",
+  "environment": {
+    "os": "Ubuntu 24.04 / WSL / Linux x64",
+    "rust": "1.85.1",
+    "dotnet_sdk": "10.0.403",
+    "python": "CPython 3.14.0"
+  },
+  "api_scope": {
+    "python_declared_exports": 917,
+    "python_other_sdk_package_attributes": 4,
+    "python_internal_return_types": 1,
+    "python_excluded_external_package_attributes": 4,
+    "csharp_reflected_types": 844,
+    "rust_rustdoc_declarations": 465,
+    "csharp_types_by_assembly": {
+      "ZVision": 823,
+      "ZVision.Display": 12,
+      "ZVision.Inspection": 9
+    },
+    "csharp_enum_storage_fields_excluded_by_assembly": {
+      "ZVision": 118,
+      "ZVision.Display": 1,
+      "ZVision.Inspection": 1
+    }
+  },
+  "inline": [
+    {
+      "page": "api/csharp/find-blobs.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "ac9a2fad2ee3c5b423da8697838de5bd691b7a9e35faf97afc92042d99e7d3ed",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:53.113485+00:00"
+    },
+    {
+      "page": "api/csharp/inspection.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "6b344009c7f6b23938c0bba893574f99ab20ab42385b3f5b1aa74d9e5fd413e8",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:14.977560+00:00"
+    },
+    {
+      "page": "api/csharp/match-model.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "4915de722b997c6206c72621e45e4aa6788cd75a3d4ddda8fdb5fb1bca68f28f",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:23.711539+00:00"
+    },
+    {
+      "page": "api/csharp/spatial3d.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "5a8e2cd74fc17e52cabc22aa09587cd992f11dc22b7b333ad0708f92256e9600",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:09:22.561052+00:00"
+    },
+    {
+      "page": "api/csharp/threshold.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "5208743bc1f92d7b97876e539e6b85dda50120a47fdf6fb0ef0a4c837b0ab9ad",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:32.267341+00:00"
+    },
+    {
+      "page": "api/python/match-model.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "7b03341923690e0da3101bdba560c88612b114a13afbffca1e095d4f16ef06af",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:13.390104+00:00"
+    },
+    {
+      "page": "api/python/threshold.html",
+      "block_index": 1,
+      "language": "python",
+      "decoded_code_sha256": "f96a1ba7f130cb2a7e49f42d791ec564488a1aede22128a9f4780d9816d39efb",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:42.626681+00:00"
+    },
+    {
+      "page": "api/rust/blob-query.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "eecbfb126633c52c3a927b562e0249eca25f2b862162be3f11c041d798e21047",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:49.289934+00:00"
+    },
+    {
+      "page": "api/rust/match-model.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "330698cadbef09b9f861407b09f993d191bc0b743be657cad5a7be2913a2d950",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:20.050924+00:00"
+    },
+    {
+      "page": "api/rust/spatial3d.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "5539599ef8c88a50cfb983515c80aef81241c214c760effd2f87950098eea68d",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:09:19.416623+00:00"
+    },
+    {
+      "page": "api/rust/threshold.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "379ffc010b53dff1074e3b57caa8d3da4d3f09d84ef78dbd7e0083642f45f59b",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:28.748728+00:00"
+    },
+    {
+      "page": "concepts/lifetime.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "fad4f7962dd32960f8bb4fc6c00bfad10c6c4dec3fbd3a9e15fb06fde54a5aad",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:44.094063+00:00"
+    },
+    {
+      "page": "concepts/lifetime.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "e56d1b60d201ed30819f9a778a0524b9018258860cd76d47a8f4fa2dab012952",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:47.178592+00:00"
+    },
+    {
+      "page": "concepts/lifetime.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "d5950b193a139e777175900821707bb1a55168359fc3804009628b19c7f5f405",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:56.047825+00:00"
+    },
+    {
+      "page": "concepts/lifetime.html",
+      "block_index": 3,
+      "language": "csharp",
+      "decoded_code_sha256": "912b12e7a47b0713a9ef904ff750bfa0aaa9e266f0ca3da71165bd5305e04cce",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:02.856442+00:00"
+    },
+    {
+      "page": "concepts/object-model.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "50ba27ffc9b77c2dda6d0d4a72771a530452d4300470a4e5eb849c9f34a5f339",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:57.256852+00:00"
+    },
+    {
+      "page": "concepts/object-model.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "89a997ff9586c388aab576478114e0b4cbbe463c210d57dcf4004220895e45c7",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:09.695687+00:00"
+    },
+    {
+      "page": "concepts/query.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "4c54d7391d8b40822c2b149434aeb66e3e646a8460b41994de6cf745f5317921",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:31.698502+00:00"
+    },
+    {
+      "page": "concepts/results.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "912b12e7a47b0713a9ef904ff750bfa0aaa9e266f0ca3da71165bd5305e04cce",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:02.856442+00:00"
+    },
+    {
+      "page": "concepts/roi.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "502a713b350ba8e9fbefb3ea38173999fce8f50eba22db0385d0ee5306fbc8ca",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:58:02.794116+00:00"
+    },
+    {
+      "page": "concepts/share.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "e2dc5cd7730b140cbb3f058a4c5358e5d33baea8c74c3116b216851190234fc8",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:12.373575+00:00"
+    },
+    {
+      "page": "concepts/share.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "77cea2abb8c8e308604dd17be4fe1fc0678c4cead3957e5560d0c30b773e9d75",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:15.517517+00:00"
+    },
+    {
+      "page": "concepts/share.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "421db95150e54dd59bec8fcf1875dc602a2a112a49b1ec2be5d227e7f0059faa",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:25.346250+00:00"
+    },
+    {
+      "page": "concepts/share.html",
+      "block_index": 3,
+      "language": "csharp",
+      "decoded_code_sha256": "912b12e7a47b0713a9ef904ff750bfa0aaa9e266f0ca3da71165bd5305e04cce",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:02.856442+00:00"
+    },
+    {
+      "page": "concepts/zimage.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "8b860168132efdf60d393e17cad4f6a421300baf89c33c12b9dffed002b9c3b1",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:36.966137+00:00"
+    },
+    {
+      "page": "concepts/zimage.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "04df1242a5ba544f8d5bc569f37ccd94fa5c6ee38a3a7665fffce06b046ad912",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:40.658178+00:00"
+    },
+    {
+      "page": "concepts/zimage.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "f327c588f62ab2c3c642532747b3555b45dec8c254abba3f1b4276f62761647f",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:04:51.444689+00:00"
+    },
+    {
+      "page": "examples/blob-inspection.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "9aafa8cd4be147a6d9e1678e9f913437d835cc6f6eaad6f9ec3786e0818966e9",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:05.567606+00:00"
+    },
+    {
+      "page": "examples/blob-inspection.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "33868e732c8bfeffb95b4ae6ba8404a491babd35bada5039600b7e0a1202a28d",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:08.690591+00:00"
+    },
+    {
+      "page": "examples/blob-inspection.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "b2ee24770930ebfa9a7357364d376fca41b9438e3acac2d5c5cb97d4f371f76e",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:19.029459+00:00"
+    },
+    {
+      "page": "examples/difference-spot.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "6b344009c7f6b23938c0bba893574f99ab20ab42385b3f5b1aa74d9e5fd413e8",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:14.977560+00:00"
+    },
+    {
+      "page": "examples/ncc-search.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "330698cadbef09b9f861407b09f993d191bc0b743be657cad5a7be2913a2d950",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:20.050924+00:00"
+    },
+    {
+      "page": "examples/ncc-search.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "4915de722b997c6206c72621e45e4aa6788cd75a3d4ddda8fdb5fb1bca68f28f",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:23.711539+00:00"
+    },
+    {
+      "page": "examples/ncc-search.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "7b03341923690e0da3101bdba560c88612b114a13afbffca1e095d4f16ef06af",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:13.390104+00:00"
+    },
+    {
+      "page": "examples/roi-threshold.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "d7e26e13ed0e129a162efe9cb46b2df6c74571c351c45e8c91f5ea93c1c4e86a",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:57.167560+00:00"
+    },
+    {
+      "page": "examples/roi-threshold.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "f4e7965f84e96a999c103374b1d6f3d0327c85552dd811426a29880f478ef26a",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:00.482010+00:00"
+    },
+    {
+      "page": "examples/roi-threshold.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "48514693decf2b3c6e98451f2c7cddf1475a84b77ef6ffb9739892299595705d",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:10.769114+00:00"
+    },
+    {
+      "page": "getting-started/first-image.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "6c7b3218b6c0623531c091facee8bdb29bcb3482f0b3ecc0fbf70c81c001a79b",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:34.406110+00:00"
+    },
+    {
+      "page": "getting-started/first-image.html",
+      "block_index": 1,
+      "language": "csharp",
+      "decoded_code_sha256": "dda50939763b5eaaac22cad9dc2d8780eb514bbd4a72aa5e665f89aa2a14bf92",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:38.026743+00:00"
+    },
+    {
+      "page": "getting-started/first-image.html",
+      "block_index": 2,
+      "language": "python",
+      "decoded_code_sha256": "477d30e67e8cf01eb63022a61e8624905334c14facd56cf1f3e4a9093a366ab2",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:50.879341+00:00"
+    },
+    {
+      "page": "guides/acquisition.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "3c2800ce574b501703bb3ea0911d7e3ab63340a696a705f4961d6489871a0886",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:09:04.049115+00:00"
+    },
+    {
+      "page": "guides/blob-analysis.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "8ff5c5b3d3e33ff2de6749bfc8d1f5c4d4aa989269086cdb03c2a8b977b8f76f",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:15.868164+00:00"
+    },
+    {
+      "page": "guides/canny.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "19039f1a52b315a106f528e8c746a0d5a6900ee250712e223958699fca39fed0",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:01.081310+00:00"
+    },
+    {
+      "page": "guides/canny.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "8c752b0d0369f78c0b7896e6ea1efe92ff584dcd9bc234d52c215fb5996de88f",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:12.073846+00:00"
+    },
+    {
+      "page": "guides/color-processing.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "ae04e570fd41182508b6b2ac641126d6276eed49fbf3eaec3b02dd913b90d16a",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:19.799614+00:00"
+    },
+    {
+      "page": "guides/depth-map.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "e701578c232944227f07efc41752b6f170d2fd5d63d4121ad77cc5b48b0f42f1",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:40.757402+00:00"
+    },
+    {
+      "page": "guides/frequency.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "8c750f71e3593c0d78d756eb7d4920f71752282038d1fd912f0fbf1237a743d0",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:07:24.781398+00:00"
+    },
+    {
+      "page": "guides/gaussian.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "5cfa424373c5a68235f91a5d6ef10f0344ec7eb5232df3475375b06ca64eb630",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:31.965107+00:00"
+    },
+    {
+      "page": "guides/gaussian.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "cee133eef9535701012efb06855290283251bdb9dbe2c93cca30bee3473632e9",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:42.347094+00:00"
+    },
+    {
+      "page": "guides/image-io.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "a5c085a24606564a3b184ac41976159ae71195398c9cfefab916818175deaf01",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:09:12.022450+00:00"
+    },
+    {
+      "page": "guides/inference.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "a2faa39ccfaf66092220f0a6c2de50ee42c3d8606dcc3ee5d29d4bc681357cde",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete-with-input",
+      "started_utc": "2026-11-08T15:08:57.820890+00:00"
+    },
+    {
+      "page": "guides/matching-ncc.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "7b03341923690e0da3101bdba560c88612b114a13afbffca1e095d4f16ef06af",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:05:13.390104+00:00"
+    },
+    {
+      "page": "guides/morphology.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "47dad4ef3481ac021a845bbc4f55a7ce6ab58b6851a4f267042516e2ef554901",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:45.666790+00:00"
+    },
+    {
+      "page": "guides/morphology.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "0b90db410bae3b45a7ef568017968b0ff037fa4e67c21bb6e7870f22b550bc52",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:57.785561+00:00"
+    },
+    {
+      "page": "guides/recognition.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "e854ae1c45a6b0a3f9a51d41679c5be8c988a723627aa2e3fe4e1af771fe5491",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:47.714020+00:00"
+    },
+    {
+      "page": "guides/recognition.html",
+      "block_index": 1,
+      "language": "rust",
+      "decoded_code_sha256": "757ba02370d4b8594c9dfafd404f5cd0601294debf0275e1f540ffef15cd1f71",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:54.444233+00:00"
+    },
+    {
+      "page": "guides/threshold.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "08a116ab14b328c503c36b36fd437236f9f5475267d381685b8c8f78f42059e5",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:21.925744+00:00"
+    },
+    {
+      "page": "reference/python/spatial3d-depthmap.html",
+      "block_index": 8,
+      "language": "python",
+      "decoded_code_sha256": "2d606fa96fd6df4ba43add9b94cb7666d3ebd5992bbeba02876d7dac42cf175c",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:25.724494+00:00"
+    },
+    {
+      "page": "reference/python/spatial3d-pointcloud.html",
+      "block_index": 8,
+      "language": "python",
+      "decoded_code_sha256": "f7956ac7aa80d298abcba381f8d74e33c565f2316ba4fc87b7c79362c3b800d9",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:34.003872+00:00"
+    },
+    {
+      "page": "examples/aligned-inspection.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "6b344009c7f6b23938c0bba893574f99ab20ab42385b3f5b1aa74d9e5fd413e8",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:14.977560+00:00"
+    },
+    {
+      "page": "guides/managed-inspection.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "02c0f1d18186a1679b054d6587a4ae44ec1d2db1cf7acc8858dd33b2227f51a2",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:28.267665+00:00"
+    },
+    {
+      "page": "guides/managed-display.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "02c0f1d18186a1679b054d6587a4ae44ec1d2db1cf7acc8858dd33b2227f51a2",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:28.267665+00:00"
+    },
+    {
+      "page": "guides/managed-workbench.html",
+      "block_index": 0,
+      "language": "csharp",
+      "decoded_code_sha256": "02c0f1d18186a1679b054d6587a4ae44ec1d2db1cf7acc8858dd33b2227f51a2",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:03:28.267665+00:00"
+    },
+    {
+      "page": "examples/planar-calibration.html",
+      "block_index": 0,
+      "language": "rust",
+      "decoded_code_sha256": "04811e48225aa0d9da5f2bfb29030cb6524b0bc7a2bccc98e4afa9a32280e22d",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": false,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:06:18.773917+00:00"
+    },
+    {
+      "page": "api/python/point-cloud.html",
+      "block_index": 0,
+      "language": "python",
+      "decoded_code_sha256": "e701578c232944227f07efc41752b6f170d2fd5d63d4121ad77cc5b48b0f42f1",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:08:40.757402+00:00"
+    },
+    {
+      "page": "api/python/point-cloud.html",
+      "block_index": 1,
+      "language": "python",
+      "decoded_code_sha256": "df2e621371fed38e39906f0e26d1129f0e0854c3d92f8e0a43273ff1c20fcbeb",
+      "status": "pass",
+      "exit_code": 0,
+      "contains_assertion": true,
+      "classification": "complete",
+      "started_utc": "2026-11-08T15:09:32.688162+00:00"
+    }
+  ],
+  "integration": {
+    "python_source": {
+      "exit_code": 0,
+      "records": [
+        {
+          "ai-demo": {
+            "anomaly": [
+              0,
+              1
+            ],
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ]
+          },
+          "aligned-inspection": {
+            "lighting": 0,
+            "missing": "unavailable",
+            "moved": 0,
+            "normal": 0,
+            "spot": 1
+          },
+          "blob": {
+            "area": 8,
+            "count": 1
+          },
+          "blob-connectivity": {
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ],
+            "eight": 1,
+            "four": 2
+          },
+          "camera-plc": {
+            "acks": 1,
+            "frame": 1
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "font-ocr": {
+            "glyphs": 1,
+            "text": "T"
+          },
+          "image-io": true,
+          "invalid-arguments": {
+            "connectivity": true,
+            "dft": true,
+            "roi": true
+          },
+          "line-circle": {
+            "center": [
+              10,
+              10
+            ],
+            "lineY": 2,
+            "radius": 2
+          },
+          "match-inspection": {
+            "matches": 1,
+            "passed": true,
+            "valid": 4
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "ncc-literal": {
+            "empty": true,
+            "maskedSamples": 4,
+            "samples": 6,
+            "x": 2,
+            "y": 0.5
+          },
+          "ownership-query": {
+            "sourceClosed": true,
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ]
+          },
+          "planar-heldout": {
+            "failedAt": 0.49,
+            "passedAt": 0.51,
+            "pixelResidual": 3.605551275463989,
+            "worldResidual": 0.5
+          },
+          "profile-caliper": {
+            "edges": 2,
+            "first": 2.5,
+            "samples": 9
+          },
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "spatial-fit": {
+            "heldOutMaxErrorBelow": 1e-08,
+            "planeInliers": 25
+          },
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ]
+        }
+      ],
+      "log_sha256": "dcf3706d2cfaad78ae52a963c6d8d791e02cc16b2f31eeb7a98986ed4661bdba"
+    },
+    "csharp_source": {
+      "exit_code": 0,
+      "records": [
+        {
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "image-io": true,
+          "blob": {
+            "count": 1,
+            "area": 8
+          },
+          "match-inspection": {
+            "matches": 1,
+            "valid": 4,
+            "passed": true
+          },
+          "profile-caliper": {
+            "samples": 9,
+            "edges": 2,
+            "first": 2.5
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "camera-plc": {
+            "frame": 1,
+            "acks": 1
+          },
+          "ncc-literal": {
+            "x": 2,
+            "y": 0.5,
+            "samples": 6,
+            "maskedSamples": 4,
+            "empty": true
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "spatial-fit": {
+            "planeInliers": 25,
+            "heldOutMaxErrorBelow": 1e-08
+          },
+          "planar-heldout": {
+            "worldResidual": 0.5,
+            "pixelResidual": 3.605551275463989,
+            "failedAt": 0.49,
+            "passedAt": 0.51
+          },
+          "line-circle": {
+            "lineY": 2,
+            "center": [
+              10,
+              10
+            ],
+            "radius": 2
+          },
+          "blob-connectivity": {
+            "four": 2,
+            "eight": 1,
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ]
+          },
+          "aligned-inspection": {
+            "normal": 0,
+            "moved": 0,
+            "lighting": 0,
+            "spot": 1,
+            "missing": "unavailable"
+          },
+          "invalid-arguments": {
+            "roi": true,
+            "connectivity": true,
+            "dft": true
+          },
+          "ai-demo": {
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ],
+            "anomaly": [
+              0,
+              1
+            ]
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "font-ocr": {
+            "text": "T",
+            "glyphs": 1
+          },
+          "ownership-query": {
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ],
+            "sourceClosed": true
+          }
+        }
+      ],
+      "log_sha256": "defd35ed0aff84cf4685bfe49a7e09b1d868b4e442c9861ed86abd0d1b1d71d5"
+    },
+    "rust_source": {
+      "exit_code": 0,
+      "records": [
+        {
+          "case": "rust-threshold",
+          "mask": [
+            0,
+            255,
+            255
+          ],
+          "nan_error": true,
+          "color_error": true
+        },
+        {
+          "case": "rust-roi-query",
+          "origin": [
+            1,
+            0
+          ],
+          "capture": [
+            0,
+            255
+          ],
+          "deep_independent": true,
+          "clone_branch": [
+            255,
+            255
+          ]
+        },
+        {
+          "case": "rust-blob-connectivity",
+          "four": 2,
+          "eight": 1
+        },
+        {
+          "case": "rust-dft",
+          "dc": 4,
+          "inverse": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "case": "rust-calibration-heldout",
+          "predicted": [
+            12,
+            42
+          ],
+          "world_residual": 0.5
+        },
+        {
+          "case": "rust-depth-cloud",
+          "roi_origin": [
+            12,
+            20,
+            30
+          ],
+          "point": [
+            14,
+            20,
+            33
+          ],
+          "transformed": [
+            15,
+            22,
+            36
+          ],
+          "plane_inliers": 25
+        },
+        {
+          "case": "rust-matching",
+          "position": [
+            2,
+            0.5
+          ],
+          "score": 1,
+          "mask_samples": 4,
+          "empty": true,
+          "restored": true
+        },
+        {
+          "case": "rust-color",
+          "hsv_roundtrip": [
+            255,
+            0,
+            0
+          ],
+          "lab_roundtrip_tolerance": 1
+        },
+        {
+          "case": "rust-gaussian",
+          "values": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "invalid_kernel": true
+        },
+        {
+          "case": "rust-canny",
+          "mask": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "invalid_thresholds": true
+        },
+        {
+          "case": "rust-simulated-io",
+          "frame_id": 1,
+          "queue_empty": true,
+          "plc_idle": true
+        },
+        {
+          "case": "rust-ai-fixtures",
+          "dark_class": 0,
+          "bright_class": 1,
+          "detection": true,
+          "segmentation_map": true,
+          "anomaly_map": true
+        },
+        {
+          "case": "rust-font-ocr",
+          "label": "A",
+          "accepted": true
+        },
+        {
+          "case": "rust-profile-caliper",
+          "profile": [
+            0,
+            0,
+            0,
+            100,
+            100,
+            100,
+            100
+          ],
+          "edge_x": 2.5
+        },
+        {
+          "case": "rust-measurement-models",
+          "line_y": 23.5,
+          "circle_center": [
+            30,
+            30
+          ],
+          "circle_radius_approx": 15
+        },
+        {
+          "case": "rust-morphology",
+          "eroded": [
+            0,
+            0,
+            0,
+            0,
+            255,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "rust-alignment",
+          "found": true,
+          "valid_count": 9,
+          "blank_found": false
+        },
+        {
+          "case": "rust-tiff-pages",
+          "page_1": [
+            3,
+            4
+          ],
+          "page_2_error": true
+        },
+        {
+          "case": "rust-fft",
+          "dc": 4,
+          "inverse": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "case": "rust-aligned-difference",
+          "inspected": 9,
+          "defect_pixels": 1
+        }
+      ],
+      "log_sha256": "be477726ca7b31e3d6878d84a6e490ba55dd9e9290b1dd15dc879a288967c179"
+    },
+    "python_wheel": {
+      "exit_code": 0,
+      "records": [
+        {
+          "ai-demo": {
+            "anomaly": [
+              0,
+              1
+            ],
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ]
+          },
+          "aligned-inspection": {
+            "lighting": 0,
+            "missing": "unavailable",
+            "moved": 0,
+            "normal": 0,
+            "spot": 1
+          },
+          "blob": {
+            "area": 8,
+            "count": 1
+          },
+          "blob-connectivity": {
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ],
+            "eight": 1,
+            "four": 2
+          },
+          "camera-plc": {
+            "acks": 1,
+            "frame": 1
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "font-ocr": {
+            "glyphs": 1,
+            "text": "T"
+          },
+          "image-io": true,
+          "invalid-arguments": {
+            "connectivity": true,
+            "dft": true,
+            "roi": true
+          },
+          "line-circle": {
+            "center": [
+              10,
+              10
+            ],
+            "lineY": 2,
+            "radius": 2
+          },
+          "match-inspection": {
+            "matches": 1,
+            "passed": true,
+            "valid": 4
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "ncc-literal": {
+            "empty": true,
+            "maskedSamples": 4,
+            "samples": 6,
+            "x": 2,
+            "y": 0.5
+          },
+          "ownership-query": {
+            "sourceClosed": true,
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ]
+          },
+          "planar-heldout": {
+            "failedAt": 0.49,
+            "passedAt": 0.51,
+            "pixelResidual": 3.605551275463989,
+            "worldResidual": 0.5
+          },
+          "profile-caliper": {
+            "edges": 2,
+            "first": 2.5,
+            "samples": 9
+          },
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "spatial-fit": {
+            "heldOutMaxErrorBelow": 1e-08,
+            "planeInliers": 25
+          },
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ]
+        }
+      ],
+      "log_sha256": "dcf3706d2cfaad78ae52a963c6d8d791e02cc16b2f31eeb7a98986ed4661bdba"
+    },
+    "csharp_nuget": {
+      "exit_code": 0,
+      "records": [
+        {
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "image-io": true,
+          "blob": {
+            "count": 1,
+            "area": 8
+          },
+          "match-inspection": {
+            "matches": 1,
+            "valid": 4,
+            "passed": true
+          },
+          "profile-caliper": {
+            "samples": 9,
+            "edges": 2,
+            "first": 2.5
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "camera-plc": {
+            "frame": 1,
+            "acks": 1
+          },
+          "ncc-literal": {
+            "x": 2,
+            "y": 0.5,
+            "samples": 6,
+            "maskedSamples": 4,
+            "empty": true
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "spatial-fit": {
+            "planeInliers": 25,
+            "heldOutMaxErrorBelow": 1e-08
+          },
+          "planar-heldout": {
+            "worldResidual": 0.5,
+            "pixelResidual": 3.605551275463989,
+            "failedAt": 0.49,
+            "passedAt": 0.51
+          },
+          "line-circle": {
+            "lineY": 2,
+            "center": [
+              10,
+              10
+            ],
+            "radius": 2
+          },
+          "blob-connectivity": {
+            "four": 2,
+            "eight": 1,
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ]
+          },
+          "aligned-inspection": {
+            "normal": 0,
+            "moved": 0,
+            "lighting": 0,
+            "spot": 1,
+            "missing": "unavailable"
+          },
+          "invalid-arguments": {
+            "roi": true,
+            "connectivity": true,
+            "dft": true
+          },
+          "ai-demo": {
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ],
+            "anomaly": [
+              0,
+              1
+            ]
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "font-ocr": {
+            "text": "T",
+            "glyphs": 1
+          },
+          "ownership-query": {
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ],
+            "sourceClosed": true
+          }
+        }
+      ],
+      "log_sha256": "e5760ba8792455a248d7ff2b0488d155b7f5b7a91194e585c41b12da90d62eca"
+    },
+    "download_rust": {
+      "exit_code": 0,
+      "records": [
+        {
+          "case": "rust-threshold",
+          "mask": [
+            0,
+            255,
+            255
+          ],
+          "nan_error": true,
+          "color_error": true
+        },
+        {
+          "case": "rust-roi-query",
+          "origin": [
+            1,
+            0
+          ],
+          "capture": [
+            0,
+            255
+          ],
+          "deep_independent": true,
+          "clone_branch": [
+            255,
+            255
+          ]
+        },
+        {
+          "case": "rust-blob-connectivity",
+          "four": 2,
+          "eight": 1
+        },
+        {
+          "case": "rust-dft",
+          "dc": 4,
+          "inverse": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "case": "rust-calibration-heldout",
+          "predicted": [
+            12,
+            42
+          ],
+          "world_residual": 0.5
+        },
+        {
+          "case": "rust-depth-cloud",
+          "roi_origin": [
+            12,
+            20,
+            30
+          ],
+          "point": [
+            14,
+            20,
+            33
+          ],
+          "transformed": [
+            15,
+            22,
+            36
+          ],
+          "plane_inliers": 25
+        },
+        {
+          "case": "rust-matching",
+          "position": [
+            2,
+            0.5
+          ],
+          "score": 1,
+          "mask_samples": 4,
+          "empty": true,
+          "restored": true
+        },
+        {
+          "case": "rust-color",
+          "hsv_roundtrip": [
+            255,
+            0,
+            0
+          ],
+          "lab_roundtrip_tolerance": 1
+        },
+        {
+          "case": "rust-gaussian",
+          "values": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "invalid_kernel": true
+        },
+        {
+          "case": "rust-canny",
+          "mask": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "invalid_thresholds": true
+        },
+        {
+          "case": "rust-simulated-io",
+          "frame_id": 1,
+          "queue_empty": true,
+          "plc_idle": true
+        },
+        {
+          "case": "rust-ai-fixtures",
+          "dark_class": 0,
+          "bright_class": 1,
+          "detection": true,
+          "segmentation_map": true,
+          "anomaly_map": true
+        },
+        {
+          "case": "rust-font-ocr",
+          "label": "A",
+          "accepted": true
+        },
+        {
+          "case": "rust-profile-caliper",
+          "profile": [
+            0,
+            0,
+            0,
+            100,
+            100,
+            100,
+            100
+          ],
+          "edge_x": 2.5
+        },
+        {
+          "case": "rust-measurement-models",
+          "line_y": 23.5,
+          "circle_center": [
+            30,
+            30
+          ],
+          "circle_radius_approx": 15
+        },
+        {
+          "case": "rust-morphology",
+          "eroded": [
+            0,
+            0,
+            0,
+            0,
+            255,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "rust-alignment",
+          "found": true,
+          "valid_count": 9,
+          "blank_found": false
+        },
+        {
+          "case": "rust-tiff-pages",
+          "page_1": [
+            3,
+            4
+          ],
+          "page_2_error": true
+        },
+        {
+          "case": "rust-fft",
+          "dc": 4,
+          "inverse": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "case": "rust-aligned-difference",
+          "inspected": 9,
+          "defect_pixels": 1
+        }
+      ],
+      "log_sha256": "b682c28ec84cee0bb5c76c4bbc049bd092f4c64d9db28aea179826341641e7dc"
+    },
+    "download_python": {
+      "exit_code": 0,
+      "records": [
+        {
+          "ai-demo": {
+            "anomaly": [
+              0,
+              1
+            ],
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ]
+          },
+          "aligned-inspection": {
+            "lighting": 0,
+            "missing": "unavailable",
+            "moved": 0,
+            "normal": 0,
+            "spot": 1
+          },
+          "blob": {
+            "area": 8,
+            "count": 1
+          },
+          "blob-connectivity": {
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ],
+            "eight": 1,
+            "four": 2
+          },
+          "camera-plc": {
+            "acks": 1,
+            "frame": 1
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "font-ocr": {
+            "glyphs": 1,
+            "text": "T"
+          },
+          "image-io": true,
+          "invalid-arguments": {
+            "connectivity": true,
+            "dft": true,
+            "roi": true
+          },
+          "line-circle": {
+            "center": [
+              10,
+              10
+            ],
+            "lineY": 2,
+            "radius": 2
+          },
+          "match-inspection": {
+            "matches": 1,
+            "passed": true,
+            "valid": 4
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "ncc-literal": {
+            "empty": true,
+            "maskedSamples": 4,
+            "samples": 6,
+            "x": 2,
+            "y": 0.5
+          },
+          "ownership-query": {
+            "sourceClosed": true,
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ]
+          },
+          "planar-heldout": {
+            "failedAt": 0.49,
+            "passedAt": 0.51,
+            "pixelResidual": 3.605551275463989,
+            "worldResidual": 0.5
+          },
+          "profile-caliper": {
+            "edges": 2,
+            "first": 2.5,
+            "samples": 9
+          },
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "spatial-fit": {
+            "heldOutMaxErrorBelow": 1e-08,
+            "planeInliers": 25
+          },
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ]
+        }
+      ],
+      "log_sha256": "dcf3706d2cfaad78ae52a963c6d8d791e02cc16b2f31eeb7a98986ed4661bdba"
+    },
+    "download_csharp": {
+      "exit_code": 0,
+      "records": [
+        {
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "image-io": true,
+          "blob": {
+            "count": 1,
+            "area": 8
+          },
+          "match-inspection": {
+            "matches": 1,
+            "valid": 4,
+            "passed": true
+          },
+          "profile-caliper": {
+            "samples": 9,
+            "edges": 2,
+            "first": 2.5
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "camera-plc": {
+            "frame": 1,
+            "acks": 1
+          },
+          "ncc-literal": {
+            "x": 2,
+            "y": 0.5,
+            "samples": 6,
+            "maskedSamples": 4,
+            "empty": true
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "spatial-fit": {
+            "planeInliers": 25,
+            "heldOutMaxErrorBelow": 1e-08
+          },
+          "planar-heldout": {
+            "worldResidual": 0.5,
+            "pixelResidual": 3.605551275463989,
+            "failedAt": 0.49,
+            "passedAt": 0.51
+          },
+          "line-circle": {
+            "lineY": 2,
+            "center": [
+              10,
+              10
+            ],
+            "radius": 2
+          },
+          "blob-connectivity": {
+            "four": 2,
+            "eight": 1,
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ]
+          },
+          "aligned-inspection": {
+            "normal": 0,
+            "moved": 0,
+            "lighting": 0,
+            "spot": 1,
+            "missing": "unavailable"
+          },
+          "invalid-arguments": {
+            "roi": true,
+            "connectivity": true,
+            "dft": true
+          },
+          "ai-demo": {
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ],
+            "anomaly": [
+              0,
+              1
+            ]
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "font-ocr": {
+            "text": "T",
+            "glyphs": 1
+          },
+          "ownership-query": {
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ],
+            "sourceClosed": true
+          }
+        }
+      ],
+      "log_sha256": "e5760ba8792455a248d7ff2b0488d155b7f5b7a91194e585c41b12da90d62eca"
+    },
+    "download_nuget": {
+      "exit_code": 0,
+      "records": [
+        {
+          "threshold-gray8": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "threshold-grayf32": [
+            0,
+            0,
+            255,
+            255
+          ],
+          "roi-query": {
+            "origin": [
+              1,
+              0
+            ],
+            "pixels": [
+              20,
+              30,
+              50,
+              60
+            ]
+          },
+          "image-io": true,
+          "blob": {
+            "count": 1,
+            "area": 8
+          },
+          "match-inspection": {
+            "matches": 1,
+            "valid": 4,
+            "passed": true
+          },
+          "profile-caliper": {
+            "samples": 9,
+            "edges": 2,
+            "first": 2.5
+          },
+          "color": {
+            "hue": [
+              0,
+              240
+            ],
+            "labPixels": 2
+          },
+          "spatial-depth": {
+            "originX": 12,
+            "secondZ": 34
+          },
+          "camera-plc": {
+            "frame": 1,
+            "acks": 1
+          },
+          "ncc-literal": {
+            "x": 2,
+            "y": 0.5,
+            "samples": 6,
+            "maskedSamples": 4,
+            "empty": true
+          },
+          "dft": {
+            "dc": 4,
+            "inverse": 1
+          },
+          "spatial-fit": {
+            "planeInliers": 25,
+            "heldOutMaxErrorBelow": 1e-08
+          },
+          "planar-heldout": {
+            "worldResidual": 0.5,
+            "pixelResidual": 3.605551275463989,
+            "failedAt": 0.49,
+            "passedAt": 0.51
+          },
+          "line-circle": {
+            "lineY": 2,
+            "center": [
+              10,
+              10
+            ],
+            "radius": 2
+          },
+          "blob-connectivity": {
+            "four": 2,
+            "eight": 1,
+            "area": 2,
+            "centroid": [
+              0.5,
+              0.5
+            ]
+          },
+          "aligned-inspection": {
+            "normal": 0,
+            "moved": 0,
+            "lighting": 0,
+            "spot": 1,
+            "missing": "unavailable"
+          },
+          "invalid-arguments": {
+            "roi": true,
+            "connectivity": true,
+            "dft": true
+          },
+          "ai-demo": {
+            "classification": [
+              0,
+              1
+            ],
+            "detection": 1,
+            "segmentation": [
+              0,
+              1
+            ],
+            "anomaly": [
+              0,
+              1
+            ]
+          },
+          "modbus-loopback": {
+            "address": 5,
+            "value": 1234
+          },
+          "font-ocr": {
+            "text": "T",
+            "glyphs": 1
+          },
+          "ownership-query": {
+            "threshold7": [
+              0,
+              255,
+              255
+            ],
+            "threshold9": [
+              0,
+              0,
+              255
+            ],
+            "sourceClosed": true
+          }
+        }
+      ],
+      "log_sha256": "e5760ba8792455a248d7ff2b0488d155b7f5b7a91194e585c41b12da90d62eca"
+    }
+  },
+  "limits": [
+    "Synthetic fixtures only; not production accuracy or performance acceptance.",
+    "No real camera/PLC/sensor/GPU acceptance.",
+    "C# declaration parser checks syntax; it does not execute every overload."
+  ],
+  "csharp_signature_syntax": {
+    "pages": 858,
+    "signatures": 15650,
+    "input_sha256": "b2cd2c656cabd8dda5187d3e85cc387d8abc0823472fba6b3c0123398ac7cbc3",
+    "errors": []
+  },
+  "downloads": {
+    "csharp.zip": {
+      "sha256": "f57915dff758cc56e8cb07aef8eb957b69680c400919840d7724711f36f61e23",
+      "bytes": 14774
+    },
+    "models.zip": {
+      "sha256": "a0f1cc42ee5fea8b19a42366b24b8060d80f54dd67854bea9570b627c12b4e78",
+      "bytes": 5393
+    },
+    "python.zip": {
+      "sha256": "15d33b1bb3437ff1f55df7d61eebfed614963cb736b04d951785f92a77f56d0f",
+      "bytes": 13863
+    },
+    "rust.zip": {
+      "sha256": "0381a5376c9fb4ce12a656cad4cb7e3a1406bc3ba030e080408b9c2bd0d0c5cd",
+      "bytes": 19393
+    }
+  },
+  "packages": [
+    {
+      "version": "0.1.0",
+      "rid": "linux-x64",
+      "native_sha256": "8b788bb25538406fbb8eea1a56f8d17d1da72a3fbf01d3e18b0a7df4c7303134",
+      "package_sha256": "a78e4f0c5be889e091ce372d83ed74d01b341f507a2eb3b4c6654b3ffa0d0ad2",
+      "package_bytes": 6041137
+    },
+    {
+      "wheel_sha256": "54a3cd0187ae2d72dd8c084df05b29b0970506ed1325bc37f10cc6fe931addb2",
+      "wheel_bytes": 5757837,
+      "native_sha256": "8b788bb25538406fbb8eea1a56f8d17d1da72a3fbf01d3e18b0a7df4c7303134",
+      "native_bytes": 13876504,
+      "platform_tag": "linux_x86_64",
+      "manylinux_claimed": false
+    }
+  ]
+}

@@ -1,28 +1,25 @@
-# ZVision Developer Manual
+# ZVision 개발자 매뉴얼
 
-ZVision의 공개 HTML 개발자 매뉴얼입니다. Rust 코어와 내부 구현 저장소는 공개하지 않습니다.
+[업데이트된 매뉴얼](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/) · [API 색인](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/reference/) · [실행 검증](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/reference/verification.html)
 
-- **웹 매뉴얼:** https://4xl-summer.github.io/ZT-Lab-Vision-Docs/
-- **매뉴얼 원본:** `ZT-Lab-Vision/docs/manual/` (비공개 저장소, 접근 권한 필요)
-- **구성:** 전체 목차 `index.html`, 장별 HTML 13개, `manual.css`, `manual.js` 및 사용자용 예제
-- **배포:** GitHub Pages (main 브랜치의 루트 또는 Actions 워크플로)
+문서 기준 SDK: `ce902e85c3405eb63df40c699ddbdf70ee1d03bd`. 원리·설정·입출력·좌표·수명·오류와 실행 프로젝트를 연결합니다. 기존 루트 매뉴얼과 해시 링크는 유지하고 신판 진입 링크를 제공합니다.
 
-이 저장소는 문서 배포용입니다. 예제는 실제 사용자 코드 작성을 돕기 위한 문서 자료이며, 내부 라이브러리 전체 소스를 포함하지 않습니다.
+소주제 HTML, 원본 페이지 레코드(`manual-next/content/pages.json`), 실제 SDK에서 추출한 API 메타데이터, 검색·공통 스타일, 실행 예제 다운로드로 구성합니다. SDK 코어 구현, 생산 데이터, 제3자 상용 매뉴얼 원본은 포함하지 않습니다.
 
-업데이트 시에는 검토된 매뉴얼 산출물만 복사합니다. 비밀키, 설정 파일 및 원본 코어 소스는 게시하지 않습니다.
+## 수정과 재생성
 
-## 본문에서 함수 확인
+본문은 `manual-next/content/pages.json`에서 수정한 뒤 `python manual-next/scripts/build_manual.py --docs . --build`로 생성합니다. SDK가 바뀌면 해당 SDK를 빌드·import·문서화해서 API 메타데이터도 다시 대조해야 합니다. 기존 메타데이터를 새 SDK의 검증 결과로 재사용하지 않습니다.
 
-본문과 예제의 밑줄이 있는 함수명을 누르면 용도·호출 서명·매개변수·기본값·범위·반환값과 사용 예가 설명창에 표시됩니다. 처음 사용하는 함수는 해당 문단 아래에도 설명과 매개변수 표를 함께 표시합니다. 설명창은 닫기 버튼 또는 Esc로 닫으면 읽던 위치로 돌아갑니다. 코드 복사는 원래 코드만 복사합니다.
+```sh
+node manual-next/scripts/validate.cjs
+python manual-next/scripts/check_content.py
+python -m http.server 8766 --bind 127.0.0.1
+```
 
-## 장별 페이지
+로컬 서버에서 `manual-next/`를 열어 검색·목차·테마·모바일 화면을 확인합니다. 검색 API 색인은 필요할 때 불러오므로 서버를 통한 열람이 필요합니다. GitHub Pages와 HTML QA는 별도 워크플로로 실행합니다.
 
-큰 목차별로 HTML 파일을 분리했습니다. 기능 장 10개와 Python·C#·C ABI 참조 3개를 각각 독립 페이지에서 읽을 수 있습니다. 사이드 목차와 이전·다음 링크로 이동하며, 전체 검색 결과는 해당 파일의 함수·절을 엽니다. 기존 단일 페이지의 `#start-first` 같은 주소도 대상 페이지로 연결합니다.
+## 실행 범위
 
-오프라인 열람 시 모든 HTML 파일과 CSS/JS, 예제 폴더를 함께 유지하십시오. 함수 설명창과 검색은 서버 없이 동작하며, 인쇄/PDF는 현재 페이지를 대상으로 합니다.
+Linux x64 / Ubuntu 24.04 WSL, Rust 1.85.1, .NET SDK 10.0.403, CPython 3.14에서 통합 예제와 문서의 전체 코드 블록을 실행했습니다. 생성 wheel·NuGet의 별도 설치 소비자와 다운로드 ZIP을 푼 프로젝트도 확인했습니다. 입력·기대값·코드 해시는 `manual-next/content/verification.json`에 있습니다.
 
-## 세부 목차와 API 목록
-
-왼쪽 큰 목차를 선택하면 그 아래에 현재 페이지의 세부 목차가 펼쳐집니다. 화살표로 접거나 펼치고 세부 항목을 눌러 해당 절로 이동합니다.
-
-각 페이지 끝에는 관련 클래스의 전체 공개 프로퍼티·메서드와 상속 멤버, 옵션·결과 필드가 있습니다. 클래스별로 펼치거나 목록 전체를 펼칠 수 있으며, 이름을 누르면 상세 설명과 매개변수·반환값·예제를 확인할 수 있습니다. 기능 장에 관련된 클래스라도 다른 기능의 멤버를 포함하므로 각 항목의 지원 형식과 조건을 확인하십시오. C#·C ABI 페이지는 실제 공개 선언 전체를 제공합니다.
+선언·설명 대조, 코드 실행, 브라우저 검증은 각각 다른 증거입니다. 실측·실장비·GPU·생산 정확도·전체 경계 입력의 인수는 포함하지 않습니다. 상세 범위는 매뉴얼의 API 범위와 검증 페이지를 확인하세요.

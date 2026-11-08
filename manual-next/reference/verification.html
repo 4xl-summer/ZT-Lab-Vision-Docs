@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="../"><meta name="manual-path" content="reference/verification.html"><meta name="description" content="실제 SDK와 대조한 기준, 합성 입력의 실행 결과, 문서 코드의 검증 상태."><title>API·예제 실행 검증 기록 · ZVision Manual</title><link rel="stylesheet" href="../assets/manual.css?v=64cff026ba5d"><link rel="stylesheet" href="../assets/manual-extra.css?v=64cff026ba5d"><script defer src="../assets/manual-data.js?v=64cff026ba5d"></script><script defer src="../assets/manual.js?v=64cff026ba5d"></script></head>
+<body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="../index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav></aside><div class="workspace"><header class="topbar"><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header><main id="main" class="main"><div class="crumb"><a href="../index.html">매뉴얼 홈</a> / 매뉴얼 안내 / <b>API·예제 실행 검증 기록</b></div><header class="page-head"><h1>API·예제 실행 검증 기록</h1><p class="lede">실제 SDK와 대조한 기준, 합성 입력의 실행 결과, 문서 코드의 검증 상태.</p></header><article class="doc"><section id="environment"><h2 id="환경과-실행-방식">환경과 실행 방식</h2><p>SDK: <code>ce902e85c3405eb63df40c699ddbdf70ee1d03bd</code> · Linux x64 · Ubuntu 24.04 WSL · Rust 1.85.1 · CPython 3.14.0 · .NET SDK 10.0.403. 실제 예제 소스를 빌드하고 종료 코드와 수치 검사를 확인합니다. 문서 코드 블록은 별도로 발췌해 컴파일·실행하며, 선언과 호출 부분은 독립 프로그램으로 세지 않습니다.</p><p><a href="../examples/downloads.html">예제 프로젝트</a>에는 해당 입력과 기대값 검사가 있습니다. 실행 성공은 기록된 합성 입력에 한정하며 모든 API·경계·스레드·하드웨어의 검증을 뜻하지 않습니다.</p></section><section id="case-ai-demo"><h2 id="ai-demo">ai-demo</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;anomaly&quot;: [
+      0,
+      1
+    ],
+    &quot;classification&quot;: [
+      0,
+      1
+    ],
+    &quot;detection&quot;: 1,
+    &quot;segmentation&quot;: [
+      0,
+      1
+    ]
+  },
+  &quot;csharp&quot;: {
+    &quot;classification&quot;: [
+      0,
+      1
+    ],
+    &quot;detection&quot;: 1,
+    &quot;segmentation&quot;: [
+      0,
+      1
+    ],
+    &quot;anomaly&quot;: [
+      0,
+      1
+    ]
+  }
+}</pre><p></p></section><section id="case-aligned-inspection"><h2 id="aligned-inspection">aligned-inspection</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;lighting&quot;: 0,
+    &quot;missing&quot;: &quot;unavailable&quot;,
+    &quot;moved&quot;: 0,
+    &quot;normal&quot;: 0,
+    &quot;spot&quot;: 1
+  },
+  &quot;csharp&quot;: {
+    &quot;normal&quot;: 0,
+    &quot;moved&quot;: 0,
+    &quot;lighting&quot;: 0,
+    &quot;spot&quot;: 1,
+    &quot;missing&quot;: &quot;unavailable&quot;
+  }
+}</pre><p><a href="../api/csharp/inspection.html">api/csharp/inspection.html</a> · <a href="../examples/aligned-inspection.html">examples/aligned-inspection.html</a> · <a href="../examples/difference-spot.html">examples/difference-spot.html</a> · <a href="../guides/difference-inspection.html">guides/difference-inspection.html</a> · <a href="../guides/inspection-framework.html">guides/inspection-framework.html</a></p></section><section id="case-blob"><h2 id="blob">blob</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;area&quot;: 8,
+    &quot;count&quot;: 1
+  },
+  &quot;csharp&quot;: {
+    &quot;count&quot;: 1,
+    &quot;area&quot;: 8
+  }
+}</pre><p></p></section><section id="case-blob-connectivity"><h2 id="blob-connectivity">blob-connectivity</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;area&quot;: 2,
+    &quot;centroid&quot;: [
+      0.5,
+      0.5
+    ],
+    &quot;eight&quot;: 1,
+    &quot;four&quot;: 2
+  },
+  &quot;csharp&quot;: {
+    &quot;four&quot;: 2,
+    &quot;eight&quot;: 1,
+    &quot;area&quot;: 2,
+    &quot;centroid&quot;: [
+      0.5,
+      0.5
+    ]
+  }
+}</pre><p><a href="../api/csharp/find-blobs.html">api/csharp/find-blobs.html</a> · <a href="../examples/blob-inspection.html">examples/blob-inspection.html</a> · <a href="../guides/blob-analysis.html">guides/blob-analysis.html</a></p></section><section id="case-camera-plc"><h2 id="camera-plc">camera-plc</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;acks&quot;: 1,
+    &quot;frame&quot;: 1
+  },
+  &quot;csharp&quot;: {
+    &quot;frame&quot;: 1,
+    &quot;acks&quot;: 1
+  }
+}</pre><p><a href="../guides/acquisition.html">guides/acquisition.html</a></p></section><section id="case-color"><h2 id="color">color</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;hue&quot;: [
+      0,
+      240
+    ],
+    &quot;labPixels&quot;: 2
+  },
+  &quot;csharp&quot;: {
+    &quot;hue&quot;: [
+      0,
+      240
+    ],
+    &quot;labPixels&quot;: 2
+  }
+}</pre><p></p></section><section id="case-dft"><h2 id="dft">dft</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;dc&quot;: 4,
+    &quot;inverse&quot;: 1
+  },
+  &quot;csharp&quot;: {
+    &quot;dc&quot;: 4,
+    &quot;inverse&quot;: 1
+  }
+}</pre><p><a href="../guides/frequency.html">guides/frequency.html</a></p></section><section id="case-font-ocr"><h2 id="font-ocr">font-ocr</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;glyphs&quot;: 1,
+    &quot;text&quot;: &quot;T&quot;
+  },
+  &quot;csharp&quot;: {
+    &quot;text&quot;: &quot;T&quot;,
+    &quot;glyphs&quot;: 1
+  }
+}</pre><p><a href="../guides/recognition.html">guides/recognition.html</a></p></section><section id="case-image-io"><h2 id="image-io">image-io</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: true,
+  &quot;csharp&quot;: true
+}</pre><p><a href="../guides/image-io.html">guides/image-io.html</a></p></section><section id="case-invalid-arguments"><h2 id="invalid-arguments">invalid-arguments</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;connectivity&quot;: true,
+    &quot;dft&quot;: true,
+    &quot;roi&quot;: true
+  },
+  &quot;csharp&quot;: {
+    &quot;roi&quot;: true,
+    &quot;connectivity&quot;: true,
+    &quot;dft&quot;: true
+  }
+}</pre><p></p></section><section id="case-line-circle"><h2 id="line-circle">line-circle</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;center&quot;: [
+      10,
+      10
+    ],
+    &quot;lineY&quot;: 2,
+    &quot;radius&quot;: 2
+  },
+  &quot;csharp&quot;: {
+    &quot;lineY&quot;: 2,
+    &quot;center&quot;: [
+      10,
+      10
+    ],
+    &quot;radius&quot;: 2
+  }
+}</pre><p><a href="../api/csharp/metrology.html">api/csharp/metrology.html</a> · <a href="../guides/metrology.html">guides/metrology.html</a></p></section><section id="case-managed-inspection"><h2 id="managed-inspection">managed-inspection</h2><p>관련 통합 사례 참조</p><p>이 식별자는 문서에서 사용하는 호출 흐름입니다. 아래 전체 프로젝트의 동일 기능 검증과 독립 코드 블록 결과를 함께 확인하세요. 이 이름 자체를 별도 실행 통과로 세지 않습니다.</p><p><a href="../guides/managed-display.html">guides/managed-display.html</a> · <a href="../guides/managed-inspection.html">guides/managed-inspection.html</a> · <a href="../guides/managed-workbench.html">guides/managed-workbench.html</a></p></section><section id="case-match-inspection"><h2 id="match-inspection">match-inspection</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;matches&quot;: 1,
+    &quot;passed&quot;: true,
+    &quot;valid&quot;: 4
+  },
+  &quot;csharp&quot;: {
+    &quot;matches&quot;: 1,
+    &quot;valid&quot;: 4,
+    &quot;passed&quot;: true
+  }
+}</pre><p></p></section><section id="case-modbus-loopback"><h2 id="modbus-loopback">modbus-loopback</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;address&quot;: 5,
+    &quot;value&quot;: 1234
+  },
+  &quot;csharp&quot;: {
+    &quot;address&quot;: 5,
+    &quot;value&quot;: 1234
+  }
+}</pre><p></p></section><section id="case-ncc-literal"><h2 id="ncc-literal">ncc-literal</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;empty&quot;: true,
+    &quot;maskedSamples&quot;: 4,
+    &quot;samples&quot;: 6,
+    &quot;x&quot;: 2,
+    &quot;y&quot;: 0.5
+  },
+  &quot;csharp&quot;: {
+    &quot;x&quot;: 2,
+    &quot;y&quot;: 0.5,
+    &quot;samples&quot;: 6,
+    &quot;maskedSamples&quot;: 4,
+    &quot;empty&quot;: true
+  }
+}</pre><p><a href="../api/csharp/match-model.html">api/csharp/match-model.html</a> · <a href="../api/python/match-model.html">api/python/match-model.html</a> · <a href="../api/rust/match-model.html">api/rust/match-model.html</a> · <a href="../examples/ncc-search.html">examples/ncc-search.html</a> · <a href="../guides/matching-ncc.html">guides/matching-ncc.html</a></p></section><section id="case-ownership-query"><h2 id="ownership-query">ownership-query</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;sourceClosed&quot;: true,
+    &quot;threshold7&quot;: [
+      0,
+      255,
+      255
+    ],
+    &quot;threshold9&quot;: [
+      0,
+      0,
+      255
+    ]
+  },
+  &quot;csharp&quot;: {
+    &quot;threshold7&quot;: [
+      0,
+      255,
+      255
+    ],
+    &quot;threshold9&quot;: [
+      0,
+      0,
+      255
+    ],
+    &quot;sourceClosed&quot;: true
+  }
+}</pre><p><a href="../concepts/lifetime.html">concepts/lifetime.html</a> · <a href="../concepts/object-model.html">concepts/object-model.html</a> · <a href="../concepts/query.html">concepts/query.html</a> · <a href="../concepts/results.html">concepts/results.html</a> · <a href="../concepts/share.html">concepts/share.html</a> · <a href="../concepts/zimage.html">concepts/zimage.html</a></p></section><section id="case-planar-heldout"><h2 id="planar-heldout">planar-heldout</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;failedAt&quot;: 0.49,
+    &quot;passedAt&quot;: 0.51,
+    &quot;pixelResidual&quot;: 3.605551275463989,
+    &quot;worldResidual&quot;: 0.5
+  },
+  &quot;csharp&quot;: {
+    &quot;worldResidual&quot;: 0.5,
+    &quot;pixelResidual&quot;: 3.605551275463989,
+    &quot;failedAt&quot;: 0.49,
+    &quot;passedAt&quot;: 0.51
+  }
+}</pre><p><a href="../api/rust/planar-calibration.html">api/rust/planar-calibration.html</a> · <a href="../concepts/coordinate-systems.html">concepts/coordinate-systems.html</a> · <a href="../examples/planar-calibration.html">examples/planar-calibration.html</a> · <a href="../guides/calibration.html">guides/calibration.html</a></p></section><section id="case-profile-caliper"><h2 id="profile-caliper">profile-caliper</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;edges&quot;: 2,
+    &quot;first&quot;: 2.5,
+    &quot;samples&quot;: 9
+  },
+  &quot;csharp&quot;: {
+    &quot;samples&quot;: 9,
+    &quot;edges&quot;: 2,
+    &quot;first&quot;: 2.5
+  }
+}</pre><p><a href="../api/csharp/metrology.html">api/csharp/metrology.html</a> · <a href="../guides/profile-caliper.html">guides/profile-caliper.html</a></p></section><section id="case-roi-query"><h2 id="roi-query">roi-query</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;origin&quot;: [
+      1,
+      0
+    ],
+    &quot;pixels&quot;: [
+      20,
+      30,
+      50,
+      60
+    ]
+  },
+  &quot;csharp&quot;: {
+    &quot;origin&quot;: [
+      1,
+      0
+    ],
+    &quot;pixels&quot;: [
+      20,
+      30,
+      50,
+      60
+    ]
+  }
+}</pre><p></p></section><section id="case-rust-ai-fixtures"><h2 id="rust-ai-fixtures">rust-ai-fixtures</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-ai-fixtures&quot;,
+  &quot;dark_class&quot;: 0,
+  &quot;bright_class&quot;: 1,
+  &quot;detection&quot;: true,
+  &quot;segmentation_map&quot;: true,
+  &quot;anomaly_map&quot;: true
+}</pre><p><a href="../guides/inference.html">guides/inference.html</a></p></section><section id="case-rust-aligned-difference"><h2 id="rust-aligned-difference">rust-aligned-difference</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-aligned-difference&quot;,
+  &quot;inspected&quot;: 9,
+  &quot;defect_pixels&quot;: 1
+}</pre><p></p></section><section id="case-rust-alignment"><h2 id="rust-alignment">rust-alignment</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-alignment&quot;,
+  &quot;found&quot;: true,
+  &quot;valid_count&quot;: 9,
+  &quot;blank_found&quot;: false
+}</pre><p></p></section><section id="case-rust-blob-connectivity"><h2 id="rust-blob-connectivity">rust-blob-connectivity</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-blob-connectivity&quot;,
+  &quot;four&quot;: 2,
+  &quot;eight&quot;: 1
+}</pre><p><a href="../api/csharp/find-blobs.html">api/csharp/find-blobs.html</a> · <a href="../api/rust/blob-query.html">api/rust/blob-query.html</a> · <a href="../examples/blob-inspection.html">examples/blob-inspection.html</a> · <a href="../guides/blob-analysis.html">guides/blob-analysis.html</a></p></section><section id="case-rust-calibration-heldout"><h2 id="rust-calibration-heldout">rust-calibration-heldout</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-calibration-heldout&quot;,
+  &quot;predicted&quot;: [
+    12,
+    42
+  ],
+  &quot;world_residual&quot;: 0.5
+}</pre><p><a href="../api/rust/planar-calibration.html">api/rust/planar-calibration.html</a> · <a href="../concepts/coordinate-systems.html">concepts/coordinate-systems.html</a> · <a href="../examples/planar-calibration.html">examples/planar-calibration.html</a> · <a href="../guides/calibration.html">guides/calibration.html</a></p></section><section id="case-rust-canny"><h2 id="rust-canny">rust-canny</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-canny&quot;,
+  &quot;mask&quot;: [
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;invalid_thresholds&quot;: true
+}</pre><p><a href="../guides/canny.html">guides/canny.html</a></p></section><section id="case-rust-color"><h2 id="rust-color">rust-color</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-color&quot;,
+  &quot;hsv_roundtrip&quot;: [
+    255,
+    0,
+    0
+  ],
+  &quot;lab_roundtrip_tolerance&quot;: 1
+}</pre><p><a href="../guides/color-processing.html">guides/color-processing.html</a></p></section><section id="case-rust-depth-cloud"><h2 id="rust-depth-cloud">rust-depth-cloud</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-depth-cloud&quot;,
+  &quot;roi_origin&quot;: [
+    12,
+    20,
+    30
+  ],
+  &quot;point&quot;: [
+    14,
+    20,
+    33
+  ],
+  &quot;transformed&quot;: [
+    15,
+    22,
+    36
+  ],
+  &quot;plane_inliers&quot;: 25
+}</pre><p></p></section><section id="case-rust-dft"><h2 id="rust-dft">rust-dft</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-dft&quot;,
+  &quot;dc&quot;: 4,
+  &quot;inverse&quot;: [
+    1,
+    1,
+    1,
+    1
+  ]
+}</pre><p><a href="../guides/frequency.html">guides/frequency.html</a></p></section><section id="case-rust-fft"><h2 id="rust-fft">rust-fft</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-fft&quot;,
+  &quot;dc&quot;: 4,
+  &quot;inverse&quot;: [
+    1,
+    1,
+    1,
+    1
+  ]
+}</pre><p><a href="../guides/frequency.html">guides/frequency.html</a></p></section><section id="case-rust-font-ocr"><h2 id="rust-font-ocr">rust-font-ocr</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-font-ocr&quot;,
+  &quot;label&quot;: &quot;A&quot;,
+  &quot;accepted&quot;: true
+}</pre><p><a href="../guides/recognition.html">guides/recognition.html</a></p></section><section id="case-rust-gaussian"><h2 id="rust-gaussian">rust-gaussian</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-gaussian&quot;,
+  &quot;values&quot;: [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7
+  ],
+  &quot;invalid_kernel&quot;: true
+}</pre><p><a href="../guides/gaussian.html">guides/gaussian.html</a></p></section><section id="case-rust-matching"><h2 id="rust-matching">rust-matching</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-matching&quot;,
+  &quot;position&quot;: [
+    2,
+    0.5
+  ],
+  &quot;score&quot;: 1,
+  &quot;mask_samples&quot;: 4,
+  &quot;empty&quot;: true,
+  &quot;restored&quot;: true
+}</pre><p></p></section><section id="case-rust-measurement-models"><h2 id="rust-measurement-models">rust-measurement-models</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-measurement-models&quot;,
+  &quot;line_y&quot;: 23.5,
+  &quot;circle_center&quot;: [
+    30,
+    30
+  ],
+  &quot;circle_radius_approx&quot;: 15
+}</pre><p><a href="../api/rust/measurement-models.html">api/rust/measurement-models.html</a> · <a href="../guides/metrology.html">guides/metrology.html</a></p></section><section id="case-rust-morphology"><h2 id="rust-morphology">rust-morphology</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-morphology&quot;,
+  &quot;eroded&quot;: [
+    0,
+    0,
+    0,
+    0,
+    255,
+    0,
+    0,
+    0,
+    0
+  ]
+}</pre><p><a href="../guides/morphology.html">guides/morphology.html</a></p></section><section id="case-rust-profile-caliper"><h2 id="rust-profile-caliper">rust-profile-caliper</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-profile-caliper&quot;,
+  &quot;profile&quot;: [
+    0,
+    0,
+    0,
+    100,
+    100,
+    100,
+    100
+  ],
+  &quot;edge_x&quot;: 2.5
+}</pre><p><a href="../guides/profile-caliper.html">guides/profile-caliper.html</a></p></section><section id="case-rust-roi-query"><h2 id="rust-roi-query">rust-roi-query</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-roi-query&quot;,
+  &quot;origin&quot;: [
+    1,
+    0
+  ],
+  &quot;capture&quot;: [
+    0,
+    255
+  ],
+  &quot;deep_independent&quot;: true,
+  &quot;clone_branch&quot;: [
+    255,
+    255
+  ]
+}</pre><p><a href="../concepts/lifetime.html">concepts/lifetime.html</a> · <a href="../concepts/object-model.html">concepts/object-model.html</a> · <a href="../concepts/query.html">concepts/query.html</a> · <a href="../concepts/results.html">concepts/results.html</a> · <a href="../concepts/share.html">concepts/share.html</a> · <a href="../concepts/zimage.html">concepts/zimage.html</a> · <a href="../examples/roi-threshold.html">examples/roi-threshold.html</a></p></section><section id="case-rust-simulated-io"><h2 id="rust-simulated-io">rust-simulated-io</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-simulated-io&quot;,
+  &quot;frame_id&quot;: 1,
+  &quot;queue_empty&quot;: true,
+  &quot;plc_idle&quot;: true
+}</pre><p></p></section><section id="case-rust-threshold"><h2 id="rust-threshold">rust-threshold</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-threshold&quot;,
+  &quot;mask&quot;: [
+    0,
+    255,
+    255
+  ],
+  &quot;nan_error&quot;: true,
+  &quot;color_error&quot;: true
+}</pre><p><a href="../api/rust/threshold.html">api/rust/threshold.html</a> · <a href="../getting-started/first-image.html">getting-started/first-image.html</a> · <a href="../guides/threshold.html">guides/threshold.html</a></p></section><section id="case-rust-tiff-pages"><h2 id="rust-tiff-pages">rust-tiff-pages</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;case&quot;: &quot;rust-tiff-pages&quot;,
+  &quot;page_1&quot;: [
+    3,
+    4
+  ],
+  &quot;page_2_error&quot;: true
+}</pre><p><a href="../guides/image-io.html">guides/image-io.html</a></p></section><section id="case-spatial-depth"><h2 id="spatial-depth">spatial-depth</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;originX&quot;: 12,
+    &quot;secondZ&quot;: 34
+  },
+  &quot;csharp&quot;: {
+    &quot;originX&quot;: 12,
+    &quot;secondZ&quot;: 34
+  }
+}</pre><p><a href="../api/csharp/spatial3d.html">api/csharp/spatial3d.html</a> · <a href="../api/python/point-cloud.html">api/python/point-cloud.html</a> · <a href="../guides/depth-map.html">guides/depth-map.html</a></p></section><section id="case-spatial-fit"><h2 id="spatial-fit">spatial-fit</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: {
+    &quot;heldOutMaxErrorBelow&quot;: 1e-08,
+    &quot;planeInliers&quot;: 25
+  },
+  &quot;csharp&quot;: {
+    &quot;planeInliers&quot;: 25,
+    &quot;heldOutMaxErrorBelow&quot;: 1e-08
+  }
+}</pre><p><a href="../api/csharp/spatial3d.html">api/csharp/spatial3d.html</a> · <a href="../api/python/point-cloud.html">api/python/point-cloud.html</a> · <a href="../guides/point-cloud.html">guides/point-cloud.html</a></p></section><section id="case-threshold-gray8"><h2 id="threshold-gray8">threshold-gray8</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: [
+    0,
+    0,
+    255,
+    255
+  ],
+  &quot;csharp&quot;: [
+    0,
+    0,
+    255,
+    255
+  ]
+}</pre><p><a href="../api/csharp/threshold.html">api/csharp/threshold.html</a> · <a href="../api/python/threshold.html">api/python/threshold.html</a> · <a href="../guides/threshold.html">guides/threshold.html</a></p></section><section id="case-threshold-grayf32"><h2 id="threshold-grayf32">threshold-grayf32</h2><p>실행 결과 확인</p><pre class="verification-output">{
+  &quot;python&quot;: [
+    0,
+    0,
+    255,
+    255
+  ],
+  &quot;csharp&quot;: [
+    0,
+    0,
+    255,
+    255
+  ]
+}</pre><p><a href="../api/csharp/threshold.html">api/csharp/threshold.html</a> · <a href="../api/python/threshold.html">api/python/threshold.html</a> · <a href="../guides/threshold.html">guides/threshold.html</a></p></section><section id="inline-code"><h2 id="문서-코드-블록-실행">문서 코드 블록 실행</h2><p>발췌한 코드 원문의 SHA-256을 기록합니다. 성공 종료와 코드에 포함된 assertion을 확인하며, 출력만 하는 예제는 수치 정확도 전 범위를 입증하지 않습니다.</p><div class="table-wrap"><table><thead><tr><th>페이지</th><th>언어</th><th>블록</th><th>실행</th><th>코드 해시 앞 16자리</th></tr></thead><tbody><tr><td><a href="../api/csharp/find-blobs.html">api/csharp/find-blobs.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>ac9a2fad2ee3c5b4</code></td></tr><tr><td><a href="../api/csharp/inspection.html">api/csharp/inspection.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>6b344009c7f6b239</code></td></tr><tr><td><a href="../api/csharp/match-model.html">api/csharp/match-model.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>4915de722b997c62</code></td></tr><tr><td><a href="../api/csharp/spatial3d.html">api/csharp/spatial3d.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>5a8e2cd74fc17e52</code></td></tr><tr><td><a href="../api/csharp/threshold.html">api/csharp/threshold.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>5208743bc1f92d7b</code></td></tr><tr><td><a href="../api/python/match-model.html">api/python/match-model.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>7b03341923690e0d</code></td></tr><tr><td><a href="../api/python/threshold.html">api/python/threshold.html</a></td><td>python</td><td>2</td><td>pass</td><td><code>f96a1ba7f130cb2a</code></td></tr><tr><td><a href="../api/rust/blob-query.html">api/rust/blob-query.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>eecbfb126633c52c</code></td></tr><tr><td><a href="../api/rust/match-model.html">api/rust/match-model.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>330698cadbef09b9</code></td></tr><tr><td><a href="../api/rust/spatial3d.html">api/rust/spatial3d.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>5539599ef8c88a50</code></td></tr><tr><td><a href="../api/rust/threshold.html">api/rust/threshold.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>379ffc010b53dff1</code></td></tr><tr><td><a href="../concepts/lifetime.html">concepts/lifetime.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>fad4f7962dd32960</code></td></tr><tr><td><a href="../concepts/lifetime.html">concepts/lifetime.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>e56d1b60d201ed30</code></td></tr><tr><td><a href="../concepts/lifetime.html">concepts/lifetime.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>d5950b193a139e77</code></td></tr><tr><td><a href="../concepts/lifetime.html">concepts/lifetime.html</a></td><td>csharp</td><td>4</td><td>pass</td><td><code>912b12e7a47b0713</code></td></tr><tr><td><a href="../concepts/object-model.html">concepts/object-model.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>50ba27ffc9b77c2d</code></td></tr><tr><td><a href="../concepts/object-model.html">concepts/object-model.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>89a997ff9586c388</code></td></tr><tr><td><a href="../concepts/query.html">concepts/query.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>4c54d7391d8b4082</code></td></tr><tr><td><a href="../concepts/results.html">concepts/results.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>912b12e7a47b0713</code></td></tr><tr><td><a href="../concepts/roi.html">concepts/roi.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>502a713b350ba8e9</code></td></tr><tr><td><a href="../concepts/share.html">concepts/share.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>e2dc5cd7730b140c</code></td></tr><tr><td><a href="../concepts/share.html">concepts/share.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>77cea2abb8c8e308</code></td></tr><tr><td><a href="../concepts/share.html">concepts/share.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>421db95150e54dd5</code></td></tr><tr><td><a href="../concepts/share.html">concepts/share.html</a></td><td>csharp</td><td>4</td><td>pass</td><td><code>912b12e7a47b0713</code></td></tr><tr><td><a href="../concepts/zimage.html">concepts/zimage.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>8b860168132efdf6</code></td></tr><tr><td><a href="../concepts/zimage.html">concepts/zimage.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>04df1242a5ba544f</code></td></tr><tr><td><a href="../concepts/zimage.html">concepts/zimage.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>f327c588f62ab2c3</code></td></tr><tr><td><a href="../examples/blob-inspection.html">examples/blob-inspection.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>9aafa8cd4be147a6</code></td></tr><tr><td><a href="../examples/blob-inspection.html">examples/blob-inspection.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>33868e732c8bfeff</code></td></tr><tr><td><a href="../examples/blob-inspection.html">examples/blob-inspection.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>b2ee24770930ebfa</code></td></tr><tr><td><a href="../examples/difference-spot.html">examples/difference-spot.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>6b344009c7f6b239</code></td></tr><tr><td><a href="../examples/ncc-search.html">examples/ncc-search.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>330698cadbef09b9</code></td></tr><tr><td><a href="../examples/ncc-search.html">examples/ncc-search.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>4915de722b997c62</code></td></tr><tr><td><a href="../examples/ncc-search.html">examples/ncc-search.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>7b03341923690e0d</code></td></tr><tr><td><a href="../examples/roi-threshold.html">examples/roi-threshold.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>d7e26e13ed0e129a</code></td></tr><tr><td><a href="../examples/roi-threshold.html">examples/roi-threshold.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>f4e7965f84e96a99</code></td></tr><tr><td><a href="../examples/roi-threshold.html">examples/roi-threshold.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>48514693decf2b3c</code></td></tr><tr><td><a href="../getting-started/first-image.html">getting-started/first-image.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>6c7b3218b6c06235</code></td></tr><tr><td><a href="../getting-started/first-image.html">getting-started/first-image.html</a></td><td>csharp</td><td>2</td><td>pass</td><td><code>dda50939763b5eaa</code></td></tr><tr><td><a href="../getting-started/first-image.html">getting-started/first-image.html</a></td><td>python</td><td>3</td><td>pass</td><td><code>477d30e67e8cf01e</code></td></tr><tr><td><a href="../guides/acquisition.html">guides/acquisition.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>3c2800ce574b5017</code></td></tr><tr><td><a href="../guides/blob-analysis.html">guides/blob-analysis.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>8ff5c5b3d3e33ff2</code></td></tr><tr><td><a href="../guides/canny.html">guides/canny.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>19039f1a52b315a1</code></td></tr><tr><td><a href="../guides/canny.html">guides/canny.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>8c752b0d0369f78c</code></td></tr><tr><td><a href="../guides/color-processing.html">guides/color-processing.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>ae04e570fd411825</code></td></tr><tr><td><a href="../guides/depth-map.html">guides/depth-map.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>e701578c23294422</code></td></tr><tr><td><a href="../guides/frequency.html">guides/frequency.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>8c750f71e3593c0d</code></td></tr><tr><td><a href="../guides/gaussian.html">guides/gaussian.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>5cfa424373c5a682</code></td></tr><tr><td><a href="../guides/gaussian.html">guides/gaussian.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>cee133eef9535701</code></td></tr><tr><td><a href="../guides/image-io.html">guides/image-io.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>a5c085a24606564a</code></td></tr><tr><td><a href="../guides/inference.html">guides/inference.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>a2faa39ccfaf6609</code></td></tr><tr><td><a href="../guides/matching-ncc.html">guides/matching-ncc.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>7b03341923690e0d</code></td></tr><tr><td><a href="../guides/morphology.html">guides/morphology.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>47dad4ef3481ac02</code></td></tr><tr><td><a href="../guides/morphology.html">guides/morphology.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>0b90db410bae3b45</code></td></tr><tr><td><a href="../guides/recognition.html">guides/recognition.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>e854ae1c45a6b0a3</code></td></tr><tr><td><a href="../guides/recognition.html">guides/recognition.html</a></td><td>rust</td><td>2</td><td>pass</td><td><code>757ba02370d4b859</code></td></tr><tr><td><a href="../guides/threshold.html">guides/threshold.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>08a116ab14b328c5</code></td></tr><tr><td><a href="../reference/python/spatial3d-depthmap.html">reference/python/spatial3d-depthmap.html</a></td><td>python</td><td>9</td><td>pass</td><td><code>2d606fa96fd6df4b</code></td></tr><tr><td><a href="../reference/python/spatial3d-pointcloud.html">reference/python/spatial3d-pointcloud.html</a></td><td>python</td><td>9</td><td>pass</td><td><code>f7956ac7aa80d298</code></td></tr><tr><td><a href="../examples/aligned-inspection.html">examples/aligned-inspection.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>6b344009c7f6b239</code></td></tr><tr><td><a href="../guides/managed-inspection.html">guides/managed-inspection.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>02c0f1d18186a167</code></td></tr><tr><td><a href="../guides/managed-display.html">guides/managed-display.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>02c0f1d18186a167</code></td></tr><tr><td><a href="../guides/managed-workbench.html">guides/managed-workbench.html</a></td><td>csharp</td><td>1</td><td>pass</td><td><code>02c0f1d18186a167</code></td></tr><tr><td><a href="../examples/planar-calibration.html">examples/planar-calibration.html</a></td><td>rust</td><td>1</td><td>pass</td><td><code>04811e48225aa0d9</code></td></tr><tr><td><a href="../api/python/point-cloud.html">api/python/point-cloud.html</a></td><td>python</td><td>1</td><td>pass</td><td><code>e701578c23294422</code></td></tr><tr><td><a href="../api/python/point-cloud.html">api/python/point-cloud.html</a></td><td>python</td><td>2</td><td>pass</td><td><code>df2e621371fed38e</code></td></tr></tbody></table></div></section><section class="related-api" id="related-api"><h2 id="related-api-heading">관련 API</h2><div class="table-wrap"><table><thead><tr><th>언어</th><th>종류</th><th>공개 심볼</th><th>형식</th><th>설명</th></tr></thead><tbody><tr><td>Python</td><td>클래스</td><td><a href="python/spatial3d-depthmap.html"><code>DepthMap</code></a></td><td><code>()</code></td><td>단위와 좌표계를 갖는 직교 깊이 격자의 소유 객체입니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-close"><code>DepthMap.close</code></a></td><td><code>(self)</code></td><td>설명 미제공</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-fill_holes"><code>DepthMap.fill_holes</code></a></td><td><code>(self, kernel, min_valid)</code></td><td>원본의 유효 이웃 중앙값으로 결측 중심만 채웁니다. 새 값은 같은 호출에서 전파되지 않습니다.</td></tr><tr><td>Python</td><td>클래스 메서드</td><td><a href="python/spatial3d-depthmap.html#member-from_values"><code>DepthMap.from_values</code></a></td><td><code>(cls, width, height, values, spacing_x, spacing_y, origin, unit, frame)</code></td><td>행 우선 높이와 좌표 메타데이터로 깊이 격자를 생성합니다.</td></tr><tr><td>Python</td><td>프로퍼티</td><td><a href="python/spatial3d-depthmap.html#member-info"><code>DepthMap.info</code></a></td><td><code>DepthMap.info</code></td><td>크기, 유효 수, 단위, frame, 간격과 원점을 읽습니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-median"><code>DepthMap.median</code></a></td><td><code>(self, kernel, min_valid)</code></td><td>유효 이웃 중앙값을 사용하고 결측 중심은 유지합니다. 짝수 개는 가운데 두 값의 평균입니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-roi"><code>DepthMap.roi</code></a></td><td><code>(self, x, y, width, height)</code></td><td>현재 맵 기준 사각형의 저장소를 공유하고 원점을 x와 y 방향으로 각각 인덱스×간격만큼 이동합니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-share"><code>DepthMap.share</code></a></td><td><code>(self)</code></td><td>원본 저장소를 공유하는 별도 핸들을 만듭니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-to_point_cloud"><code>DepthMap.to_point_cloud</code></a></td><td><code>(self)</code></td><td>행 우선 깊이를 직교 점으로 바꾸고 결측·단위·frame을 보존합니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-depthmap.html#member-to_values"><code>DepthMap.to_values</code></a></td><td><code>(self)</code></td><td>행 우선 높이를 복사하고 결측은 None으로 반환합니다.</td></tr><tr><td>Python</td><td>클래스</td><td><a href="python/spatial3d-pointcloud.html"><code>PointCloud</code></a></td><td><code>()</code></td><td>결측 슬롯을 보존하는 3차원 점 배열의 소유 객체입니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-close"><code>PointCloud.close</code></a></td><td><code>(self)</code></td><td>설명 미제공</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-estimate_normals"><code>PointCloud.estimate_normals</code></a></td><td><code>(self, neighbors, viewpoint)</code></td><td>중심과 최근접 유효 이웃으로 PCA 법선을 구하고 시점 방향으로 부호를 정합니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-fit_cylinder"><code>PointCloud.fit_cylinder</code></a></td><td><code>(self, threshold)</code></td><td>제한된 국소 탐색으로 원통을 맞춥니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-fit_plane"><code>PointCloud.fit_plane</code></a></td><td><code>(self, threshold)</code></td><td>제한된 가설 탐색과 정제로 평면을 맞춥니다.</td></tr><tr><td>Python</td><td>클래스 메서드</td><td><a href="python/spatial3d-pointcloud.html#member-from_points"><code>PointCloud.from_points</code></a></td><td><code>(cls, points, unit, frame)</code></td><td>유효 점과 결측 슬롯으로 점군을 생성합니다.</td></tr><tr><td>Python</td><td>프로퍼티</td><td><a href="python/spatial3d-pointcloud.html#member-info"><code>PointCloud.info</code></a></td><td><code>PointCloud.info</code></td><td>슬롯 수, 유효점 수, 길이 단위와 frame을 읽습니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-share"><code>PointCloud.share</code></a></td><td><code>(self)</code></td><td>원본 저장소를 공유하는 별도 핸들을 만듭니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-to_points"><code>PointCloud.to_points</code></a></td><td><code>(self)</code></td><td>점 슬롯을 순서대로 복사하고 결측은 None으로 반환합니다.</td></tr><tr><td>Python</td><td>메서드</td><td><a href="python/spatial3d-pointcloud.html#member-transform"><code>PointCloud.transform</code></a></td><td><code>(self, transform)</code></td><td>점군에 강체 변환을 적용하고 결측을 유지합니다.</td></tr></tbody></table></div></section></article><footer class="footer">ZVision 기술 매뉴얼 · <a href="../index.html">매뉴얼 홈</a></footer></main></div></div><dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="API, 알고리즘, 개념 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>
