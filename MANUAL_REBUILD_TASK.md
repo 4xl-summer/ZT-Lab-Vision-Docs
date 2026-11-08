@@ -15,6 +15,8 @@
 
 작업은 이 문서만 다시 작성하는 것으로 끝나지 않는다. 후속 세션은 접근 가능한 환경에서 조사, 정보 구조 설계, 사이트 구현, 실제 매뉴얼 작성, 예제 검증, 배포 검증을 단계적으로 실행한다. 시간 또는 환경 제약이 있으면 검증된 단계별 산출물을 먼저 커밋하고 남은 범위를 명시한다. **검증 없이 대량의 페이지를 생성하는 것은 금지한다.**
 
+**확정된 문서 형식:** HTML 기반, 소주제마다 독립 `.html` 파일. 단일 거대 HTML, 장별 통합 HTML, 앵커 중심 분할은 금지한다.
+
 ### 범위 제한
 
 - 문서 작업 대상은 **ZT-Lab-Vision-Docs**이다. 개발 저장소 **ZT-Lab-Vision은 기본적으로 읽기 전용**이며, API·알고리즘·래퍼·테스트 코드를 요청 없이 수정하지 않는다.
@@ -148,21 +150,36 @@ Rust의 공개 `zvision` Facade(타입·메서드·trait·feature 조건), 실�
 
 알고리즘 분류 예: Filtering, Thresholding, Morphology, Segmentation, Regions/Blobs, Edges/Contours, Matching, Registration, Measurement, Calibration, Color, 3D, Recognition, Acquisition, Inspection, DL Integration. **이는 후보 목차이며 미구현 기능을 정식 지원 목록에 넣지 않는다.** 필요 시 계획 문서를 별도 격리하고 상태를 표시한다.
 
+### HTML 및 소주제별 독립 페이지 — 필수 요구사항
+
+**최종 공식 매뉴얼은 HTML 기반 정적 웹사이트로 제작하며, 소주제 하나를 독립된 `.html` 페이지 하나로 만든다.** 카테고리 페이지는 하위 주제의 목차와 안내 역할을 하고, 실제 본문은 각 소주제 페이지에 배치한다.
+
+- **개념:** `concepts/roi.html`, `concepts/share.html`, `concepts/copy-vs-share.html` 등 개념을 분리한다.
+- **알고리즘:** `guides/filtering/gaussian.html`, `guides/segmentation/threshold.html` 등 알고리즘마다 상세 페이지를 둔다.
+- **API:** `api/rust/zimage-threshold.html`, `api/csharp/zimage-threshold.html`, `api/python/zimage-threshold.html`처럼 언어별 실제 공개 API를 독립적으로 관리한다. 의미상 하나인 오버로드는 같은 페이지에 함께 기술할 수 있다.
+- **실전 예제:** `examples/blob-inspection.html`, `examples/difference-defect.html`처럼 작업 시나리오별 HTML로 분리한다.
+- **파일 분할 기준:** 하나의 독립적인 개념·알고리즘·API 책임·검사 레시피가 하나의 본문이다. 장 전체를 하나의 HTML 파일에 담거나 `#anchor`만으로 소주제를 구분하지 않는다. 매개변수 하나마다 파일을 만드는 식의 과도한 분할도 피한다.
+- **유지보수:** 공통 헤더·사이드 메뉴·푸터·검색/코드 탭은 공유 CSS/JS 및 재사용 가능한 HTML 템플릿/partial로 관리한다. 한 주제의 내용 수정이 다른 주제의 HTML 본문을 광범위하게 수정하게 해서는 안 된다.
+- **탐색:** 각 페이지는 고유하고 안정적인 URL, `<title>`, H1, Breadcrumb, 관련 API·예제 링크, 이전/다음 주제 이동을 제공한다. 검색과 메뉴는 주제별 독립 HTML URL로 바로 이동한다.
+- **배포:** GitHub Pages에서 주제별 `.html` URL을 직접 열거나 새로고침해도 정상 동작해야 한다. 필수 본문을 단일 SPA 또는 클라이언트 JavaScript 라우팅에만 의존하여 제공해서는 안 된다.
+
+위 경로의 기능/메서드 이름은 페이지 분할을 보여주는 **예시**이며 해당 API의 구현·지원 확인을 대신하지 않는다.
+
 ### 구조 및 도구 선택
 
-Docusaurus, MkDocs Material, VitePress, Astro Starlight 같은 정적 문서 도구 또는 적절한 경량 대안을 비교할 수 있다. **처음부터 과도한 프레임워크·플러그인·백엔드를 만들지 않는다.**
+**정적 HTML 파일 + 공통 CSS/JS를 우선한다.** 공통 레이아웃 중복을 줄이는 가벼운 HTML 템플릿/빌드 도구는 사용할 수 있으나 결과물은 반드시 소주제별 실체가 있는 독립 `.html` 페이지여야 한다. Markdown은 조사/설계용 문서에 사용할 수 있지만 최종 매뉴얼을 Markdown/MDX 페이지나 단일 SPA로 대체하지 않는다. 처음부터 과도한 프레임워크·플러그인·백엔드를 만들지 않는다.
 
 선정 조건:
 
 - GitHub Pages 정적 배포, 버전과 링크 안정성
-- 수백~수천 API 항목을 관리할 수 있는 분할된 콘텐츠 구조
-- Markdown/MDX 등의 관리성과 검색·목차·상호 참조
+- 수백~수천 API 항목을 소주제별 HTML 파일로 독립 편집할 수 있는 구조
+- 공통 HTML 템플릿·CSS/JS 재사용, HTML 페이지 간 검색·목차·상호 참조
 - C#/Rust/Python 코드 탭과 코드 복사
 - 모바일/데스크톱, 다크 모드, 키보드 접근성
 - Windows 환경 로컬 빌드 및 재현 가능한 CI
 - 유지보수 비용, 의존성·라이선스
 
-기존처럼 거대한 단일 HTML 본문을 계속 확장하지 않는다. 소스·템플릿·빌드 산출물을 분리하고 생성 파일은 프로젝트 정책에 따라 관리한다.
+거대한 단일 HTML 본문을 계속 확장하지 않는다. 소주제별 본문 HTML과 공통 레이아웃·내비게이션·검색 데이터를 분리한다. 생성기를 사용한다면 최종 결과에도 각 소주제의 독립 HTML 파일이 존재해야 한다.
 
 **산출물:** `research/manual-architecture.md`, `research/documentation-style-guide.md`, `research/api-page-template.md`.
 
@@ -230,7 +247,7 @@ Docusaurus, MkDocs Material, VitePress, Astro Starlight 같은 정적 문서 도
 
 ## 8. 웹 매뉴얼 UX 및 배포
 
-권장 기본 UX: 계층형 좌측 메뉴, 페이지별 목차, 문서 전체 검색, 현재 위치/Breadcrumb, 이전/다음 이동, 관련 문서 링크, 코드 복사, 언어 선택, 다크 모드, 반응형 레이아웃, 직접 공유 가능한 고정 URL.
+권장 기본 UX: 계층형 좌측 메뉴(대분류 → 소분류 → 소주제 HTML), 페이지별 목차, 문서 전체 검색, 현재 위치/Breadcrumb, 이전/다음 이동, 관련 문서 링크, 코드 복사, 언어 선택, 다크 모드, 반응형 레이아웃, 직접 공유 가능한 고정 URL. 각 메뉴와 검색 결과는 해당 독립 `.html` 파일로 연결한다.
 
 필요한 경우에만 버전 선택, 인쇄 친화형 CSS, 오프라인 문서 패키지, PDF 내보내기를 추가한다. 우선 기능이 제대로 동작하는 간결한 사이트를 구현한다.
 
@@ -248,6 +265,7 @@ Docusaurus, MkDocs Material, VitePress, Astro Starlight 같은 정적 문서 도
 4. 예제 빌드/실행 및 예상 결과 검증
 5. 깨진 링크, 잘못된 이미지 경로, 문서 빌드 오류 검출
 6. 버전/SHA 표시와 사이트 배포 자동 검증
+7. 소주제별 HTML 직접 URL, 링크/제목 중복, 카테고리 메뉴 및 검색 인덱스 동기화 검증
 
 **기계가 생성하는 시그니처/목록**과 **사람이 검토한 알고리즘 설명/사용 예제**는 분리한다. 재생성 시 원리 설명이 지워지는 구조를 금지한다. 정식 사이트의 모든 문장은 현재 대상 버전에 대응해야 하며, 이전 버전은 버전별 기록으로 보존한다.
 
@@ -265,11 +283,11 @@ Docusaurus, MkDocs Material, VitePress, Astro Starlight 같은 정적 문서 도
 ### Phase B — 문서 시스템 설계
 
 - 개념/가이드/API/실전 예제의 정보 구조 정의
-- 정적 사이트 도구를 근거로 선정하고 소규모 스켈레톤 구현
+- 소주제별 독립 `.html` 파일을 만드는 HTML 기반 사이트 구조를 확정하고 스켈레톤 구현
 - API 페이지, 알고리즘 가이드, 결과 객체 문서, 코드 예제 표준을 작성
 - 대표 문서의 링크/검색/코드 블록/모바일 동작 확인
 
-**Gate B:** 한 기능을 처음부터 찾아 실행할 수 있는 탐색 흐름이 동작해야 한다.
+**Gate B:** 한 기능을 처음부터 찾아 실행할 수 있는 탐색 흐름이 동작해야 한다. 서로 다른 소주제 HTML 2개 이상을 각각의 직접 URL로 열고 새로고침·메뉴·공통 스타일을 검증한다.
 
 ### Phase C — 대표 콘텐츠를 완성도 높게 제작
 
@@ -281,11 +299,11 @@ Docusaurus, MkDocs Material, VitePress, Astro Starlight 같은 정적 문서 도
 4. 실제 구현된 Model/Result 또는 Domain Result의 상세 API 레퍼런스
 5. 검증된 산업용 검사 레시피 하나(입력/중간/결과 이미지 포함)
 
-**Gate C:** 예제 실행과 API 시그니처, 시각자료, 오류/수명 설명을 독립 검토하여 합격해야 한다. 합격 전 유사 문서를 무더기로 생성하지 않는다.
+**Gate C:** 대표 콘텐츠는 소주제별 독립 HTML 페이지로 제공한다. 예제 실행과 API 시그니처, 시각자료, 오류/수명 설명을 독립 검토하여 합격해야 한다. 합격 전 유사 문서를 무더기로 생성하지 않는다.
 
 ### Phase D — 전체 지원 API/영역으로 확장
 
-- A에서 확정된 **실제 지원 공개 API**에 대해 언어별 레퍼런스 및 관련 가이드 작성
+- A에서 확정된 **실제 지원 공개 API**에 대해 언어별·소주제별 독립 HTML 레퍼런스 및 관련 가이드 작성
 - 범주별 고품질 시각자료와 레시피 추가
 - API 링크·예제·플랫폼 지원표 자동 갱신
 - 기능/언어/버전별 미완료 항목을 지속 기록
@@ -300,47 +318,63 @@ Docusaurus, MkDocs Material, VitePress, Astro Starlight 같은 정적 문서 도
 - 새 사이트 배포와 실제 URL 열람 검증
 - 브랜치/PR/커밋 기록과 남은 작업 인계
 
-**Gate E:** 실제 게시된 사이트가 열리고, 예제·검색·링크·버전 표시가 문서의 검증 기준을 충족해야 한다. 배포 성공을 확인하지 못했다면 완료로 보고하지 않는다.
+**Gate E:** 실제 게시된 사이트와 대표 소주제 `.html` 직접 URL이 열리고, 예제·검색·링크·버전 표시가 문서의 검증 기준을 충족해야 한다. 배포 성공을 확인하지 못했다면 완료로 보고하지 않는다.
 
-## 11. 제안 저장소 구조(도구 확정 후 조정 가능)
+## 11. 제안 HTML 저장소 구조(도구 확정 후 조정 가능)
 
 ```text
 ZT-Lab-Vision-Docs/
 ├── MANUAL_REBUILD_TASK.md
 ├── README.md
-├── docs/
-│   ├── getting-started/
-│   ├── concepts/
-│   ├── guides/
-│   ├── api/
-│   │   ├── rust/
-│   │   ├── csharp/
-│   │   ├── python/
-│   │   └── c-abi/
-│   ├── examples/
-│   ├── advanced/
-│   └── reference/
-├── examples/
+├── index.html
+├── getting-started/
+│   ├── index.html
+│   ├── installation.html
+│   └── first-image.html
+├── concepts/
+│   ├── index.html
+│   ├── object-model.html
+│   ├── roi.html
+│   ├── share.html
+│   └── copy-vs-share.html
+├── guides/
+│   ├── filtering/
+│   │   ├── index.html
+│   │   └── gaussian.html
+│   └── segmentation/
+│       ├── index.html
+│       └── threshold.html
+├── api/
 │   ├── rust/
+│   │   ├── index.html
+│   │   └── zimage-threshold.html
 │   ├── csharp/
-│   └── python/
+│   │   ├── index.html
+│   │   └── zimage-threshold.html
+│   ├── python/
+│   │   ├── index.html
+│   │   └── zimage-threshold.html
+│   └── c-abi/
+│       └── index.html
+├── examples/
+│   ├── index.html
+│   ├── blob-inspection.html
+│   └── difference-defect.html
+├── advanced/index.html
+├── reference/index.html
 ├── assets/
+│   ├── css/manual.css             # 모든 페이지 공통 스타일
+│   ├── js/manual.js               # 공통 탐색·검색·코드 복사
 │   ├── images/
 │   ├── diagrams/
 │   └── samples/
-├── research/
-│   ├── commercial-manual-analysis.md
-│   ├── api-inventory.md
-│   ├── documentation-gap-analysis.md
-│   ├── manual-architecture.md
-│   ├── documentation-style-guide.md
-│   └── api-page-template.md
-├── scripts/
-├── .github/
-└── [선정한 문서 도구의 설정/빌드 파일]
+├── templates/                     # 선택: 공통 HTML 템플릿
+├── research/                      # 공개 가능한 분석·설계 문서
+├── scripts/                       # 선택: 검증 및 빌드
+└── .github/
 ```
 
-이 구조는 **제안**일 뿐이다. 선택한 도구가 요구하는 경로를 따르되 학습 문서/기능 가이드/API 레퍼런스/실전 예제가 서로 뒤섞이지 않도록 한다. 내부 감사 원장에는 비공개 코드를 공개하지 않는 별도 보관 정책을 적용한다.
+이 경로는 개별 HTML 분할의 **예시**다. 조사 후 주제명/개수는 조정해도 되지만 **소주제 하나당 독립 HTML 페이지, 카테고리별 index, 공통 CSS/JS, 안정적인 URL**은 필수다. 내부 비공개 코드와 제3자 매뉴얼 원문은 공개 저장소에 포함하지 않는다.
 
 ## 12. 최종 품질 기준과 금지사항
 
@@ -356,6 +390,7 @@ ZT-Lab-Vision-Docs/
 | 유지보수성 | API 변경/누락 검출, 문서 빌드와 링크/예제 검사 가능 |
 | 공개 안전성 | 비공개 원본 코드, 상용 원문, 개인/장비 데이터의 무단 게시 없음 |
 | 사이트 동작 | 검색/목차/링크/모바일/배포 URL이 실제 정상 동작 |
+| HTML 소주제 분할 | 각 소주제의 독립 `.html` 파일·URL, 공통 CSS/JS, 개별 수정 및 검색/탐색 가능 |
 
 다음은 **금지**한다.
 
@@ -368,6 +403,7 @@ ZT-Lab-Vision-Docs/
 - 부분적 합성 시험을 산업 생산 검증으로 과장
 - 사용자 승인 없이 비공개 개발 저장소 코드 변경
 - 신규 사이트 인수 전에 기존 공개 배포를 파괴
+- 장/카테고리를 하나의 거대한 HTML에 합치거나 앵커만으로 소주제를 구분
 - 필요성이 검증되지 않은 대규모 문서 프레임워크·플러그인 확장
 
 ## 13. 후속 세션의 첫 수행 작업과 보고 형식
