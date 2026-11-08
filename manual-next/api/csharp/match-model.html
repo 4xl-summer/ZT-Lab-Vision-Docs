@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="../../"><meta name="manual-path" content="api/csharp/match-model.html"><meta name="description" content="학습된 NCC 모델을 소유하는 C# 타입, 검색 파라미터, 읽기 전용 결과 타입."><title>C# · MatchModel / MatchResult · ZVision Manual</title><link rel="stylesheet" href="../../assets/manual.css"><script defer src="../../assets/manual.js"></script></head>
+<body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="../../index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav><div class="side-note">Rust · C# · Python<br>신규 HTML 매뉴얼 · 초기 버전</div></aside><div class="workspace"><header class="topbar"><div><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span></div><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header>
+<main id="main" class="main"><div class="crumb"><a href="../../index.html">매뉴얼 홈</a> / API Reference / <b>C# · MatchModel / MatchResult</b></div><header class="page-head"><div class="overline">API Reference · HTML REFERENCE</div><h1>C# · MatchModel / MatchResult</h1><p class="lede">학습된 NCC 모델을 소유하는 C# 타입, 검색 파라미터, 읽기 전용 결과 타입.</p><div class="tags"><span class="tag">소주제별 독립 HTML</span><span class="tag">2026-11-08 소스 확인</span><span class="tag">예제 실행 재검증 대기</span></div></header><article class="doc">
+<h2 id="signatures">공개 시그니처</h2>
+<div class="code"><div class="code-head"><span>C#</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>namespace ZVision;
+
+public static MatchModel TrainNcc(ZImage template, ZImage? mask = null);
+public MatchModelInfo Info { get; }
+public MatchResult Find(ZImage image, MatchSpec spec);
+public IReadOnlyList&lt;Match&gt; MatchResult.Matches { get; }
+public Match? MatchResult.Best { get; }</code></pre></div>
+<h2 id="spec">MatchSpec 인자</h2>
+<div class="table-wrap"><table><thead><tr><th>인자</th><th>자료형</th><th>제약</th></tr></thead><tbody><tr><td>angleMin / angleMax / angleStep</td><td>double</td><td>회전 범위·격자, 라디안</td></tr><tr><td>scaleMin / scaleMax / scaleStep</td><td>double</td><td>등방 배율 범위·격자</td></tr><tr><td>minScore</td><td>double</td><td>0 이상 1 이하</td></tr><tr><td>minDistance</td><td>double</td><td>NMS 거리, 비음수 픽셀</td></tr><tr><td>maxMatches</td><td>ulong</td><td>양수</td></tr></tbody></table></div>
+<h2 id="example">C# 호출 예제</h2>
+<div class="code"><div class="code-head"><span>C#</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>using ZVision;
+
+// template와 image는 유효한 ZImage라고 가정합니다.
+using var model = MatchModel.TrainNcc(template);
+var spec = new MatchSpec(
+    0, 0, 1, 1, 1, 1, 0.999999, 0, 10);
+MatchResult result = model.Find(image, spec);
+if (result.Best is Match best)
+    System.Console.WriteLine(best.Score);</code></pre></div>
+<h2 id="ownership">소유권 및 결과 형태</h2>
+<p><code>MatchModel</code>은 네이티브 핸들이 있으므로 <code>using</code>으로 해제합니다. <code>MatchResult</code>는 <code>Match</code> 값의 불변 스냅샷이며 별도 Dispose가 없습니다. <code>Best</code>는 결과가 없으면 null입니다. <code>Match.Position</code>과 <code>Match.GlobalPosition</code>의 차이를 확인하세요.</p>
+<p><a href="../../guides/matching-ncc.html">NCC 원리</a> · <a href="../../examples/ncc-search.html">실행 가능한 전체 데이터</a></p><div class="note"><span class="note-mark">i</span><span>작성 기준: 2026-11-08 소스 SHA ce902e85c340. 공개 시그니처와 기존 테스트를 확인한 문서입니다. 이 세션에서 새로운 Rust/C#/Python 실행 및 실제 장비 검증을 수행하지 않았으며, 결과값을 새 실험 결과로 표현하지 않습니다.</span></div>
+</article><footer class="footer">ZVision 기술 매뉴얼 · 2026-11-08 개발 소스 대조 · SHA ce902e85c340 · <a href="../../index.html">매뉴얼 홈</a></footer></main></div></div>
+<dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="객체·알고리즘·API 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>

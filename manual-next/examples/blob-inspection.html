@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="../"><meta name="manual-path" content="examples/blob-inspection.html"><meta name="description" content="세 픽셀의 단순한 입력으로 Threshold와 4-연결 Blob 분석의 면적을 확인합니다."><title>작은 Blob 검사 · 3×1 마스크 · ZVision Manual</title><link rel="stylesheet" href="../assets/manual.css"><script defer src="../assets/manual.js"></script></head>
+<body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="../index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav><div class="side-note">Rust · C# · Python<br>신규 HTML 매뉴얼 · 초기 버전</div></aside><div class="workspace"><header class="topbar"><div><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span></div><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header>
+<main id="main" class="main"><div class="crumb"><a href="../index.html">매뉴얼 홈</a> / 실전 예제 / <b>작은 Blob 검사 · 3×1 마스크</b></div><header class="page-head"><div class="overline">실전 예제 · HTML REFERENCE</div><h1>작은 Blob 검사 · 3×1 마스크</h1><p class="lede">세 픽셀의 단순한 입력으로 Threshold와 4-연결 Blob 분석의 면적을 확인합니다.</p><div class="tags"><span class="tag">소주제별 독립 HTML</span><span class="tag">2026-11-08 소스 확인</span><span class="tag">예제 실행 재검증 대기</span></div></header><article class="doc">
+<h2 id="task">검사할 입력</h2>
+<p>검출할 후보가 두 픽셀 이어져 있는 3×1 Gray8 이미지 <code>[0,5,5]</code>를 사용합니다. 임계값 1을 적용하면 <code>[0,255,255]</code>가 되고, 4-연결 Blob 하나의 면적은 2픽셀입니다.</p>
+<div class="flow"><div class="flow-box"><strong>입력</strong><small>0, 5, 5</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-box"><strong>Threshold(1)</strong><small>0, 255, 255</small></div><span class="flow-arrow" aria-hidden="true">→</span><div class="flow-box"><strong>FindBlobs(4)</strong><small>면적 2, 1개</small></div></div>
+<h2 id="rust">Rust 전체 예제</h2>
+<div class="code"><div class="code-head"><span>Rust</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>use zvision::{Connectivity, ZImage};
+
+fn main() -&gt; zvision::ZResult&lt;()&gt; {
+    let image = ZImage::from_vec_gray8(3, 1, vec![0, 5, 5])?;
+    let plan = image.query()?.threshold(1)?.find_blobs(Connectivity::Four);
+    let run = plan.execute()?;
+    assert_eq!(run.output().blobs().len(), 1);
+    assert_eq!(run.output().blobs()[0].area, 2);
+    Ok(())
+}</code></pre></div>
+<h2 id="csharp">C# 직접 호출</h2>
+<div class="code"><div class="code-head"><span>C#</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>using ZVision;
+
+using var image = ZImage.FromGray8(3, 1, new byte[] { 0, 5, 5 });
+using var mask = image.Threshold(1.0);
+BlobAnalysisResult result = mask.FindBlobs(4);
+System.Diagnostics.Debug.Assert(result.Blobs.Count == 1);
+System.Diagnostics.Debug.Assert(result.Blobs[0].Area == 2);</code></pre></div>
+<h2 id="python">Python 직접 호출</h2>
+<div class="code"><div class="code-head"><span>Python</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>from zvision import ZImage
+
+with ZImage.from_gray8(3, 1, bytes([0, 5, 5])) as image:
+    with image.threshold(1.0) as mask:
+        result = mask.find_blobs(connectivity=4)
+        assert len(result.blobs) == 1
+        assert result.blobs[0].area == 2</code></pre></div>
+<h2 id="result">결과의 단위</h2>
+<div class="table-wrap"><table><thead><tr><th>속성</th><th>예상 값</th><th>설명</th></tr></thead><tbody><tr><td>블롭 개수</td><td>1</td><td>인접한 두 전경 픽셀</td></tr><tr><td>Area</td><td>2</td><td>픽셀 수; 실물 면적 단위 아님</td></tr><tr><td>마스크 픽셀</td><td>0,255,255</td><td>Gray8 비제로 전경</td></tr></tbody></table></div>
+<div class="note warn"><span class="note-mark">!</span><span>동일한 픽셀 배열에 대한 Rust의 기존 typed Query 테스트가 있습니다. 다른 언어는 대응되는 공개 호출이 구현되어 있지만 본 세션에서 새로 실행하지 않았습니다. 실제 설비 조건에서 정확도를 검증한 레시피는 아닙니다.</span></div>
+<p><a href="../guides/blob-analysis.html">연결 성분 원리</a> · <a href="../api/csharp/find-blobs.html">C# API</a></p>
+</article><footer class="footer">ZVision 기술 매뉴얼 · 2026-11-08 개발 소스 대조 · SHA ce902e85c340 · <a href="../index.html">매뉴얼 홈</a></footer></main></div></div>
+<dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="객체·알고리즘·API 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>

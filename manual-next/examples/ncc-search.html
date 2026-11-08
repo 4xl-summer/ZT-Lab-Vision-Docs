@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="../"><meta name="manual-path" content="examples/ncc-search.html"><meta name="description" content="기존 Rust Facade 테스트에 사용한 합성 템플릿으로 모델 학습과 전역 위치 계산을 재현합니다."><title>NCC 검출 · ROI 검색 좌표 · ZVision Manual</title><link rel="stylesheet" href="../assets/manual.css"><script defer src="../assets/manual.js"></script></head>
+<body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="../index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav><div class="side-note">Rust · C# · Python<br>신규 HTML 매뉴얼 · 초기 버전</div></aside><div class="workspace"><header class="topbar"><div><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span></div><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header>
+<main id="main" class="main"><div class="crumb"><a href="../index.html">매뉴얼 홈</a> / 실전 예제 / <b>NCC 검출 · ROI 검색 좌표</b></div><header class="page-head"><div class="overline">실전 예제 · HTML REFERENCE</div><h1>NCC 검출 · ROI 검색 좌표</h1><p class="lede">기존 Rust Facade 테스트에 사용한 합성 템플릿으로 모델 학습과 전역 위치 계산을 재현합니다.</p><div class="tags"><span class="tag">소주제별 독립 HTML</span><span class="tag">2026-11-08 소스 확인</span><span class="tag">예제 실행 재검증 대기</span></div></header><article class="doc">
+<h2 id="fixture">테스트 데이터 설명</h2>
+<p>3×2 템플릿 <code>[1,2,4 / 8,16,32]</code>가 8×4 이미지에 두 번 배치되어 있습니다. 이미지에서 <code>(1,1,6,2)</code> ROI를 선택한 다음 NCC 모델을 검색합니다. 회전 0, 배율 1, 고정 점수와 NMS 조건을 사용합니다.</p>
+<div class="table-wrap"><table><thead><tr><th>요소</th><th>값</th></tr></thead><tbody><tr><td>템플릿</td><td>3×2; 1,2,4 / 8,16,32</td></tr><tr><td>검색 영상</td><td>8×4 (두 개의 동일 패턴)</td></tr><tr><td>검색 ROI</td><td>(1,1,6,2)</td></tr><tr><td>모델 종류</td><td>NCC</td></tr><tr><td>탐색</td><td>angle=0, scale=1</td></tr><tr><td>기대 매치</td><td>기존 Rust 테스트: 2개, 점수 ≈ 1</td></tr></tbody></table></div>
+<h2 id="rust">Rust 전체 예제</h2>
+<div class="code"><div class="code-head"><span>Rust</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>use zvision::{MatchModel, MatchSpec, ZImage, ZRect};
+
+fn main() -&gt; zvision::ZResult&lt;()&gt; {
+    let template = ZImage::from_vec_gray8(3, 2, vec![1, 2, 4, 8, 16, 32])?;
+    let image = ZImage::from_vec_gray8(8, 4, vec![
+        0,0,0,0,0,0,0,0,
+        0,1,2,4,1,2,4,0,
+        0,8,16,32,8,16,32,0,
+        0,0,0,0,0,0,0,0
+    ])?;
+    let roi = image.roi(ZRect::new(1, 1, 6, 2))?;
+    let model = MatchModel::train_ncc(&amp;template, None)?;
+    let spec = MatchSpec {
+        angle_min: 0.0, angle_max: 0.0, angle_step: 1.0,
+        scale_min: 1.0, scale_max: 1.0, scale_step: 1.0,
+        min_score: 0.999999, min_distance: 0.0, max_matches: 10,
+    };
+    let result = model.find(&amp;roi, &amp;spec)?;
+    assert_eq!(result.matches().len(), 2);
+    assert_eq!(result.best().unwrap().global_position.x, 2.0);
+    Ok(())
+}</code></pre></div>
+<h2 id="csharp">C# 동일 데이터 호출</h2>
+<div class="code"><div class="code-head"><span>C#</span><button type="button" class="copy" aria-label="코드 복사">복사</button></div><pre><code>using ZVision;
+
+using var template = ZImage.FromGray8(3, 2, new byte[] { 1, 2, 4, 8, 16, 32 });
+using var image = ZImage.FromGray8(8, 4, new byte[] {
+    0,0,0,0,0,0,0,0,
+    0,1,2,4,1,2,4,0,
+    0,8,16,32,8,16,32,0,
+    0,0,0,0,0,0,0,0
+});
+using var roi = image.Roi(1, 1, 6, 2);
+using var model = MatchModel.TrainNcc(template);
+var spec = new MatchSpec(0, 0, 1, 1, 1, 1, 0.999999, 0, 10);
+MatchResult result = model.Find(roi, spec);
+System.Console.WriteLine(result.Matches.Count);</code></pre></div>
+<h2 id="coordinate">로컬/글로벌 좌표</h2>
+<p>기존 Rust 테스트는 검색 ROI의 모델 기준점 x좌표가 1과 4이고 원본 글로벌 위치 x좌표가 2와 5임을 확인합니다. 모델 기준점은 템플릿 중심으로 해석되며, 원본 ROI의 원점이 추가됩니다. <strong>ROI 지역 좌표를 전역 좌표로 바로 사용하는 오류</strong>를 피하세요.</p>
+<div class="note warn"><span class="note-mark">!</span><span>2개 매치 및 점수 약 1의 결과는 기존 Rust 테스트에 기록된 기대값입니다. C# 출력은 같은 입력과 공개 API를 보여주지만 이 세션에서 별도로 실행하지 않았습니다. NCC 생산 검출률은 검증되지 않았습니다.</span></div>
+<p><a href="../guides/matching-ncc.html">NCC 원리</a> · <a href="../api/rust/match-model.html">Rust Model API</a></p>
+</article><footer class="footer">ZVision 기술 매뉴얼 · 2026-11-08 개발 소스 대조 · SHA ce902e85c340 · <a href="../index.html">매뉴얼 홈</a></footer></main></div></div>
+<dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="객체·알고리즘·API 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>
