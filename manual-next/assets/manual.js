@@ -13,14 +13,15 @@ if(navEl){
      const isCurrent=groupItems.some(row=>row[1]===path);
      btn.setAttribute("aria-expanded",String(isCurrent));
      btn.textContent=group+" ("+groupItems.length+")";
-     groupWrap=document.createElement("div");
-     groupWrap.className="nav-group";
-     groupWrap.hidden=!isCurrent;
+     const panel=document.createElement("div");
+     panel.className="nav-group";
+     panel.hidden=!isCurrent;
      btn.addEventListener("click",()=>{
-       groupWrap.hidden=!groupWrap.hidden;
-       btn.setAttribute("aria-expanded",String(!groupWrap.hidden));
+       panel.hidden=!panel.hidden;
+       btn.setAttribute("aria-expanded",String(!panel.hidden));
      });
-     navEl.append(btn,groupWrap);
+     groupWrap=panel;
+     navEl.append(btn,panel);
    }
    const a=document.createElement("a");
    a.className="nav-a"+(p===path?" active":"");
