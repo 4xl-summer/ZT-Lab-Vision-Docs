@@ -87,7 +87,7 @@
     "시각 자료와 측정",
     "labs/visual-guide.html",
     "시각 자료 해설",
-    "원리·구조·판독 기준을 설명하는 38개의 독립 그림 해설입니다."
+    "픽셀·좌표·분포·실제 영상 비교와 객체 관계를 주제에 맞게 설명합니다."
   ],
   [
     "시각 자료와 측정",
@@ -176,146 +176,146 @@
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-acquisition-flow.html",
-    "영상 취득 흐름 · AntV 인포그래픽",
-    "카메라 또는 시뮬레이터의 상태와 프레임을 구분합니다."
+    "유한 프레임 큐 · 시각 해설",
+    "큐의 공유 이미지와 꺼낸 핸들의 관계를 명확히 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-ai-coordinates.html",
-    "AI 추론 좌표 · AntV 인포그래픽",
-    "모델 입력과 출력 좌표의 기준을 확인합니다."
+    "기본 AI 입력과 출력 좌표 · 시각 해설",
+    "종횡비를 유지하지 않는 기본 stretch의 축별 역변환을 예로 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-blob-connectivity.html",
-    "대각선과 연결성 · AntV 인포그래픽",
-    "같은 두 전경 픽셀도 연결 규칙에 따라 다른 객체가 됩니다."
+    "대각선 연결성 비교 · 시각 해설",
+    "같은 두 픽셀이 연결 방식에 따라 몇 개의 성분이 되는지 비교합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-calibration-transform.html",
-    "ROI에서 세계 좌표 · AntV 인포그래픽",
-    "원점 이동과 보정 변환의 순서를 계산합니다."
+    "로컬·전역·평면 좌표 · 시각 해설",
+    "ROI 원점을 더한 뒤 보정 변환을 적용하는 순서를 공간과 수식으로 설명합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-caliper-profile.html",
-    "캘리퍼 프로파일 · AntV 인포그래픽",
-    "선분을 따라 샘플링해 경계 후보를 찾습니다."
+    "캘리퍼 프로파일 · 시각 해설",
+    "실제 camera 사진의 표본 선 및 SDK 프로파일을 같은 x좌표로 나란히 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-canny-edges.html",
-    "Canny 경계 단계 · AntV 인포그래픽",
-    "평활화부터 이중 임계값 연결까지 살핍니다."
+    "Canny 경계 단계 · 시각 해설",
+    "공개 camera 사진에 SDK Canny를 두 번 적용해 경계 마스크와 검출 픽셀 수를 비교합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-deployment-check.html",
-    "실행 환경과 배포 · AntV 인포그래픽",
-    "개발 환경에서 운영 환경으로 넘어갈 때 확인할 항목입니다."
+    "설치 전 확인 · 시각 해설",
+    "운영체제·언어·실행 환경과 설치 후 확인 항목을 나누어 살펴봅니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-depth-grid.html",
-    "깊이 격자와 좌표 · AntV 인포그래픽",
-    "깊이 격자의 표본과 3차원 위치를 구분합니다."
+    "격자 셀에서 3D 점으로 · 시각 해설",
+    "행·열 인덱스, 간격, 원점과 높이가 점의 좌표를 결정합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-difference-inspection.html",
-    "기준 영상과 차분 · AntV 인포그래픽",
-    "정렬 후 유효 영역의 차이를 판독합니다."
+    "기준 영상과 차분 · 시각 해설",
+    "공개 사진, 의도적 수정 영상과 실제 SDK 차분 마스크를 나란히 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-first-pipeline.html",
-    "첫 영상 처리 흐름 · AntV 인포그래픽",
-    "입력에서 마스크와 측정 결과까지 자료형과 결과를 따라갑니다."
+    "임계값과 블롭 중심 · 시각 해설",
+    "임계값 경계가 포함되는지, 두 전경 픽셀의 중심은 어디인지 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-frequency-roundtrip.html",
-    "주파수 변환 왕복 · AntV 인포그래픽",
-    "복소 성분과 역변환 정규화를 함께 보존합니다."
+    "주파수 변환 왕복 · 시각 해설",
+    "64×64 합성 줄무늬와 2D FFT의 ky=0 단면, 복소 계수로 복원한 영상을 비교합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-gaussian-filter.html",
-    "가우시안 평활화 · AntV 인포그래픽",
-    "커널 폭과 시그마가 이웃 기여를 바꿉니다."
+    "가우시안 평활화 · 시각 해설",
+    "가운데 값이 1인 합성 입력과 σ=1인 3×3 정규화 커널에 대한 출력을 비교합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-histogram-bins.html",
-    "히스토그램 읽기 · AntV 인포그래픽",
-    "값을 구간에 배치해 분포를 확인합니다."
+    "히스토그램 읽기 · 시각 해설",
+    "합성 표본 0, 0, 1, 3을 폭 1인 구간으로 나누면 빈도는 2, 1, 0, 1입니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-image-lifetime.html",
-    "영상 객체와 수명 · AntV 인포그래픽",
-    "원본과 결과의 사용 범위를 구분합니다."
+    "이미지 공유와 수명 · 시각 해설",
+    "공유 저장소와 독립 복사의 차이는 공간적 소유 관계로 읽습니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-inspection-alignment.html",
-    "검사 정렬과 유효 마스크 · AntV 인포그래픽",
-    "기준 격자에 맞춘 뒤 유효한 위치만 비교합니다."
+    "검사 정렬과 유효 마스크 · 시각 해설",
+    "기준 격자를 검사 영상으로 대응할 때 영상 밖의 표본을 유효 비교에서 제외하는 이유를 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-lab-distance.html",
-    "Lab 색차 계산 · AntV 인포그래픽",
-    "변환 조건을 맞춘 두 색의 거리를 계산합니다."
+    "Lab 색차 계산 · 시각 해설",
+    "Lab 차이 공간의 두 점과 그 사이의 벡터를 표시합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-morphology.html",
-    "형태학의 폭과 반복 · AntV 인포그래픽",
-    "구조 요소와 반복 적용이 마스크를 바꾸는 과정을 봅니다."
+    "이진 형태학의 픽셀 변화 · 시각 해설",
+    "같은 3×3 구조 요소를 쓴 침식·팽창·열림·닫힘 결과를 비교합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-ncc-matching.html",
-    "NCC 점수 판독 · AntV 인포그래픽",
-    "평균 제거와 정규화 상관의 의미를 살펴봅니다."
+    "NCC 점수 판독 · 시각 해설",
+    "합성 3×3 모델을 검색 영상의 (9,5)에 넣고 모든 유효 위치의 NCC를 계산합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-ocr-region.html",
-    "OCR 영역과 판독 · AntV 인포그래픽",
-    "문자 인식 전에 영역과 방향을 정하고 결과를 확인합니다."
+    "단일 글자 줄과 ROI의 공간 관계 · 시각 해설",
+    "기본 인쇄 OCR이 읽는 ROI 안의 단일 문자 줄을 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-pixel-formats.html",
-    "픽셀 형식 선택 · AntV 인포그래픽",
-    "저장 형식과 연산의 허용 형식을 분리해 읽습니다."
+    "픽셀 형식과 저장 크기 · 시각 해설",
+    "형식의 채널 구성과 픽셀 크기를 비교하고 함수별 지원을 따로 확인합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-plc-simulation.html",
-    "PLC 요청과 결과 시뮬레이션 · AntV 인포그래픽",
-    "요청 ID로 결과를 연결하고 확인하며, Poll의 시간 초과와 Reset을 구분합니다."
+    "모의 PLC 상태 · 시각 해설",
+    "요청·결과·승인과 타임아웃 상태를 구분합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-point-cloud-fit.html",
-    "점군과 기하 피팅 · AntV 인포그래픽",
-    "3차원 점의 집합에서 형상을 추정합니다."
+    "점과 평면의 잔차 · 시각 해설",
+    "평면과 점 사이의 수직 거리를 표시해 잔차의 뜻을 설명합니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-query-execution.html",
-    "쿼리 구성과 실행 · AntV 인포그래픽",
-    "연산을 구성하고 실행 결과를 읽는 순서를 보여 줍니다."
+    "쿼리 실행 · 시각 해설",
+    "구성 시점과 명시적 실행 시점의 차이를 보여 줍니다."
   ],
   [
     "시각 자료와 측정",
     "labs/visual-guide/infographic-roi-coordinates.html",
-    "ROI와 영상 좌표 · AntV 인포그래픽",
-    "부분 영상의 로컬 좌표를 원본 좌표로 옮깁니다."
+    "ROI와 원본 좌표 · 시각 해설",
+    "ROI의 로컬 점에 원점을 한 번 더해 원본 좌표를 구합니다."
   ],
   [
     "시작하기",

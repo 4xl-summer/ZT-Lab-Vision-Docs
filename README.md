@@ -36,7 +36,7 @@ Linux x64 / Ubuntu 24.04 WSL, Rust 1.85.1, .NET SDK 10.0.403, CPython 3.14에서
 
 ## 시각 자료와 실제 사진 측정
 
-[시각 해설](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/labs/visual-guide.html)은 실제 AntV Infographic 0.2.20으로 렌더한 SVG 24개와 draw.io 32.6.10으로 내보낸 구조도 14개입니다. 편집용 `.drawio`와 AntV 구문을 함께 보관하며, 관련 본문 57곳과 각 그림의 독립 해설 페이지에서 읽을 수 있습니다. 정적 SVG는 외부 글꼴 서버 없이 표시됩니다.
+[시각 해설](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/labs/visual-guide.html)은 픽셀 격자·좌표 도해·분포 그래프·실제 영상 비교·객체 관계도를 설명 대상에 맞춰 사용합니다. 형식·실행 조건은 선택 가능한 HTML 표로 제공합니다. 작은 썸네일 격자 대신 읽을 수 있는 크기의 대표 예와 질문별 목록을 제공하며, 관련 본문 33곳의 설명 문단 뒤에 필요한 자료만 배치합니다. 편집 가능한 SVG, Matplotlib 생성 코드와 `.drawio` 원본을 보관합니다. 기존 해설 페이지 주소는 유지합니다.
 
 [측정 화면](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/labs/measurement.html)은 공개 사진 4종으로 SDK를 실행한 7개 사례를 읽습니다. 입력·처리 이미지·검출 표시·픽셀·확대·수치·프로파일 그래프와 실제 파라미터를 확인합니다. 브라우저는 저장된 SDK 실행 결과를 보여주며 네이티브 SDK를 실행하지 않습니다. 원/프로파일은 각각 잔차 재계산과 표본 비교의 검증 범위를 명시합니다. 표시 영역과 실제 처리 범위는 별도로 표시합니다.
 
@@ -47,10 +47,12 @@ Linux x64 / Ubuntu 24.04 WSL, Rust 1.85.1, .NET SDK 10.0.403, CPython 3.14에서
 ```sh
 python -m pip install -r manual-next/examples/requirements-measurements.txt
 python manual-next/examples/generate-measurements.py --output manual-next/assets/measurement
-npm ci --prefix manual-next/tools/visuals
-node manual-next/scripts/render_infographics.cjs
+python -m pip install matplotlib==3.11.2
+python manual-next/examples/generate-visual-plots.py
 drawio -x -f svg --embed-diagram -b 24 -o manual-next/assets/visuals/drawio manual-next/assets/visuals/drawio/*.drawio
 python manual-next/scripts/normalize_drawio.py
 ```
 
-다시 생성한 그림과 측정 결과는 화면·수치 검증 후 실행 기록과 해시를 갱신합니다. `check_visuals.py`는 기록과 달라진 자산을 거부합니다. 전체 모니터나 사용자의 다른 창을 촬영한 이미지 대신 agent-desktop으로 전용 측정 창만 캡처합니다.
+그래프 생성은 위 SDK 환경과 WSL에서 Windows의 `C:/Windows/Fonts/malgun.ttf`를 사용하는 구성으로 검증했습니다. Canny·프로파일은 SDK로 계산하며 NCC·가우시안·FFT 등은 별도로 표시한 수학 설명 예입니다. 편집 SVG는 해당 파일을 직접 편집하고, HTML 표는 본문 레코드와 `assets/visuals/tables/*.html.txt`를 함께 수정합니다.
+
+다시 생성한 그림과 측정 결과는 화면·수치 검증 후 실행 기록과 해시를 갱신합니다. `check_visuals.py`는 기록과 달라진 자산 및 폐기한 공통 화살표 템플릿의 재사용을 거부합니다. 전체 모니터나 사용자의 다른 창을 촬영한 이미지 대신 agent-desktop으로 전용 측정 창만 캡처합니다.
