@@ -1,0 +1,3851 @@
+[
+  {
+    "parent": "api/index.html",
+    "anchor": "topic-1",
+    "child": "api/index/topic-1.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/index.html",
+    "anchor": "topic-2",
+    "child": "api/index/topic-2.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/index.html",
+    "anchor": "related-api",
+    "child": "api/index/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/index.html",
+    "anchor": "topic-1",
+    "child": "concepts/index/topic-1.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/index.html",
+    "anchor": "next-topics",
+    "child": "concepts/index/next-topics.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/index.html",
+    "anchor": "first-class",
+    "child": "concepts/index/first-class.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/index.html",
+    "anchor": "related-api",
+    "child": "concepts/index/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "definition",
+    "child": "concepts/roi/definition.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "visual",
+    "child": "concepts/roi/visual.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "local",
+    "child": "concepts/roi/local.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "502a713b350ba8e9fbefb3ea38173999fce8f50eba22db0385d0ee5306fbc8ca"
+    ]
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "languages",
+    "child": "concepts/roi/languages.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "ownership",
+    "child": "concepts/roi/ownership.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "errors",
+    "child": "concepts/roi/errors.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/roi.html",
+    "anchor": "related-api",
+    "child": "concepts/roi/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/index.html",
+    "anchor": "examples",
+    "child": "examples/index/examples.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/index.html",
+    "anchor": "downloads",
+    "child": "examples/index/downloads.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/index.html",
+    "anchor": "next-topics",
+    "child": "examples/index/next-topics.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/index.html",
+    "anchor": "related-api",
+    "child": "examples/index/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "purpose",
+    "child": "getting-started/first-image/purpose.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "rust",
+    "child": "getting-started/first-image/rust.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "6c7b3218b6c0623531c091facee8bdb29bcb3482f0b3ecc0fbf70c81c001a79b"
+    ]
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "csharp",
+    "child": "getting-started/first-image/csharp.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "dda50939763b5eaaac22cad9dc2d8780eb514bbd4a72aa5e665f89aa2a14bf92"
+    ]
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "python",
+    "child": "getting-started/first-image/python.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "477d30e67e8cf01eb63022a61e8624905334c14facd56cf1f3e4a9093a366ab2"
+    ]
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "next",
+    "child": "getting-started/first-image/next.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "verification-cases",
+    "child": "getting-started/first-image/verification-cases.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/first-image.html",
+    "anchor": "related-api",
+    "child": "getting-started/first-image/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/index.html",
+    "anchor": "start",
+    "child": "getting-started/index/start.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/index.html",
+    "anchor": "prerequisites",
+    "child": "getting-started/index/prerequisites.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/index.html",
+    "anchor": "related-api",
+    "child": "getting-started/index/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "scope",
+    "child": "getting-started/sdk-setup/scope.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "rust",
+    "child": "getting-started/sdk-setup/rust.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "51338b42e7f24c751331cdba365666157b62ec980dafccb54f2d920fcac1486d"
+    ]
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "python",
+    "child": "getting-started/sdk-setup/python.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "5ba1e0387f66c11adecb461a7ed61e504fdaa3fa5f75780cd4069d0db30dcd17",
+      "7125b56372a577111a4a016ffaee955bb19b579349b3fea2849044a459ef6546"
+    ]
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "csharp",
+    "child": "getting-started/sdk-setup/csharp.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "f279acc020513a28a756e5dfed6fcecb6c430bc760bf58577a010f04e98910f5",
+      "8ae5a5c869140f065c3c0ab2d887934edf3be5bdcc9792f29eea966c69288fbc"
+    ]
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "windows",
+    "child": "getting-started/sdk-setup/windows.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "cf6e1e5661666b3b54c9908a0dd16aef81bdd3cde87686f637d12aa54cf8c7fb"
+    ]
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "failure",
+    "child": "getting-started/sdk-setup/failure.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/sdk-setup.html",
+    "anchor": "related-api",
+    "child": "getting-started/sdk-setup/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/index.html",
+    "anchor": "topic-1",
+    "child": "guides/index/topic-1.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/index.html",
+    "anchor": "next-topics",
+    "child": "guides/index/next-topics.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/index.html",
+    "anchor": "related-api",
+    "child": "guides/index/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "index.html",
+    "anchor": "paths",
+    "child": "index/paths.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "index.html",
+    "anchor": "topic-2",
+    "child": "index/topic-2.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "index.html",
+    "anchor": "topic-3",
+    "child": "index/topic-3.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "index.html",
+    "anchor": "related-api",
+    "child": "index/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/downloads.html",
+    "anchor": "topic-1",
+    "child": "examples/downloads/topic-1.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/downloads.html",
+    "anchor": "topic-2",
+    "child": "examples/downloads/topic-2.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/downloads.html",
+    "anchor": "topic-3",
+    "child": "examples/downloads/topic-3.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/downloads.html",
+    "anchor": "related-api",
+    "child": "examples/downloads/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/package-consumer.html",
+    "anchor": "topic-1",
+    "child": "getting-started/package-consumer/topic-1.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "getting-started/package-consumer.html",
+    "anchor": "topic-2",
+    "child": "getting-started/package-consumer/topic-2.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "0cb507c9bf0315b49d37f1149d1911a3b275927f1945f2768278c2e99ea93545"
+    ]
+  },
+  {
+    "parent": "getting-started/package-consumer.html",
+    "anchor": "topic-3",
+    "child": "getting-started/package-consumer/topic-3.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "0c17e0c02288122578bbfd736316cf000ff93ff33cf580842ea5b12b1b7e5095"
+    ]
+  },
+  {
+    "parent": "getting-started/package-consumer.html",
+    "anchor": "topic-4",
+    "child": "getting-started/package-consumer/topic-4.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "afce743f55fbe2d5a4741849fbbc0c005861e0ed19a792ecaba6bef8f92c5306"
+    ]
+  },
+  {
+    "parent": "getting-started/package-consumer.html",
+    "anchor": "related-api",
+    "child": "getting-started/package-consumer/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "why",
+    "child": "concepts/object-model/why.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "responsibilities",
+    "child": "concepts/object-model/responsibilities.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "direct",
+    "child": "concepts/object-model/direct.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "50ba27ffc9b77c2dda6d0d4a72771a530452d4300470a4e5eb849c9f34a5f339",
+      "89a997ff9586c388aab576478114e0b4cbbe463c210d57dcf4004220895e45c7"
+    ]
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "model",
+    "child": "concepts/object-model/model.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "536c16c322fb9117635cc8103804a6b0687a8a11849ed17e00d7363e513053e7"
+    ]
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "query",
+    "child": "concepts/object-model/query.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "ownership",
+    "child": "concepts/object-model/ownership.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "languages",
+    "child": "concepts/object-model/languages.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "diagnosis",
+    "child": "concepts/object-model/diagnosis.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "verified-public-flow",
+    "child": "concepts/object-model/verified-public-flow.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "verified-close-races",
+    "child": "concepts/object-model/verified-close-races.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "verification-cases",
+    "child": "concepts/object-model/verification-cases.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/object-model.html",
+    "anchor": "related-api",
+    "child": "concepts/object-model/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "why",
+    "child": "concepts/lifetime/why.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "matrix",
+    "child": "concepts/lifetime/matrix.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "rust",
+    "child": "concepts/lifetime/rust.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "fad4f7962dd32960f8bb4fc6c00bfad10c6c4dec3fbd3a9e15fb06fde54a5aad"
+    ]
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "cs",
+    "child": "concepts/lifetime/cs.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "e56d1b60d201ed30819f9a778a0524b9018258860cd76d47a8f4fa2dab012952"
+    ]
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "python",
+    "child": "concepts/lifetime/python.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "d5950b193a139e777175900821707bb1a55168359fc3804009628b19c7f5f405"
+    ]
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "troubleshoot",
+    "child": "concepts/lifetime/troubleshoot.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "verified-resource-contract",
+    "child": "concepts/lifetime/verified-resource-contract.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "verified-close-races",
+    "child": "concepts/lifetime/verified-close-races.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "verified-failure-example",
+    "child": "concepts/lifetime/verified-failure-example.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "912b12e7a47b0713a9ef904ff750bfa0aaa9e266f0ca3da71165bd5305e04cce"
+    ]
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "verification-cases",
+    "child": "concepts/lifetime/verification-cases.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/lifetime.html",
+    "anchor": "related-api",
+    "child": "concepts/lifetime/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "meaning",
+    "child": "concepts/share/meaning.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "comparison",
+    "child": "concepts/share/comparison.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "rust",
+    "child": "concepts/share/rust.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "e2dc5cd7730b140cbb3f058a4c5358e5d33baea8c74c3116b216851190234fc8"
+    ]
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "cs",
+    "child": "concepts/share/cs.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "77cea2abb8c8e308604dd17be4fe1fc0678c4cead3957e5560d0c30b773e9d75"
+    ]
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "python",
+    "child": "concepts/share/python.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "421db95150e54dd59bec8fcf1875dc602a2a112a49b1ec2be5d227e7f0059faa"
+    ]
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "diagnostics",
+    "child": "concepts/share/diagnostics.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "verified-share-contract",
+    "child": "concepts/share/verified-share-contract.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "verified-close-races",
+    "child": "concepts/share/verified-close-races.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "verified-failure-example",
+    "child": "concepts/share/verified-failure-example.html",
+    "owner": "basics",
+    "original_code_sha256": [
+      "912b12e7a47b0713a9ef904ff750bfa0aaa9e266f0ca3da71165bd5305e04cce"
+    ]
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "verification-cases",
+    "child": "concepts/share/verification-cases.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/share.html",
+    "anchor": "related-api",
+    "child": "concepts/share/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/pixel-formats.html",
+    "anchor": "formats",
+    "child": "concepts/pixel-formats/formats.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/pixel-formats.html",
+    "anchor": "per-function",
+    "child": "concepts/pixel-formats/per-function.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/pixel-formats.html",
+    "anchor": "stride",
+    "child": "concepts/pixel-formats/stride.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/pixel-formats.html",
+    "anchor": "select",
+    "child": "concepts/pixel-formats/select.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/pixel-formats.html",
+    "anchor": "related-api",
+    "child": "concepts/pixel-formats/related-api.html",
+    "owner": "basics",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "signature",
+    "child": "api/csharp/find-blobs/signature.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "531aebcfda11f7e4d9da7cafe293e811981e662db5ea6d778939b6377d99bbd3"
+    ]
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "parameters",
+    "child": "api/csharp/find-blobs/parameters.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "example",
+    "child": "api/csharp/find-blobs/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "ac9a2fad2ee3c5b423da8697838de5bd691b7a9e35faf97afc92042d99e7d3ed"
+    ]
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "limits",
+    "child": "api/csharp/find-blobs/limits.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "detail-blob",
+    "child": "api/csharp/find-blobs/detail-blob.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "result-lifetime-detail",
+    "child": "api/csharp/find-blobs/result-lifetime-detail.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "fixture-coverage",
+    "child": "api/csharp/find-blobs/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "verification-cases",
+    "child": "api/csharp/find-blobs/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/find-blobs.html",
+    "anchor": "related-api",
+    "child": "api/csharp/find-blobs/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "signature",
+    "child": "api/csharp/threshold/signature.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "aa554434d6cc727dcab47fd9fb83a06191c9010cc1ccc8a0cbb3550d7c899d8c"
+    ]
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "params",
+    "child": "api/csharp/threshold/params.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "example",
+    "child": "api/csharp/threshold/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "5208743bc1f92d7b97876e539e6b85dda50120a47fdf6fb0ef0a4c837b0ab9ad"
+    ]
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "detail-threshold",
+    "child": "api/csharp/threshold/detail-threshold.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "threshold-cases",
+    "child": "api/csharp/threshold/threshold-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "fixture-coverage",
+    "child": "api/csharp/threshold/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "verification-cases",
+    "child": "api/csharp/threshold/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/threshold.html",
+    "anchor": "related-api",
+    "child": "api/csharp/threshold/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "signature",
+    "child": "api/python/threshold/signature.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "34c5bb96b78ac34c7935ea441d194e34194f69332a76e5a64bc2e401f7a31002"
+    ]
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "conditions",
+    "child": "api/python/threshold/conditions.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "example",
+    "child": "api/python/threshold/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "f96a1ba7f130cb2a7e49f42d791ec564488a1aede22128a9f4780d9816d39efb"
+    ]
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "detail-threshold",
+    "child": "api/python/threshold/detail-threshold.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "threshold-cases",
+    "child": "api/python/threshold/threshold-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "fixture-coverage",
+    "child": "api/python/threshold/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "verification-cases",
+    "child": "api/python/threshold/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/threshold.html",
+    "anchor": "related-api",
+    "child": "api/python/threshold/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "signature",
+    "child": "api/rust/blob-query/signature.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "688e578eeb4a826c1793ec1dc691860de41727b0119d235e3f9f0a45054922a6"
+    ]
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "params",
+    "child": "api/rust/blob-query/params.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "example",
+    "child": "api/rust/blob-query/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "eecbfb126633c52c3a927b562e0249eca25f2b862162be3f11c041d798e21047"
+    ]
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "errors",
+    "child": "api/rust/blob-query/errors.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "detail-blob",
+    "child": "api/rust/blob-query/detail-blob.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "result-lifetime-detail",
+    "child": "api/rust/blob-query/result-lifetime-detail.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "fixture-coverage",
+    "child": "api/rust/blob-query/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "verification-cases",
+    "child": "api/rust/blob-query/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/blob-query.html",
+    "anchor": "related-api",
+    "child": "api/rust/blob-query/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "scenario",
+    "child": "examples/roi-threshold/scenario.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "rust",
+    "child": "examples/roi-threshold/rust.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "d7e26e13ed0e129a162efe9cb46b2df6c74571c351c45e8c91f5ea93c1c4e86a"
+    ]
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "csharp",
+    "child": "examples/roi-threshold/csharp.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "f4e7965f84e96a999c103374b1d6f3d0327c85552dd811426a29880f478ef26a"
+    ]
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "python",
+    "child": "examples/roi-threshold/python.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "48514693decf2b3c6e98451f2c7cddf1475a84b77ef6ffb9739892299595705d"
+    ]
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "interpretation",
+    "child": "examples/roi-threshold/interpretation.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "verification-cases",
+    "child": "examples/roi-threshold/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/roi-threshold.html",
+    "anchor": "related-api",
+    "child": "examples/roi-threshold/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "principle",
+    "child": "guides/blob-analysis/principle.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "connectivity",
+    "child": "guides/blob-analysis/connectivity.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "result",
+    "child": "guides/blob-analysis/result.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "rust",
+    "child": "guides/blob-analysis/rust.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "8ff5c5b3d3e33ff2de6749bfc8d1f5c4d4aa989269086cdb03c2a8b977b8f76f"
+    ]
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "real",
+    "child": "guides/blob-analysis/real.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "detail-blob",
+    "child": "guides/blob-analysis/detail-blob.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "result-lifetime-detail",
+    "child": "guides/blob-analysis/result-lifetime-detail.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/blob-analysis/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "verification-cases",
+    "child": "guides/blob-analysis/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/blob-analysis.html",
+    "anchor": "related-api",
+    "child": "guides/blob-analysis/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "pipeline",
+    "child": "guides/canny/pipeline.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "contract",
+    "child": "guides/canny/contract.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "code",
+    "child": "guides/canny/code.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "19039f1a52b315a106f528e8c746a0d5a6900ee250712e223958699fca39fed0"
+    ]
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "select",
+    "child": "guides/canny/select.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "detail-canny",
+    "child": "guides/canny/detail-canny.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "options-lifetime",
+    "child": "guides/canny/options-lifetime.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "complete-fixture",
+    "child": "guides/canny/complete-fixture.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "8c752b0d0369f78c0b7896e6ea1efe92ff584dcd9bc234d52c215fb5996de88f"
+    ]
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/canny/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "verification-cases",
+    "child": "guides/canny/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/canny.html",
+    "anchor": "related-api",
+    "child": "guides/canny/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "principle",
+    "child": "guides/gaussian/principle.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "parameters",
+    "child": "guides/gaussian/parameters.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "example",
+    "child": "guides/gaussian/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "5cfa424373c5a68235f91a5d6ef10f0344ec7eb5232df3475375b06ca64eb630"
+    ]
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "application",
+    "child": "guides/gaussian/application.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "detail-gaussian",
+    "child": "guides/gaussian/detail-gaussian.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "options-lifetime",
+    "child": "guides/gaussian/options-lifetime.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "complete-fixture",
+    "child": "guides/gaussian/complete-fixture.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "cee133eef9535701012efb06855290283251bdb9dbe2c93cca30bee3473632e9"
+    ]
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/gaussian/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "verification-cases",
+    "child": "guides/gaussian/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/gaussian.html",
+    "anchor": "related-api",
+    "child": "guides/gaussian/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "basics",
+    "child": "guides/morphology/basics.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "size",
+    "child": "guides/morphology/size.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "api",
+    "child": "guides/morphology/api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "example",
+    "child": "guides/morphology/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "47dad4ef3481ac021a845bbc4f55a7ce6ab58b6851a4f267042516e2ef554901"
+    ]
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "failure",
+    "child": "guides/morphology/failure.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "detail-morph",
+    "child": "guides/morphology/detail-morph.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "options-lifetime",
+    "child": "guides/morphology/options-lifetime.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "complete-fixture",
+    "child": "guides/morphology/complete-fixture.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "0b90db410bae3b45a7ef568017968b0ff037fa4e67c21bb6e7870f22b550bc52"
+    ]
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/morphology/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "verification-cases",
+    "child": "guides/morphology/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/morphology.html",
+    "anchor": "related-api",
+    "child": "guides/morphology/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "theory",
+    "child": "guides/threshold/theory.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "contract",
+    "child": "guides/threshold/contract.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "parameter",
+    "child": "guides/threshold/parameter.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "example",
+    "child": "guides/threshold/example.html",
+    "owner": "processing",
+    "original_code_sha256": [
+      "08a116ab14b328c503c36b36fd437236f9f5475267d381685b8c8f78f42059e5"
+    ]
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "detail-threshold",
+    "child": "guides/threshold/detail-threshold.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "options-lifetime",
+    "child": "guides/threshold/options-lifetime.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/threshold/fixture-coverage.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "verification-cases",
+    "child": "guides/threshold/verification-cases.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/threshold.html",
+    "anchor": "related-api",
+    "child": "guides/threshold/related-api.html",
+    "owner": "processing",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "workflow",
+    "child": "api/csharp/match-model/workflow.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "fixture",
+    "child": "api/csharp/match-model/fixture.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "4915de722b997c6206c72621e45e4aa6788cd75a3d4ddda8fdb5fb1bca68f28f"
+    ]
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "principle",
+    "child": "api/csharp/match-model/principle.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "contract",
+    "child": "api/csharp/match-model/contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "results",
+    "child": "api/csharp/match-model/results.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "spec",
+    "child": "api/csharp/match-model/spec.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "persistence",
+    "child": "api/csharp/match-model/persistence.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "tuning",
+    "child": "api/csharp/match-model/tuning.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "related",
+    "child": "api/csharp/match-model/related.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "verification-cases",
+    "child": "api/csharp/match-model/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/match-model.html",
+    "anchor": "related-api",
+    "child": "api/csharp/match-model/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "workflow",
+    "child": "api/python/match-model/workflow.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "fixture",
+    "child": "api/python/match-model/fixture.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "7b03341923690e0da3101bdba560c88612b114a13afbffca1e095d4f16ef06af"
+    ]
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "principle",
+    "child": "api/python/match-model/principle.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "contract",
+    "child": "api/python/match-model/contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "results",
+    "child": "api/python/match-model/results.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "spec",
+    "child": "api/python/match-model/spec.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "persistence",
+    "child": "api/python/match-model/persistence.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "tuning",
+    "child": "api/python/match-model/tuning.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "related",
+    "child": "api/python/match-model/related.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "verification-cases",
+    "child": "api/python/match-model/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/match-model.html",
+    "anchor": "related-api",
+    "child": "api/python/match-model/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "workflow",
+    "child": "api/rust/match-model/workflow.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "fixture",
+    "child": "api/rust/match-model/fixture.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "330698cadbef09b9f861407b09f993d191bc0b743be657cad5a7be2913a2d950"
+    ]
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "principle",
+    "child": "api/rust/match-model/principle.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "contract",
+    "child": "api/rust/match-model/contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "results",
+    "child": "api/rust/match-model/results.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "spec",
+    "child": "api/rust/match-model/spec.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "persistence",
+    "child": "api/rust/match-model/persistence.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "tuning",
+    "child": "api/rust/match-model/tuning.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "related",
+    "child": "api/rust/match-model/related.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "verification-cases",
+    "child": "api/rust/match-model/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/match-model.html",
+    "anchor": "related-api",
+    "child": "api/rust/match-model/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "fixture",
+    "child": "examples/ncc-search/fixture.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "330698cadbef09b9f861407b09f993d191bc0b743be657cad5a7be2913a2d950",
+      "4915de722b997c6206c72621e45e4aa6788cd75a3d4ddda8fdb5fb1bca68f28f",
+      "7b03341923690e0da3101bdba560c88612b114a13afbffca1e095d4f16ef06af"
+    ]
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "principle",
+    "child": "examples/ncc-search/principle.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "contract",
+    "child": "examples/ncc-search/contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "results",
+    "child": "examples/ncc-search/results.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "spec",
+    "child": "examples/ncc-search/spec.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "tuning",
+    "child": "examples/ncc-search/tuning.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "persistence",
+    "child": "examples/ncc-search/persistence.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "related",
+    "child": "examples/ncc-search/related.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "verification-cases",
+    "child": "examples/ncc-search/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/ncc-search.html",
+    "anchor": "related-api",
+    "child": "examples/ncc-search/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "choose",
+    "child": "guides/matching-alternatives/choose.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "principle",
+    "child": "guides/matching-alternatives/principle.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "spec",
+    "child": "guides/matching-alternatives/spec.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "contract",
+    "child": "guides/matching-alternatives/contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "results",
+    "child": "guides/matching-alternatives/results.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "tuning",
+    "child": "guides/matching-alternatives/tuning.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "related",
+    "child": "guides/matching-alternatives/related.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-alternatives.html",
+    "anchor": "related-api",
+    "child": "guides/matching-alternatives/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "principle",
+    "child": "guides/matching-ncc/principle.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "contract",
+    "child": "guides/matching-ncc/contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "results",
+    "child": "guides/matching-ncc/results.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "spec",
+    "child": "guides/matching-ncc/spec.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "tuning",
+    "child": "guides/matching-ncc/tuning.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "fixture",
+    "child": "guides/matching-ncc/fixture.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "7b03341923690e0da3101bdba560c88612b114a13afbffca1e095d4f16ef06af"
+    ]
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "persistence",
+    "child": "guides/matching-ncc/persistence.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "related",
+    "child": "guides/matching-ncc/related.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "verification-cases",
+    "child": "guides/matching-ncc/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/matching-ncc.html",
+    "anchor": "related-api",
+    "child": "guides/matching-ncc/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "signature",
+    "child": "api/rust/threshold/signature.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "9a07db587ac6740a36b7b1dc747d3eef225912683d8d25e67f67c559f1a70c04"
+    ]
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "params",
+    "child": "api/rust/threshold/params.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "example",
+    "child": "api/rust/threshold/example.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "379ffc010b53dff1074e3b57caa8d3da4d3f09d84ef78dbd7e0083642f45f59b"
+    ]
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "detail-threshold",
+    "child": "api/rust/threshold/detail-threshold.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "threshold-cases",
+    "child": "api/rust/threshold/threshold-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "fixture-coverage",
+    "child": "api/rust/threshold/fixture-coverage.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "verification-cases",
+    "child": "api/rust/threshold/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/threshold.html",
+    "anchor": "related-api",
+    "child": "api/rust/threshold/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "role",
+    "child": "concepts/results/role.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "empty",
+    "child": "concepts/results/empty.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "csharp",
+    "child": "concepts/results/csharp.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "e1f6309e0482ba9450b2ad96e171bd76c416a7c7e6483bf1f5ef57a1f9167e4d"
+    ]
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "verified-results-contract",
+    "child": "concepts/results/verified-results-contract.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "verified-close-races",
+    "child": "concepts/results/verified-close-races.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "verified-failure-example",
+    "child": "concepts/results/verified-failure-example.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "912b12e7a47b0713a9ef904ff750bfa0aaa9e266f0ca3da71165bd5305e04cce"
+    ]
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "verification-cases",
+    "child": "concepts/results/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/results.html",
+    "anchor": "related-api",
+    "child": "concepts/results/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "overview-1",
+    "child": "guides/image-io/overview-1.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "overview-2",
+    "child": "guides/image-io/overview-2.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "overview-3",
+    "child": "guides/image-io/overview-3.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "overview-4",
+    "child": "guides/image-io/overview-4.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "io-formats",
+    "child": "guides/image-io/io-formats.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "io-load-details",
+    "child": "guides/image-io/io-load-details.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "tiff-options",
+    "child": "guides/image-io/tiff-options.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "io-example",
+    "child": "guides/image-io/io-example.html",
+    "owner": "matching",
+    "original_code_sha256": [
+      "a5c085a24606564a3b184ac41976159ae71195398c9cfefab916818175deaf01"
+    ]
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "verification-cases",
+    "child": "guides/image-io/verification-cases.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/image-io.html",
+    "anchor": "related-api",
+    "child": "guides/image-io/related-api.html",
+    "owner": "matching",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "strip-math",
+    "child": "api/csharp/metrology/strip-math.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "basic-params",
+    "child": "api/csharp/metrology/basic-params.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "managed-snapshot",
+    "child": "api/csharp/metrology/managed-snapshot.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "basic-field-table",
+    "child": "api/csharp/metrology/basic-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "profile-call",
+    "child": "api/csharp/metrology/profile-call.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "ae528ff5bee6deb5d0d6f9b1cc4a239565f64aa978cfb99482b93c03e7e18193"
+    ]
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "verification-cases",
+    "child": "api/csharp/metrology/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/metrology.html",
+    "anchor": "related-api",
+    "child": "api/csharp/metrology/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "probe-settings-detail",
+    "child": "api/rust/measurement-models/probe-settings-detail.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "robust-options-detail",
+    "child": "api/rust/measurement-models/robust-options-detail.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "probe-diagnostics",
+    "child": "api/rust/measurement-models/probe-diagnostics.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "fit-options",
+    "child": "api/rust/measurement-models/fit-options.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "probe-defaults",
+    "child": "api/rust/measurement-models/probe-defaults.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "model-signatures",
+    "child": "api/rust/measurement-models/model-signatures.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "10a82e5aab4b03e56d5a724ea4b1b9c530dde643314b37c627ed3c01ad0ec683"
+    ]
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "probe-field-table",
+    "child": "api/rust/measurement-models/probe-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "advanced-field-table",
+    "child": "api/rust/measurement-models/advanced-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "fit-field-table",
+    "child": "api/rust/measurement-models/fit-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "robust-field-table",
+    "child": "api/rust/measurement-models/robust-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "result-field-table",
+    "child": "api/rust/measurement-models/result-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "robust-enum-import",
+    "child": "api/rust/measurement-models/robust-enum-import.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "a78e8852ef597fcdbaf7020daf0193665ff1766696e229cd782827e9d52d4c0c"
+    ]
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "verification-cases",
+    "child": "api/rust/measurement-models/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/measurement-models.html",
+    "anchor": "related-api",
+    "child": "api/rust/measurement-models/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/planar-calibration.html",
+    "anchor": "planar-contract",
+    "child": "api/rust/planar-calibration/planar-contract.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/planar-calibration.html",
+    "anchor": "validation-fields",
+    "child": "api/rust/planar-calibration/validation-fields.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/planar-calibration.html",
+    "anchor": "calibration-fields",
+    "child": "api/rust/planar-calibration/calibration-fields.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/planar-calibration.html",
+    "anchor": "verification-cases",
+    "child": "api/rust/planar-calibration/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/planar-calibration.html",
+    "anchor": "related-api",
+    "child": "api/rust/planar-calibration/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/coordinate-systems.html",
+    "anchor": "roi-world-example",
+    "child": "concepts/coordinate-systems/roi-world-example.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/coordinate-systems.html",
+    "anchor": "verification-cases",
+    "child": "concepts/coordinate-systems/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/coordinate-systems.html",
+    "anchor": "related-api",
+    "child": "concepts/coordinate-systems/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/calibration.html",
+    "anchor": "planar-contract",
+    "child": "guides/calibration/planar-contract.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/calibration.html",
+    "anchor": "validation-fields",
+    "child": "guides/calibration/validation-fields.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/calibration.html",
+    "anchor": "roi-world-example",
+    "child": "guides/calibration/roi-world-example.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/calibration.html",
+    "anchor": "calibration-fields",
+    "child": "guides/calibration/calibration-fields.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/calibration.html",
+    "anchor": "verification-cases",
+    "child": "guides/calibration/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/calibration.html",
+    "anchor": "related-api",
+    "child": "guides/calibration/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "probe-settings-detail",
+    "child": "guides/metrology/probe-settings-detail.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "robust-options-detail",
+    "child": "guides/metrology/robust-options-detail.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "probe-diagnostics",
+    "child": "guides/metrology/probe-diagnostics.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "fit-options",
+    "child": "guides/metrology/fit-options.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "probe-defaults",
+    "child": "guides/metrology/probe-defaults.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "model-signatures",
+    "child": "guides/metrology/model-signatures.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "10a82e5aab4b03e56d5a724ea4b1b9c530dde643314b37c627ed3c01ad0ec683"
+    ]
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "probe-field-table",
+    "child": "guides/metrology/probe-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "advanced-field-table",
+    "child": "guides/metrology/advanced-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "fit-field-table",
+    "child": "guides/metrology/fit-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "robust-field-table",
+    "child": "guides/metrology/robust-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "result-field-table",
+    "child": "guides/metrology/result-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "robust-enum-import",
+    "child": "guides/metrology/robust-enum-import.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "a78e8852ef597fcdbaf7020daf0193665ff1766696e229cd782827e9d52d4c0c"
+    ]
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "verification-cases",
+    "child": "guides/metrology/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/metrology.html",
+    "anchor": "related-api",
+    "child": "guides/metrology/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "strip-math",
+    "child": "guides/profile-caliper/strip-math.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "basic-params",
+    "child": "guides/profile-caliper/basic-params.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "basic-field-table",
+    "child": "guides/profile-caliper/basic-field-table.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "profile-call",
+    "child": "guides/profile-caliper/profile-call.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "ae528ff5bee6deb5d0d6f9b1cc4a239565f64aa978cfb99482b93c03e7e18193"
+    ]
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "rust-profile-call",
+    "child": "guides/profile-caliper/rust-profile-call.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "af76049b99de25c3f2f8bdcdfbe1cc417729b98107d4a6fa2cdb7c2fcc59c03b"
+    ]
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "verification-cases",
+    "child": "guides/profile-caliper/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/profile-caliper.html",
+    "anchor": "related-api",
+    "child": "guides/profile-caliper/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "fixture",
+    "child": "examples/planar-calibration/fixture.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "roi-world-example",
+    "child": "examples/planar-calibration/roi-world-example.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "04811e48225aa0d9da5f2bfb29030cb6524b0bc7a2bccc98e4afa9a32280e22d"
+    ]
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "planar-contract",
+    "child": "examples/planar-calibration/planar-contract.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "validation-fields",
+    "child": "examples/planar-calibration/validation-fields.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "calibration-fields",
+    "child": "examples/planar-calibration/calibration-fields.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "verification-cases",
+    "child": "examples/planar-calibration/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/planar-calibration.html",
+    "anchor": "related-api",
+    "child": "examples/planar-calibration/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "architecture",
+    "child": "concepts/query/architecture.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "rust",
+    "child": "concepts/query/rust.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "4c54d7391d8b40822c2b149434aeb66e3e646a8460b41994de6cf745f5317921"
+    ]
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "language-difference",
+    "child": "concepts/query/language-difference.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "failure",
+    "child": "concepts/query/failure.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "verified-execution-types",
+    "child": "concepts/query/verified-execution-types.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "verified-close-races",
+    "child": "concepts/query/verified-close-races.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "verification-cases",
+    "child": "concepts/query/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/query.html",
+    "anchor": "related-api",
+    "child": "concepts/query/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "existing-2132336933701782354",
+    "child": "guides/frequency/existing-2132336933701782354.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "existing-3576884134528031495",
+    "child": "guides/frequency/existing-3576884134528031495.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "existing-5325653523530320153",
+    "child": "guides/frequency/existing-5325653523530320153.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "existing-5634416791548174161",
+    "child": "guides/frequency/existing-5634416791548174161.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "detail-frequency",
+    "child": "guides/frequency/detail-frequency.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "fixture-example",
+    "child": "guides/frequency/fixture-example.html",
+    "owner": "metrology",
+    "original_code_sha256": [
+      "8c750f71e3593c0d78d756eb7d4920f71752282038d1fd912f0fbf1237a743d0"
+    ]
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "options-lifetime",
+    "child": "guides/frequency/options-lifetime.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/frequency/fixture-coverage.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "filter-options",
+    "child": "guides/frequency/filter-options.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "verification-cases",
+    "child": "guides/frequency/verification-cases.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/frequency.html",
+    "anchor": "related-api",
+    "child": "guides/frequency/related-api.html",
+    "owner": "metrology",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "coordinates",
+    "child": "api/csharp/inspection/coordinates.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "parameters",
+    "child": "api/csharp/inspection/parameters.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "ownership",
+    "child": "api/csharp/inspection/ownership.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "algorithm",
+    "child": "api/csharp/inspection/algorithm.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "errors",
+    "child": "api/csharp/inspection/errors.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "example",
+    "child": "api/csharp/inspection/example.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "6b344009c7f6b23938c0bba893574f99ab20ab42385b3f5b1aa74d9e5fd413e8"
+    ]
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "input-output-contract",
+    "child": "api/csharp/inspection/input-output-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "error-lifetime-contract",
+    "child": "api/csharp/inspection/error-lifetime-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "verification-cases",
+    "child": "api/csharp/inspection/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/inspection.html",
+    "anchor": "related-api",
+    "child": "api/csharp/inspection/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "identity",
+    "child": "concepts/zimage/identity.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "memory",
+    "child": "concepts/zimage/memory.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "three",
+    "child": "concepts/zimage/three.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "8b860168132efdf60d393e17cad4f6a421300baf89c33c12b9dffed002b9c3b1",
+      "04df1242a5ba544f8d5bc569f37ccd94fa5c6ee38a3a7665fffce06b046ad912",
+      "f327c588f62ab2c3c642532747b3555b45dec8c254abba3f1b4276f62761647f"
+    ]
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "vs",
+    "child": "concepts/zimage/vs.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "constraints",
+    "child": "concepts/zimage/constraints.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "verified-image-contract",
+    "child": "concepts/zimage/verified-image-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "verified-close-races",
+    "child": "concepts/zimage/verified-close-races.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "verification-cases",
+    "child": "concepts/zimage/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "concepts/zimage.html",
+    "anchor": "related-api",
+    "child": "concepts/zimage/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "task",
+    "child": "examples/blob-inspection/task.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "rust",
+    "child": "examples/blob-inspection/rust.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "9aafa8cd4be147a6d9e1678e9f913437d835cc6f6eaad6f9ec3786e0818966e9"
+    ]
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "csharp",
+    "child": "examples/blob-inspection/csharp.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "33868e732c8bfeffb95b4ae6ba8404a491babd35bada5039600b7e0a1202a28d"
+    ]
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "python",
+    "child": "examples/blob-inspection/python.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "b2ee24770930ebfa9a7357364d376fca41b9438e3acac2d5c5cb97d4f371f76e"
+    ]
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "result",
+    "child": "examples/blob-inspection/result.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "detail-blob",
+    "child": "examples/blob-inspection/detail-blob.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "result-lifetime-detail",
+    "child": "examples/blob-inspection/result-lifetime-detail.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "fixture-coverage",
+    "child": "examples/blob-inspection/fixture-coverage.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "verification-cases",
+    "child": "examples/blob-inspection/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/blob-inspection.html",
+    "anchor": "related-api",
+    "child": "examples/blob-inspection/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "fixture",
+    "child": "examples/difference-spot/fixture.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "algorithm",
+    "child": "examples/difference-spot/algorithm.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "recipe",
+    "child": "examples/difference-spot/recipe.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "6b344009c7f6b23938c0bba893574f99ab20ab42385b3f5b1aa74d9e5fd413e8"
+    ]
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "errors",
+    "child": "examples/difference-spot/errors.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "input-output-contract",
+    "child": "examples/difference-spot/input-output-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "error-lifetime-contract",
+    "child": "examples/difference-spot/error-lifetime-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "verification-cases",
+    "child": "examples/difference-spot/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/difference-spot.html",
+    "anchor": "related-api",
+    "child": "examples/difference-spot/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "coordinates",
+    "child": "guides/difference-inspection/coordinates.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "algorithm",
+    "child": "guides/difference-inspection/algorithm.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "parameters",
+    "child": "guides/difference-inspection/parameters.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "errors",
+    "child": "guides/difference-inspection/errors.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "input-output-contract",
+    "child": "guides/difference-inspection/input-output-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "error-lifetime-contract",
+    "child": "guides/difference-inspection/error-lifetime-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "verification-cases",
+    "child": "guides/difference-inspection/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/difference-inspection.html",
+    "anchor": "related-api",
+    "child": "guides/difference-inspection/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "coordinates",
+    "child": "guides/inspection-framework/coordinates.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "algorithm",
+    "child": "guides/inspection-framework/algorithm.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "parameters",
+    "child": "guides/inspection-framework/parameters.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "errors",
+    "child": "guides/inspection-framework/errors.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "input-output-contract",
+    "child": "guides/inspection-framework/input-output-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "error-lifetime-contract",
+    "child": "guides/inspection-framework/error-lifetime-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "verification-cases",
+    "child": "guides/inspection-framework/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inspection-framework.html",
+    "anchor": "related-api",
+    "child": "guides/inspection-framework/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "fixture",
+    "child": "examples/aligned-inspection/fixture.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "coordinates",
+    "child": "examples/aligned-inspection/coordinates.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "recipe",
+    "child": "examples/aligned-inspection/recipe.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "6b344009c7f6b23938c0bba893574f99ab20ab42385b3f5b1aa74d9e5fd413e8"
+    ]
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "algorithm",
+    "child": "examples/aligned-inspection/algorithm.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "parameters",
+    "child": "examples/aligned-inspection/parameters.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "errors",
+    "child": "examples/aligned-inspection/errors.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "input-output-contract",
+    "child": "examples/aligned-inspection/input-output-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "error-lifetime-contract",
+    "child": "examples/aligned-inspection/error-lifetime-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "verification-cases",
+    "child": "examples/aligned-inspection/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "examples/aligned-inspection.html",
+    "anchor": "related-api",
+    "child": "examples/aligned-inspection/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "pipeline",
+    "child": "guides/managed-inspection/pipeline.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "host",
+    "child": "guides/managed-inspection/host.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "recipe",
+    "child": "guides/managed-inspection/recipe.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "02c0f1d18186a1679b054d6587a4ae44ec1d2db1cf7acc8858dd33b2227f51a2"
+    ]
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "display",
+    "child": "guides/managed-inspection/display.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "managed-contract",
+    "child": "guides/managed-inspection/managed-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "display-contract",
+    "child": "guides/managed-inspection/display-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "verification-scope",
+    "child": "guides/managed-inspection/verification-scope.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "verification-cases",
+    "child": "guides/managed-inspection/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-inspection.html",
+    "anchor": "related-api",
+    "child": "guides/managed-inspection/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "display",
+    "child": "guides/managed-display/display.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "pipeline",
+    "child": "guides/managed-display/pipeline.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "workbench",
+    "child": "guides/managed-display/workbench.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "host",
+    "child": "guides/managed-display/host.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "recipe",
+    "child": "guides/managed-display/recipe.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "02c0f1d18186a1679b054d6587a4ae44ec1d2db1cf7acc8858dd33b2227f51a2"
+    ]
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "managed-contract",
+    "child": "guides/managed-display/managed-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "display-contract",
+    "child": "guides/managed-display/display-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "verification-scope",
+    "child": "guides/managed-display/verification-scope.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "verification-cases",
+    "child": "guides/managed-display/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-display.html",
+    "anchor": "related-api",
+    "child": "guides/managed-display/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "purpose",
+    "child": "guides/managed-workbench/purpose.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "procedure",
+    "child": "guides/managed-workbench/procedure.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "failure",
+    "child": "guides/managed-workbench/failure.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "connection",
+    "child": "guides/managed-workbench/connection.html",
+    "owner": "inspection",
+    "original_code_sha256": [
+      "02c0f1d18186a1679b054d6587a4ae44ec1d2db1cf7acc8858dd33b2227f51a2"
+    ]
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "managed-contract",
+    "child": "guides/managed-workbench/managed-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "display-contract",
+    "child": "guides/managed-workbench/display-contract.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "verification-scope",
+    "child": "guides/managed-workbench/verification-scope.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "verification-cases",
+    "child": "guides/managed-workbench/verification-cases.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/managed-workbench.html",
+    "anchor": "related-api",
+    "child": "guides/managed-workbench/related-api.html",
+    "owner": "inspection",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "overview-1",
+    "child": "api/csharp/spatial3d/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "overview-2",
+    "child": "api/csharp/spatial3d/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "overview-3",
+    "child": "api/csharp/spatial3d/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "overview-4",
+    "child": "api/csharp/spatial3d/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "grid-contract",
+    "child": "api/csharp/spatial3d/grid-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "point-contract",
+    "child": "api/csharp/spatial3d/point-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "fit-details",
+    "child": "api/csharp/spatial3d/fit-details.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "fit-options",
+    "child": "api/csharp/spatial3d/fit-options.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "csharp-depth-example",
+    "child": "api/csharp/spatial3d/csharp-depth-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "5a8e2cd74fc17e52cabc22aa09587cd992f11dc22b7b333ad0708f92256e9600"
+    ]
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "verification-cases",
+    "child": "api/csharp/spatial3d/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/csharp/spatial3d.html",
+    "anchor": "related-api",
+    "child": "api/csharp/spatial3d/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "overview-1",
+    "child": "api/rust/spatial3d/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "overview-2",
+    "child": "api/rust/spatial3d/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "overview-3",
+    "child": "api/rust/spatial3d/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "overview-4",
+    "child": "api/rust/spatial3d/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "grid-contract",
+    "child": "api/rust/spatial3d/grid-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "point-contract",
+    "child": "api/rust/spatial3d/point-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "fit-details",
+    "child": "api/rust/spatial3d/fit-details.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "fit-options",
+    "child": "api/rust/spatial3d/fit-options.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "rust-depth-example",
+    "child": "api/rust/spatial3d/rust-depth-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "5539599ef8c88a50cfb983515c80aef81241c214c760effd2f87950098eea68d"
+    ]
+  },
+  {
+    "parent": "api/rust/spatial3d.html",
+    "anchor": "related-api",
+    "child": "api/rust/spatial3d/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "overview-1",
+    "child": "guides/acquisition/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "overview-2",
+    "child": "guides/acquisition/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "overview-3",
+    "child": "guides/acquisition/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "overview-4",
+    "child": "guides/acquisition/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "sim-state",
+    "child": "guides/acquisition/sim-state.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "camera-example",
+    "child": "guides/acquisition/camera-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "3c2800ce574b501703bb3ea0911d7e3ab63340a696a705f4961d6489871a0886"
+    ]
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "verification-cases",
+    "child": "guides/acquisition/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/acquisition.html",
+    "anchor": "related-api",
+    "child": "guides/acquisition/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "overview-1",
+    "child": "guides/depth-map/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "overview-2",
+    "child": "guides/depth-map/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "overview-3",
+    "child": "guides/depth-map/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "overview-4",
+    "child": "guides/depth-map/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "grid-contract",
+    "child": "guides/depth-map/grid-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "grid-example",
+    "child": "guides/depth-map/grid-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "e701578c232944227f07efc41752b6f170d2fd5d63d4121ad77cc5b48b0f42f1"
+    ]
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "perspective",
+    "child": "guides/depth-map/perspective.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "verification-cases",
+    "child": "guides/depth-map/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/depth-map.html",
+    "anchor": "related-api",
+    "child": "guides/depth-map/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "overview-1",
+    "child": "guides/inference/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "overview-2",
+    "child": "guides/inference/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "overview-3",
+    "child": "guides/inference/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "overview-4",
+    "child": "guides/inference/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "model-contract",
+    "child": "guides/inference/model-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "output-coordinates",
+    "child": "guides/inference/output-coordinates.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "ai-fixture",
+    "child": "guides/inference/ai-fixture.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "a2faa39ccfaf66092220f0a6c2de50ee42c3d8606dcc3ee5d29d4bc681357cde"
+    ]
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "advanced-ai",
+    "child": "guides/inference/advanced-ai.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "verification-cases",
+    "child": "guides/inference/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/inference.html",
+    "anchor": "related-api",
+    "child": "guides/inference/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "overview-1",
+    "child": "guides/point-cloud/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "overview-2",
+    "child": "guides/point-cloud/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "overview-3",
+    "child": "guides/point-cloud/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "overview-4",
+    "child": "guides/point-cloud/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "point-contract",
+    "child": "guides/point-cloud/point-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "fit-details",
+    "child": "guides/point-cloud/fit-details.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "fit-options",
+    "child": "guides/point-cloud/fit-options.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "verification-cases",
+    "child": "guides/point-cloud/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/point-cloud.html",
+    "anchor": "related-api",
+    "child": "guides/point-cloud/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "overview-1",
+    "child": "guides/recognition/overview-1.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "overview-2",
+    "child": "guides/recognition/overview-2.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "overview-3",
+    "child": "guides/recognition/overview-3.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "overview-4",
+    "child": "guides/recognition/overview-4.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "read-contract",
+    "child": "guides/recognition/read-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "ocr-region",
+    "child": "guides/recognition/ocr-region.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "font-training",
+    "child": "guides/recognition/font-training.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "barcode-no-read",
+    "child": "guides/recognition/barcode-no-read.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "e854ae1c45a6b0a3f9a51d41679c5be8c988a723627aa2e3fe4e1af771fe5491"
+    ]
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "font-example",
+    "child": "guides/recognition/font-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "757ba02370d4b8594c9dfafd404f5cd0601294debf0275e1f540ffef15cd1f71"
+    ]
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "verification-cases",
+    "child": "guides/recognition/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/recognition.html",
+    "anchor": "related-api",
+    "child": "guides/recognition/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "python-pointcloud",
+    "child": "api/python/point-cloud/python-pointcloud.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "e701578c232944227f07efc41752b6f170d2fd5d63d4121ad77cc5b48b0f42f1"
+    ]
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "point-contract",
+    "child": "api/python/point-cloud/point-contract.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "fit-details",
+    "child": "api/python/point-cloud/fit-details.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "python-cloud-example",
+    "child": "api/python/point-cloud/python-cloud-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "df2e621371fed38e39906f0e26d1129f0e0854c3d92f8e0a43273ff1c20fcbeb"
+    ]
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "fit-options",
+    "child": "api/python/point-cloud/fit-options.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "verification-cases",
+    "child": "api/python/point-cloud/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "api/python/point-cloud.html",
+    "anchor": "related-api",
+    "child": "api/python/point-cloud/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "existing-2132336933701782354",
+    "child": "guides/color-processing/existing-2132336933701782354.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "existing-3576884134528031495",
+    "child": "guides/color-processing/existing-3576884134528031495.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "existing-5325653523530320153",
+    "child": "guides/color-processing/existing-5325653523530320153.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "existing-5634416791548174161",
+    "child": "guides/color-processing/existing-5634416791548174161.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "detail-color",
+    "child": "guides/color-processing/detail-color.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "fixture-example",
+    "child": "guides/color-processing/fixture-example.html",
+    "owner": "spatial",
+    "original_code_sha256": [
+      "ae04e570fd41182508b6b2ac641126d6276eed49fbf3eaec3b02dd913b90d16a"
+    ]
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "options-lifetime",
+    "child": "guides/color-processing/options-lifetime.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "fixture-coverage",
+    "child": "guides/color-processing/fixture-coverage.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "verification-cases",
+    "child": "guides/color-processing/verification-cases.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  },
+  {
+    "parent": "guides/color-processing.html",
+    "anchor": "related-api",
+    "child": "guides/color-processing/related-api.html",
+    "owner": "spatial",
+    "original_code_sha256": []
+  }
+]

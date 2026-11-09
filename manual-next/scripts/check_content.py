@@ -10,6 +10,8 @@ pages = json.loads((root / 'content/pages.json').read_text(encoding='utf-8'))
 receipt = json.loads((root / 'content/verification.json').read_text(encoding='utf-8'))
 catalog = json.loads((root / 'content/unified-catalog.json').read_text(encoding='utf-8'))
 errors = []
+if re.search(r'(?i)(?:/mnt/w/Source/\.zvision-tools|W:[/\\]Source[/\\]\.zvision-tools|C:[/\\]Users[/\\][^/\\\s<]+)',json.dumps([pages,catalog,receipt],ensure_ascii=False)):
+    errors.append('Private work path leaked into public structured content')
 paths = [p['path'] for p in pages]
 if len(paths) != len(set(paths)): errors.append('Duplicate content page paths')
 if len({e['id'] for e in catalog['entries']}) != len(catalog['entries']): errors.append('Duplicate API IDs')
@@ -40,6 +42,16 @@ for page in pages:
             if digest not in verified: errors.append(f'{page["path"]} block {i}: executable code has no passing receipt')
 for p in paths:
     if not (root / p).is_file(): errors.append('Missing generated page ' + p)
+call_receipt_path=root/'content/topic-call-verification.json'
+if call_receipt_path.exists():
+    calls=json.loads(call_receipt_path.read_text(encoding='utf-8'))
+    fixture=root/calls['fixture']
+    if not fixture.is_file() or hashlib.sha256(fixture.read_bytes()).hexdigest()!=calls['fixture_sha256']:errors.append('Call verification fixture differs from tested version')
+    by_path={p['path']:p for p in pages}
+    for case in calls['cases']:
+        page=by_path.get(case['page'])
+        hashes={hashlib.sha256(html.unescape(code).encode()).hexdigest()for code in re.findall(r'<pre><code[^>]*>(.*?)</code></pre>',page['body'],re.S)}if page else set()
+        if case['status']!='pass' or case['decoded_code_sha256']not in hashes:errors.append('Call fragment differs from passing receipt: '+case['page'])
 if receipt['source_revision'] != 'ce902e85c3405eb63df40c699ddbdf70ee1d03bd': errors.append('Unexpected SDK revision')
 for name, expected in receipt.get('downloads', {}).items():
     archive=root/'examples/downloads'/name

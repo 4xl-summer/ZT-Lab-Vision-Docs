@@ -21,3 +21,4 @@ jobs:
           node-version: '22'
       - run: node manual-next/scripts/validate.cjs
       - run: python3 manual-next/scripts/check_content.py
+      - run: python3 manual-next/scripts/check_topics.py

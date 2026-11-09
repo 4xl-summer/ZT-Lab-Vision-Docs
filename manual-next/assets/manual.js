@@ -42,63 +42,52 @@
     return {id, text: h.textContent.trim(), level: h.tagName};
   }).filter(h => h.text);
 
+  const byPath = new Map(pages.map(p => [p.path,p]));
+  const childPages = new Map();
+  for (const p of pages) if (p.parent) { if (!childPages.has(p.parent)) childPages.set(p.parent,[]); childPages.get(p.parent).push(p); }
+  for(const children of childPages.values())children.sort((a,b)=>(a.topic_order??99999)-(b.topic_order??99999));
+  const lineage = new Set([current]);
+  for (let p=byPath.get(current), guard=0; p?.parent && guard++<12; p=byPath.get(p.parent)) lineage.add(p.parent);
   const nav = document.getElementById('site-nav');
   if (nav) {
-    const groups = new Map();
-    const references = new Map();
+    const groups = new Map(), references = new Map();
     for (const page of pages) {
-      if (!page || !page.path || !page.title) continue;
+      if (!page?.path || !page.title || page.parent) continue;
       const lang = page.path.startsWith('reference/') ? languageOfPath(page.path) : '';
-      if (lang) {
-        if (!references.has(lang)) references.set(lang, []);
-        references.get(lang).push(page);
+      const map = lang ? references : groups, key = lang || page.group || '기타';
+      if (!map.has(key)) map.set(key,[]); map.get(key).push(page);
+    }
+    const linkFor = page => {
+      const link=make('a','nav-a'+(page.path===current?' active':''),page.nav_label || page.title);
+      link.href=href(page.path); if(page.path===current)link.setAttribute('aria-current','page'); return link;
+    };
+    const appendPage=(parent,page)=>{
+      const kids=childPages.get(page.path)||[];
+      if(kids.length){
+        const detail=make('details','nav-topic-parent');detail.open=lineage.has(page.path);
+        const summary=make('summary','nav-parent-summary');summary.append(linkFor(page));detail.append(summary);
+        const content=make('div','nav-topic-children');
+        let rendered=false;
+        const renderChildren=()=>{if(rendered)return;rendered=true;for(const child of kids)appendPage(content,child);};
+        if(detail.open)renderChildren();
+        detail.addEventListener('toggle',()=>{if(detail.open)renderChildren();});
+        detail.append(content);parent.append(detail);
       } else {
-        const key = page.group || '기타';
-        if (!groups.has(key)) groups.set(key, []);
-        groups.get(key).push(page);
-      }
-    }
-    const appendPage = (parent, page) => {
-      const link = make('a', 'nav-a' + (page.path === current ? ' active' : ''), page.title);
-      link.href = href(page.path);
-      if (page.path === current) link.setAttribute('aria-current', 'page');
-      parent.append(link);
-      if (page.path === current && currentHeadings.length) {
-        const list = make('div', 'nav-toc');
-        list.setAttribute('aria-label', '이 페이지 목차');
-        for (const heading of currentHeadings) {
-          const item = make('a', 'nav-toc-link ' + heading.level.toLowerCase(), heading.text);
-          item.href = '#' + encodeURIComponent(heading.id);
-          list.append(item);
+        parent.append(linkFor(page));
+        // Leaf headings describe the same topic; peer topics always open actual files.
+        if(page.path===current && !page.topic_leaf && currentHeadings.length){
+          const list=make('div','nav-toc');list.setAttribute('aria-label','이 페이지 목차');
+          for(const h of currentHeadings){const item=make('a','nav-toc-link '+h.level.toLowerCase(),h.text);item.href='#'+encodeURIComponent(h.id);list.append(item);}parent.append(list);
         }
-        parent.append(list);
       }
     };
-    const appendGroup = (name, items) => {
-      const detail = make('details', 'nav-details');
-      detail.open = items.some(p => p.path === current);
-      const summary = make('summary', 'nav-summary', `${name} (${items.length})`);
-      const content = make('div', 'nav-group');
-      for (const p of items) appendPage(content, p);
-      detail.append(summary, content);
-      nav.append(detail);
+    const appendGroup=(target,name,items)=>{
+      const detail=make('details','nav-details');detail.open=items.some(p=>lineage.has(p.path));
+      detail.append(make('summary','nav-summary',`${name} (${items.length})`));const content=make('div','nav-group');
+      for(const p of items)appendPage(content,p);detail.append(content);target.append(detail);
     };
-    for (const [group, items] of groups) appendGroup(group, items);
-    if (references.size) {
-      const outer = make('details', 'nav-details nav-reference');
-      outer.open = [...references.values()].some(items => items.some(p => p.path === current));
-      outer.append(make('summary', 'nav-summary', '언어별 API 선언'));
-      for (const [lang, items] of references) {
-        const inner = make('details', 'nav-details nav-language');
-        inner.open = items.some(p => p.path === current);
-        inner.append(make('summary', 'nav-summary', `${languageLabel(lang)} (${items.length})`));
-        const content = make('div', 'nav-group');
-        for (const p of items) appendPage(content, p);
-        inner.append(content);
-        outer.append(inner);
-      }
-      nav.append(outer);
-    }
+    for(const [name,items]of groups)appendGroup(nav,name,items);
+    if(references.size){const outer=make('details','nav-details nav-reference');outer.open=[...references.values()].some(xs=>xs.some(p=>lineage.has(p.path)));outer.append(make('summary','nav-summary','언어별 API 참조'));for(const [lang,items]of references)appendGroup(outer,languageLabel(lang),items);nav.append(outer);}
   }
 
   const sidebar = document.querySelector('.sidebar');
@@ -166,6 +155,10 @@
     if (!location.hash) return;
     let id;
     try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
+    const redirects = document.getElementById('page-redirects');
+    if (redirects) {
+      try { const target=JSON.parse(redirects.textContent)[id]; if(target){location.replace(href(target));return;} } catch (_) {}
+    }
     let target = document.getElementById(id);
     if (!target) return;
     if (target.dataset.legacyTarget) target = document.getElementById(target.dataset.legacyTarget) || target;

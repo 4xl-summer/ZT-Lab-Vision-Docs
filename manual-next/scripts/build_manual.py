@@ -241,11 +241,30 @@ def render(page,index,by_page,report,version=''):
         if existing_ids.count(ident)>1: report['duplicate_ids'].append({'path':path,'id':ident})
     for fragment in re.findall(r'href\s*=\s*[\"\']#([^\"\']+)[\"\']',body,re.I):
         if fragment not in existing_ids: report['unresolved_local_fragments'].append({'path':path,'fragment':fragment})
-    body+=verification(page)+related(page,index,by_page,report)
+    body='<div class="topic-content" data-topic-primary="true">'+body+'</div>'
+    parent=page.get('parent')
+    if parent:
+        body='<p class="topic-context"><a href="'+H(relurl(path,parent),quote=True)+'">상위 목차로 돌아가기</a></p>'+body
+    appendix=verification(page)+related(page,index,by_page,report)
+    # A leaf may itself be the original verification/API topic. Its source
+    # anchor keeps its address; generated appendices receive distinct IDs.
+    used=set(re.findall(r'\bid=["\']([^"\']+)',body))
+    def appendix_id(match):
+        original=match[1];candidate=original
+        while candidate in used:candidate='appendix-'+candidate
+        used.add(candidate)
+        return 'id="'+H(candidate,quote=True)+'"'
+    appendix=re.sub(r'\bid="([^"]+)"',appendix_id,appendix)
+    body+=appendix
+    if page.get('previous_topic') or page.get('next_topic'):
+        body+='<nav class="topic-pager" aria-label="소주제 순서">'
+        for key,label in [('previous_topic','이전 소주제'),('next_topic','다음 소주제')]:
+            if page.get(key):body+='<a href="'+H(relurl(path,page[key]['path']),quote=True)+'">'+label+' · '+H(page[key]['title'])+'</a>'
+        body+='</nav>'
     return '''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="{root}"><meta name="manual-path" content="{path}"><meta name="description" content="{description}"><title>{title} · ZVision Manual</title><link rel="stylesheet" href="{root}assets/manual.css"><link rel="stylesheet" href="{root}assets/manual-extra.css"><script defer src="{root}assets/manual-data.js"></script><script defer src="{root}assets/manual.js"></script></head>
 <body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="{root}index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav></aside><div class="workspace"><header class="topbar"><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header><main id="main" class="main"><div class="crumb"><a href="{root}index.html">매뉴얼 홈</a> / {group} / <b>{title}</b></div><header class="page-head"><h1>{title}</h1><p class="lede">{description}</p></header><article class="doc">{body}</article><footer class="footer">ZVision 기술 매뉴얼 · <a href="{root}index.html">매뉴얼 홈</a></footer></main></div></div><dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="API, 알고리즘, 개념 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>
-'''.format(root=H(root,quote=True),path=H(path,quote=True),title=H(title),description=H(description,quote=True),group=H(page.get('group') or '문서'),body=body).replace('assets/manual.css"','assets/manual.css?v='+version+'"').replace('assets/manual-extra.css"','assets/manual-extra.css?v='+version+'"').replace('assets/manual-data.js"','assets/manual-data.js?v='+version+'"').replace('assets/manual.js"','assets/manual.js?v='+version+'"')
+'''.format(root=H(root,quote=True),path=H(path,quote=True),title=H(title),description=H(description,quote=True),group=H(page.get('group') or '문서'),body=body).replace('assets/manual.css"','assets/manual.css?v='+version+'"').replace('assets/manual-extra.css"','assets/manual-extra.css?v='+version+'"').replace('assets/manual-data.js"','assets/manual-data.js?v='+version+'"').replace('assets/manual.js"','assets/manual.js?v='+version+'"').replace('</body>','<script type="application/json" id="page-redirects">'+json.dumps(page.get('topic_redirects',{}),ensure_ascii=False).replace('</','<\\/')+'</script></body>')
 
 def nav_records(pages,nav):
     rows=[]; seen=set()
@@ -281,6 +300,21 @@ def main():
         catalog=read_json(content/'unified-catalog.json')
         nav=read_json(content/'navigation.json')
         baseline=None
+    redirects_file=content/'topic-redirects.json'
+    for page in pages.values():
+        for key in ('topic_redirects','previous_topic','next_topic'):page.pop(key,None)
+    if redirects_file.exists():
+        for old,target in read_json(redirects_file).items():
+            origin,sep,anchor=old.partition('#')
+            if sep and origin in pages:pages[origin].setdefault('topic_redirects',{})[anchor]=target
+    families=defaultdict(list)
+    for page in pages.values():
+        if page.get('parent'):families[page['parent']].append(page)
+    for children in families.values():
+        children.sort(key=lambda p:p.get('topic_order',99999))
+        for i,p in enumerate(children):
+            if i:p['previous_topic']={'path':children[i-1]['path'],'title':children[i-1].get('nav_label')or children[i-1]['title']}
+            if i+1<len(children):p['next_topic']={'path':children[i+1]['path'],'title':children[i+1].get('nav_label')or children[i+1]['title']}
     rows=nav_records(pages,nav); index,by_page=build_index(catalog)
     version_hash=hashlib.sha256(json.dumps([pages,catalog],ensure_ascii=False,sort_keys=True).encode())
     version_hash.update(Path(__file__).read_bytes())
@@ -305,7 +339,7 @@ def main():
                 {'members':[{k:m.get(k) for k in ('name','href')} | {'kind':api_kind(e,m)} | search_meta(m) for m in e.get('members',[])]}
                 for e in catalog.get('entries',[])]
     (assets/'api-search.json').write_text(json.dumps(api_search,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
-    data=json.dumps({'version':version,'pages':[{'group':r[0],'path':r[1],'title':r[2],'description':r[3]} for r in rows], 'apis':[], 'apiIndex':'assets/api-search.json'},ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
+    data=json.dumps({'version':version,'pages':[{'group':r[0],'path':r[1],'title':r[2],'description':r[3]}|{k:pages[r[1]][k]for k in ('parent','topic_leaf','nav_label','topic_order')if k in pages[r[1]]} for r in rows], 'apis':[], 'apiIndex':'assets/api-search.json'},ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
     (assets/'manual-data.js').write_text('window.MANUAL_DATA = '+data+';\n',encoding='utf-8')
     write_json(content/'pages.json',list(pages.values()))
     write_json(content/'unified-catalog.json',catalog)

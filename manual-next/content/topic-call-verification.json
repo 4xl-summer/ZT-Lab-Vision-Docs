@@ -1,0 +1,57 @@
+{
+  "source_revision": "ce902e85c3405eb63df40c699ddbdf70ee1d03bd",
+  "environment": "Ubuntu 24.04 / WSL / CPython 3.14.0",
+  "fixture": "examples/verify-topic-calls.py",
+  "fixture_sha256": "b414111da2e2bebd7b858aa52d1c99a1a5787feb7475f9b31fbf5d21a59f2335",
+  "scope": "Documented call fragments executed with synthetic input; hardware and production accuracy excluded.",
+  "cases": [
+    {
+      "page": "reference/python/topics/depthmap-median-7ecbe3a6783a.html",
+      "decoded_code_sha256": "1d1e5d96abbea35fd0acc33993518c4d17f8c6bd725265be40f201da1b2a99fa",
+      "utc": "2026-11-08T23:54:00.440979+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/depthmap-roi-9958610bb058.html",
+      "decoded_code_sha256": "e5ffc0e6d9aec0cf7346ec82f5b38c3d702c3fa57285ffbda0a39a568cb43e51",
+      "utc": "2026-11-08T23:54:00.443441+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/pointcloud-fit-plane-1cfa97fa51de.html",
+      "decoded_code_sha256": "738ef6a8143dd3572f4be17f69117e8456b526efaaa8ab8445b0f7105ff158c9",
+      "utc": "2026-11-08T23:54:00.444811+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/zimage-ssim-d475fdf0d3fb.html",
+      "decoded_code_sha256": "c50e1db16e68c30ef5b35bfd43944129bcf15144a21bc672d36c1a6dc65d0f4d",
+      "utc": "2026-11-08T23:54:00.445855+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/zimage-polar-unwrap-b722c107f5f3.html",
+      "decoded_code_sha256": "64dc9396ef016c473d0a715bc46e524d70bb86191700e2ebc69bc441755c49ab",
+      "utc": "2026-11-08T23:54:00.448108+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/zimage-gaussian-with-care-mask-57e986adf03e.html",
+      "decoded_code_sha256": "1df141089d84860608583d78a22e9809f10cf5e29d3df3b2ccbb1f4209de1da6",
+      "utc": "2026-11-08T23:54:00.450449+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/zimage-polar-rewrap-d9c40f6ed953.html",
+      "decoded_code_sha256": "e2ab27808714eb6fa875e6f23b9f33a377b20a54a7136e0220c979d4e6188bb3",
+      "utc": "2026-11-08T23:54:00.452346+00:00",
+      "status": "pass"
+    },
+    {
+      "page": "reference/python/topics/zimage-convolve-grayf64-98be23b8ccf3.html",
+      "decoded_code_sha256": "1bf5a1e7ec3fbbda0febacd013ec83d163aa1e1d53ded607300d85f9cb68c87d",
+      "utc": "2026-11-08T23:54:00.468245+00:00",
+      "status": "pass"
+    }
+  ]
+}

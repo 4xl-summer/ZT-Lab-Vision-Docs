@@ -1,5 +1,17 @@
 /* Additive styles for manual navigation, search and accessible printing. */
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.nav-topic-parent { margin: 2px 0; }
+.page-head h1, .crumb, .nav-a, .nav-parent-summary { overflow-wrap:anywhere; }
+.nav-parent-summary { cursor:pointer; color:var(--muted); }
+.nav-parent-summary .nav-a { display:inline-block; max-width:calc(100% - 20px); vertical-align:middle; }
+.nav-topic-children { border-left:1px solid var(--line); margin:3px 0 10px 17px; padding-left:7px; }
+.nav-topic-children .nav-a { padding-top:6px; padding-bottom:6px; }
+.topic-cards { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+.topic-card { display:grid; grid-template-columns:32px 1fr; gap:5px 12px; padding:18px; background:var(--paper); border:1px solid var(--line); border-radius:9px; }
+.topic-card>span:last-child { grid-column:2; color:var(--muted); }
+.topic-number { color:var(--accent); font-weight:800; }
+.topic-context { font-size:14px; }
+.topic-pager { display:flex; justify-content:space-between; gap:20px; margin-top:32px; padding-top:18px; border-top:1px solid var(--line); }
 .nav-details { margin: 8px 0; }
 .nav-summary { cursor: pointer; padding: 8px 11px; color: var(--muted); font-weight: 700; overflow-wrap: anywhere; }
 .nav-summary:hover { background: var(--chip); color: var(--ink); border-radius: 7px; }
