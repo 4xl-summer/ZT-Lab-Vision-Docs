@@ -1,6 +1,7 @@
 /* Additive styles for manual navigation, search and accessible printing. */
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .nav-actions { display:flex; gap:8px; padding:0 10px 14px; }
+.sidebar { overflow-anchor:none; }
 .nav-actions button { flex:1; padding:7px 8px; border:1px solid var(--line); border-radius:6px; background:var(--chip); color:var(--ink); font-size:13px; line-height:1.5; white-space:nowrap; }
 .nav-actions button:hover { border-color:var(--accent); color:var(--accent); }
 .nav-topic-parent { margin: 2px 0; }

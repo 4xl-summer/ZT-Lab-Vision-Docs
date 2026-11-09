@@ -23,3 +23,5 @@ jobs:
       - run: python3 manual-next/scripts/check_content.py
       - run: python3 manual-next/scripts/check_topics.py
       - run: python3 manual-next/scripts/check_visuals.py
+      - run: node --check manual-next/assets/manual.js && node --check manual-next/assets/manual-navigation.js && node --check manual-next/assets/measurement-lab.js
+      - run: python3 manual-next/scripts/check_navigation.py

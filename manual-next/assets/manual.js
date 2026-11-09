@@ -5,11 +5,12 @@
   let apis = Array.isArray(data.apis) ? data.apis : [];
   let apiLoadPromise = null;
   let apiLoadState = data.apiIndex ? 'idle' : 'ready';
-  const root = document.querySelector('meta[name="manual-root"]')?.content || './';
-  const current = document.querySelector('meta[name="manual-path"]')?.content || 'index.html';
+  const manualBase = new URL(document.querySelector('meta[name="manual-root"]')?.content || './', document.baseURI);
+  const root = manualBase.href;
+  let current = document.querySelector('meta[name="manual-path"]')?.content || 'index.html';
   const normal = value => String(value ?? '').normalize('NFKC').toLocaleLowerCase();
   const kindName = value => ({method:'메서드',classmethod:'클래스 메서드',staticmethod:'정적 메서드',property:'프로퍼티',attribute:'속성',field:'필드',enum_member:'열거값',constructor:'생성자',class:'클래스',struct:'구조체',enum:'열거형',function:'함수',rustdoc:'Rust 선언',rustdoc_heading:'Rust 멤버',other:'기타',constant:'상수',trait:'트레이트',type_alias:'타입 별칭',associated_type:'연관 타입',operator:'연산자',interface:'인터페이스',delegate:'델리게이트',union:'공용체'}[normal(value)] || value);
-  const href = path => root + String(path || '');
+  const href = path => new URL(String(path || ''), root).href;
   const make = (tag, cls, text) => {
     const el = document.createElement(tag);
     if (cls) el.className = cls;
@@ -26,10 +27,10 @@
     return s === 'c#' || s === 'cs' || s === '.net' ? 'csharp' : s;
   };
 
-  // Link to existing section IDs when a heading is contained in a section.
+  function collectHeadings() {
   const headings = [...document.querySelectorAll('.doc h2, .doc h3')];
   let autoId = 0;
-  const currentHeadings = headings.map(h => {
+  return headings.map(h => {
     let id = h.id;
     if (!id) {
       const parent = h.closest('section[id]');
@@ -42,6 +43,9 @@
     return {id, text: h.textContent.trim(), level: h.tagName};
   }).filter(h => h.text);
 
+  }
+  let currentHeadings = collectHeadings();
+
   const byPath = new Map(pages.map(p => [p.path,p]));
   const childPages = new Map();
   for (const p of pages) if (p.parent) { if (!childPages.has(p.parent)) childPages.set(p.parent,[]); childPages.get(p.parent).push(p); }
@@ -49,7 +53,13 @@
   const lineage = new Set([current]);
   for (let p=byPath.get(current), guard=0; p?.parent && guard++<12; p=byPath.get(p.parent)) lineage.add(p.parent);
   const nav = document.getElementById('site-nav');
+  let captureNavigation = () => null, restoreNavigation = () => {}, updatePage = () => {};
   if (nav) {
+    const panel = nav.closest('.sidebar');
+    const stateKey = 'zvision-nav-state:' + manualBase.pathname;
+    const keyedDetails = new Map(), pageDetails = new Map(), pageLinks = new Map();
+    nav.dataset.instance = globalThis.crypto?.randomUUID?.() || String(Date.now()) + Math.random();
+    let restoring = false, restoreSerial = 0, saveFrame = 0;
     const expandKey = 'zvision-nav-expand-mode';
     const renderers = new WeakMap();
     const actions = make('div', 'nav-actions');
@@ -67,12 +77,14 @@
     }
     const linkFor = page => {
       const link=make('a','nav-a'+(page.path===current?' active':''),page.nav_label || page.title);
+      pageLinks.set(page.path,link); link.dataset.manualPath=page.path;
       link.href=href(page.path); if(page.path===current)link.setAttribute('aria-current','page'); return link;
     };
     const appendPage=(parent,page)=>{
       const kids=childPages.get(page.path)||[];
       if(kids.length){
         const detail=make('details','nav-topic-parent');detail.open=lineage.has(page.path);
+        detail.dataset.navKey='page:'+page.path; keyedDetails.set(detail.dataset.navKey,detail); pageDetails.set(page.path,detail);
         const summary=make('summary','nav-parent-summary');summary.append(linkFor(page));detail.append(summary);
         const content=make('div','nav-topic-children');
         let rendered=false;
@@ -92,11 +104,12 @@
     };
     const appendGroup=(target,name,items)=>{
       const detail=make('details','nav-details');detail.open=items.some(p=>lineage.has(p.path));
+      detail.dataset.navKey='group:'+name+':'+items[0].path;keyedDetails.set(detail.dataset.navKey,detail);
       detail.append(make('summary','nav-summary',`${name} (${items.length})`));const content=make('div','nav-group');
       for(const p of items)appendPage(content,p);detail.append(content);target.append(detail);
     };
     for(const [name,items]of groups)appendGroup(nav,name,items);
-    if(references.size){const outer=make('details','nav-details nav-reference');outer.open=[...references.values()].some(xs=>xs.some(p=>lineage.has(p.path)));outer.append(make('summary','nav-summary','언어별 API 참조'));for(const [lang,items]of references)appendGroup(outer,languageLabel(lang),items);nav.append(outer);}
+    if(references.size){const outer=make('details','nav-details nav-reference');outer.dataset.navKey='reference:all';keyedDetails.set(outer.dataset.navKey,outer);outer.open=[...references.values()].some(xs=>xs.some(p=>lineage.has(p.path)));outer.append(make('summary','nav-summary','언어별 API 참조'));for(const [lang,items]of references)appendGroup(outer,languageLabel(lang),items);nav.append(outer);}
     const openEveryLevel = () => {
       const pending = [nav];
       while (pending.length) {
@@ -108,16 +121,90 @@
         for (const child of node.children) pending.push(child);
       }
     };
+    const ensurePage = (path, depth = 0) => {
+      if (depth > 20) return;
+      const page = byPath.get(path);
+      if (page?.parent) {
+        ensurePage(page.parent, depth + 1);
+        const parent = pageDetails.get(page.parent);
+        if (parent) renderers.get(parent)?.();
+      }
+    };
+    captureNavigation = () => ({
+      expanded: [...keyedDetails].filter(([,node]) => node.open).map(([key]) => key),
+      scrollTop: panel?.scrollTop || 0
+    });
+    const saveNavigation = () => {
+      if (restoring) return;
+      try { sessionStorage.setItem(stateKey, JSON.stringify(captureNavigation())); } catch (_) {}
+    };
+    const queueSave = () => {
+      if (restoring) return;
+      cancelAnimationFrame(saveFrame);
+      saveFrame = requestAnimationFrame(saveNavigation);
+    };
+    restoreNavigation = snapshot => {
+      if (!snapshot || !Array.isArray(snapshot.expanded)) return;
+      const serial = ++restoreSerial; restoring = true;
+      const expanded = new Set(snapshot.expanded.filter(key => typeof key === 'string'));
+      for (const key of expanded) if (key.startsWith('page:')) ensurePage(key.slice(5));
+      // Materialize open descendants now. Waiting for native toggle events
+      // would insert rows after scroll restoration and move the scroll anchor.
+      for (const key of expanded) {
+        const node = keyedDetails.get(key);
+        if (node) renderers.get(node)?.();
+      }
+      for (const [key,node] of keyedDetails) node.open = expanded.has(key);
+      const top = Number.isFinite(snapshot.scrollTop) ? Math.max(0,snapshot.scrollTop) : 0;
+      if (panel) panel.scrollTop = top;
+      requestAnimationFrame(() => {
+        if (serial !== restoreSerial) return;
+        if (panel) panel.scrollTop = top;
+        requestAnimationFrame(() => { if (serial === restoreSerial) { restoring = false; saveNavigation(); } });
+      });
+    };
+    updatePage = path => {
+      const top = panel?.scrollTop || 0;
+      current = path; currentHeadings = collectHeadings(); ensurePage(path);
+      for (const [key,link] of pageLinks) {
+        link.classList.toggle('active', key === path);
+        if (key === path) link.setAttribute('aria-current','page');
+        else link.removeAttribute('aria-current');
+      }
+      nav.querySelectorAll('.nav-toc').forEach(node => node.remove());
+      const page = byPath.get(path), link = pageLinks.get(path);
+      if (page && link && !page.topic_leaf && !childPages.get(path)?.length && currentHeadings.length) {
+        const list = make('div','nav-toc'); list.setAttribute('aria-label','이 페이지 목차');
+        for (const h of currentHeadings) {
+          const item = make('a','nav-toc-link '+h.level.toLowerCase(),h.text);
+          item.href = href(path)+'#'+encodeURIComponent(h.id); list.append(item);
+        }
+        link.after(list);
+      }
+      if (panel) panel.scrollTop = top;
+    };
+    nav.addEventListener('toggle', queueSave, true);
+    panel?.addEventListener('scroll', queueSave, {passive:true});
+    window.addEventListener('pagehide', saveNavigation);
+    document.addEventListener('zvision:before-page-change', saveNavigation);
     expandAll.addEventListener('click', () => {
       openEveryLevel();
       try { sessionStorage.setItem(expandKey, 'all'); } catch (_) {}
+      saveNavigation();
     });
     collapseAll.addEventListener('click', () => {
       nav.querySelectorAll('details').forEach(detail => { detail.open = false; });
       try { sessionStorage.removeItem(expandKey); } catch (_) {}
+      saveNavigation();
     });
-    try { if (sessionStorage.getItem(expandKey) === 'all') openEveryLevel(); } catch (_) {}
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(stateKey) || 'null');
+      if (saved && Array.isArray(saved.expanded)) restoreNavigation(saved);
+      else if (sessionStorage.getItem(expandKey) === 'all') openEveryLevel();
+    } catch (_) {}
   }
+
+  window.ZVisionManualShell = {captureNavigation, restoreNavigation, updatePage};
 
   const sidebar = document.querySelector('.sidebar');
   const menu = document.getElementById('menu-toggle');

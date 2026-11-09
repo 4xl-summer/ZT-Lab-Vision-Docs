@@ -5,10 +5,10 @@
   },
   "minimum_primary_height_px": 700,
   "scope": "Functional teaching topics, SDK callable reference pages and seven feature-specific photo examples. Retired collection and related API topics are excluded from navigation, search and layout coverage.",
-  "method": "Browser geometry at 1280×900. Reused 3,654 exact unchanged primary bodies under unchanged primary-content styling; remeasured all 56 changed or moved functional topics. Added styles affect navigation controls only; removed related API appendices were outside measured primary bodies.",
+  "method": "Reused all 3,710 exact unchanged primary bodies. Changed CSS is scoped to sidebar scroll anchoring; content styles are unchanged. Partial navigation, photo remounts and desktop/mobile overflow were checked separately in navigation-verification.json.",
   "stylesheets_sha256": {
     "assets/manual.css": "40b413cd179685ec4d0d8f917fdcab6b7a9da77e65eb7a7b22e7ded0400dee78",
-    "assets/manual-extra.css": "cce3222788377ad397eeaaba81f12a18d694b01429ce7e9b0d84ca83b332ca95",
+    "assets/manual-extra.css": "0430d0f218ab02890a255e13789ab3345543f787cf7399f70c48c2a668270ae3",
     "assets/manual-visuals.css": "eb81d2abdcdc777b44b12644b2aeb8d49e227465cedf6175e6d0aa44619323d4",
     "assets/measurement-lab.css": "39a87d547d68b718152607bd98c0b367acca5b29c831f1a2172e638460ca09b8"
   },

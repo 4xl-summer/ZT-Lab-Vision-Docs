@@ -119,7 +119,7 @@
     "assets/measurement/stage/coins-threshold.png": "d842a065ccd0224880768e7ea55bea5e9518ec76c5e3f7b9dcf06cf106b191ec",
     "assets/measurement/stage/text-mask.png": "4d4b29dcdaf301c441d00e7abb811da0a52c3b05fd398a68072eed04adba6b9b",
     "assets/measurement-lab.css": "39a87d547d68b718152607bd98c0b367acca5b29c831f1a2172e638460ca09b8",
-    "assets/measurement-lab.js": "df6772c71650e4993f72ed62a1cfffe4089e2547b86c509e0d802497c637eec6",
+    "assets/measurement-lab.js": "0cd66ec85d31d7fc4a9d0b3403c3e64403a5a795ba074a0492dc3598b3994898",
     "assets/visuals/drawio/calibration.drawio": "20bc9136b79085db58766c8efda01ef9d0e6ffd40314292e435967e6190c9879",
     "assets/visuals/drawio/calibration.svg": "aac0eef1487ed870277235fcc54fb82420f92db178e41446abb1004a10ac9015",
     "assets/visuals/drawio/caliper-flow.drawio": "92b005d4239f822c24e9f1bbb509c7fb3051a62dfc8aabe635c76c579a7b81d8",
@@ -175,10 +175,11 @@
     "assets/visuals/tables/deployment-check.html.txt": "5eb34d20cbee2b0690fc6f52ed33b7f53609bf60f7c9ae2bcd2e7172fdf8269f",
     "assets/visuals/tables/pixel-formats.html.txt": "ebeb249053eb4ea4611fa12e4de05c2c02d16529657cff4bf5f9b9f887340a6b",
     "examples/generate-visual-plots.py": "15ce14220b9dcb41468a19e6e6c97f3d84fbc41aa79df086c7b992403895390f",
-    "assets/manual.js": "5460be270fcb3302dd33b798fbc96805b1aea446583350d3a0bf4af22d76f87e",
+    "assets/manual.js": "06702043c6293d4f8fa99e361f2ebb9fec8c17b6d1bd77a0b682648a6e4e2bdf",
     "content/page-moves.json": "a786326993522d2a461b2f368373cf573086e9300c3dcab819b1fa5ae6f77862",
     "content/feature-photo-examples.json": "aa155cca9938289b5ee419d24395f1f8f6db2bb401bd79a098e693c7e46a0491",
-    "content/retired-topics.json": "5eaa36b25fb1a5a006de8d670a495490a3568f3aa854e387f57b259c017c0a2e"
+    "content/retired-topics.json": "5eaa36b25fb1a5a006de8d670a495490a3568f3aa854e387f57b259c017c0a2e",
+    "assets/manual-navigation.js": "27a1bbc7fdaf02c99638228b9910af5eb92b2e581e7cfaee96ca43f8408cbbe3"
   },
   "refinement": {
     "recorded_utc": "2026-11-09T06:35:26.909076+00:00",
@@ -264,5 +265,11 @@
       "pixel_pass": true
     },
     "scope": "Existing SDK source/output measurements are unchanged. This integration verifies functional placement, fixed-case rendering, navigation and viewer controls; it adds no production or hardware accuracy claims. Previous agent-desktop screen captures remain archived run evidence and are not embedded in the functional example pages."
+  },
+  "partial_navigation": {
+    "receipt": "content/navigation-verification.json",
+    "photo_examples": 7,
+    "displayed_values_checked": 37,
+    "measurement_data_unchanged": true
   }
 }

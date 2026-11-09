@@ -1,11 +1,28 @@
 (() => {
   'use strict';
-  const app = document.getElementById('measurement-lab');
-  if (!app) return;
+  let mounted = null;
+  function unmount() {
+    if (!mounted) return;
+    const previous = mounted;
+    mounted = null;
+    previous.dispose();
+  }
+  function mount() {
+    const app = document.getElementById('measurement-lab');
+    if (mounted && mounted.app === app) return;
+    unmount();
+    if (!app) return;
+    const lifecycle = new AbortController();
+    const downloads = new Map();
+    let disposed = false;
+    let pendingImage = null;
+    let caseEvents = null;
+    let layerEvents = null;
+    const listen = (target, type, handler) => target.addEventListener(type, handler, {signal: lifecycle.signal});
   // Inline examples bind to one recorded case and must ignore navigation hashes.
   const fixedCase = app.hasAttribute('data-case-id');
   const requestedCaseId = fixedCase ? app.getAttribute('data-case-id').trim() : null;
-  const $ = (id) => document.getElementById(id);
+  const $ = (id) => app.querySelector(`[id="${id}"]`);
   const status = $('mlab-status'), workspace = $('mlab-workspace');
   const canvas = $('mlab-canvas'), context = canvas.getContext('2d');
   const stage = $('mlab-stage'), shell = $('mlab-image-shell'), pixel = $('mlab-pixel');
@@ -14,6 +31,32 @@
   const manualRoot = new URL(rootMeta?.content || '../', document.baseURI);
   const assetRoot = new URL('assets/measurement/', manualRoot);
   const state = { data: null, cases: [], current: null, image: null, pixels: null, layers: [], layer: 0, zoom: null, cursor: null, request: 0, overlayAllowed: true };
+  function cancelImage() {
+    if (!pendingImage) return;
+    pendingImage.onload = null;
+    pendingImage.onerror = null;
+    pendingImage.src = '';
+    pendingImage = null;
+  }
+  mounted = {app, dispose() {
+    disposed = true;
+    state.request++;
+    lifecycle.abort();
+    caseEvents?.abort();
+    layerEvents?.abort();
+    cancelImage();
+    for (const [url, timer] of downloads) {
+      clearTimeout(timer);
+      URL.revokeObjectURL(url);
+    }
+    downloads.clear();
+    state.image = null;
+    state.pixels = null;
+    state.data = null;
+    state.cases = [];
+    state.current = null;
+    state.layers = [];
+  }};
   const finite = (value) => typeof value === 'number' && Number.isFinite(value);
   const text = (value, fallback = '—') => value === null || value === undefined || value === '' ? fallback : String(value);
   const categoryNames = {blob:'연결 성분',circle:'원 측정',profile:'프로파일',color:'색상',inspection:'검사 차분',statistics:'밝기 통계'};
@@ -52,12 +95,15 @@
     workspace.hidden = true;
   }
   function initCases() {
+    caseEvents?.abort();
+    caseEvents = null;
     const holder = $('mlab-case-list');
     const count = $('mlab-case-count');
     if (count) count.textContent = `${state.cases.length}개`;
     if (!holder) return;
     clear(holder);
     if (fixedCase) return;
+    caseEvents = new AbortController();
     state.cases.forEach((item, index) => {
       const button = element('button', 'mlab-case-button');
       button.type = 'button';
@@ -66,7 +112,7 @@
       const labels = element('span', 'mlab-case-text');
       labels.append(element('strong', '', text(item.title, '계측 예제')), element('small', '', categoryLabel(item.category)));
       button.append(labels);
-      button.addEventListener('click', () => selectCase(index, true));
+      button.addEventListener('click', () => selectCase(index, true), {signal: caseEvents.signal});
       holder.append(button);
     });
   }
@@ -97,6 +143,8 @@
     initCases(); buildLayers(); renderDetails(); loadLayer();
   }
   function buildLayers() {
+    layerEvents?.abort();
+    layerEvents = new AbortController();
     const item = state.current;
     const layers = [{label: '원본', path: item.image?.original, description: '입력 사진'}];
     const seen = new Set(layers.map((v) => v.path).filter(Boolean));
@@ -121,11 +169,12 @@
         state.layer = index; state.cursor = null; crosshair.hidden = true; pixel.textContent = '좌표 — · 픽셀 —';
         [...holder.children].forEach((v, i) => v.setAttribute('aria-pressed', i === index ? 'true' : 'false'));
         loadLayer();
-      });
+      }, {signal: layerEvents.signal});
       holder.append(button);
     });
   }
   function loadLayer() {
+    cancelImage();
     const layer = state.layers[state.layer];
     const url = layer && localUrl(layer.path, assetRoot);
     const ticket = ++state.request;
@@ -134,8 +183,10 @@
     canvas.width = 1; canvas.height = 1;
     if (!url) { imageError.textContent = '이 단계의 이미지 경로를 확인할 수 없습니다.'; imageError.hidden = false; return; }
     const img = new Image();
+    pendingImage = img;
     img.onload = () => {
-      if (ticket !== state.request) return;
+      if (disposed || ticket !== state.request) return;
+      pendingImage = null;
       state.image = img;
       const expected = state.current.image || {};
       state.overlayAllowed = !(finite(expected.width) && finite(expected.height)) || (expected.width === img.naturalWidth && expected.height === img.naturalHeight);
@@ -154,7 +205,8 @@
       draw(); resizeImage();
     };
     img.onerror = () => {
-      if (ticket !== state.request) return;
+      if (disposed || ticket !== state.request) return;
+      pendingImage = null;
       state.image = null; state.pixels = null;
       canvas.width = 1; canvas.height = 1;
       imageError.textContent = '이미지를 불러오지 못했습니다. 예제 데이터와 사진 경로를 확인하세요.';
@@ -254,17 +306,17 @@
     pixel.textContent = `x ${x}, y ${y} px · ${value}`;
     if (announce) pixel.setAttribute('aria-live', 'polite');
   }
-  canvas.addEventListener('pointermove', (event) => {
+  listen(canvas, 'pointermove', (event) => {
     pixel.setAttribute('aria-live', 'off');
     const rect = canvas.getBoundingClientRect();
     inspect((event.clientX - rect.left) * canvas.width / rect.width, (event.clientY - rect.top) * canvas.height / rect.height);
   });
-  canvas.addEventListener('click', (event) => {
+  listen(canvas, 'click', (event) => {
     const rect = canvas.getBoundingClientRect();
     inspect((event.clientX - rect.left) * canvas.width / rect.width, (event.clientY - rect.top) * canvas.height / rect.height, true);
     stage.focus({preventScroll:true});
   });
-  stage.addEventListener('keydown', (event) => {
+  listen(stage, 'keydown', (event) => {
     if (event.key === '+' || event.key === '=') { event.preventDefault(); changeZoom(1.25); return; }
     if (event.key === '-') { event.preventDefault(); changeZoom(.8); return; }
     const delta = {ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[event.key];
@@ -274,11 +326,11 @@
       inspect(current.x + delta[0] * step, current.y + delta[1] * step, true);
     }
   });
-  $('mlab-overlay').addEventListener('change', draw);
-  $('mlab-zoom-in').addEventListener('click', () => changeZoom(1.25));
-  $('mlab-zoom-out').addEventListener('click', () => changeZoom(.8));
-  $('mlab-zoom-fit').addEventListener('click', () => { state.zoom = null; resizeImage(); });
-  window.addEventListener('resize', () => { if (state.zoom === null) resizeImage(); });
+  listen($('mlab-overlay'), 'change', draw);
+  listen($('mlab-zoom-in'), 'click', () => changeZoom(1.25));
+  listen($('mlab-zoom-out'), 'click', () => changeZoom(.8));
+  listen($('mlab-zoom-fit'), 'click', () => { state.zoom = null; resizeImage(); });
+  listen(window, 'resize', () => { if (state.zoom === null) resizeImage(); });
   function geometryRows(item) {
     const list = [];
     if (item.roi && [item.roi.x,item.roi.y,item.roi.width,item.roi.height].every(finite)) {
@@ -353,12 +405,14 @@
     const warnings=$('mlab-warnings');clear(warnings);
     array(item.warnings).forEach((warning)=>warnings.append(element('p','',`※ ${text(warning)}`)));
   }
-  $('mlab-download').addEventListener('click', () => {
+  listen($('mlab-download'), 'click', () => {
     if(!state.current)return;
     const content={version:state.data.version,sdk_revision:state.data.sdk_revision,cases:[state.current]};
     const blob=new Blob([JSON.stringify(content,null,2)+'\n'],{type:'application/json;charset=utf-8'});
     const url=URL.createObjectURL(blob),a=element('a');a.href=url;
-    a.download=`measurement-${String(state.current.id || 'case').replace(/[^a-zA-Z0-9_-]/g,'-')}.json`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    a.download=`measurement-${String(state.current.id || 'case').replace(/[^a-zA-Z0-9_-]/g,'-')}.json`;document.body.append(a);a.click();a.remove();
+    const timer = setTimeout(() => { downloads.delete(url); URL.revokeObjectURL(url); }, 1000);
+    downloads.set(url, timer);
   });
   function caseIndexFromHash() {
     let id = '';
@@ -366,16 +420,17 @@
     const index = state.cases.findIndex((item) => item && String(item.id) === id);
     return index < 0 ? 0 : index;
   }
-  window.addEventListener('hashchange', () => {
+  listen(window, 'hashchange', () => {
     if (fixedCase || !state.cases.length) return;
     let id = '';
     try { id = decodeURIComponent(window.location.hash.slice(1)); } catch (_) { return; }
     const index = state.cases.findIndex((item) => item && String(item.id) === id);
     if (index >= 0 && state.cases[index] !== state.current) selectCase(index);
   });
-  fetch(new URL('measurements.json', assetRoot))
+  fetch(new URL('measurements.json', assetRoot), {signal: lifecycle.signal})
     .then((response) => { if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json(); })
     .then((data) => {
+      if (disposed) return;
       if(data?.version !== 1 || !Array.isArray(data.cases) || !data.cases.length)throw new Error('지원되는 예제 데이터가 없습니다.');
       state.data=data;
       if (fixedCase) {
@@ -390,5 +445,10 @@
       }
       status.hidden=true;workspace.hidden=false;selectCase(fixedCase ? 0 : caseIndexFromHash());
     })
-    .catch(() => showError('계측 예제 데이터를 불러오지 못했습니다. 문서를 제공하는 서버와 예제 데이터 경로를 확인하세요.'));
+    .catch((error) => {
+      if (!disposed && error?.name !== 'AbortError') showError('계측 예제 데이터를 불러오지 못했습니다. 문서를 제공하는 서버와 예제 데이터 경로를 확인하세요.');
+    });
+  }
+  window.ZVisionMeasurement = {mount, unmount};
+  mount();
 })();

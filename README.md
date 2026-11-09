@@ -17,6 +17,7 @@ node manual-next/scripts/validate.cjs
 python manual-next/scripts/check_content.py
 python manual-next/scripts/check_topics.py
 python manual-next/scripts/check_visuals.py
+python manual-next/scripts/check_navigation.py
 python -m http.server 8766 --bind 127.0.0.1
 ```
 
@@ -58,3 +59,9 @@ python manual-next/scripts/normalize_drawio.py
 그래프 생성은 위 SDK 환경과 WSL에서 Windows의 `C:/Windows/Fonts/malgun.ttf`를 사용하는 구성으로 검증했습니다. Canny·프로파일은 SDK로 계산하며 NCC·가우시안·FFT 등은 별도로 표시한 수학 설명 예입니다. 편집 SVG는 해당 파일을 직접 편집하고, HTML 표는 본문 레코드와 `assets/visuals/tables/*.html.txt`를 함께 수정합니다.
 
 다시 생성한 그림과 측정 결과는 화면·수치 검증 후 실행 기록과 해시를 갱신합니다. `check_visuals.py`는 기록과 달라진 자산 및 폐기한 공통 화살표 템플릿의 재사용을 거부합니다. 전체 모니터나 사용자의 다른 창을 촬영한 이미지 대신 agent-desktop으로 전용 측정 창만 캡처합니다.
+
+## 본문 전환과 목차 상태
+
+`assets/manual-navigation.js`는 같은 매뉴얼의 문서 링크를 선택하면 본문만 교체하고 실제 문서 주소를 방문 기록에 반영합니다. 목차 DOM과 개별 펼침·접힘 및 스크롤을 유지합니다. 같은 탭에서 새로고침하면 저장된 메뉴 상태를 복원하며 각 문서 HTML은 직접 주소로도 열립니다. 외부 링크·다운로드·새 탭 동작은 브라우저가 처리하고, 본문 요청에 실패하면 일반 페이지 이동으로 복구합니다.
+
+사진 예제는 `ZVisionMeasurement.mount()/unmount()`로 문서 전환 때 이벤트와 요청을 정리합니다. 브라우저 검증 시나리오와 검사한 소스 해시는 `content/navigation-verification.json`에 기록합니다. 변경된 탐색 코드는 실제 주소·새로고침·방문 기록·검색·사진 예제·모바일 동작을 재검증한 뒤 해당 기록을 갱신합니다.

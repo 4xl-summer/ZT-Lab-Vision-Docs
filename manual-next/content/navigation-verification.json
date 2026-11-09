@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "recorded_utc": "2026-11-09T08:04:50.013693+00:00",
+  "scope": "Real Chromium browser interactions on the local generated manual, including native mobile coordinate click and a local delayed/error HTTP fixture. Native SDK measurements and source code examples were unchanged.",
+  "checks": {
+    "partial_content": {
+      "status": "pass",
+      "observation": "Sidebar instance remained identical across deep C# documents, manual home and child routes; only main content and metadata changed."
+    },
+    "sidebar_scroll": {
+      "status": "pass",
+      "observation": "Numeric sidebar scrollTop 2185 px remained unchanged across document clicks and history traversal."
+    },
+    "sidebar_expansion": {
+      "status": "pass",
+      "observation": "Exact expanded-key sets remained unchanged; the active document changed without forcing other menu nodes open."
+    },
+    "refresh": {
+      "status": "pass",
+      "repeats": 2,
+      "scrollTop": 2425,
+      "expanded_nodes": 5
+    },
+    "back_forward": {
+      "status": "pass",
+      "back_routes": [
+        "index.html",
+        "reference/csharp/topics/zimage-copyregiontoimage-ca6cf5db79b0.html",
+        "reference/csharp/topics/zimage-pixelarithmetic-ce3366e22be7.html"
+      ],
+      "forward_routes": [
+        "reference/csharp/topics/zimage-copyregiontoimage-ca6cf5db79b0.html",
+        "index.html",
+        "index/paths.html"
+      ],
+      "body_scroll_restored_px": 1492
+    },
+    "deep_address": {
+      "status": "pass",
+      "path": "reference/csharp/topics/zimage-pixelarithmetic-ce3366e22be7.html",
+      "title": "C# API · ZImage · PixelArithmetic · ZVision Manual"
+    },
+    "search": {
+      "status": "pass",
+      "observation": "Search result loaded the correct photo example, closed its dialog, and preserved sidebar instance and state."
+    },
+    "anchor": {
+      "status": "pass",
+      "observation": "Same-document hash preserved the active pixel inspector. Legacy topic fragment resolved to the standalone teaching page."
+    },
+    "photo_lifecycle": {
+      "status": "pass",
+      "examples": 7,
+      "displayed_values": 37,
+      "observation": "Entered all seven examples through search. Widget to normal document to back navigation remounted correctly; one script and stylesheet remained."
+    },
+    "mobile_navigation": {
+      "status": "pass",
+      "viewport": [
+        390,
+        844
+      ],
+      "scrollTop": 2395,
+      "observation": "Real coordinate click on a visible menu item preserved exact open keys, sidebar DOM instance and scrollTop. Mobile refresh/back and horizontal overflow also checked."
+    },
+    "request_race": {
+      "status": "pass",
+      "observation": "A delayed document request was followed immediately by a different link. The latest destination remained active while the earlier response completed."
+    },
+    "native_fallback": {
+      "status": "pass",
+      "observation": "Controlled fetch 503 was followed by native document navigation 200. Sidebar state survived that full reload."
+    }
+  },
+  "source_sha256": {
+    "assets/manual.js": "06702043c6293d4f8fa99e361f2ebb9fec8c17b6d1bd77a0b682648a6e4e2bdf",
+    "assets/manual-navigation.js": "27a1bbc7fdaf02c99638228b9910af5eb92b2e581e7cfaee96ca43f8408cbbe3",
+    "assets/measurement-lab.js": "0cd66ec85d31d7fc4a9d0b3403c3e64403a5a795ba074a0492dc3598b3994898",
+    "assets/manual-extra.css": "0430d0f218ab02890a255e13789ab3345543f787cf7399f70c48c2a668270ae3",
+    "scripts/build_manual.py": "ba2387fe595849a91bdab1511b560c993b335267313f626b1ba34875b5f3b16f"
+  }
+}
