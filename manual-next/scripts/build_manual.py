@@ -159,54 +159,6 @@ def ensure_ids(body, path, report):
         return f'<{tag}{attrs} id="{H(slug,quote=True)}">{inner}</{tag}>'
     return pattern.sub(update,body)
 
-def related(page,index,by_page,report):
-    path=page['path']; selected={}
-    def put(entry, member=None):
-        item=member or entry
-        href=item.get('href')
-        if not href: return
-        selected[href]=(entry,item,member is not None)
-    for symbol in page.get('symbols') or []:
-        if not isinstance(symbol,str): continue
-        matches=index.get(norm(symbol),[])
-        if not matches:
-            report['unmatched_symbols'].append({'path':path,'symbol':symbol})
-        for entry,member in matches:
-            put(entry,member)
-            if member is None:
-                for child in entry.get('members',[]): put(entry,child)
-    for entry in by_page.get(path,[]):
-        put(entry)
-        for member in entry.get('members',[]): put(entry,member)
-    if not page.get('symbols'):
-        # Baseline pages often identify a type only in code, or link directly to
-        # an API page from a category/index. Match exact normalized type names.
-        for token in re.findall(r'<code\b[^>]*>(.*?)</code\s*>',page.get('body',''),re.I|re.S):
-            for entry,member in index.get(norm(plain(token)),[]):
-                if member is None and norm(plain(token)) in {norm(entry.get('name')),norm(entry.get('type_name'))}:
-                    put(entry)
-                    for child in entry.get('members',[]): put(entry,child)
-        for href in re.findall(r'href\s*=\s*[\"\']([^\"\']+)[\"\']',page.get('body',''),re.I):
-            if href.startswith(('#','http:','https:','mailto:')): continue
-            target,mark,anchor=href.partition('#')
-            candidate=os.path.normpath(os.path.join(str(PurePosixPath(path).parent),target)).replace('\\','/')
-            for entry in by_page.get(candidate,[]):
-                if not mark:
-                    put(entry)
-                    for child in entry.get('members',[]): put(entry,child)
-                else:
-                    for child in entry.get('members',[]):
-                        if child.get('href','').partition('#')[2]==anchor: put(entry,child)
-    if not selected:
-        return ('<section class=\"related-api\" id=\"related-api\"><h2 id=\"related-api-heading\">관련 API</h2>'
-                '<p>이 페이지는 탐색 또는 개념 안내입니다. <a href=\"'+H(relurl(path,'reference/index.html'),quote=True)+'\">API 색인</a>에서 공개 심볼을 찾으세요.</p></section>')
-    rows=[]
-    for href,(entry,item,is_member) in sorted(selected.items(),key=lambda pair:(pair[1][0].get('language',''),pair[1][0].get('name',''),pair[1][1].get('name',''),pair[0])):
-        label=((entry.get('name') or '')+'.' if is_member else '')+(item.get('name') or '')
-        language={'csharp':'C#','rust':'Rust','python':'Python'}.get(entry.get('language'),entry.get('language') or '')
-        rows.append('<tr><td>'+H(language)+'</td><td>'+H(kind_label(api_kind(entry,item)))+'</td><td><a href="'+H(relurl(path,href),quote=True)+'"><code>'+H(label)+'</code></a></td><td><code>'+H(str(item.get('signature') or ''))+'</code></td><td>'+H(str(item.get('summary') or '설명 미제공'))+'</td></tr>')
-    return '<section class="related-api" id="related-api"><h2 id="related-api-heading">관련 API</h2><div class="table-wrap"><table><thead><tr><th>언어</th><th>종류</th><th>공개 심볼</th><th>형식</th><th>설명</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div></section>'
-
 def verification(page):
     cases=list(dict.fromkeys(str(x) for x in page.get('examples',[]) if isinstance(x,str) and x))
     if not cases: return ''
@@ -245,7 +197,7 @@ def render(page,index,by_page,report,version=''):
     parent=page.get('parent')
     if parent:
         body='<p class="topic-context"><a href="'+H(relurl(path,parent),quote=True)+'">상위 목차로 돌아가기</a></p>'+body
-    appendix=verification(page)+related(page,index,by_page,report)
+    appendix=verification(page)
     # A leaf may itself be the original verification/API topic. Its source
     # anchor keeps its address; generated appendices receive distinct IDs.
     used=set(re.findall(r'\bid=["\']([^"\']+)',body))
@@ -281,6 +233,20 @@ def nav_records(pages,nav):
     # Preserve existing order within groups, put new items after each existing group.
     group_order=list(dict.fromkeys(row[0] for row in rows))
     return [row for group in group_order for row in rows if row[0]==group]
+
+def render_page_move(path, move):
+    """Keep bookmarked URLs working without exposing retired pages in navigation."""
+    safe_path(path)
+    def destination(value):
+        base,sep,fragment=value.partition('#')
+        safe_path(base)
+        return relurl(path,base)+('#'+fragment if sep else '')
+    target=destination(move['target'])
+    fragments={key:destination(value) for key,value in move.get('fragments',{}).items()}
+    data=json.dumps({'target':target,'fragments':fragments},ensure_ascii=False).replace('</','<\\/')
+    root='../'*len(PurePosixPath(path).parts[:-1]) or './'
+    script='const m='+data+';let k="";try{k=decodeURIComponent(location.hash.slice(1))}catch{}location.replace(m.fragments[k]||m.target);'
+    return '<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="'+H(root,quote=True)+'"><meta name="manual-path" content="'+H(path,quote=True)+'"><meta name="manual-redirect" content="'+H(target,quote=True)+'"><title>기능 문서로 이동 · '+H(path)+'</title><link rel="canonical" href="'+H(target,quote=True)+'"><script>'+script+'</script><noscript><meta http-equiv="refresh" content="0;url='+H(target,quote=True)+'"></noscript></head><body><h1>기능 문서로 이동합니다</h1><p>설명과 예제가 해당 기능 문서에 통합되었습니다.</p><p><a href="'+H(target,quote=True)+'">해당 기능 문서 열기</a></p></body></html>\n'
 
 def main():
     parser=argparse.ArgumentParser(description='Generate the ZVision manual from structured pages.')
@@ -318,6 +284,12 @@ def main():
         for i,p in enumerate(children):
             if i:p['previous_topic']={'path':children[i-1]['path'],'title':children[i-1].get('nav_label')or children[i-1]['title']}
             if i+1<len(children):p['next_topic']={'path':children[i+1]['path'],'title':children[i+1].get('nav_label')or children[i+1]['title']}
+    moves_file=content/'page-moves.json'
+    moves=read_json(moves_file)['moves'] if moves_file.exists() else {}
+    for old,move in moves.items():
+        if old in pages:raise ValueError('Moved page is still active: '+old)
+        for dest in [move['target'],*move.get('fragments',{}).values()]:
+            if dest.split('#',1)[0] not in pages:raise ValueError('Move target is not active: '+dest)
     rows=nav_records(pages,nav); index,by_page=build_index(catalog)
     version_hash=hashlib.sha256(json.dumps([pages,catalog],ensure_ascii=False,sort_keys=True).encode())
     version_hash.update(Path(__file__).read_bytes())
@@ -331,6 +303,10 @@ def main():
         target=manual.joinpath(*PurePosixPath(path).parts)
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(render(page,index,by_page,report,version),encoding='utf-8',newline='\n')
+    for path,move in moves.items():
+        target=manual.joinpath(*PurePosixPath(safe_path(path)).parts)
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_text(render_page_move(path,move),encoding='utf-8',newline='\n')
     assets=manual/'assets'; assets.mkdir(parents=True,exist_ok=True)
     if baseline:
         for name in ('manual.css','manual.js'):

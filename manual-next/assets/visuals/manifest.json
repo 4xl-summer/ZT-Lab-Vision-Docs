@@ -8,7 +8,7 @@
   "diagrams": [
     {
       "id": "first-pipeline",
-      "page": "labs/visual-guide/infographic-first-pipeline.html",
+      "page": "guides/threshold/detail-threshold.html",
       "title": "임계값과 블롭 중심",
       "representation": "diagram",
       "caption": "임계값 경계가 포함되는지, 두 전경 픽셀의 중심은 어디인지 보여 줍니다.",
@@ -27,11 +27,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/first-pipeline.svg",
       "width": 900,
-      "height": 500
+      "height": 500,
+      "legacy_page": "labs/visual-guide/infographic-first-pipeline.html",
+      "anchor": "visual-concept-first-pipeline"
     },
     {
       "id": "blob-connectivity",
-      "page": "labs/visual-guide/infographic-blob-connectivity.html",
+      "page": "guides/blob-analysis/connectivity.html",
       "title": "대각선 연결성 비교",
       "representation": "diagram",
       "caption": "같은 두 픽셀이 연결 방식에 따라 몇 개의 성분이 되는지 비교합니다.",
@@ -50,11 +52,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/blob-connectivity.svg",
       "width": 900,
-      "height": 500
+      "height": 500,
+      "legacy_page": "labs/visual-guide/infographic-blob-connectivity.html",
+      "anchor": "visual-concept-blob-connectivity"
     },
     {
       "id": "image-lifetime",
-      "page": "labs/visual-guide/infographic-image-lifetime.html",
+      "page": "concepts/lifetime/matrix.html",
       "title": "이미지 공유와 수명",
       "representation": "reuse",
       "caption": "공유 저장소와 독립 복사의 차이는 공간적 소유 관계로 읽습니다.",
@@ -72,11 +76,13 @@
       "image": "assets/visuals/drawio/image-ownership.svg",
       "source": "assets/visuals/drawio/image-ownership.drawio",
       "width": 1481,
-      "height": 1148
+      "height": 1148,
+      "legacy_page": "labs/visual-guide/infographic-image-lifetime.html",
+      "anchor": "visual-reuse-image-lifetime"
     },
     {
       "id": "roi-coordinates",
-      "page": "labs/visual-guide/infographic-roi-coordinates.html",
+      "page": "concepts/roi/local.html",
       "title": "ROI와 원본 좌표",
       "representation": "diagram",
       "caption": "ROI의 로컬 점에 원점을 한 번 더해 원본 좌표를 구합니다.",
@@ -95,11 +101,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/roi-coordinates.svg",
       "width": 900,
-      "height": 500
+      "height": 500,
+      "legacy_page": "labs/visual-guide/infographic-roi-coordinates.html",
+      "anchor": "visual-concept-roi-coordinates"
     },
     {
       "id": "query-execution",
-      "page": "labs/visual-guide/infographic-query-execution.html",
+      "page": "concepts/query/architecture.html",
       "title": "쿼리 실행",
       "representation": "reuse",
       "caption": "구성 시점과 명시적 실행 시점의 차이를 보여 줍니다.",
@@ -117,11 +125,13 @@
       "image": "assets/visuals/drawio/query-execution.svg",
       "source": "assets/visuals/drawio/query-execution.drawio",
       "width": 1433,
-      "height": 1558
+      "height": 1558,
+      "legacy_page": "labs/visual-guide/infographic-query-execution.html",
+      "anchor": "visual-reuse-query-execution"
     },
     {
       "id": "pixel-formats",
-      "page": "labs/visual-guide/infographic-pixel-formats.html",
+      "page": "concepts/pixel-formats/per-function.html",
       "title": "픽셀 형식과 저장 크기",
       "representation": "table",
       "caption": "형식의 채널 구성과 픽셀 크기를 비교하고 함수별 지원을 따로 확인합니다.",
@@ -137,11 +147,13 @@
       "evidence": "docs/API_CONTRACT.md: 픽셀 형식 표와 stride",
       "kind": "table",
       "renderer": "native HTML",
-      "source": "assets/visuals/tables/pixel-formats.html.txt"
+      "source": "assets/visuals/tables/pixel-formats.html.txt",
+      "legacy_page": "labs/visual-guide/infographic-pixel-formats.html",
+      "anchor": "visual-table-pixel-formats"
     },
     {
       "id": "histogram-bins",
-      "page": "labs/visual-guide/infographic-histogram-bins.html",
+      "page": "reference/python/api-histogramspec.html",
       "title": "히스토그램 읽기",
       "representation": "plot",
       "caption": "합성 표본 0, 0, 1, 3을 폭 1인 구간으로 나누면 빈도는 2, 1, 0, 1입니다.",
@@ -160,11 +172,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/histogram-bins.png",
       "width": 1298,
-      "height": 658
+      "height": 658,
+      "legacy_page": "labs/visual-guide/infographic-histogram-bins.html",
+      "anchor": "visual-plot-histogram-bins"
     },
     {
       "id": "gaussian-filter",
-      "page": "labs/visual-guide/infographic-gaussian-filter.html",
+      "page": "guides/gaussian/principle.html",
       "title": "가우시안 평활화",
       "representation": "plot",
       "caption": "가운데 값이 1인 합성 입력과 σ=1인 3×3 정규화 커널에 대한 출력을 비교합니다.",
@@ -183,11 +197,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/gaussian-filter.png",
       "width": 1235,
-      "height": 658
+      "height": 658,
+      "legacy_page": "labs/visual-guide/infographic-gaussian-filter.html",
+      "anchor": "visual-plot-gaussian-filter"
     },
     {
       "id": "morphology",
-      "page": "labs/visual-guide/infographic-morphology.html",
+      "page": "guides/morphology/size.html",
       "title": "이진 형태학의 픽셀 변화",
       "representation": "diagram",
       "caption": "같은 3×3 구조 요소를 쓴 침식·팽창·열림·닫힘 결과를 비교합니다.",
@@ -206,11 +222,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/morphology.svg",
       "width": 900,
-      "height": 665
+      "height": 665,
+      "legacy_page": "labs/visual-guide/infographic-morphology.html",
+      "anchor": "visual-concept-morphology"
     },
     {
       "id": "canny-edges",
-      "page": "labs/visual-guide/infographic-canny-edges.html",
+      "page": "guides/canny/pipeline.html",
       "title": "Canny 경계 단계",
       "representation": "plot",
       "caption": "공개 camera 사진에 SDK Canny를 두 번 적용해 경계 마스크와 검출 픽셀 수를 비교합니다.",
@@ -229,11 +247,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/canny-edges.png",
       "width": 1701,
-      "height": 658
+      "height": 658,
+      "legacy_page": "labs/visual-guide/infographic-canny-edges.html",
+      "anchor": "visual-plot-canny-edges"
     },
     {
       "id": "ncc-matching",
-      "page": "labs/visual-guide/infographic-ncc-matching.html",
+      "page": "guides/matching-ncc/principle.html",
       "title": "NCC 점수 판독",
       "representation": "plot",
       "caption": "합성 3×3 모델을 검색 영상의 (9,5)에 넣고 모든 유효 위치의 NCC를 계산합니다.",
@@ -252,11 +272,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/ncc-matching.png",
       "width": 1770,
-      "height": 636
+      "height": 636,
+      "legacy_page": "labs/visual-guide/infographic-ncc-matching.html",
+      "anchor": "visual-plot-ncc-matching"
     },
     {
       "id": "caliper-profile",
-      "page": "labs/visual-guide/infographic-caliper-profile.html",
+      "page": "guides/profile-caliper/strip-math.html",
       "title": "캘리퍼 프로파일",
       "representation": "plot",
       "caption": "실제 camera 사진의 표본 선 및 SDK 프로파일을 같은 x좌표로 나란히 보여 줍니다.",
@@ -275,11 +297,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/caliper-profile.png",
       "width": 1595,
-      "height": 658
+      "height": 658,
+      "legacy_page": "labs/visual-guide/infographic-caliper-profile.html",
+      "anchor": "visual-plot-caliper-profile"
     },
     {
       "id": "lab-distance",
-      "page": "labs/visual-guide/infographic-lab-distance.html",
+      "page": "guides/color-processing/detail-color.html",
       "title": "Lab 색차 계산",
       "representation": "plot",
       "caption": "Lab 차이 공간의 두 점과 그 사이의 벡터를 표시합니다.",
@@ -298,11 +322,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/lab-distance.png",
       "width": 695,
-      "height": 818
+      "height": 818,
+      "legacy_page": "labs/visual-guide/infographic-lab-distance.html",
+      "anchor": "visual-plot-lab-distance"
     },
     {
       "id": "ocr-region",
-      "page": "labs/visual-guide/infographic-ocr-region.html",
+      "page": "guides/recognition/ocr-region.html",
       "title": "단일 글자 줄과 ROI의 공간 관계",
       "representation": "diagram",
       "caption": "기본 인쇄 OCR이 읽는 ROI 안의 단일 문자 줄을 보여 줍니다.",
@@ -321,11 +347,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/ocr-region.svg",
       "width": 1000,
-      "height": 445
+      "height": 445,
+      "legacy_page": "labs/visual-guide/infographic-ocr-region.html",
+      "anchor": "visual-concept-ocr-region"
     },
     {
       "id": "depth-grid",
-      "page": "labs/visual-guide/infographic-depth-grid.html",
+      "page": "guides/depth-map/grid-contract.html",
       "title": "격자 셀에서 3D 점으로",
       "representation": "diagram",
       "caption": "행·열 인덱스, 간격, 원점과 높이가 점의 좌표를 결정합니다.",
@@ -343,11 +371,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/depth-grid.svg",
       "width": 1000,
-      "height": 450
+      "height": 450,
+      "legacy_page": "labs/visual-guide/infographic-depth-grid.html",
+      "anchor": "visual-concept-depth-grid"
     },
     {
       "id": "point-cloud-fit",
-      "page": "labs/visual-guide/infographic-point-cloud-fit.html",
+      "page": "guides/point-cloud/fit-details.html",
       "title": "점과 평면의 잔차",
       "representation": "diagram",
       "caption": "평면과 점 사이의 수직 거리를 표시해 잔차의 뜻을 설명합니다.",
@@ -365,11 +395,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/point-cloud-fit.svg",
       "width": 1000,
-      "height": 445
+      "height": 445,
+      "legacy_page": "labs/visual-guide/infographic-point-cloud-fit.html",
+      "anchor": "visual-concept-point-cloud-fit"
     },
     {
       "id": "ai-coordinates",
-      "page": "labs/visual-guide/infographic-ai-coordinates.html",
+      "page": "guides/inference/output-coordinates.html",
       "title": "기본 AI 입력과 출력 좌표",
       "representation": "diagram",
       "caption": "종횡비를 유지하지 않는 기본 stretch의 축별 역변환을 예로 보여 줍니다.",
@@ -387,11 +419,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/ai-coordinates.svg",
       "width": 1000,
-      "height": 505
+      "height": 505,
+      "legacy_page": "labs/visual-guide/infographic-ai-coordinates.html",
+      "anchor": "visual-concept-ai-coordinates"
     },
     {
       "id": "acquisition-flow",
-      "page": "labs/visual-guide/infographic-acquisition-flow.html",
+      "page": "reference/python/api-framequeue.html",
       "title": "유한 프레임 큐",
       "representation": "reuse",
       "caption": "큐의 공유 이미지와 꺼낸 핸들의 관계를 명확히 보여 줍니다.",
@@ -409,11 +443,13 @@
       "image": "assets/visuals/drawio/frame-queue.svg",
       "source": "assets/visuals/drawio/frame-queue.drawio",
       "width": 1433,
-      "height": 1353
+      "height": 1353,
+      "legacy_page": "labs/visual-guide/infographic-acquisition-flow.html",
+      "anchor": "visual-reuse-acquisition-flow"
     },
     {
       "id": "plc-simulation",
-      "page": "labs/visual-guide/infographic-plc-simulation.html",
+      "page": "reference/python/acquisition-simulatedplc.html",
       "title": "모의 PLC 상태",
       "representation": "reuse",
       "caption": "요청·결과·승인과 타임아웃 상태를 구분합니다.",
@@ -431,11 +467,13 @@
       "image": "assets/visuals/drawio/plc-simulation.svg",
       "source": "assets/visuals/drawio/plc-simulation.drawio",
       "width": 1531,
-      "height": 1353
+      "height": 1353,
+      "legacy_page": "labs/visual-guide/infographic-plc-simulation.html",
+      "anchor": "visual-reuse-plc-simulation"
     },
     {
       "id": "inspection-alignment",
-      "page": "labs/visual-guide/infographic-inspection-alignment.html",
+      "page": "guides/inspection-framework/coordinates.html",
       "title": "검사 정렬과 유효 마스크",
       "representation": "diagram",
       "caption": "기준 격자를 검사 영상으로 대응할 때 영상 밖의 표본을 유효 비교에서 제외하는 이유를 보여 줍니다.",
@@ -454,11 +492,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/inspection-alignment.svg",
       "width": 1000,
-      "height": 570
+      "height": 570,
+      "legacy_page": "labs/visual-guide/infographic-inspection-alignment.html",
+      "anchor": "visual-concept-inspection-alignment"
     },
     {
       "id": "calibration-transform",
-      "page": "labs/visual-guide/infographic-calibration-transform.html",
+      "page": "guides/calibration/roi-world-example.html",
       "title": "로컬·전역·평면 좌표",
       "representation": "diagram",
       "caption": "ROI 원점을 더한 뒤 보정 변환을 적용하는 순서를 공간과 수식으로 설명합니다.",
@@ -476,11 +516,13 @@
       "renderer": "editable SVG",
       "image": "assets/visuals/concept/calibration-transform.svg",
       "width": 1000,
-      "height": 445
+      "height": 445,
+      "legacy_page": "labs/visual-guide/infographic-calibration-transform.html",
+      "anchor": "visual-concept-calibration-transform"
     },
     {
       "id": "frequency-roundtrip",
-      "page": "labs/visual-guide/infographic-frequency-roundtrip.html",
+      "page": "guides/frequency/detail-frequency.html",
       "title": "주파수 변환 왕복",
       "representation": "plot",
       "caption": "64×64 합성 줄무늬와 2D FFT의 ky=0 단면, 복소 계수로 복원한 영상을 비교합니다.",
@@ -499,11 +541,13 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/frequency-roundtrip.png",
       "width": 1531,
-      "height": 610
+      "height": 610,
+      "legacy_page": "labs/visual-guide/infographic-frequency-roundtrip.html",
+      "anchor": "visual-plot-frequency-roundtrip"
     },
     {
       "id": "deployment-check",
-      "page": "labs/visual-guide/infographic-deployment-check.html",
+      "page": "getting-started/sdk-setup/scope.html",
       "title": "설치 전 확인",
       "representation": "table",
       "caption": "운영체제·언어·실행 환경과 설치 후 확인 항목을 나누어 살펴봅니다.",
@@ -519,11 +563,13 @@
       "evidence": "docs/WRAPPER_CONTRACT.md; getting-started/sdk-setup/*",
       "kind": "table",
       "renderer": "native HTML",
-      "source": "assets/visuals/tables/deployment-check.html.txt"
+      "source": "assets/visuals/tables/deployment-check.html.txt",
+      "legacy_page": "labs/visual-guide/infographic-deployment-check.html",
+      "anchor": "visual-table-deployment-check"
     },
     {
       "id": "difference-inspection",
-      "page": "labs/visual-guide/infographic-difference-inspection.html",
+      "page": "guides/difference-inspection/algorithm.html",
       "title": "기준 영상과 차분",
       "representation": "plot",
       "caption": "공개 사진, 의도적 수정 영상과 실제 SDK 차분 마스크를 나란히 보여 줍니다.",
@@ -542,7 +588,9 @@
       "renderer": "Matplotlib 3.11.2",
       "image": "assets/visuals/plots/difference-inspection.png",
       "width": 1729,
-      "height": 658
+      "height": 658,
+      "legacy_page": "labs/visual-guide/infographic-difference-inspection.html",
+      "anchor": "visual-plot-difference-inspection"
     },
     {
       "id": "sdk-layers",
@@ -550,7 +598,9 @@
       "caption": "C#과 Python은 C ABI를 통해 Rust 구현에 접근하고 Rust는 공개 API를 직접 사용합니다.",
       "alt": "언어별 API와 네이티브 경계 흐름도. C#과 Python은 C ABI를 통해 Rust 구현에 접근하고 Rust는 공개 API를 직접 사용합니다.",
       "source": "assets/visuals/drawio/sdk-layers.drawio",
-      "targets": [],
+      "targets": [
+        "concepts/object-model/languages.html"
+      ],
       "reading_notes": [
         "C#과 Python은 각자의 소유 객체를 해제합니다.",
         "모든 연산이 동일한 입력 형식과 옵션을 지원하는 것은 아닙니다."
@@ -560,9 +610,11 @@
       "image": "assets/visuals/drawio/sdk-layers.svg",
       "width": 1481,
       "height": 1148,
-      "page": "labs/visual-guide/drawio-sdk-layers.html",
+      "page": "concepts/object-model/languages.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-sdk-layers.html",
+      "anchor": "visual-drawio-sdk-layers"
     },
     {
       "id": "image-ownership",
@@ -582,9 +634,11 @@
       "image": "assets/visuals/drawio/image-ownership.svg",
       "width": 1481,
       "height": 1148,
-      "page": "labs/visual-guide/drawio-image-ownership.html",
+      "page": "concepts/roi/ownership.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-image-ownership.html",
+      "anchor": "visual-drawio-image-ownership"
     },
     {
       "id": "query-execution",
@@ -592,7 +646,9 @@
       "caption": "단계를 정의하고 명시적인 실행에서 결과를 얻습니다.",
       "alt": "지연 쿼리의 구성과 실행 흐름도. 단계를 정의하고 명시적인 실행에서 결과를 얻습니다.",
       "source": "assets/visuals/drawio/query-execution.drawio",
-      "targets": [],
+      "targets": [
+        "concepts/query/architecture.html"
+      ],
       "reading_notes": [
         "정확한 실행 메서드와 반환형은 언어별 API에서 확인합니다.",
         "구성 성공만으로 실행 성공이나 특정 입력 형식의 지원이 보장되지는 않습니다."
@@ -602,9 +658,11 @@
       "image": "assets/visuals/drawio/query-execution.svg",
       "width": 1433,
       "height": 1558,
-      "page": "labs/visual-guide/drawio-query-execution.html",
+      "page": "concepts/query/architecture.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-query-execution.html",
+      "anchor": "visual-drawio-query-execution"
     },
     {
       "id": "coordinates",
@@ -624,9 +682,11 @@
       "image": "assets/visuals/drawio/coordinates.svg",
       "width": 1486,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-coordinates.html",
+      "page": "concepts/coordinate-systems/roi-world-example.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-coordinates.html",
+      "anchor": "visual-drawio-coordinates"
     },
     {
       "id": "matching-inspection",
@@ -634,7 +694,9 @@
       "caption": "기준 대상을 찾은 뒤 위치에 맞춰 검사 영역을 해석합니다.",
       "alt": "매칭 결과로 검사 영역 정렬 흐름도. 기준 대상을 찾은 뒤 위치에 맞춰 검사 영역을 해석합니다.",
       "source": "assets/visuals/drawio/matching-inspection.drawio",
-      "targets": [],
+      "targets": [
+        "guides/matching-ncc/fixture.html"
+      ],
       "reading_notes": [
         "매칭 점수만으로 최종 제품 합격이 결정되지는 않습니다.",
         "좌표계와 적용 가능한 회전·크기 범위는 사용하는 API의 계약을 확인합니다."
@@ -644,9 +706,11 @@
       "image": "assets/visuals/drawio/matching-inspection.svg",
       "width": 1433,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-matching-inspection.html",
+      "page": "guides/matching-ncc/fixture.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-matching-inspection.html",
+      "anchor": "visual-drawio-matching-inspection"
     },
     {
       "id": "caliper-flow",
@@ -666,9 +730,11 @@
       "image": "assets/visuals/drawio/caliper-flow.svg",
       "width": 1433,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-caliper-flow.html",
+      "page": "api/rust/measurement-models/model-signatures.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-caliper-flow.html",
+      "anchor": "visual-drawio-caliper-flow"
     },
     {
       "id": "geometric-models",
@@ -677,7 +743,7 @@
       "alt": "선·원·사각형 모델의 해석 흐름도. 측정점의 공간 배치에 맞는 형상을 선택하고 결과와 잔차를 함께 봅니다.",
       "source": "assets/visuals/drawio/geometric-models.drawio",
       "targets": [
-        "guides/profile-caliper/related-api.html"
+        "guides/metrology/model-signatures.html"
       ],
       "reading_notes": [
         "모델마다 필요한 입력과 옵션이 다르므로 해당 API를 따릅니다.",
@@ -688,9 +754,11 @@
       "image": "assets/visuals/drawio/geometric-models.svg",
       "width": 1433,
       "height": 1148,
-      "page": "labs/visual-guide/drawio-geometric-models.html",
+      "page": "guides/metrology/model-signatures.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-geometric-models.html",
+      "anchor": "visual-drawio-geometric-models"
     },
     {
       "id": "calibration",
@@ -710,9 +778,11 @@
       "image": "assets/visuals/drawio/calibration.svg",
       "width": 1433,
       "height": 1558,
-      "page": "labs/visual-guide/drawio-calibration.html",
+      "page": "guides/calibration/planar-contract.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-calibration.html",
+      "anchor": "visual-drawio-calibration"
     },
     {
       "id": "frame-queue",
@@ -720,7 +790,9 @@
       "caption": "큐에 공유 이미지를 넣고 꺼낸 독립 핸들을 사용하는 흐름입니다.",
       "alt": "프레임 큐의 소유권과 대기 흐름도. 큐에 공유 이미지를 넣고 꺼낸 독립 핸들을 사용하는 흐름입니다.",
       "source": "assets/visuals/drawio/frame-queue.drawio",
-      "targets": [],
+      "targets": [
+        "reference/python/api-framequeue.html"
+      ],
       "reading_notes": [
         "큐의 share는 원본 핸들이 해제되어도 유효합니다.",
         "이는 소프트웨어 프레임 전달이며 실제 카메라 취득을 의미하지 않습니다."
@@ -730,9 +802,11 @@
       "image": "assets/visuals/drawio/frame-queue.svg",
       "width": 1433,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-frame-queue.html",
+      "page": "reference/python/api-framequeue.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-frame-queue.html",
+      "anchor": "visual-drawio-frame-queue"
     },
     {
       "id": "plc-simulation",
@@ -741,7 +815,7 @@
       "alt": "모의 PLC 요청과 결과 확인 흐름도. 명시된 명령과 시간으로 동작하는 SimPlc 상태 흐름입니다.",
       "source": "assets/visuals/drawio/plc-simulation.drawio",
       "targets": [
-        "guides/acquisition/verification-cases.html"
+        "guides/acquisition/sim-state.html"
       ],
       "reading_notes": [
         "기한은 Poll에서 명시적으로 평가하며 Request나 Publish가 자동 평가하지 않습니다.",
@@ -752,9 +826,11 @@
       "image": "assets/visuals/drawio/plc-simulation.svg",
       "width": 1531,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-plc-simulation.html",
+      "page": "guides/acquisition/sim-state.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-plc-simulation.html",
+      "anchor": "visual-drawio-plc-simulation"
     },
     {
       "id": "inspection-extension",
@@ -762,7 +838,9 @@
       "caption": "입력, 파라미터, 결과와 오류를 분리해 검사 단계를 연결합니다.",
       "alt": "검사 확장의 입출력 경계 흐름도. 입력, 파라미터, 결과와 오류를 분리해 검사 단계를 연결합니다.",
       "source": "assets/visuals/drawio/inspection-extension.drawio",
-      "targets": [],
+      "targets": [
+        "guides/inspection-framework/input-output-contract.html"
+      ],
       "reading_notes": [
         "결과의 의미와 허용 기준은 각 검사 도구의 계약을 따릅니다.",
         "실행 오류와 검사 결과에 대한 업무 판정은 구분합니다."
@@ -772,9 +850,11 @@
       "image": "assets/visuals/drawio/inspection-extension.svg",
       "width": 1433,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-inspection-extension.html",
+      "page": "guides/inspection-framework/input-output-contract.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-inspection-extension.html",
+      "anchor": "visual-drawio-inspection-extension"
     },
     {
       "id": "depth-to-cloud",
@@ -794,9 +874,11 @@
       "image": "assets/visuals/drawio/depth-to-cloud.svg",
       "width": 1433,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-depth-to-cloud.html",
+      "page": "api/rust/spatial3d/grid-contract.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-depth-to-cloud.html",
+      "anchor": "visual-drawio-depth-to-cloud"
     },
     {
       "id": "font-ocr",
@@ -816,9 +898,11 @@
       "image": "assets/visuals/drawio/font-ocr.svg",
       "width": 1481,
       "height": 1148,
-      "page": "labs/visual-guide/drawio-font-ocr.html",
+      "page": "guides/recognition/font-training.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-font-ocr.html",
+      "anchor": "visual-drawio-font-ocr"
     },
     {
       "id": "queue-shutdown",
@@ -838,9 +922,11 @@
       "image": "assets/visuals/drawio/queue-shutdown.svg",
       "width": 1480,
       "height": 1353,
-      "page": "labs/visual-guide/drawio-queue-shutdown.html",
+      "page": "reference/python/topics/framequeue-shutdown-bb0b1b6b9ed9.html",
       "renderer": "draw.io 32.6.10",
-      "representation": "drawio"
+      "representation": "drawio",
+      "legacy_page": "labs/visual-guide/drawio-queue-shutdown.html",
+      "anchor": "visual-drawio-queue-shutdown"
     }
   ]
 }

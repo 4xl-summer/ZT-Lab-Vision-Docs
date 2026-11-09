@@ -13,12 +13,6 @@
   ],
   [
     "소개",
-    "index/related-api.html",
-    "관련 API · ZVision 개발자 매뉴얼",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "소개",
     "index/topic-2.html",
     "문서 읽는 순서 · ZVision 개발자 매뉴얼",
     "문서 읽는 순서의 입력과 결과, 적용 방법을 설명합니다."
@@ -28,294 +22,6 @@
     "index/topic-3.html",
     "기준 버전과 검증 범위 · ZVision 개발자 매뉴얼",
     "기준 버전과 검증 범위의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/index.html",
-    "시각 자료와 사진 측정",
-    "구조도, 처리 인포그래픽과 실제 사진 측정 예제를 함께 읽는 안내입니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement.html",
-    "사진으로 보는 측정 작업 화면",
-    "실제 공개 사진을 ZVision SDK로 처리한 결과를 위치와 수치로 살펴봅니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/camera-controlled-difference.html",
-    "사진에 통제 변화를 넣은 차분 · 사진 측정 사례",
-    "실제 사진의 지정 24×16 영역을 인위적으로 바꿔 차분 마스크를 검증합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/camera-profile.html",
-    "실제 사진의 프로파일과 에지 · 사진 측정 사례",
-    "중앙 가로 줄의 강도 표본과 SDK의 부호 있는 에지 위치를 확인합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/camera-statistics.html",
-    "사진의 전체 밝기 통계 · 사진 측정 사례",
-    "실제 Gray8 영상의 픽셀 수·최소·최대·평균·분산을 원본 배열과 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/coffee-color.html",
-    "커피 사진 ROI의 RGB 통계 · 사진 측정 사례",
-    "고정 ROI의 정규화 인코딩 RGB 평균과 모집단 표준편차를 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/coins-blob.html",
-    "동전 사진의 연결 성분 · 사진 측정 사례",
-    "실제 사진을 고정 문턱으로 이진화한 뒤 8연결 영역의 면적과 경계를 측정합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/coins-circle.html",
-    "동전 경계의 원 피팅 · 사진 측정 사례",
-    "선택 성분의 채워진 픽셀 경계를 ROI 로컬 좌표로 피팅합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/measurement/text-components.html",
-    "텍스트 사진의 어두운 연결 성분 · 사진 측정 사례",
-    "텍스트 사진의 어두운 부분을 반전하고 임계값을 적용해 연결 성분을 측정합니다. 여러 획이나 선이 이어질 수 있으며 OCR이나 문자 단위 분할이 아닙니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide.html",
-    "시각 자료 해설",
-    "픽셀·좌표·분포·실제 영상 비교와 객체 관계를 주제에 맞게 설명합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-calibration.html",
-    "평면 보정의 준비와 검증 · draw.io 구조도",
-    "픽셀과 기준 평면의 대응점을 이용해 변환을 만들고 독립 점으로 확인합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-caliper-flow.html",
-    "캘리퍼: 프로브부터 측정까지 · draw.io 구조도",
-    "프로브에서 에지 후보를 구하고 측정 모델을 피팅합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-coordinates.html",
-    "ROI 로컬, 전역, 월드 좌표 · draw.io 구조도",
-    "ROI 원점을 더해 전역 픽셀 좌표로 바꾸고 보정을 별도 적용합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-depth-to-cloud.html",
-    "높이 맵에서 점 구름으로 · draw.io 구조도",
-    "격자 셀과 높이를 원점 및 간격으로 3차원 점에 대응합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-font-ocr.html",
-    "글꼴 예제 학습과 판독 · draw.io 구조도",
-    "라벨이 있는 글자 셀로 모델을 학습하고 읽은 결과를 확인합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-frame-queue.html",
-    "프레임 큐의 소유권과 대기 · draw.io 구조도",
-    "큐에 공유 이미지를 넣고 꺼낸 독립 핸들을 사용하는 흐름입니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-geometric-models.html",
-    "선·원·사각형 모델의 해석 · draw.io 구조도",
-    "측정점의 공간 배치에 맞는 형상을 선택하고 결과와 잔차를 함께 봅니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-image-ownership.html",
-    "이미지 공유와 ROI의 수명 · draw.io 구조도",
-    "Share와 ROI는 저장소를 공유하고 깊은 복사는 독립 버퍼를 만듭니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-inspection-extension.html",
-    "검사 확장의 입출력 경계 · draw.io 구조도",
-    "입력, 파라미터, 결과와 오류를 분리해 검사 단계를 연결합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-matching-inspection.html",
-    "매칭 결과로 검사 영역 정렬 · draw.io 구조도",
-    "기준 대상을 찾은 뒤 위치에 맞춰 검사 영역을 해석합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-plc-simulation.html",
-    "모의 PLC 요청과 결과 확인 · draw.io 구조도",
-    "명시된 명령과 시간으로 동작하는 SimPlc 상태 흐름입니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-query-execution.html",
-    "지연 쿼리의 구성과 실행 · draw.io 구조도",
-    "단계를 정의하고 명시적인 실행에서 결과를 얻습니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-queue-shutdown.html",
-    "대기 작업과 안전한 종료 순서 · draw.io 구조도",
-    "큐를 닫아 대기자를 깨우고 작업과 보유 객체를 정리합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/drawio-sdk-layers.html",
-    "언어별 API와 네이티브 경계 · draw.io 구조도",
-    "C#과 Python은 C ABI를 통해 Rust 구현에 접근하고 Rust는 공개 API를 직접 사용합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-acquisition-flow.html",
-    "유한 프레임 큐 · 시각 해설",
-    "큐의 공유 이미지와 꺼낸 핸들의 관계를 명확히 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-ai-coordinates.html",
-    "기본 AI 입력과 출력 좌표 · 시각 해설",
-    "종횡비를 유지하지 않는 기본 stretch의 축별 역변환을 예로 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-blob-connectivity.html",
-    "대각선 연결성 비교 · 시각 해설",
-    "같은 두 픽셀이 연결 방식에 따라 몇 개의 성분이 되는지 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-calibration-transform.html",
-    "로컬·전역·평면 좌표 · 시각 해설",
-    "ROI 원점을 더한 뒤 보정 변환을 적용하는 순서를 공간과 수식으로 설명합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-caliper-profile.html",
-    "캘리퍼 프로파일 · 시각 해설",
-    "실제 camera 사진의 표본 선 및 SDK 프로파일을 같은 x좌표로 나란히 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-canny-edges.html",
-    "Canny 경계 단계 · 시각 해설",
-    "공개 camera 사진에 SDK Canny를 두 번 적용해 경계 마스크와 검출 픽셀 수를 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-deployment-check.html",
-    "설치 전 확인 · 시각 해설",
-    "운영체제·언어·실행 환경과 설치 후 확인 항목을 나누어 살펴봅니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-depth-grid.html",
-    "격자 셀에서 3D 점으로 · 시각 해설",
-    "행·열 인덱스, 간격, 원점과 높이가 점의 좌표를 결정합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-difference-inspection.html",
-    "기준 영상과 차분 · 시각 해설",
-    "공개 사진, 의도적 수정 영상과 실제 SDK 차분 마스크를 나란히 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-first-pipeline.html",
-    "임계값과 블롭 중심 · 시각 해설",
-    "임계값 경계가 포함되는지, 두 전경 픽셀의 중심은 어디인지 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-frequency-roundtrip.html",
-    "주파수 변환 왕복 · 시각 해설",
-    "64×64 합성 줄무늬와 2D FFT의 ky=0 단면, 복소 계수로 복원한 영상을 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-gaussian-filter.html",
-    "가우시안 평활화 · 시각 해설",
-    "가운데 값이 1인 합성 입력과 σ=1인 3×3 정규화 커널에 대한 출력을 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-histogram-bins.html",
-    "히스토그램 읽기 · 시각 해설",
-    "합성 표본 0, 0, 1, 3을 폭 1인 구간으로 나누면 빈도는 2, 1, 0, 1입니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-image-lifetime.html",
-    "이미지 공유와 수명 · 시각 해설",
-    "공유 저장소와 독립 복사의 차이는 공간적 소유 관계로 읽습니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-inspection-alignment.html",
-    "검사 정렬과 유효 마스크 · 시각 해설",
-    "기준 격자를 검사 영상으로 대응할 때 영상 밖의 표본을 유효 비교에서 제외하는 이유를 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-lab-distance.html",
-    "Lab 색차 계산 · 시각 해설",
-    "Lab 차이 공간의 두 점과 그 사이의 벡터를 표시합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-morphology.html",
-    "이진 형태학의 픽셀 변화 · 시각 해설",
-    "같은 3×3 구조 요소를 쓴 침식·팽창·열림·닫힘 결과를 비교합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-ncc-matching.html",
-    "NCC 점수 판독 · 시각 해설",
-    "합성 3×3 모델을 검색 영상의 (9,5)에 넣고 모든 유효 위치의 NCC를 계산합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-ocr-region.html",
-    "단일 글자 줄과 ROI의 공간 관계 · 시각 해설",
-    "기본 인쇄 OCR이 읽는 ROI 안의 단일 문자 줄을 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-pixel-formats.html",
-    "픽셀 형식과 저장 크기 · 시각 해설",
-    "형식의 채널 구성과 픽셀 크기를 비교하고 함수별 지원을 따로 확인합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-plc-simulation.html",
-    "모의 PLC 상태 · 시각 해설",
-    "요청·결과·승인과 타임아웃 상태를 구분합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-point-cloud-fit.html",
-    "점과 평면의 잔차 · 시각 해설",
-    "평면과 점 사이의 수직 거리를 표시해 잔차의 뜻을 설명합니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-query-execution.html",
-    "쿼리 실행 · 시각 해설",
-    "구성 시점과 명시적 실행 시점의 차이를 보여 줍니다."
-  ],
-  [
-    "시각 자료와 측정",
-    "labs/visual-guide/infographic-roi-coordinates.html",
-    "ROI와 원본 좌표 · 시각 해설",
-    "ROI의 로컬 점에 원점을 한 번 더해 원본 좌표를 구합니다."
   ],
   [
     "시작하기",
@@ -361,12 +67,6 @@
   ],
   [
     "시작하기",
-    "getting-started/first-image/related-api.html",
-    "관련 API · 첫 이미지 처리",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "시작하기",
     "getting-started/first-image/rust.html",
     "Rust · 첫 이미지 처리",
     "Rust의 입력과 결과, 적용 방법을 설명합니다."
@@ -382,12 +82,6 @@
     "getting-started/index/prerequisites.html",
     "다음 주제 · 시작하기",
     "다음 주제의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "시작하기",
-    "getting-started/index/related-api.html",
-    "관련 API · 시작하기",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
   ],
   [
     "시작하기",
@@ -415,12 +109,6 @@
   ],
   [
     "시작하기",
-    "getting-started/sdk-setup/related-api.html",
-    "관련 API · SDK 환경 준비 및 첫 빌드",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "시작하기",
     "getting-started/sdk-setup/rust.html",
     "Rust 소스 소비 · SDK 환경 준비 및 첫 빌드",
     "Rust 소스 소비의 입력과 결과, 적용 방법을 설명합니다."
@@ -436,6 +124,12 @@
     "getting-started/sdk-setup/windows.html",
     "소스에서 네이티브 빌드 · SDK 환경 준비 및 첫 빌드",
     "소스에서 네이티브 빌드의 입력과 결과, 적용 방법을 설명합니다."
+  ],
+  [
+    "시작하기",
+    "getting-started/first-image/photo-statistics.html",
+    "사진 사용 예 · 사진의 전체 밝기 통계",
+    "실제 Gray8 영상의 픽셀 수·최소·최대·평균·분산을 원본 배열과 비교합니다."
   ],
   [
     "핵심 개념",
@@ -499,12 +193,6 @@
   ],
   [
     "핵심 개념",
-    "concepts/coordinate-systems/related-api.html",
-    "관련 API · 좌표계: Local · Global · World",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "핵심 개념",
     "concepts/coordinate-systems/roi-world-example.html",
     "ROI 로컬에서 세계 좌표까지 · 좌표계: Local · Global · World",
     "ROI 로컬에서 세계 좌표까지의 입력 조건과 결과 해석을 설명합니다."
@@ -529,12 +217,6 @@
   ],
   [
     "핵심 개념",
-    "concepts/index/related-api.html",
-    "관련 API · 핵심 개념",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "핵심 개념",
     "concepts/index/topic-1.html",
     "객체와 데이터 · 핵심 개념",
     "객체와 데이터의 입력과 결과, 적용 방법을 설명합니다."
@@ -556,12 +238,6 @@
     "concepts/lifetime/python.html",
     "5. Python의 context manager · 객체 수명과 메모리 관리",
     "5. Python의 context manager의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "핵심 개념",
-    "concepts/lifetime/related-api.html",
-    "관련 API · 객체 수명과 메모리 관리",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
   ],
   [
     "핵심 개념",
@@ -643,12 +319,6 @@
   ],
   [
     "핵심 개념",
-    "concepts/object-model/related-api.html",
-    "관련 API · 객체 중심 API 모델",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "핵심 개념",
     "concepts/object-model/responsibilities.html",
     "2. 주요 객체의 책임과 수명 · 객체 중심 API 모델",
     "2. 주요 객체의 책임과 수명의 입력과 결과, 적용 방법을 설명합니다."
@@ -691,12 +361,6 @@
   ],
   [
     "핵심 개념",
-    "concepts/pixel-formats/related-api.html",
-    "관련 API · 픽셀 형식과 알고리즘 지원 범위",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "핵심 개념",
     "concepts/pixel-formats/select.html",
     "형식 선택 기준 · 픽셀 형식과 알고리즘 지원 범위",
     "형식 선택 기준의 입력과 결과, 적용 방법을 설명합니다."
@@ -724,12 +388,6 @@
     "concepts/query/language-difference.html",
     "C#·Python Builder와의 차이 · ImageQuery · 지연 실행",
     "C#·Python Builder와의 차이의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "핵심 개념",
-    "concepts/query/related-api.html",
-    "관련 API · ImageQuery · 지연 실행",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
   ],
   [
     "핵심 개념",
@@ -766,12 +424,6 @@
     "concepts/results/empty.html",
     "검출 결과가 없을 때 · 결과 객체",
     "검출 결과가 없을 때에 대한 결과 객체 사용 안내"
-  ],
-  [
-    "핵심 개념",
-    "concepts/results/related-api.html",
-    "관련 API · 결과 객체",
-    "관련 API에 대한 결과 객체 사용 안내"
   ],
   [
     "핵심 개념",
@@ -835,12 +487,6 @@
   ],
   [
     "핵심 개념",
-    "concepts/roi/related-api.html",
-    "관련 API · ROI와 좌표계",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "핵심 개념",
     "concepts/roi/visual.html",
     "2. 4×3 입력과 ROI 예제 · ROI와 좌표계",
     "2. 4×3 입력과 ROI 예제의 입력과 결과, 적용 방법을 설명합니다."
@@ -874,12 +520,6 @@
     "concepts/share/python.html",
     "5. Python의 같은 계약 · Share와 복사",
     "5. Python의 같은 계약의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "핵심 개념",
-    "concepts/share/related-api.html",
-    "관련 API · Share와 복사",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
   ],
   [
     "핵심 개념",
@@ -928,12 +568,6 @@
     "concepts/zimage/memory.html",
     "2. 메모리와 원점의 관계 · ZImage",
     "ZImage에서 2. 메모리와 원점의 관계을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "핵심 개념",
-    "concepts/zimage/related-api.html",
-    "관련 API · ZImage",
-    "ZImage에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
   ],
   [
     "핵심 개념",
@@ -1069,12 +703,6 @@
   ],
   [
     "알고리즘",
-    "guides/blob-analysis/related-api.html",
-    "관련 API · Blob Analysis · 연결 영역",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
     "guides/blob-analysis/result-lifetime-detail.html",
     "결과 필드와 수명 · Blob Analysis · 연결 영역",
     "결과 필드와 수명의 사용 조건과 결과 해석을 설명합니다."
@@ -1108,12 +736,6 @@
     "guides/calibration/planar-contract.html",
     "평면 변환과 검증 · PlanarCalibration · 보정",
     "평면 변환과 검증의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
-    "guides/calibration/related-api.html",
-    "관련 API · PlanarCalibration · 보정",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
   ],
   [
     "알고리즘",
@@ -1177,12 +799,6 @@
   ],
   [
     "알고리즘",
-    "guides/canny/related-api.html",
-    "관련 API · Canny · 에지 검출",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
     "guides/canny/select.html",
     "언제 사용하면 좋을까? · Canny · 에지 검출",
     "언제 사용하면 좋을까?의 사용 조건과 결과 해석을 설명합니다."
@@ -1228,12 +844,6 @@
     "guides/difference-inspection/parameters.html",
     "옵션과 결과 · 차분 검사",
     "차분 검사에서 옵션과 결과을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "알고리즘",
-    "guides/difference-inspection/related-api.html",
-    "관련 API · 차분 검사",
-    "차분 검사에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
   ],
   [
     "알고리즘",
@@ -1291,12 +901,6 @@
   ],
   [
     "알고리즘",
-    "guides/gaussian/related-api.html",
-    "관련 API · Gaussian Blur — 가우시안 평활화",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
     "guides/gaussian/verification-cases.html",
     "관련 검증 사례 · Gaussian Blur — 가우시안 평활화",
     "관련 검증 사례의 사용 조건과 결과 해석을 설명합니다."
@@ -1306,12 +910,6 @@
     "guides/index/next-topics.html",
     "추가 상세 주제 · 알고리즘 가이드",
     "추가 상세 주제의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "알고리즘",
-    "guides/index/related-api.html",
-    "관련 API · 알고리즘 가이드",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
   ],
   [
     "알고리즘",
@@ -1336,12 +934,6 @@
     "guides/matching-alternatives/principle.html",
     "정규화 상관으로 포즈 찾기 · 매칭 모델 선택",
     "정규화 상관으로 포즈 찾기에 대한 매칭 모델 선택 사용 안내"
-  ],
-  [
-    "알고리즘",
-    "guides/matching-alternatives/related-api.html",
-    "관련 API · 매칭 모델 선택",
-    "관련 API에 대한 매칭 모델 선택 사용 안내"
   ],
   [
     "알고리즘",
@@ -1390,12 +982,6 @@
     "guides/matching-ncc/principle.html",
     "정규화 상관으로 포즈 찾기 · NCC 매칭",
     "정규화 상관으로 포즈 찾기에 대한 NCC 매칭 사용 안내"
-  ],
-  [
-    "알고리즘",
-    "guides/matching-ncc/related-api.html",
-    "관련 API · NCC 매칭",
-    "관련 API에 대한 NCC 매칭 사용 안내"
   ],
   [
     "알고리즘",
@@ -1477,12 +1063,6 @@
   ],
   [
     "알고리즘",
-    "guides/metrology/related-api.html",
-    "관련 API · 기하 계측 모델",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
     "guides/metrology/result-field-table.html",
     "결과와 수명 · 기하 계측 모델",
     "결과와 수명의 입력 조건과 결과 해석을 설명합니다."
@@ -1561,12 +1141,6 @@
   ],
   [
     "알고리즘",
-    "guides/morphology/related-api.html",
-    "관련 API · Morphology · 열기와 닫기",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
     "guides/morphology/size.html",
     "커널 숫자에 담긴 의미 · Morphology · 열기와 닫기",
     "커널 숫자에 담긴 의미의 사용 조건과 결과 해석을 설명합니다."
@@ -1594,12 +1168,6 @@
     "guides/profile-caliper/profile-call.html",
     "C# 호출 부분 · Profile · Caliper",
     "C# 호출 부분의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
-    "guides/profile-caliper/related-api.html",
-    "관련 API · Profile · Caliper",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
   ],
   [
     "알고리즘",
@@ -1657,12 +1225,6 @@
   ],
   [
     "알고리즘",
-    "guides/threshold/related-api.html",
-    "관련 API · Threshold — 임계값 분할",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "알고리즘",
     "guides/threshold/theory.html",
     "알고리즘의 정의 · Threshold — 임계값 분할",
     "알고리즘의 정의의 사용 조건과 결과 해석을 설명합니다."
@@ -1672,6 +1234,36 @@
     "guides/threshold/verification-cases.html",
     "관련 검증 사례 · Threshold — 임계값 분할",
     "관련 검증 사례의 사용 조건과 결과 해석을 설명합니다."
+  ],
+  [
+    "알고리즘",
+    "guides/blob-analysis/photo-coins.html",
+    "사진 사용 예 · 동전 사진의 연결 성분",
+    "실제 사진을 고정 문턱으로 이진화한 뒤 8연결 영역의 면적과 경계를 측정합니다."
+  ],
+  [
+    "알고리즘",
+    "guides/blob-analysis/photo-text-components.html",
+    "사진 사용 예 · 텍스트 사진의 어두운 연결 성분",
+    "텍스트 사진의 어두운 부분을 반전하고 임계값을 적용해 연결 성분을 측정합니다. 여러 획이나 선이 이어질 수 있으며 OCR이나 문자 단위 분할이 아닙니다."
+  ],
+  [
+    "알고리즘",
+    "guides/difference-inspection/photo-controlled-difference.html",
+    "사진 사용 예 · 사진에 통제 변화를 넣은 차분",
+    "실제 사진의 지정 24×16 영역을 인위적으로 바꿔 차분 마스크를 검증합니다."
+  ],
+  [
+    "알고리즘",
+    "guides/metrology/photo-circle-fit.html",
+    "사진 사용 예 · 동전 경계의 원 피팅",
+    "선택 성분의 채워진 픽셀 경계를 ROI 로컬 좌표로 피팅합니다."
+  ],
+  [
+    "알고리즘",
+    "guides/profile-caliper/photo-profile.html",
+    "사진 사용 예 · 실제 사진의 프로파일과 에지",
+    "중앙 가로 줄의 강도 표본과 SDK의 부호 있는 에지 위치를 확인합니다."
   ],
   [
     "3D / Spatial",
@@ -1705,12 +1297,6 @@
   ],
   [
     "3D / Spatial",
-    "guides/depth-map/overview-2.html",
-    "관련 공개 API · DepthMap · 깊이 지도",
-    "결측을 유지하는 깊이 격자와 거리 단위·원점·프레임."
-  ],
-  [
-    "3D / Spatial",
     "guides/depth-map/overview-3.html",
     "오류·주의사항 · DepthMap · 깊이 지도",
     "결측을 유지하는 깊이 격자와 거리 단위·원점·프레임."
@@ -1725,12 +1311,6 @@
     "3D / Spatial",
     "guides/depth-map/perspective.html",
     "원근 투영과 직교 격자 · DepthMap · 깊이 지도",
-    "결측을 유지하는 깊이 격자와 거리 단위·원점·프레임."
-  ],
-  [
-    "3D / Spatial",
-    "guides/depth-map/related-api.html",
-    "관련 API · DepthMap · 깊이 지도",
     "결측을 유지하는 깊이 격자와 거리 단위·원점·프레임."
   ],
   [
@@ -1759,12 +1339,6 @@
   ],
   [
     "3D / Spatial",
-    "guides/point-cloud/overview-2.html",
-    "관련 공개 API · PointCloud · 점군",
-    "3D 점군 수명과 법선, 평면·원통 피팅, ICP 정합."
-  ],
-  [
-    "3D / Spatial",
     "guides/point-cloud/overview-3.html",
     "오류·주의사항 · PointCloud · 점군",
     "3D 점군 수명과 법선, 평면·원통 피팅, ICP 정합."
@@ -1779,12 +1353,6 @@
     "3D / Spatial",
     "guides/point-cloud/point-contract.html",
     "점군과 정합의 결과 판독 · PointCloud · 점군",
-    "3D 점군 수명과 법선, 평면·원통 피팅, ICP 정합."
-  ],
-  [
-    "3D / Spatial",
-    "guides/point-cloud/related-api.html",
-    "관련 API · PointCloud · 점군",
     "3D 점군 수명과 법선, 평면·원통 피팅, ICP 정합."
   ],
   [
@@ -1837,12 +1405,6 @@
   ],
   [
     "검사 / Inspection",
-    "guides/inspection-framework/related-api.html",
-    "관련 API · 검사 프레임워크",
-    "검사 프레임워크에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "검사 / Inspection",
     "guides/inspection-framework/verification-cases.html",
     "관련 검증 사례 · 검사 프레임워크",
     "검사 프레임워크에서 관련 검증 사례을 이해하기 위한 입력, 동작과 결과 설명"
@@ -1863,12 +1425,6 @@
     "색상 / Color",
     "guides/color-processing/existing-2132336933701782354.html",
     "개념과 사용 흐름 · HSV·Lab·DeltaE76",
-    "색상 공간 변환 및 화이트밸런스·교정·색차 검사."
-  ],
-  [
-    "색상 / Color",
-    "guides/color-processing/existing-3576884134528031495.html",
-    "관련 공개 API · HSV·Lab·DeltaE76",
     "색상 공간 변환 및 화이트밸런스·교정·색차 검사."
   ],
   [
@@ -1903,15 +1459,15 @@
   ],
   [
     "색상 / Color",
-    "guides/color-processing/related-api.html",
-    "관련 API · HSV·Lab·DeltaE76",
+    "guides/color-processing/verification-cases.html",
+    "관련 검증 사례 · HSV·Lab·DeltaE76",
     "색상 공간 변환 및 화이트밸런스·교정·색차 검사."
   ],
   [
     "색상 / Color",
-    "guides/color-processing/verification-cases.html",
-    "관련 검증 사례 · HSV·Lab·DeltaE76",
-    "색상 공간 변환 및 화이트밸런스·교정·색차 검사."
+    "guides/color-processing/photo-rgb-statistics.html",
+    "사진 사용 예 · 커피 사진 ROI의 RGB 통계",
+    "고정 ROI의 정규화 인코딩 RGB 평균과 모집단 표준편차를 비교합니다."
   ],
   [
     "인식 / OCR",
@@ -1951,12 +1507,6 @@
   ],
   [
     "인식 / OCR",
-    "guides/recognition/overview-2.html",
-    "관련 공개 API · 바코드·OCR 인식",
-    "인식 문자열뿐 아니라 상태·실패 이유·좌표를 분석하는 방법."
-  ],
-  [
-    "인식 / OCR",
     "guides/recognition/overview-3.html",
     "오류·주의사항 · 바코드·OCR 인식",
     "인식 문자열뿐 아니라 상태·실패 이유·좌표를 분석하는 방법."
@@ -1971,12 +1521,6 @@
     "인식 / OCR",
     "guides/recognition/read-contract.html",
     "모델·문자와 판정 · 바코드·OCR 인식",
-    "인식 문자열뿐 아니라 상태·실패 이유·좌표를 분석하는 방법."
-  ],
-  [
-    "인식 / OCR",
-    "guides/recognition/related-api.html",
-    "관련 API · 바코드·OCR 인식",
     "인식 문자열뿐 아니라 상태·실패 이유·좌표를 분석하는 방법."
   ],
   [
@@ -2023,12 +1567,6 @@
   ],
   [
     "AI / Inference",
-    "guides/inference/overview-2.html",
-    "관련 공개 API · AI 엔진과 결과",
-    "CPU RTen 모델, ROI 추론과 분류·검출·분할·이상 결과."
-  ],
-  [
-    "AI / Inference",
     "guides/inference/overview-3.html",
     "오류·주의사항 · AI 엔진과 결과",
     "CPU RTen 모델, ROI 추론과 분류·검출·분할·이상 결과."
@@ -2037,12 +1575,6 @@
     "AI / Inference",
     "guides/inference/overview-4.html",
     "검증 기준 · AI 엔진과 결과",
-    "CPU RTen 모델, ROI 추론과 분류·검출·분할·이상 결과."
-  ],
-  [
-    "AI / Inference",
-    "guides/inference/related-api.html",
-    "관련 API · AI 엔진과 결과",
     "CPU RTen 모델, ROI 추론과 분류·검출·분할·이상 결과."
   ],
   [
@@ -2071,12 +1603,6 @@
   ],
   [
     "취득 / Device",
-    "guides/acquisition/overview-2.html",
-    "관련 공개 API · SimulatedCamera · 취득 모의",
-    "모의 카메라 상태와 트리거·프레임 소유권을 설명합니다."
-  ],
-  [
-    "취득 / Device",
     "guides/acquisition/overview-3.html",
     "오류·주의사항 · SimulatedCamera · 취득 모의",
     "모의 카메라 상태와 트리거·프레임 소유권을 설명합니다."
@@ -2085,12 +1611,6 @@
     "취득 / Device",
     "guides/acquisition/overview-4.html",
     "검증 기준 · SimulatedCamera · 취득 모의",
-    "모의 카메라 상태와 트리거·프레임 소유권을 설명합니다."
-  ],
-  [
-    "취득 / Device",
-    "guides/acquisition/related-api.html",
-    "관련 API · SimulatedCamera · 취득 모의",
     "모의 카메라 상태와 트리거·프레임 소유권을 설명합니다."
   ],
   [
@@ -2137,12 +1657,6 @@
   ],
   [
     "입출력 / IO",
-    "guides/image-io/overview-2.html",
-    "관련 공개 API · 이미지 파일 Load · Save",
-    "관련 공개 API에 대한 이미지 파일 Load · Save 사용 안내"
-  ],
-  [
-    "입출력 / IO",
     "guides/image-io/overview-3.html",
     "오류·주의사항 · 이미지 파일 Load · Save",
     "오류·주의사항에 대한 이미지 파일 Load · Save 사용 안내"
@@ -2152,12 +1666,6 @@
     "guides/image-io/overview-4.html",
     "검증 기준 · 이미지 파일 Load · Save",
     "검증 기준에 대한 이미지 파일 Load · Save 사용 안내"
-  ],
-  [
-    "입출력 / IO",
-    "guides/image-io/related-api.html",
-    "관련 API · 이미지 파일 Load · Save",
-    "관련 API에 대한 이미지 파일 Load · Save 사용 안내"
   ],
   [
     "입출력 / IO",
@@ -2188,12 +1696,6 @@
     "guides/frequency/existing-2132336933701782354.html",
     "개념과 사용 흐름 · FFT · 주파수 필터",
     "개념과 사용 흐름의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "신호처리 / Frequency",
-    "guides/frequency/existing-3576884134528031495.html",
-    "관련 공개 API · FFT · 주파수 필터",
-    "관련 공개 API의 입력 조건과 결과 해석을 설명합니다."
   ],
   [
     "신호처리 / Frequency",
@@ -2230,12 +1732,6 @@
     "guides/frequency/options-lifetime.html",
     "스펙트럼 필드와 수명 · FFT · 주파수 필터",
     "스펙트럼 필드와 수명의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "신호처리 / Frequency",
-    "guides/frequency/related-api.html",
-    "관련 API · FFT · 주파수 필터",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
   ],
   [
     "신호처리 / Frequency",
@@ -2365,12 +1861,6 @@
   ],
   [
     "API Reference",
-    "api/csharp/find-blobs/related-api.html",
-    "관련 API · C# · ZImage.FindBlobs",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/csharp/find-blobs/result-lifetime-detail.html",
     "결과 필드와 수명 · C# · ZImage.FindBlobs",
     "결과 필드와 수명의 사용 조건과 결과 해석을 설명합니다."
@@ -2437,12 +1927,6 @@
   ],
   [
     "API Reference",
-    "api/csharp/inspection/related-api.html",
-    "관련 API · C# 검사 API",
-    "C# 검사 API에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "API Reference",
     "api/csharp/inspection/verification-cases.html",
     "관련 검증 사례 · C# 검사 API",
     "C# 검사 API에서 관련 검증 사례을 이해하기 위한 입력, 동작과 결과 설명"
@@ -2470,12 +1954,6 @@
     "api/csharp/match-model/principle.html",
     "정규화 상관으로 포즈 찾기 · C# MatchModel",
     "정규화 상관으로 포즈 찾기에 대한 C# MatchModel 사용 안내"
-  ],
-  [
-    "API Reference",
-    "api/csharp/match-model/related-api.html",
-    "관련 API · C# MatchModel",
-    "관련 API에 대한 C# MatchModel 사용 안내"
   ],
   [
     "API Reference",
@@ -2539,12 +2017,6 @@
   ],
   [
     "API Reference",
-    "api/csharp/metrology/related-api.html",
-    "관련 API · C# · Metrology",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/csharp/metrology/strip-math.html",
     "스트립, 미분과 피크 · C# · Metrology",
     "스트립, 미분과 피크의 입력 조건과 결과 해석을 설명합니다."
@@ -2587,12 +2059,6 @@
   ],
   [
     "API Reference",
-    "api/csharp/spatial3d/overview-2.html",
-    "관련 공개 API · C# · Spatial3D",
-    "DepthMap/PointCloud의 .NET 소유 핸들과 결과."
-  ],
-  [
-    "API Reference",
     "api/csharp/spatial3d/overview-3.html",
     "오류·주의사항 · C# · Spatial3D",
     "DepthMap/PointCloud의 .NET 소유 핸들과 결과."
@@ -2607,12 +2073,6 @@
     "API Reference",
     "api/csharp/spatial3d/point-contract.html",
     "점군과 정합의 결과 판독 · C# · Spatial3D",
-    "DepthMap/PointCloud의 .NET 소유 핸들과 결과."
-  ],
-  [
-    "API Reference",
-    "api/csharp/spatial3d/related-api.html",
-    "관련 API · C# · Spatial3D",
     "DepthMap/PointCloud의 .NET 소유 핸들과 결과."
   ],
   [
@@ -2647,12 +2107,6 @@
   ],
   [
     "API Reference",
-    "api/csharp/threshold/related-api.html",
-    "관련 API · C# · ZImage.Threshold",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/csharp/threshold/signature.html",
     "공개 시그니처 · C# · ZImage.Threshold",
     "공개 시그니처의 사용 조건과 결과 해석을 설명합니다."
@@ -2668,12 +2122,6 @@
     "api/csharp/threshold/verification-cases.html",
     "관련 검증 사례 · C# · ZImage.Threshold",
     "관련 검증 사례의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
-    "api/index/related-api.html",
-    "관련 API · 언어별 API 안내",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
   ],
   [
     "API Reference",
@@ -2710,12 +2158,6 @@
     "api/python/match-model/principle.html",
     "정규화 상관으로 포즈 찾기 · Python MatchModel",
     "정규화 상관으로 포즈 찾기에 대한 Python MatchModel 사용 안내"
-  ],
-  [
-    "API Reference",
-    "api/python/match-model/related-api.html",
-    "관련 API · Python MatchModel",
-    "관련 API에 대한 Python MatchModel 사용 안내"
   ],
   [
     "API Reference",
@@ -2779,12 +2221,6 @@
   ],
   [
     "API Reference",
-    "api/python/threshold/related-api.html",
-    "관련 API · Python · ZImage.threshold",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/python/threshold/signature.html",
     "공개 호출 형태 · Python · ZImage.threshold",
     "공개 호출 형태의 사용 조건과 결과 해석을 설명합니다."
@@ -2833,12 +2269,6 @@
   ],
   [
     "API Reference",
-    "api/rust/blob-query/related-api.html",
-    "관련 API · Rust · BlobQuery / BlobAnalysisResult",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/rust/blob-query/result-lifetime-detail.html",
     "결과 필드와 수명 · Rust · BlobQuery / BlobAnalysisResult",
     "결과 필드와 수명의 사용 조건과 결과 해석을 설명합니다."
@@ -2878,12 +2308,6 @@
     "api/rust/match-model/principle.html",
     "정규화 상관으로 포즈 찾기 · Rust MatchModel",
     "정규화 상관으로 포즈 찾기에 대한 Rust MatchModel 사용 안내"
-  ],
-  [
-    "API Reference",
-    "api/rust/match-model/related-api.html",
-    "관련 API · Rust MatchModel",
-    "관련 API에 대한 Rust MatchModel 사용 안내"
   ],
   [
     "API Reference",
@@ -2971,12 +2395,6 @@
   ],
   [
     "API Reference",
-    "api/rust/measurement-models/related-api.html",
-    "관련 API · Rust · MeasurementModels",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/rust/measurement-models/result-field-table.html",
     "결과와 수명 · Rust · MeasurementModels",
     "결과와 수명의 입력 조건과 결과 해석을 설명합니다."
@@ -3019,12 +2437,6 @@
   ],
   [
     "API Reference",
-    "api/rust/planar-calibration/related-api.html",
-    "관련 API · Rust · PlanarCalibration",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "API Reference",
     "api/rust/planar-calibration/validation-fields.html",
     "보류점 평가 · Rust · PlanarCalibration",
     "보류점 평가의 입력 조건과 결과 해석을 설명합니다."
@@ -3061,12 +2473,6 @@
   ],
   [
     "API Reference",
-    "api/rust/spatial3d/overview-2.html",
-    "관련 공개 API · Rust · Spatial3D",
-    "DepthMap과 PointCloud의 생성·공유·기하 피팅 API."
-  ],
-  [
-    "API Reference",
     "api/rust/spatial3d/overview-3.html",
     "오류·주의사항 · Rust · Spatial3D",
     "DepthMap과 PointCloud의 생성·공유·기하 피팅 API."
@@ -3081,12 +2487,6 @@
     "API Reference",
     "api/rust/spatial3d/point-contract.html",
     "점군과 정합의 결과 판독 · Rust · Spatial3D",
-    "DepthMap과 PointCloud의 생성·공유·기하 피팅 API."
-  ],
-  [
-    "API Reference",
-    "api/rust/spatial3d/related-api.html",
-    "관련 API · Rust · Spatial3D",
     "DepthMap과 PointCloud의 생성·공유·기하 피팅 API."
   ],
   [
@@ -3118,12 +2518,6 @@
     "api/rust/threshold/params.html",
     "매개변수·반환 · Rust · ZImage::threshold",
     "매개변수·반환에 대한 Rust · ZImage::threshold 사용 안내"
-  ],
-  [
-    "API Reference",
-    "api/rust/threshold/related-api.html",
-    "관련 API · Rust · ZImage::threshold",
-    "관련 API에 대한 Rust · ZImage::threshold 사용 안내"
   ],
   [
     "API Reference",
@@ -3199,12 +2593,6 @@
   ],
   [
     "실전 예제",
-    "examples/blob-inspection/related-api.html",
-    "관련 API · 작은 Blob 검사 · 3×1 마스크",
-    "작은 Blob 검사 · 3×1 마스크에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "실전 예제",
     "examples/blob-inspection/result-lifetime-detail.html",
     "결과 필드와 수명 · 작은 Blob 검사 · 3×1 마스크",
     "작은 Blob 검사 · 3×1 마스크에서 결과 필드와 수명을 이해하기 위한 입력, 동작과 결과 설명"
@@ -3271,12 +2659,6 @@
   ],
   [
     "실전 예제",
-    "examples/difference-spot/related-api.html",
-    "관련 API · 차분 점 결함",
-    "차분 점 결함에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "실전 예제",
     "examples/difference-spot/verification-cases.html",
     "관련 검증 사례 · 차분 점 결함",
     "차분 점 결함에서 관련 검증 사례을 이해하기 위한 입력, 동작과 결과 설명"
@@ -3301,12 +2683,6 @@
   ],
   [
     "실전 예제",
-    "examples/index/related-api.html",
-    "관련 API · 실전 예제",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "실전 예제",
     "examples/ncc-search/contract.html",
     "입력, 좌표와 소유권 · NCC 검색 예제",
     "입력, 좌표와 소유권에 대한 NCC 검색 예제 사용 안내"
@@ -3328,12 +2704,6 @@
     "examples/ncc-search/principle.html",
     "정규화 상관으로 포즈 찾기 · NCC 검색 예제",
     "정규화 상관으로 포즈 찾기에 대한 NCC 검색 예제 사용 안내"
-  ],
-  [
-    "실전 예제",
-    "examples/ncc-search/related-api.html",
-    "관련 API · NCC 검색 예제",
-    "관련 API에 대한 NCC 검색 예제 사용 안내"
   ],
   [
     "실전 예제",
@@ -3382,12 +2752,6 @@
     "examples/roi-threshold/python.html",
     "Python · ROI 기반 임계값 검사",
     "Python의 사용 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "실전 예제",
-    "examples/roi-threshold/related-api.html",
-    "관련 API · ROI 기반 임계값 검사",
-    "관련 API의 사용 조건과 결과 해석을 설명합니다."
   ],
   [
     "실전 예제",
@@ -4885,12 +4249,6 @@
   ],
   [
     "Python API",
-    "api/python/point-cloud/related-api.html",
-    "관련 API · PointCloud · Python",
-    "결측·단위·프레임을 보존하는 Python 점군"
-  ],
-  [
-    "Python API",
     "api/python/point-cloud/verification-cases.html",
     "관련 검증 사례 · PointCloud · Python",
     "결측·단위·프레임을 보존하는 Python 점군"
@@ -4957,12 +4315,6 @@
   ],
   [
     "예제",
-    "examples/aligned-inspection/related-api.html",
-    "관련 API · 정렬 후 차분 검사",
-    "정렬 후 차분 검사에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "예제",
     "examples/aligned-inspection/verification-cases.html",
     "관련 검증 사례 · 정렬 후 차분 검사",
     "정렬 후 차분 검사에서 관련 검증 사례을 이해하기 위한 입력, 동작과 결과 설명"
@@ -4984,12 +4336,6 @@
     "examples/planar-calibration/planar-contract.html",
     "평면 변환과 검증 · 평면 보정 합성 예제",
     "평면 변환과 검증의 입력 조건과 결과 해석을 설명합니다."
-  ],
-  [
-    "예제",
-    "examples/planar-calibration/related-api.html",
-    "관련 API · 평면 보정 합성 예제",
-    "관련 API의 입력 조건과 결과 해석을 설명합니다."
   ],
   [
     "예제",
@@ -5029,12 +4375,6 @@
   ],
   [
     "매뉴얼 안내",
-    "examples/downloads/related-api.html",
-    "관련 API · 실행 프로젝트 다운로드",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "매뉴얼 안내",
     "examples/downloads/topic-1.html",
     "전체 실행 코드 받기 · 실행 프로젝트 다운로드",
     "전체 실행 코드 받기의 입력과 결과, 적용 방법을 설명합니다."
@@ -5050,12 +4390,6 @@
     "examples/downloads/topic-3.html",
     "포함 데이터와 한계 · 실행 프로젝트 다운로드",
     "포함 데이터와 한계의 입력과 결과, 적용 방법을 설명합니다."
-  ],
-  [
-    "매뉴얼 안내",
-    "getting-started/package-consumer/related-api.html",
-    "관련 API · 설치 패키지로 예제 실행",
-    "관련 API의 입력과 결과, 적용 방법을 설명합니다."
   ],
   [
     "매뉴얼 안내",
@@ -5137,12 +4471,6 @@
   ],
   [
     "가이드",
-    "guides/managed-display/related-api.html",
-    "관련 API · 관리형 표시와 Workbench",
-    "관리형 표시와 Workbench에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "가이드",
     "guides/managed-display/verification-cases.html",
     "관련 검증 사례 · 관리형 표시와 Workbench",
     "관리형 표시와 Workbench에서 관련 검증 사례을 이해하기 위한 입력, 동작과 결과 설명"
@@ -5197,12 +4525,6 @@
   ],
   [
     "가이드",
-    "guides/managed-inspection/related-api.html",
-    "관련 API · 관리형 검사와 호스트",
-    "관리형 검사와 호스트에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "가이드",
     "guides/managed-inspection/verification-cases.html",
     "관련 검증 사례 · 관리형 검사와 호스트",
     "관리형 검사와 호스트에서 관련 검증 사례을 이해하기 위한 입력, 동작과 결과 설명"
@@ -5248,12 +4570,6 @@
     "guides/managed-workbench/purpose.html",
     "실행과 구성 · 관리형 Workbench",
     "관리형 Workbench에서 실행과 구성을 이해하기 위한 입력, 동작과 결과 설명"
-  ],
-  [
-    "가이드",
-    "guides/managed-workbench/related-api.html",
-    "관련 API · 관리형 Workbench",
-    "관리형 Workbench에서 관련 API을 이해하기 위한 입력, 동작과 결과 설명"
   ],
   [
     "가이드",

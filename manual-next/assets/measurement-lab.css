@@ -11,10 +11,9 @@
 
 .mlab-plots{margin-top:1rem}.mlab-plot{margin:.9rem 0 0;padding:.7rem;border:1px solid #e5ede8;border-radius:8px;background:#fafcfb}.mlab-plot img{display:block;max-width:100%;height:auto;margin:auto;border-radius:4px}.mlab-plot figcaption{display:grid;gap:.2rem;margin-top:.6rem;font-size:.7rem;color:var(--ml-muted);line-height:1.55}.mlab-plot figcaption strong{color:var(--ml-ink);font-size:.76rem}
 
-/* Keep saved measurements alongside the image on wide screens. */
-.measurement-page .main{width:100%;max-width:1600px;padding-left:32px;padding-right:32px}
-.measurement-page .doc{max-width:none}
-@media(max-width:630px){.measurement-page .main{padding-left:15px;padding-right:15px}}
+/* Inline examples use the article width and do not reserve a case-list column. */
+.mlab[data-embedded="true"] .mlab-workspace,.mlab[data-case-id] .mlab-workspace{grid-template-columns:minmax(0,1fr)}
+.mlab[data-case-id] .mlab-cases{display:none}
 .mlab-visual-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(205px,.85fr);gap:1rem;align-items:start}
 .mlab-visual-grid .mlab-viewer-card,.mlab-visual-grid .mlab-results{min-width:0}
 .mlab-visual-grid .mlab-stage{height:clamp(290px,32vw,430px)}

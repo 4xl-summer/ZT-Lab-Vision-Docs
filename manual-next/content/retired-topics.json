@@ -1,0 +1,516 @@
+{
+  "reason": "User requested removal of all related API sections and navigation topics. No executable code blocks existed in these retired topics.",
+  "topics": [
+    {
+      "parent": "api/index.html",
+      "anchor": "related-api",
+      "child": "api/index/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/index.html",
+      "anchor": "related-api",
+      "child": "concepts/index/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/roi.html",
+      "anchor": "related-api",
+      "child": "concepts/roi/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/index.html",
+      "anchor": "related-api",
+      "child": "examples/index/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "getting-started/first-image.html",
+      "anchor": "related-api",
+      "child": "getting-started/first-image/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "getting-started/index.html",
+      "anchor": "related-api",
+      "child": "getting-started/index/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "getting-started/sdk-setup.html",
+      "anchor": "related-api",
+      "child": "getting-started/sdk-setup/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/index.html",
+      "anchor": "related-api",
+      "child": "guides/index/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "index.html",
+      "anchor": "related-api",
+      "child": "index/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/downloads.html",
+      "anchor": "related-api",
+      "child": "examples/downloads/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "getting-started/package-consumer.html",
+      "anchor": "related-api",
+      "child": "getting-started/package-consumer/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/object-model.html",
+      "anchor": "related-api",
+      "child": "concepts/object-model/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/lifetime.html",
+      "anchor": "related-api",
+      "child": "concepts/lifetime/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/share.html",
+      "anchor": "related-api",
+      "child": "concepts/share/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/pixel-formats.html",
+      "anchor": "related-api",
+      "child": "concepts/pixel-formats/related-api.html",
+      "owner": "basics",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/find-blobs.html",
+      "anchor": "related-api",
+      "child": "api/csharp/find-blobs/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/threshold.html",
+      "anchor": "related-api",
+      "child": "api/csharp/threshold/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/python/threshold.html",
+      "anchor": "related-api",
+      "child": "api/python/threshold/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/blob-query.html",
+      "anchor": "related-api",
+      "child": "api/rust/blob-query/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/roi-threshold.html",
+      "anchor": "related-api",
+      "child": "examples/roi-threshold/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/blob-analysis.html",
+      "anchor": "related-api",
+      "child": "guides/blob-analysis/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/canny.html",
+      "anchor": "related-api",
+      "child": "guides/canny/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/gaussian.html",
+      "anchor": "related-api",
+      "child": "guides/gaussian/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/morphology.html",
+      "anchor": "related-api",
+      "child": "guides/morphology/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/threshold.html",
+      "anchor": "related-api",
+      "child": "guides/threshold/related-api.html",
+      "owner": "processing",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/match-model.html",
+      "anchor": "related-api",
+      "child": "api/csharp/match-model/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/python/match-model.html",
+      "anchor": "related-api",
+      "child": "api/python/match-model/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/match-model.html",
+      "anchor": "related-api",
+      "child": "api/rust/match-model/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/ncc-search.html",
+      "anchor": "related-api",
+      "child": "examples/ncc-search/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/matching-alternatives.html",
+      "anchor": "related-api",
+      "child": "guides/matching-alternatives/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/matching-ncc.html",
+      "anchor": "related-api",
+      "child": "guides/matching-ncc/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/threshold.html",
+      "anchor": "related-api",
+      "child": "api/rust/threshold/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/results.html",
+      "anchor": "related-api",
+      "child": "concepts/results/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/image-io.html",
+      "anchor": "overview-2",
+      "child": "guides/image-io/overview-2.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/image-io.html",
+      "anchor": "related-api",
+      "child": "guides/image-io/related-api.html",
+      "owner": "matching",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/metrology.html",
+      "anchor": "related-api",
+      "child": "api/csharp/metrology/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/measurement-models.html",
+      "anchor": "related-api",
+      "child": "api/rust/measurement-models/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/planar-calibration.html",
+      "anchor": "related-api",
+      "child": "api/rust/planar-calibration/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/coordinate-systems.html",
+      "anchor": "related-api",
+      "child": "concepts/coordinate-systems/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/calibration.html",
+      "anchor": "related-api",
+      "child": "guides/calibration/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/metrology.html",
+      "anchor": "related-api",
+      "child": "guides/metrology/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/profile-caliper.html",
+      "anchor": "related-api",
+      "child": "guides/profile-caliper/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/planar-calibration.html",
+      "anchor": "related-api",
+      "child": "examples/planar-calibration/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/query.html",
+      "anchor": "related-api",
+      "child": "concepts/query/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/frequency.html",
+      "anchor": "existing-3576884134528031495",
+      "child": "guides/frequency/existing-3576884134528031495.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/frequency.html",
+      "anchor": "related-api",
+      "child": "guides/frequency/related-api.html",
+      "owner": "metrology",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/inspection.html",
+      "anchor": "related-api",
+      "child": "api/csharp/inspection/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "concepts/zimage.html",
+      "anchor": "related-api",
+      "child": "concepts/zimage/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/blob-inspection.html",
+      "anchor": "related-api",
+      "child": "examples/blob-inspection/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/difference-spot.html",
+      "anchor": "related-api",
+      "child": "examples/difference-spot/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/difference-inspection.html",
+      "anchor": "related-api",
+      "child": "guides/difference-inspection/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/inspection-framework.html",
+      "anchor": "related-api",
+      "child": "guides/inspection-framework/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "examples/aligned-inspection.html",
+      "anchor": "related-api",
+      "child": "examples/aligned-inspection/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/managed-inspection.html",
+      "anchor": "related-api",
+      "child": "guides/managed-inspection/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/managed-display.html",
+      "anchor": "related-api",
+      "child": "guides/managed-display/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/managed-workbench.html",
+      "anchor": "related-api",
+      "child": "guides/managed-workbench/related-api.html",
+      "owner": "inspection",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/spatial3d.html",
+      "anchor": "overview-2",
+      "child": "api/csharp/spatial3d/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/csharp/spatial3d.html",
+      "anchor": "related-api",
+      "child": "api/csharp/spatial3d/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/spatial3d.html",
+      "anchor": "overview-2",
+      "child": "api/rust/spatial3d/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/rust/spatial3d.html",
+      "anchor": "related-api",
+      "child": "api/rust/spatial3d/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/acquisition.html",
+      "anchor": "overview-2",
+      "child": "guides/acquisition/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/acquisition.html",
+      "anchor": "related-api",
+      "child": "guides/acquisition/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/depth-map.html",
+      "anchor": "overview-2",
+      "child": "guides/depth-map/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/depth-map.html",
+      "anchor": "related-api",
+      "child": "guides/depth-map/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/inference.html",
+      "anchor": "overview-2",
+      "child": "guides/inference/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/inference.html",
+      "anchor": "related-api",
+      "child": "guides/inference/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/point-cloud.html",
+      "anchor": "overview-2",
+      "child": "guides/point-cloud/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/point-cloud.html",
+      "anchor": "related-api",
+      "child": "guides/point-cloud/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/recognition.html",
+      "anchor": "overview-2",
+      "child": "guides/recognition/overview-2.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/recognition.html",
+      "anchor": "related-api",
+      "child": "guides/recognition/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "api/python/point-cloud.html",
+      "anchor": "related-api",
+      "child": "api/python/point-cloud/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/color-processing.html",
+      "anchor": "existing-3576884134528031495",
+      "child": "guides/color-processing/existing-3576884134528031495.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    },
+    {
+      "parent": "guides/color-processing.html",
+      "anchor": "related-api",
+      "child": "guides/color-processing/related-api.html",
+      "owner": "spatial",
+      "original_code_sha256": []
+    }
+  ]
+}

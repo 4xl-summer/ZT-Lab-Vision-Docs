@@ -118,8 +118,8 @@
     "assets/measurement/stage/camera-difference-mask.png": "0cdfa10f9d6d955c9e13e9ce55d8d3fe321af4145b1263024ba8dc6316dd5863",
     "assets/measurement/stage/coins-threshold.png": "d842a065ccd0224880768e7ea55bea5e9518ec76c5e3f7b9dcf06cf106b191ec",
     "assets/measurement/stage/text-mask.png": "4d4b29dcdaf301c441d00e7abb811da0a52c3b05fd398a68072eed04adba6b9b",
-    "assets/measurement-lab.css": "4816fd58116d538676e40d0386ad79a3e687218820b8319a9c6217ce7a370870",
-    "assets/measurement-lab.js": "71764f0a7159b35bed049f14a963646b5054522aa36d8373dd58b6df2ef130ba",
+    "assets/measurement-lab.css": "39a87d547d68b718152607bd98c0b367acca5b29c831f1a2172e638460ca09b8",
+    "assets/measurement-lab.js": "df6772c71650e4993f72ed62a1cfffe4089e2547b86c509e0d802497c637eec6",
     "assets/visuals/drawio/calibration.drawio": "20bc9136b79085db58766c8efda01ef9d0e6ffd40314292e435967e6190c9879",
     "assets/visuals/drawio/calibration.svg": "aac0eef1487ed870277235fcc54fb82420f92db178e41446abb1004a10ac9015",
     "assets/visuals/drawio/caliper-flow.drawio": "92b005d4239f822c24e9f1bbb509c7fb3051a62dfc8aabe635c76c579a7b81d8",
@@ -148,7 +148,7 @@
     "assets/visuals/drawio/queue-shutdown.svg": "cbb69e1acea503eb03b118dde26a64f88ea5bff9da8b40ecb61d0bfb4b86c9c9",
     "assets/visuals/drawio/sdk-layers.drawio": "82927c57f6b26d8e2547f515a65065cfe17dd158cb24284ef63616692072a035",
     "assets/visuals/drawio/sdk-layers.svg": "974f7b21716650c60fbacfa961dc9611cb7d7d54e8f34c599aeb6f5315c75af9",
-    "assets/visuals/manifest.json": "df27bf96c807abab23159b2e575d8b7930d93e7642ba19b9c7b4ece6cbe3880e",
+    "assets/visuals/manifest.json": "0b167b19096fdd49af1e7686e14c8cfcf009383291992852a6f104911d911c17",
     "examples/generate-measurements.py": "e80f8eab3b096dda414a729b907329b8232c2e0bbdad672cfef0b9925f96952f",
     "examples/requirements-measurements.txt": "29beeb35dd1470eb8e8084435795bb77c5b330d35b6cc652dd8716894ad4e894",
     "scripts/normalize_drawio.py": "904e5416bad11749b0d9477e9d8831b11f9ffd18174021153c604f6c78763ecc",
@@ -174,7 +174,11 @@
     "assets/visuals/plots/ncc-matching.png": "534d15d71371c6edeb1e70dfcb4a9d0a5704fa4d3dad57acb6590568041ec847",
     "assets/visuals/tables/deployment-check.html.txt": "5eb34d20cbee2b0690fc6f52ed33b7f53609bf60f7c9ae2bcd2e7172fdf8269f",
     "assets/visuals/tables/pixel-formats.html.txt": "ebeb249053eb4ea4611fa12e4de05c2c02d16529657cff4bf5f9b9f887340a6b",
-    "examples/generate-visual-plots.py": "15ce14220b9dcb41468a19e6e6c97f3d84fbc41aa79df086c7b992403895390f"
+    "examples/generate-visual-plots.py": "15ce14220b9dcb41468a19e6e6c97f3d84fbc41aa79df086c7b992403895390f",
+    "assets/manual.js": "5460be270fcb3302dd33b798fbc96805b1aea446583350d3a0bf4af22d76f87e",
+    "content/page-moves.json": "a786326993522d2a461b2f368373cf573086e9300c3dcab819b1fa5ae6f77862",
+    "content/feature-photo-examples.json": "aa155cca9938289b5ee419d24395f1f8f6db2bb401bd79a098e693c7e46a0491",
+    "content/retired-topics.json": "5eaa36b25fb1a5a006de8d670a495490a3568f3aa854e387f57b259c017c0a2e"
   },
   "refinement": {
     "recorded_utc": "2026-11-09T06:35:26.909076+00:00",
@@ -210,5 +214,55 @@
       "horizontal_overflow": false,
       "missing_images": false
     }
+  },
+  "functional_integration": {
+    "recorded_utc": "2026-11-09T07:23:55.434643+00:00",
+    "photo_cases": 7,
+    "displayed_values_checked": 37,
+    "functional_examples": "content/feature-photo-examples.json",
+    "legacy_routes": 121,
+    "related_api_sections": 0,
+    "related_api_navigation_topics": 0,
+    "navigation": {
+      "expanded": {
+        "closed": 0,
+        "details": 1226,
+        "pages": 6038,
+        "retired": false,
+        "unique": 6038
+      },
+      "collapsed": {
+        "opened": 0,
+        "pages": 6038
+      },
+      "repeated": {
+        "closed": 0,
+        "pages": 6038
+      },
+      "restored": {
+        "closed": 0,
+        "pages": 6038,
+        "relatedSections": 0
+      }
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "photo_pages": 7,
+      "horizontal_overflow": false,
+      "expanded_menu_links": 6038
+    },
+    "interaction": {
+      "pixelCheck": "x 1, y 0 px · 밝기 200",
+      "zoomBefore": "70%",
+      "zoomAfter": "91%",
+      "zoomChanges": true,
+      "overlayToggle": "executed both states",
+      "independent_png_pixel": 200,
+      "pixel_pass": true
+    },
+    "scope": "Existing SDK source/output measurements are unchanged. This integration verifies functional placement, fixed-case rendering, navigation and viewer controls; it adds no production or hardware accuracy claims. Previous agent-desktop screen captures remain archived run evidence and are not embedded in the functional example pages."
   }
 }

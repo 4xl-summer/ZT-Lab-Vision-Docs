@@ -38,6 +38,17 @@ for row in mapping:
     hashes={hashlib.sha256(html.unescape(c).encode()).hexdigest()for c in re.findall(r'<pre><code[^>]*>(.*?)</code></pre>',page['body'],re.S)}
     if set(row['original_code_sha256'])-hashes:errors.append(row['child']+': original code changed or missing')
 
+retired_file=root/'content/retired-topics.json'
+if retired_file.exists():
+    moves=json.loads((root/'content/page-moves.json').read_text(encoding='utf-8'))['moves']
+    retired=json.loads(retired_file.read_text(encoding='utf-8'))['topics']
+    active_children={row['child'] for row in mapping}
+    for row in retired:
+        path=row['child']
+        if path in pages or path in active_children:errors.append(path+': removed related API topic is active')
+        if path not in moves:errors.append(path+': removed topic has no legacy destination')
+        if row['original_code_sha256']:errors.append(path+': removed topic contained original executable examples')
+
 receipt_path=root/'content/topic-layout-verification.json'
 if not receipt_path.exists():errors.append('layout receipt: missing independent-topic screen verification')
 if receipt_path.exists():

@@ -92,6 +92,8 @@ for d in manifest['diagrams']:
             fail(ident + ': missing ' + key)
     if d.get('page') not in pages:
         fail(ident + ': missing explanation record')
+    elif not d.get('anchor') or d['anchor'] not in re.findall(r'\bid="([^"]+)"', pages[d['page']]['body']):
+        fail(ident + ': missing inline explanation anchor')
     for target in d.get('targets', []):
         if target not in pages:
             fail(ident + ': missing target ' + target)
@@ -133,6 +135,22 @@ for d in manifest['diagrams']:
 
 if data['version'] != 1 or data['sdk_revision'] != receipt['sdk_revision']:
     fail('Measurement schema or SDK revision differs')
+photo_pages = read(root / 'content/feature-photo-examples.json')['examples']
+if {p['case'] for p in photo_pages} != {c['id'] for c in data['cases']}:
+    fail('Functional photo examples do not cover every recorded case')
+for row in photo_pages:
+    page = pages.get(row['page'])
+    if not page or page.get('parent') != row['parent']:
+        fail(row['case'] + ': missing functional example or parent')
+        continue
+    if page.get('measurement_case') != row['case'] or not page.get('measurement_lab'):
+        fail(row['case'] + ': example component metadata differs')
+    if f'data-case-id="{row["case"]}"' not in page['body'] or 'data-embedded="true"' not in page['body']:
+        fail(row['case'] + ': missing fixed-case viewer')
+    if 'mlab-case-list' in page['body'] or 'class="mlab-cases"' in page['body']:
+        fail(row['case'] + ': cross-function case menu remains')
+    if row['principle'] not in pages:
+        fail(row['case'] + ': functional principle absent')
 seen = set()
 for c in data['cases']:
     if c['id'] in seen:

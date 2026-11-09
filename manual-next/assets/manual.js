@@ -50,6 +50,14 @@
   for (let p=byPath.get(current), guard=0; p?.parent && guard++<12; p=byPath.get(p.parent)) lineage.add(p.parent);
   const nav = document.getElementById('site-nav');
   if (nav) {
+    const expandKey = 'zvision-nav-expand-mode';
+    const renderers = new WeakMap();
+    const actions = make('div', 'nav-actions');
+    const expandAll = make('button', '', '모두 펼침');
+    expandAll.type = 'button'; expandAll.id = 'nav-expand-all'; expandAll.setAttribute('aria-controls', 'site-nav');
+    const collapseAll = make('button', '', '모두 접기');
+    collapseAll.type = 'button'; collapseAll.id = 'nav-collapse-all'; collapseAll.setAttribute('aria-controls', 'site-nav');
+    actions.append(expandAll, collapseAll); nav.append(actions);
     const groups = new Map(), references = new Map();
     for (const page of pages) {
       if (!page?.path || !page.title || page.parent) continue;
@@ -69,6 +77,7 @@
         const content=make('div','nav-topic-children');
         let rendered=false;
         const renderChildren=()=>{if(rendered)return;rendered=true;for(const child of kids)appendPage(content,child);};
+        renderers.set(detail, renderChildren);
         if(detail.open)renderChildren();
         detail.addEventListener('toggle',()=>{if(detail.open)renderChildren();});
         detail.append(content);parent.append(detail);
@@ -88,6 +97,26 @@
     };
     for(const [name,items]of groups)appendGroup(nav,name,items);
     if(references.size){const outer=make('details','nav-details nav-reference');outer.open=[...references.values()].some(xs=>xs.some(p=>lineage.has(p.path)));outer.append(make('summary','nav-summary','언어별 API 참조'));for(const [lang,items]of references)appendGroup(outer,languageLabel(lang),items);nav.append(outer);}
+    const openEveryLevel = () => {
+      const pending = [nav];
+      while (pending.length) {
+        const node = pending.pop();
+        if (node.tagName === 'DETAILS') {
+          renderers.get(node)?.();
+          node.open = true;
+        }
+        for (const child of node.children) pending.push(child);
+      }
+    };
+    expandAll.addEventListener('click', () => {
+      openEveryLevel();
+      try { sessionStorage.setItem(expandKey, 'all'); } catch (_) {}
+    });
+    collapseAll.addEventListener('click', () => {
+      nav.querySelectorAll('details').forEach(detail => { detail.open = false; });
+      try { sessionStorage.removeItem(expandKey); } catch (_) {}
+    });
+    try { if (sessionStorage.getItem(expandKey) === 'all') openEveryLevel(); } catch (_) {}
   }
 
   const sidebar = document.querySelector('.sidebar');

@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "examples": [
+    {
+      "case": "coins-blob",
+      "page": "guides/blob-analysis/photo-coins.html",
+      "parent": "guides/blob-analysis.html",
+      "principle": "guides/blob-analysis/result.html"
+    },
+    {
+      "case": "text-components",
+      "page": "guides/blob-analysis/photo-text-components.html",
+      "parent": "guides/blob-analysis.html",
+      "principle": "guides/blob-analysis/real.html"
+    },
+    {
+      "case": "coins-circle",
+      "page": "guides/metrology/photo-circle-fit.html",
+      "parent": "guides/metrology.html",
+      "principle": "guides/metrology/fit-options.html"
+    },
+    {
+      "case": "camera-profile",
+      "page": "guides/profile-caliper/photo-profile.html",
+      "parent": "guides/profile-caliper.html",
+      "principle": "guides/profile-caliper/strip-math.html"
+    },
+    {
+      "case": "coffee-color",
+      "page": "guides/color-processing/photo-rgb-statistics.html",
+      "parent": "guides/color-processing.html",
+      "principle": "reference/python/api-colorstatistics.html"
+    },
+    {
+      "case": "camera-controlled-difference",
+      "page": "guides/difference-inspection/photo-controlled-difference.html",
+      "parent": "guides/difference-inspection.html",
+      "principle": "guides/difference-inspection/algorithm.html"
+    },
+    {
+      "case": "camera-statistics",
+      "page": "getting-started/first-image/photo-statistics.html",
+      "parent": "getting-started/first-image.html",
+      "principle": "getting-started/first-image/next.html"
+    }
+  ]
+}

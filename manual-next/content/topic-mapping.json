@@ -14,13 +14,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/index.html",
-    "anchor": "related-api",
-    "child": "api/index/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "concepts/index.html",
     "anchor": "topic-1",
     "child": "concepts/index/topic-1.html",
@@ -38,13 +31,6 @@
     "parent": "concepts/index.html",
     "anchor": "first-class",
     "child": "concepts/index/first-class.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "concepts/index.html",
-    "anchor": "related-api",
-    "child": "concepts/index/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -93,13 +79,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "concepts/roi.html",
-    "anchor": "related-api",
-    "child": "concepts/roi/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "examples/index.html",
     "anchor": "examples",
     "child": "examples/index/examples.html",
@@ -117,13 +96,6 @@
     "parent": "examples/index.html",
     "anchor": "next-topics",
     "child": "examples/index/next-topics.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "examples/index.html",
-    "anchor": "related-api",
-    "child": "examples/index/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -176,13 +148,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "getting-started/first-image.html",
-    "anchor": "related-api",
-    "child": "getting-started/first-image/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "getting-started/index.html",
     "anchor": "start",
     "child": "getting-started/index/start.html",
@@ -193,13 +158,6 @@
     "parent": "getting-started/index.html",
     "anchor": "prerequisites",
     "child": "getting-started/index/prerequisites.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "getting-started/index.html",
-    "anchor": "related-api",
-    "child": "getting-started/index/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -256,13 +214,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "getting-started/sdk-setup.html",
-    "anchor": "related-api",
-    "child": "getting-started/sdk-setup/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/index.html",
     "anchor": "topic-1",
     "child": "guides/index/topic-1.html",
@@ -273,13 +224,6 @@
     "parent": "guides/index.html",
     "anchor": "next-topics",
     "child": "guides/index/next-topics.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/index.html",
-    "anchor": "related-api",
-    "child": "guides/index/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -305,13 +249,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "index.html",
-    "anchor": "related-api",
-    "child": "index/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "examples/downloads.html",
     "anchor": "topic-1",
     "child": "examples/downloads/topic-1.html",
@@ -329,13 +266,6 @@
     "parent": "examples/downloads.html",
     "anchor": "topic-3",
     "child": "examples/downloads/topic-3.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "examples/downloads.html",
-    "anchor": "related-api",
-    "child": "examples/downloads/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -372,13 +302,6 @@
     "original_code_sha256": [
       "afce743f55fbe2d5a4741849fbbc0c005861e0ed19a792ecaba6bef8f92c5306"
     ]
-  },
-  {
-    "parent": "getting-started/package-consumer.html",
-    "anchor": "related-api",
-    "child": "getting-started/package-consumer/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
   },
   {
     "parent": "concepts/object-model.html",
@@ -463,13 +386,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "concepts/object-model.html",
-    "anchor": "related-api",
-    "child": "concepts/object-model/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "concepts/lifetime.html",
     "anchor": "why",
     "child": "concepts/lifetime/why.html",
@@ -544,13 +460,6 @@
     "parent": "concepts/lifetime.html",
     "anchor": "verification-cases",
     "child": "concepts/lifetime/verification-cases.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "concepts/lifetime.html",
-    "anchor": "related-api",
-    "child": "concepts/lifetime/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -633,13 +542,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "concepts/share.html",
-    "anchor": "related-api",
-    "child": "concepts/share/related-api.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
     "parent": "concepts/pixel-formats.html",
     "anchor": "formats",
     "child": "concepts/pixel-formats/formats.html",
@@ -664,13 +566,6 @@
     "parent": "concepts/pixel-formats.html",
     "anchor": "select",
     "child": "concepts/pixel-formats/select.html",
-    "owner": "basics",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "concepts/pixel-formats.html",
-    "anchor": "related-api",
-    "child": "concepts/pixel-formats/related-api.html",
     "owner": "basics",
     "original_code_sha256": []
   },
@@ -735,13 +630,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/csharp/find-blobs.html",
-    "anchor": "related-api",
-    "child": "api/csharp/find-blobs/related-api.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/csharp/threshold.html",
     "anchor": "signature",
     "child": "api/csharp/threshold/signature.html",
@@ -795,13 +683,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/csharp/threshold.html",
-    "anchor": "related-api",
-    "child": "api/csharp/threshold/related-api.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/python/threshold.html",
     "anchor": "signature",
     "child": "api/python/threshold/signature.html",
@@ -851,13 +732,6 @@
     "parent": "api/python/threshold.html",
     "anchor": "verification-cases",
     "child": "api/python/threshold/verification-cases.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "api/python/threshold.html",
-    "anchor": "related-api",
-    "child": "api/python/threshold/related-api.html",
     "owner": "processing",
     "original_code_sha256": []
   },
@@ -922,13 +796,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/rust/blob-query.html",
-    "anchor": "related-api",
-    "child": "api/rust/blob-query/related-api.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
     "parent": "examples/roi-threshold.html",
     "anchor": "scenario",
     "child": "examples/roi-threshold/scenario.html",
@@ -973,13 +840,6 @@
     "parent": "examples/roi-threshold.html",
     "anchor": "verification-cases",
     "child": "examples/roi-threshold/verification-cases.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "examples/roi-threshold.html",
-    "anchor": "related-api",
-    "child": "examples/roi-threshold/related-api.html",
     "owner": "processing",
     "original_code_sha256": []
   },
@@ -1045,13 +905,6 @@
     "parent": "guides/blob-analysis.html",
     "anchor": "verification-cases",
     "child": "guides/blob-analysis/verification-cases.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/blob-analysis.html",
-    "anchor": "related-api",
-    "child": "guides/blob-analysis/related-api.html",
     "owner": "processing",
     "original_code_sha256": []
   },
@@ -1123,13 +976,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/canny.html",
-    "anchor": "related-api",
-    "child": "guides/canny/related-api.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/gaussian.html",
     "anchor": "principle",
     "child": "guides/gaussian/principle.html",
@@ -1193,13 +1039,6 @@
     "parent": "guides/gaussian.html",
     "anchor": "verification-cases",
     "child": "guides/gaussian/verification-cases.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/gaussian.html",
-    "anchor": "related-api",
-    "child": "guides/gaussian/related-api.html",
     "owner": "processing",
     "original_code_sha256": []
   },
@@ -1278,13 +1117,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/morphology.html",
-    "anchor": "related-api",
-    "child": "guides/morphology/related-api.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/threshold.html",
     "anchor": "theory",
     "child": "guides/threshold/theory.html",
@@ -1339,13 +1171,6 @@
     "parent": "guides/threshold.html",
     "anchor": "verification-cases",
     "child": "guides/threshold/verification-cases.html",
-    "owner": "processing",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/threshold.html",
-    "anchor": "related-api",
-    "child": "guides/threshold/related-api.html",
     "owner": "processing",
     "original_code_sha256": []
   },
@@ -1422,13 +1247,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/csharp/match-model.html",
-    "anchor": "related-api",
-    "child": "api/csharp/match-model/related-api.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/python/match-model.html",
     "anchor": "workflow",
     "child": "api/python/match-model/workflow.html",
@@ -1497,13 +1315,6 @@
     "parent": "api/python/match-model.html",
     "anchor": "verification-cases",
     "child": "api/python/match-model/verification-cases.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "api/python/match-model.html",
-    "anchor": "related-api",
-    "child": "api/python/match-model/related-api.html",
     "owner": "matching",
     "original_code_sha256": []
   },
@@ -1580,13 +1391,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/rust/match-model.html",
-    "anchor": "related-api",
-    "child": "api/rust/match-model/related-api.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
     "parent": "examples/ncc-search.html",
     "anchor": "fixture",
     "child": "examples/ncc-search/fixture.html",
@@ -1654,13 +1458,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "examples/ncc-search.html",
-    "anchor": "related-api",
-    "child": "examples/ncc-search/related-api.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/matching-alternatives.html",
     "anchor": "choose",
     "child": "guides/matching-alternatives/choose.html",
@@ -1706,13 +1503,6 @@
     "parent": "guides/matching-alternatives.html",
     "anchor": "related",
     "child": "guides/matching-alternatives/related.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/matching-alternatives.html",
-    "anchor": "related-api",
-    "child": "guides/matching-alternatives/related-api.html",
     "owner": "matching",
     "original_code_sha256": []
   },
@@ -1782,13 +1572,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/matching-ncc.html",
-    "anchor": "related-api",
-    "child": "guides/matching-ncc/related-api.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/rust/threshold.html",
     "anchor": "signature",
     "child": "api/rust/threshold/signature.html",
@@ -1838,13 +1621,6 @@
     "parent": "api/rust/threshold.html",
     "anchor": "verification-cases",
     "child": "api/rust/threshold/verification-cases.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "api/rust/threshold.html",
-    "anchor": "related-api",
-    "child": "api/rust/threshold/related-api.html",
     "owner": "matching",
     "original_code_sha256": []
   },
@@ -1902,23 +1678,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "concepts/results.html",
-    "anchor": "related-api",
-    "child": "concepts/results/related-api.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/image-io.html",
     "anchor": "overview-1",
     "child": "guides/image-io/overview-1.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/image-io.html",
-    "anchor": "overview-2",
-    "child": "guides/image-io/overview-2.html",
     "owner": "matching",
     "original_code_sha256": []
   },
@@ -1974,13 +1736,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/image-io.html",
-    "anchor": "related-api",
-    "child": "guides/image-io/related-api.html",
-    "owner": "matching",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/csharp/metrology.html",
     "anchor": "strip-math",
     "child": "api/csharp/metrology/strip-math.html",
@@ -2021,13 +1776,6 @@
     "parent": "api/csharp/metrology.html",
     "anchor": "verification-cases",
     "child": "api/csharp/metrology/verification-cases.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "api/csharp/metrology.html",
-    "anchor": "related-api",
-    "child": "api/csharp/metrology/related-api.html",
     "owner": "metrology",
     "original_code_sha256": []
   },
@@ -2127,13 +1875,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/rust/measurement-models.html",
-    "anchor": "related-api",
-    "child": "api/rust/measurement-models/related-api.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/rust/planar-calibration.html",
     "anchor": "planar-contract",
     "child": "api/rust/planar-calibration/planar-contract.html",
@@ -2162,13 +1903,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/rust/planar-calibration.html",
-    "anchor": "related-api",
-    "child": "api/rust/planar-calibration/related-api.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
     "parent": "concepts/coordinate-systems.html",
     "anchor": "roi-world-example",
     "child": "concepts/coordinate-systems/roi-world-example.html",
@@ -2179,13 +1913,6 @@
     "parent": "concepts/coordinate-systems.html",
     "anchor": "verification-cases",
     "child": "concepts/coordinate-systems/verification-cases.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "concepts/coordinate-systems.html",
-    "anchor": "related-api",
-    "child": "concepts/coordinate-systems/related-api.html",
     "owner": "metrology",
     "original_code_sha256": []
   },
@@ -2221,13 +1948,6 @@
     "parent": "guides/calibration.html",
     "anchor": "verification-cases",
     "child": "guides/calibration/verification-cases.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/calibration.html",
-    "anchor": "related-api",
-    "child": "guides/calibration/related-api.html",
     "owner": "metrology",
     "original_code_sha256": []
   },
@@ -2327,13 +2047,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/metrology.html",
-    "anchor": "related-api",
-    "child": "guides/metrology/related-api.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/profile-caliper.html",
     "anchor": "strip-math",
     "child": "guides/profile-caliper/strip-math.html",
@@ -2380,13 +2093,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/profile-caliper.html",
-    "anchor": "related-api",
-    "child": "guides/profile-caliper/related-api.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
     "parent": "examples/planar-calibration.html",
     "anchor": "fixture",
     "child": "examples/planar-calibration/fixture.html",
@@ -2427,13 +2133,6 @@
     "parent": "examples/planar-calibration.html",
     "anchor": "verification-cases",
     "child": "examples/planar-calibration/verification-cases.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "examples/planar-calibration.html",
-    "anchor": "related-api",
-    "child": "examples/planar-calibration/related-api.html",
     "owner": "metrology",
     "original_code_sha256": []
   },
@@ -2489,23 +2188,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "concepts/query.html",
-    "anchor": "related-api",
-    "child": "concepts/query/related-api.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/frequency.html",
     "anchor": "existing-2132336933701782354",
     "child": "guides/frequency/existing-2132336933701782354.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/frequency.html",
-    "anchor": "existing-3576884134528031495",
-    "child": "guides/frequency/existing-3576884134528031495.html",
     "owner": "metrology",
     "original_code_sha256": []
   },
@@ -2564,13 +2249,6 @@
     "parent": "guides/frequency.html",
     "anchor": "verification-cases",
     "child": "guides/frequency/verification-cases.html",
-    "owner": "metrology",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/frequency.html",
-    "anchor": "related-api",
-    "child": "guides/frequency/related-api.html",
     "owner": "metrology",
     "original_code_sha256": []
   },
@@ -2640,13 +2318,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/csharp/inspection.html",
-    "anchor": "related-api",
-    "child": "api/csharp/inspection/related-api.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
     "parent": "concepts/zimage.html",
     "anchor": "identity",
     "child": "concepts/zimage/identity.html",
@@ -2703,13 +2374,6 @@
     "parent": "concepts/zimage.html",
     "anchor": "verification-cases",
     "child": "concepts/zimage/verification-cases.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "concepts/zimage.html",
-    "anchor": "related-api",
-    "child": "concepts/zimage/related-api.html",
     "owner": "inspection",
     "original_code_sha256": []
   },
@@ -2783,13 +2447,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "examples/blob-inspection.html",
-    "anchor": "related-api",
-    "child": "examples/blob-inspection/related-api.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
     "parent": "examples/difference-spot.html",
     "anchor": "fixture",
     "child": "examples/difference-spot/fixture.html",
@@ -2837,13 +2494,6 @@
     "parent": "examples/difference-spot.html",
     "anchor": "verification-cases",
     "child": "examples/difference-spot/verification-cases.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "examples/difference-spot.html",
-    "anchor": "related-api",
-    "child": "examples/difference-spot/related-api.html",
     "owner": "inspection",
     "original_code_sha256": []
   },
@@ -2897,13 +2547,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/difference-inspection.html",
-    "anchor": "related-api",
-    "child": "guides/difference-inspection/related-api.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/inspection-framework.html",
     "anchor": "coordinates",
     "child": "guides/inspection-framework/coordinates.html",
@@ -2949,13 +2592,6 @@
     "parent": "guides/inspection-framework.html",
     "anchor": "verification-cases",
     "child": "guides/inspection-framework/verification-cases.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/inspection-framework.html",
-    "anchor": "related-api",
-    "child": "guides/inspection-framework/related-api.html",
     "owner": "inspection",
     "original_code_sha256": []
   },
@@ -3025,13 +2661,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "examples/aligned-inspection.html",
-    "anchor": "related-api",
-    "child": "examples/aligned-inspection/related-api.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/managed-inspection.html",
     "anchor": "pipeline",
     "child": "guides/managed-inspection/pipeline.html",
@@ -3086,13 +2715,6 @@
     "parent": "guides/managed-inspection.html",
     "anchor": "verification-cases",
     "child": "guides/managed-inspection/verification-cases.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/managed-inspection.html",
-    "anchor": "related-api",
-    "child": "guides/managed-inspection/related-api.html",
     "owner": "inspection",
     "original_code_sha256": []
   },
@@ -3162,13 +2784,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/managed-display.html",
-    "anchor": "related-api",
-    "child": "guides/managed-display/related-api.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/managed-workbench.html",
     "anchor": "purpose",
     "child": "guides/managed-workbench/purpose.html",
@@ -3227,23 +2842,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/managed-workbench.html",
-    "anchor": "related-api",
-    "child": "guides/managed-workbench/related-api.html",
-    "owner": "inspection",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/csharp/spatial3d.html",
     "anchor": "overview-1",
     "child": "api/csharp/spatial3d/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "api/csharp/spatial3d.html",
-    "anchor": "overview-2",
-    "child": "api/csharp/spatial3d/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3306,23 +2907,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/csharp/spatial3d.html",
-    "anchor": "related-api",
-    "child": "api/csharp/spatial3d/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/rust/spatial3d.html",
     "anchor": "overview-1",
     "child": "api/rust/spatial3d/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "api/rust/spatial3d.html",
-    "anchor": "overview-2",
-    "child": "api/rust/spatial3d/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3378,23 +2965,9 @@
     ]
   },
   {
-    "parent": "api/rust/spatial3d.html",
-    "anchor": "related-api",
-    "child": "api/rust/spatial3d/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/acquisition.html",
     "anchor": "overview-1",
     "child": "guides/acquisition/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/acquisition.html",
-    "anchor": "overview-2",
-    "child": "guides/acquisition/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3436,23 +3009,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/acquisition.html",
-    "anchor": "related-api",
-    "child": "guides/acquisition/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/depth-map.html",
     "anchor": "overview-1",
     "child": "guides/depth-map/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/depth-map.html",
-    "anchor": "overview-2",
-    "child": "guides/depth-map/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3501,23 +3060,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/depth-map.html",
-    "anchor": "related-api",
-    "child": "guides/depth-map/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/inference.html",
     "anchor": "overview-1",
     "child": "guides/inference/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/inference.html",
-    "anchor": "overview-2",
-    "child": "guides/inference/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3573,23 +3118,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/inference.html",
-    "anchor": "related-api",
-    "child": "guides/inference/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/point-cloud.html",
     "anchor": "overview-1",
     "child": "guides/point-cloud/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/point-cloud.html",
-    "anchor": "overview-2",
-    "child": "guides/point-cloud/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3636,23 +3167,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/point-cloud.html",
-    "anchor": "related-api",
-    "child": "guides/point-cloud/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/recognition.html",
     "anchor": "overview-1",
     "child": "guides/recognition/overview-1.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/recognition.html",
-    "anchor": "overview-2",
-    "child": "guides/recognition/overview-2.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3717,13 +3234,6 @@
     "original_code_sha256": []
   },
   {
-    "parent": "guides/recognition.html",
-    "anchor": "related-api",
-    "child": "guides/recognition/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "api/python/point-cloud.html",
     "anchor": "python-pointcloud",
     "child": "api/python/point-cloud/python-pointcloud.html",
@@ -3770,23 +3280,9 @@
     "original_code_sha256": []
   },
   {
-    "parent": "api/python/point-cloud.html",
-    "anchor": "related-api",
-    "child": "api/python/point-cloud/related-api.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
     "parent": "guides/color-processing.html",
     "anchor": "existing-2132336933701782354",
     "child": "guides/color-processing/existing-2132336933701782354.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/color-processing.html",
-    "anchor": "existing-3576884134528031495",
-    "child": "guides/color-processing/existing-3576884134528031495.html",
     "owner": "spatial",
     "original_code_sha256": []
   },
@@ -3838,13 +3334,6 @@
     "parent": "guides/color-processing.html",
     "anchor": "verification-cases",
     "child": "guides/color-processing/verification-cases.html",
-    "owner": "spatial",
-    "original_code_sha256": []
-  },
-  {
-    "parent": "guides/color-processing.html",
-    "anchor": "related-api",
-    "child": "guides/color-processing/related-api.html",
     "owner": "spatial",
     "original_code_sha256": []
   }

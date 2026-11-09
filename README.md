@@ -6,7 +6,7 @@
 
 소주제 HTML, 원본 페이지 레코드(`manual-next/content/pages.json`), 실제 SDK에서 추출한 API 메타데이터, 검색·공통 스타일, 실행 예제 다운로드로 구성합니다. SDK 코어 구현, 생산 데이터, 제3자 상용 매뉴얼 원본은 포함하지 않습니다.
 
-설명 소주제 526개와 SDK 고유 메서드·생성자·연관 함수 3,250개를 독립 파일로 연결하고 시각 해설과 실제 사진 사례를 보강한 총 6,152페이지입니다. 필드와 열거값은 소유 타입에서 함께 설명합니다. 장 페이지는 개요와 하위 페이지 목록을 제공하며, 이전 `페이지#소주제` 주소는 대응하는 파일로 연결됩니다.
+설명 소주제 453개와 SDK 고유 메서드·생성자·연관 함수 3,250개를 독립 파일로 연결하고 기능별 원리 설명과 사진 사용 예제를 포함한 총 6,038개 문서입니다. 필드와 열거값은 소유 타입에서 함께 설명합니다. 장 페이지는 개요와 하위 페이지 목록을 제공하며, 이전 `페이지#소주제` 주소는 대응하는 파일로 연결됩니다.
 
 ## 수정과 재생성
 
@@ -36,9 +36,11 @@ Linux x64 / Ubuntu 24.04 WSL, Rust 1.85.1, .NET SDK 10.0.403, CPython 3.14에서
 
 ## 시각 자료와 실제 사진 측정
 
-[시각 해설](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/labs/visual-guide.html)은 픽셀 격자·좌표 도해·분포 그래프·실제 영상 비교·객체 관계도를 설명 대상에 맞춰 사용합니다. 형식·실행 조건은 선택 가능한 HTML 표로 제공합니다. 작은 썸네일 격자 대신 읽을 수 있는 크기의 대표 예와 질문별 목록을 제공하며, 관련 본문 33곳의 설명 문단 뒤에 필요한 자료만 배치합니다. 편집 가능한 SVG, Matplotlib 생성 코드와 `.drawio` 원본을 보관합니다. 기존 해설 페이지 주소는 유지합니다.
+시각 자료는 별도 모음 메뉴 없이 각 기능의 원리·계약을 설명하는 문단에 배치합니다. [연결성의 픽셀 비교](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/blob-analysis/connectivity.html), [프로파일의 영상·그래프 대응](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/profile-caliper/strip-math.html)처럼 필요한 위치에서 읽습니다. 편집 가능한 SVG, Matplotlib 생성 코드와 `.drawio` 원본을 보관합니다.
 
-[측정 화면](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/labs/measurement.html)은 공개 사진 4종으로 SDK를 실행한 7개 사례를 읽습니다. 입력·처리 이미지·검출 표시·픽셀·확대·수치·프로파일 그래프와 실제 파라미터를 확인합니다. 브라우저는 저장된 SDK 실행 결과를 보여주며 네이티브 SDK를 실행하지 않습니다. 원/프로파일은 각각 잔차 재계산과 표본 비교의 검증 범위를 명시합니다. 표시 영역과 실제 처리 범위는 별도로 표시합니다.
+실제 사진 사례 7개는 해당 기능의 사용 예제입니다. [동전 연결 성분](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/blob-analysis/photo-coins.html), [원 피팅](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/metrology/photo-circle-fit.html), [프로파일](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/profile-caliper/photo-profile.html), [RGB 통계](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/color-processing/photo-rgb-statistics.html), [차분](https://4xl-summer.github.io/ZT-Lab-Vision-Docs/manual-next/guides/difference-inspection/photo-controlled-difference.html) 등에서 해당 입력·표시 단계·픽셀·확대·검출 위치·결과 수치·파라미터를 확인합니다. 각 화면은 그 기능의 사례 하나를 보여주며 브라우저에서 SDK를 실행하지 않습니다. 원·프로파일의 잔차 재계산 및 표본 비교 범위를 명시합니다.
+
+이전 모음·해설 및 관련 API 목차 주소 121개는 `content/page-moves.json`에 따라 대응 기능으로 이동하며 목차·검색에 포함하지 않습니다. 실행 사진과 수치 자료는 이동 과정에서 변경하지 않습니다. 관련 API 자동 표와 전용 소주제는 제거했습니다. 실제 API 선언은 언어별 참조와 검색에서 확인합니다. 왼쪽 목차의 모두 펼침은 미리 생성되지 않은 하위 항목까지 펼치며, 선택한 펼침 상태는 문서를 이동해도 유지됩니다.
 
 사진 원본·출처와 사용 조건은 `assets/measurement/sources.json`, 계산값은 `measurements.json`, 도식 정보는 `assets/visuals/manifest.json`, 실행 및 산출물 해시는 `content/visual-verification.json`에 있습니다. 기준 치수 없는 사진은 px·px²로 해석하며 실제 생산 정확도를 주장하지 않습니다.
 

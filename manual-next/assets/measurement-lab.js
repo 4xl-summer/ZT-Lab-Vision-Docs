@@ -2,6 +2,9 @@
   'use strict';
   const app = document.getElementById('measurement-lab');
   if (!app) return;
+  // Inline examples bind to one recorded case and must ignore navigation hashes.
+  const fixedCase = app.hasAttribute('data-case-id');
+  const requestedCaseId = fixedCase ? app.getAttribute('data-case-id').trim() : null;
   const $ = (id) => document.getElementById(id);
   const status = $('mlab-status'), workspace = $('mlab-workspace');
   const canvas = $('mlab-canvas'), context = canvas.getContext('2d');
@@ -49,8 +52,12 @@
     workspace.hidden = true;
   }
   function initCases() {
-    const holder = $('mlab-case-list'); clear(holder);
-    $('mlab-case-count').textContent = `${state.cases.length}개`;
+    const holder = $('mlab-case-list');
+    const count = $('mlab-case-count');
+    if (count) count.textContent = `${state.cases.length}개`;
+    if (!holder) return;
+    clear(holder);
+    if (fixedCase) return;
     state.cases.forEach((item, index) => {
       const button = element('button', 'mlab-case-button');
       button.type = 'button';
@@ -67,7 +74,7 @@
     const item = state.cases[index];
     if (!item) return;
     state.current = item;
-    if (updateHash && item.id) {
+    if (!fixedCase && updateHash && item.id) {
       const location = new URL(window.location.href);
       location.hash = encodeURIComponent(String(item.id));
       window.history.replaceState(window.history.state, '', location.href);
@@ -360,7 +367,7 @@
     return index < 0 ? 0 : index;
   }
   window.addEventListener('hashchange', () => {
-    if (!state.cases.length) return;
+    if (fixedCase || !state.cases.length) return;
     let id = '';
     try { id = decodeURIComponent(window.location.hash.slice(1)); } catch (_) { return; }
     const index = state.cases.findIndex((item) => item && String(item.id) === id);
@@ -370,8 +377,18 @@
     .then((response) => { if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json(); })
     .then((data) => {
       if(data?.version !== 1 || !Array.isArray(data.cases) || !data.cases.length)throw new Error('지원되는 예제 데이터가 없습니다.');
-      state.data=data;state.cases=data.cases;
-      status.hidden=true;workspace.hidden=false;selectCase(caseIndexFromHash());
+      state.data=data;
+      if (fixedCase) {
+        const selected = data.cases.find((item) => item && String(item.id) === requestedCaseId);
+        if (!requestedCaseId || !selected) {
+          showError(`지정한 계측 사례를 찾을 수 없습니다: ${requestedCaseId || '(빈 사례 ID)'}`);
+          return;
+        }
+        state.cases = [selected];
+      } else {
+        state.cases = data.cases;
+      }
+      status.hidden=true;workspace.hidden=false;selectCase(fixedCase ? 0 : caseIndexFromHash());
     })
     .catch(() => showError('계측 예제 데이터를 불러오지 못했습니다. 문서를 제공하는 서버와 예제 데이터 경로를 확인하세요.'));
 })();

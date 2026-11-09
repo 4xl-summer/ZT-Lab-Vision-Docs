@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "moves": {
+    "labs/visual-guide/infographic-first-pipeline.html": {
+      "target": "guides/threshold/detail-threshold.html#visual-concept-first-pipeline"
+    },
+    "labs/visual-guide/infographic-blob-connectivity.html": {
+      "target": "guides/blob-analysis/connectivity.html#visual-concept-blob-connectivity"
+    },
+    "labs/visual-guide/infographic-image-lifetime.html": {
+      "target": "concepts/lifetime/matrix.html#visual-reuse-image-lifetime"
+    },
+    "labs/visual-guide/infographic-roi-coordinates.html": {
+      "target": "concepts/roi/local.html#visual-concept-roi-coordinates"
+    },
+    "labs/visual-guide/infographic-query-execution.html": {
+      "target": "concepts/query/architecture.html#visual-reuse-query-execution"
+    },
+    "labs/visual-guide/infographic-pixel-formats.html": {
+      "target": "concepts/pixel-formats/per-function.html#visual-table-pixel-formats"
+    },
+    "labs/visual-guide/infographic-histogram-bins.html": {
+      "target": "reference/python/api-histogramspec.html#visual-plot-histogram-bins"
+    },
+    "labs/visual-guide/infographic-gaussian-filter.html": {
+      "target": "guides/gaussian/principle.html#visual-plot-gaussian-filter"
+    },
+    "labs/visual-guide/infographic-morphology.html": {
+      "target": "guides/morphology/size.html#visual-concept-morphology"
+    },
+    "labs/visual-guide/infographic-canny-edges.html": {
+      "target": "guides/canny/pipeline.html#visual-plot-canny-edges"
+    },
+    "labs/visual-guide/infographic-ncc-matching.html": {
+      "target": "guides/matching-ncc/principle.html#visual-plot-ncc-matching"
+    },
+    "labs/visual-guide/infographic-caliper-profile.html": {
+      "target": "guides/profile-caliper/strip-math.html#visual-plot-caliper-profile"
+    },
+    "labs/visual-guide/infographic-lab-distance.html": {
+      "target": "guides/color-processing/detail-color.html#visual-plot-lab-distance"
+    },
+    "labs/visual-guide/infographic-ocr-region.html": {
+      "target": "guides/recognition/ocr-region.html#visual-concept-ocr-region"
+    },
+    "labs/visual-guide/infographic-depth-grid.html": {
+      "target": "guides/depth-map/grid-contract.html#visual-concept-depth-grid"
+    },
+    "labs/visual-guide/infographic-point-cloud-fit.html": {
+      "target": "guides/point-cloud/fit-details.html#visual-concept-point-cloud-fit"
+    },
+    "labs/visual-guide/infographic-ai-coordinates.html": {
+      "target": "guides/inference/output-coordinates.html#visual-concept-ai-coordinates"
+    },
+    "labs/visual-guide/infographic-acquisition-flow.html": {
+      "target": "reference/python/api-framequeue.html#visual-reuse-acquisition-flow"
+    },
+    "labs/visual-guide/infographic-plc-simulation.html": {
+      "target": "reference/python/acquisition-simulatedplc.html#visual-reuse-plc-simulation"
+    },
+    "labs/visual-guide/infographic-inspection-alignment.html": {
+      "target": "guides/inspection-framework/coordinates.html#visual-concept-inspection-alignment"
+    },
+    "labs/visual-guide/infographic-calibration-transform.html": {
+      "target": "guides/calibration/roi-world-example.html#visual-concept-calibration-transform"
+    },
+    "labs/visual-guide/infographic-frequency-roundtrip.html": {
+      "target": "guides/frequency/detail-frequency.html#visual-plot-frequency-roundtrip"
+    },
+    "labs/visual-guide/infographic-deployment-check.html": {
+      "target": "getting-started/sdk-setup/scope.html#visual-table-deployment-check"
+    },
+    "labs/visual-guide/infographic-difference-inspection.html": {
+      "target": "guides/difference-inspection/algorithm.html#visual-plot-difference-inspection"
+    },
+    "labs/visual-guide/drawio-sdk-layers.html": {
+      "target": "concepts/object-model/languages.html#visual-drawio-sdk-layers"
+    },
+    "labs/visual-guide/drawio-image-ownership.html": {
+      "target": "concepts/roi/ownership.html#visual-drawio-image-ownership"
+    },
+    "labs/visual-guide/drawio-query-execution.html": {
+      "target": "concepts/query/architecture.html#visual-drawio-query-execution"
+    },
+    "labs/visual-guide/drawio-coordinates.html": {
+      "target": "concepts/coordinate-systems/roi-world-example.html#visual-drawio-coordinates"
+    },
+    "labs/visual-guide/drawio-matching-inspection.html": {
+      "target": "guides/matching-ncc/fixture.html#visual-drawio-matching-inspection"
+    },
+    "labs/visual-guide/drawio-caliper-flow.html": {
+      "target": "api/rust/measurement-models/model-signatures.html#visual-drawio-caliper-flow"
+    },
+    "labs/visual-guide/drawio-geometric-models.html": {
+      "target": "guides/metrology/model-signatures.html#visual-drawio-geometric-models"
+    },
+    "labs/visual-guide/drawio-calibration.html": {
+      "target": "guides/calibration/planar-contract.html#visual-drawio-calibration"
+    },
+    "labs/visual-guide/drawio-frame-queue.html": {
+      "target": "reference/python/api-framequeue.html#visual-drawio-frame-queue"
+    },
+    "labs/visual-guide/drawio-plc-simulation.html": {
+      "target": "guides/acquisition/sim-state.html#visual-drawio-plc-simulation"
+    },
+    "labs/visual-guide/drawio-inspection-extension.html": {
+      "target": "guides/inspection-framework/input-output-contract.html#visual-drawio-inspection-extension"
+    },
+    "labs/visual-guide/drawio-depth-to-cloud.html": {
+      "target": "api/rust/spatial3d/grid-contract.html#visual-drawio-depth-to-cloud"
+    },
+    "labs/visual-guide/drawio-font-ocr.html": {
+      "target": "guides/recognition/font-training.html#visual-drawio-font-ocr"
+    },
+    "labs/visual-guide/drawio-queue-shutdown.html": {
+      "target": "reference/python/topics/framequeue-shutdown-bb0b1b6b9ed9.html#visual-drawio-queue-shutdown"
+    },
+    "labs/measurement/coins-blob.html": {
+      "target": "guides/blob-analysis/photo-coins.html"
+    },
+    "labs/measurement/text-components.html": {
+      "target": "guides/blob-analysis/photo-text-components.html"
+    },
+    "labs/measurement/coins-circle.html": {
+      "target": "guides/metrology/photo-circle-fit.html"
+    },
+    "labs/measurement/camera-profile.html": {
+      "target": "guides/profile-caliper/photo-profile.html"
+    },
+    "labs/measurement/coffee-color.html": {
+      "target": "guides/color-processing/photo-rgb-statistics.html"
+    },
+    "labs/measurement/camera-controlled-difference.html": {
+      "target": "guides/difference-inspection/photo-controlled-difference.html"
+    },
+    "labs/measurement/camera-statistics.html": {
+      "target": "getting-started/first-image/photo-statistics.html"
+    },
+    "labs/index.html": {
+      "target": "index.html"
+    },
+    "labs/visual-guide.html": {
+      "target": "index.html"
+    },
+    "labs/measurement.html": {
+      "target": "guides/blob-analysis/photo-coins.html",
+      "fragments": {
+        "coins-blob": "guides/blob-analysis/photo-coins.html#measurement-lab",
+        "text-components": "guides/blob-analysis/photo-text-components.html#measurement-lab",
+        "coins-circle": "guides/metrology/photo-circle-fit.html#measurement-lab",
+        "camera-profile": "guides/profile-caliper/photo-profile.html#measurement-lab",
+        "coffee-color": "guides/color-processing/photo-rgb-statistics.html#measurement-lab",
+        "camera-controlled-difference": "guides/difference-inspection/photo-controlled-difference.html#measurement-lab",
+        "camera-statistics": "getting-started/first-image/photo-statistics.html#measurement-lab"
+      }
+    },
+    "guides/managed-inspection/related-api.html": {
+      "target": "guides/managed-inspection.html#chapter-overview"
+    },
+    "guides/managed-display/related-api.html": {
+      "target": "guides/managed-display.html#chapter-overview"
+    },
+    "examples/downloads/related-api.html": {
+      "target": "examples/downloads.html#chapter-overview"
+    },
+    "guides/inference/related-api.html": {
+      "target": "guides/inference.html#chapter-overview"
+    },
+    "guides/profile-caliper/related-api.html": {
+      "target": "guides/profile-caliper.html#chapter-overview"
+    },
+    "guides/frequency/existing-3576884134528031495.html": {
+      "target": "guides/frequency.html#chapter-overview"
+    },
+    "guides/threshold/related-api.html": {
+      "target": "guides/threshold.html#chapter-overview"
+    },
+    "guides/inspection-framework/related-api.html": {
+      "target": "guides/inspection-framework.html#chapter-overview"
+    },
+    "guides/frequency/related-api.html": {
+      "target": "guides/frequency.html#chapter-overview"
+    },
+    "guides/acquisition/related-api.html": {
+      "target": "guides/acquisition.html#chapter-overview"
+    },
+    "getting-started/first-image/related-api.html": {
+      "target": "getting-started/first-image.html#chapter-overview"
+    },
+    "guides/image-io/overview-2.html": {
+      "target": "guides/image-io.html#chapter-overview"
+    },
+    "guides/matching-ncc/related-api.html": {
+      "target": "guides/matching-ncc.html#chapter-overview"
+    },
+    "api/csharp/metrology/related-api.html": {
+      "target": "api/csharp/metrology.html#chapter-overview"
+    },
+    "guides/recognition/overview-2.html": {
+      "target": "guides/recognition.html#chapter-overview"
+    },
+    "index/related-api.html": {
+      "target": "index.html#chapter-overview"
+    },
+    "api/python/point-cloud/related-api.html": {
+      "target": "api/python/point-cloud.html#chapter-overview"
+    },
+    "guides/managed-workbench/related-api.html": {
+      "target": "guides/managed-workbench.html#chapter-overview"
+    },
+    "api/csharp/match-model/related-api.html": {
+      "target": "api/csharp/match-model.html#chapter-overview"
+    },
+    "api/rust/blob-query/related-api.html": {
+      "target": "api/rust/blob-query.html#chapter-overview"
+    },
+    "api/rust/planar-calibration/related-api.html": {
+      "target": "api/rust/planar-calibration.html#chapter-overview"
+    },
+    "getting-started/index/related-api.html": {
+      "target": "getting-started/index.html#chapter-overview"
+    },
+    "guides/canny/related-api.html": {
+      "target": "guides/canny.html#chapter-overview"
+    },
+    "api/csharp/threshold/related-api.html": {
+      "target": "api/csharp/threshold.html#chapter-overview"
+    },
+    "guides/inference/overview-2.html": {
+      "target": "guides/inference.html#chapter-overview"
+    },
+    "api/rust/threshold/related-api.html": {
+      "target": "api/rust/threshold.html#chapter-overview"
+    },
+    "guides/image-io/related-api.html": {
+      "target": "guides/image-io.html#chapter-overview"
+    },
+    "concepts/index/related-api.html": {
+      "target": "concepts/index.html#chapter-overview"
+    },
+    "guides/calibration/related-api.html": {
+      "target": "guides/calibration.html#chapter-overview"
+    },
+    "guides/acquisition/overview-2.html": {
+      "target": "guides/acquisition.html#chapter-overview"
+    },
+    "api/rust/spatial3d/overview-2.html": {
+      "target": "api/rust/spatial3d.html#chapter-overview"
+    },
+    "api/rust/spatial3d/related-api.html": {
+      "target": "api/rust/spatial3d.html#chapter-overview"
+    },
+    "guides/metrology/related-api.html": {
+      "target": "guides/metrology.html#chapter-overview"
+    },
+    "getting-started/package-consumer/related-api.html": {
+      "target": "getting-started/package-consumer.html#chapter-overview"
+    },
+    "guides/color-processing/existing-3576884134528031495.html": {
+      "target": "guides/color-processing.html#chapter-overview"
+    },
+    "api/rust/measurement-models/related-api.html": {
+      "target": "api/rust/measurement-models.html#chapter-overview"
+    },
+    "guides/recognition/related-api.html": {
+      "target": "guides/recognition.html#chapter-overview"
+    },
+    "examples/aligned-inspection/related-api.html": {
+      "target": "examples/aligned-inspection.html#chapter-overview"
+    },
+    "concepts/results/related-api.html": {
+      "target": "concepts/results.html#chapter-overview"
+    },
+    "getting-started/sdk-setup/related-api.html": {
+      "target": "getting-started/sdk-setup.html#chapter-overview"
+    },
+    "concepts/lifetime/related-api.html": {
+      "target": "concepts/lifetime.html#chapter-overview"
+    },
+    "concepts/pixel-formats/related-api.html": {
+      "target": "concepts/pixel-formats.html#chapter-overview"
+    },
+    "guides/index/related-api.html": {
+      "target": "guides/index.html#chapter-overview"
+    },
+    "examples/ncc-search/related-api.html": {
+      "target": "examples/ncc-search.html#chapter-overview"
+    },
+    "concepts/share/related-api.html": {
+      "target": "concepts/share.html#chapter-overview"
+    },
+    "concepts/zimage/related-api.html": {
+      "target": "concepts/zimage.html#chapter-overview"
+    },
+    "examples/blob-inspection/related-api.html": {
+      "target": "examples/blob-inspection.html#chapter-overview"
+    },
+    "guides/difference-inspection/related-api.html": {
+      "target": "guides/difference-inspection.html#chapter-overview"
+    },
+    "guides/morphology/related-api.html": {
+      "target": "guides/morphology.html#chapter-overview"
+    },
+    "api/csharp/spatial3d/overview-2.html": {
+      "target": "api/csharp/spatial3d.html#chapter-overview"
+    },
+    "api/csharp/spatial3d/related-api.html": {
+      "target": "api/csharp/spatial3d.html#chapter-overview"
+    },
+    "guides/depth-map/related-api.html": {
+      "target": "guides/depth-map.html#chapter-overview"
+    },
+    "api/python/match-model/related-api.html": {
+      "target": "api/python/match-model.html#chapter-overview"
+    },
+    "api/rust/match-model/related-api.html": {
+      "target": "api/rust/match-model.html#chapter-overview"
+    },
+    "examples/planar-calibration/related-api.html": {
+      "target": "examples/planar-calibration.html#chapter-overview"
+    },
+    "concepts/roi/related-api.html": {
+      "target": "concepts/roi.html#chapter-overview"
+    },
+    "examples/difference-spot/related-api.html": {
+      "target": "examples/difference-spot.html#chapter-overview"
+    },
+    "guides/gaussian/related-api.html": {
+      "target": "guides/gaussian.html#chapter-overview"
+    },
+    "concepts/object-model/related-api.html": {
+      "target": "concepts/object-model.html#chapter-overview"
+    },
+    "concepts/coordinate-systems/related-api.html": {
+      "target": "concepts/coordinate-systems.html#chapter-overview"
+    },
+    "api/index/related-api.html": {
+      "target": "api/index.html#chapter-overview"
+    },
+    "guides/color-processing/related-api.html": {
+      "target": "guides/color-processing.html#chapter-overview"
+    },
+    "guides/point-cloud/related-api.html": {
+      "target": "guides/point-cloud.html#chapter-overview"
+    },
+    "examples/index/related-api.html": {
+      "target": "examples/index.html#chapter-overview"
+    },
+    "api/python/threshold/related-api.html": {
+      "target": "api/python/threshold.html#chapter-overview"
+    },
+    "guides/depth-map/overview-2.html": {
+      "target": "guides/depth-map.html#chapter-overview"
+    },
+    "guides/blob-analysis/related-api.html": {
+      "target": "guides/blob-analysis.html#chapter-overview"
+    },
+    "guides/point-cloud/overview-2.html": {
+      "target": "guides/point-cloud.html#chapter-overview"
+    },
+    "guides/matching-alternatives/related-api.html": {
+      "target": "guides/matching-alternatives.html#chapter-overview"
+    },
+    "api/csharp/inspection/related-api.html": {
+      "target": "api/csharp/inspection.html#chapter-overview"
+    },
+    "concepts/query/related-api.html": {
+      "target": "concepts/query.html#chapter-overview"
+    },
+    "api/csharp/find-blobs/related-api.html": {
+      "target": "api/csharp/find-blobs.html#chapter-overview"
+    },
+    "examples/roi-threshold/related-api.html": {
+      "target": "examples/roi-threshold.html#chapter-overview"
+    }
+  }
+}
