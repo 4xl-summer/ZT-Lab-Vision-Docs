@@ -1,0 +1,62 @@
+{
+  "sdk_revision": "ce902e85c3405eb63df40c699ddbdf70ee1d03bd",
+  "datasets": [
+    {
+      "id": "coins",
+      "label": "scikit-image coins — Brooklyn Museum collection",
+      "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.coins",
+      "license": "no known copyright restrictions",
+      "author": "Brooklyn Museum",
+      "file": "input/coins.png",
+      "shape": [
+        303,
+        384
+      ],
+      "sha256": "f8d773fc9cfa6f4d8e5942dc34d0a0788fcaed2a4fefbbed0aef5398d7ef4cba",
+      "origin": "skimage.data.coins() — unmodified RGB/gray pixel array saved as PNG"
+    },
+    {
+      "id": "camera",
+      "label": "scikit-image camera — cameraman",
+      "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.camera",
+      "license": "CC0",
+      "author": "Lav Varshney",
+      "file": "input/camera.png",
+      "shape": [
+        512,
+        512
+      ],
+      "sha256": "4cfbba3559df4e7d6765b5aac6e8cd5d3309f728f3eb35e155e644c48a6fcca7",
+      "origin": "skimage.data.camera() — unmodified RGB/gray pixel array saved as PNG"
+    },
+    {
+      "id": "text",
+      "label": "scikit-image text — Wikipedia Corner.png",
+      "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.text",
+      "license": "public domain / no known restrictions",
+      "author": "Wikipedia Corner.png contributors",
+      "file": "input/text.png",
+      "shape": [
+        172,
+        448
+      ],
+      "sha256": "bd84aa3a6e3c9887850d45d606c96b2e59433fbef50338570b63c319e668e6d1",
+      "origin": "skimage.data.text() — unmodified RGB/gray pixel array saved as PNG"
+    },
+    {
+      "id": "coffee",
+      "label": "scikit-image coffee",
+      "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.coffee",
+      "license": "CC0",
+      "author": "Rachel Michetti",
+      "file": "input/coffee.png",
+      "shape": [
+        400,
+        600,
+        3
+      ],
+      "sha256": "1b334876bab6bccddc821520b67fad5bceaaf3c454885b75cdc126b7ebfe9576",
+      "origin": "skimage.data.coffee() — unmodified RGB/gray pixel array saved as PNG"
+    }
+  ]
+}

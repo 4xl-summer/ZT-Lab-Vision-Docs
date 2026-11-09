@@ -4,11 +4,13 @@
     "height": 900
   },
   "minimum_primary_height_px": 700,
-  "scope": "Independent teaching topics and SDK own callable pages. Primary content excludes page heading, navigation, generated related API and verification appendices.",
-  "method": "Browser DOM geometry at 1280×900. Exact unchanged body hashes reuse measurements with the same stylesheets.",
+  "scope": "Independent teaching, SDK own callable, visual explanation and photo-measurement example pages. Primary content excludes page heading, navigation and generated appendices.",
+  "method": "Browser geometry at 1280×900. Reused 3,731 exact unchanged bodies under unchanged base styles; remeasured 90 new or illustrated bodies. New styles are scoped to the added visual and measurement components.",
   "stylesheets_sha256": {
     "assets/manual.css": "40b413cd179685ec4d0d8f917fdcab6b7a9da77e65eb7a7b22e7ded0400dee78",
-    "assets/manual-extra.css": "28bfc56a439e15c5804f4e6eecce6322369cd8c9b72e283c0f0be55b146a59f3"
+    "assets/manual-extra.css": "28bfc56a439e15c5804f4e6eecce6322369cd8c9b72e283c0f0be55b146a59f3",
+    "assets/manual-visuals.css": "ba6cff12a518ff302cd2ed32e574f34b40979ca9c049e9d92f1218ef4fa21107",
+    "assets/measurement-lab.css": "4816fd58116d538676e40d0386ad79a3e687218820b8319a9c6217ce7a370870"
   },
   "measurements": [
     {
@@ -66,10 +68,10 @@
       "overflow": false
     },
     {
+      "height": 1910.59375,
+      "overflow": false,
       "path": "concepts/roi/local.html",
-      "body_sha256": "fe7dada421263e93e70b969162f0e5e50b3cb316c06a70f4a2765b362edfcde1",
-      "height": 1204.45,
-      "overflow": false
+      "body_sha256": "57ed8f27a54344c9024fea4129d618feb6aa20a65efcbb192db3a7be4a54aad0"
     },
     {
       "path": "concepts/roi/languages.html",
@@ -78,10 +80,10 @@
       "overflow": false
     },
     {
+      "height": 1886.921875,
+      "overflow": false,
       "path": "concepts/roi/ownership.html",
-      "body_sha256": "15a4d02ada560bd79ca8b2d652567e2eb16d4ea6c4d6d356ae88a686337aa99c",
-      "height": 977.64,
-      "overflow": false
+      "body_sha256": "d97d68676ae33320295a275ca1d416d67541811f51cb228d021f94a2706967aa"
     },
     {
       "path": "concepts/roi/errors.html",
@@ -348,10 +350,10 @@
       "overflow": false
     },
     {
+      "height": 3109.015625,
+      "overflow": false,
       "path": "concepts/object-model/ownership.html",
-      "body_sha256": "96b60167cf91c6118716d7bc8b6b83340025a51cb5619ff20995aaf395c7c5c7",
-      "height": 1373.34,
-      "overflow": false
+      "body_sha256": "a7b95758b378d9554374ab694b86b4da39b381b6ef330df8ba55bb6c771bc86b"
     },
     {
       "path": "concepts/object-model/languages.html",
@@ -396,10 +398,10 @@
       "overflow": false
     },
     {
+      "height": 1901.15625,
+      "overflow": false,
       "path": "concepts/lifetime/matrix.html",
-      "body_sha256": "088eff5200b2a76169e52343dc974ff2a1e748985ced517cc29ca8546b8ecbde",
-      "height": 1207.02,
-      "overflow": false
+      "body_sha256": "6b93b8c4a15539b1daff65bd04e74db969516dc894e1e860e542d468bb91e49b"
     },
     {
       "path": "concepts/lifetime/rust.html",
@@ -528,10 +530,10 @@
       "overflow": false
     },
     {
+      "height": 2042.53125,
+      "overflow": false,
       "path": "concepts/pixel-formats/per-function.html",
-      "body_sha256": "1556f5a8ca2b11d39489f3557ab5c32a1d28291637519a789d130572912b57a6",
-      "height": 1348.39,
-      "overflow": false
+      "body_sha256": "e2d55ebb4cbe99979063b21e850bab2674c0d5da6c6d9cb1fa013f2f4b55fb0e"
     },
     {
       "path": "concepts/pixel-formats/stride.html",
@@ -804,16 +806,16 @@
       "overflow": false
     },
     {
+      "height": 1579.84375,
+      "overflow": false,
       "path": "guides/blob-analysis/connectivity.html",
-      "body_sha256": "1363007ba5616a7a09b1dcedfe49ecb55fce41ab49fa317515046d8f50769c4e",
-      "height": 873.7,
-      "overflow": false
+      "body_sha256": "608e618c4bf0c23f5254f35c9d9f0a01a977bed6d67e8d8ad12c72bd45f27236"
     },
     {
+      "height": 2274.34375,
+      "overflow": false,
       "path": "guides/blob-analysis/result.html",
-      "body_sha256": "1539a558e5f585878662913d82238f8c6a77401f887a026fcd6f52ec8cdc827b",
-      "height": 968.95,
-      "overflow": false
+      "body_sha256": "0353b5a9630b80fb0d79ce93d414e8e7181d997a71103635f9fdcab5b83ce5ca"
     },
     {
       "path": "guides/blob-analysis/rust.html",
@@ -858,10 +860,10 @@
       "overflow": false
     },
     {
+      "height": 1547.09375,
+      "overflow": false,
       "path": "guides/canny/pipeline.html",
-      "body_sha256": "a41055764b457bc3f73328587912638737f7302796177fc92b4f31578e4a72a2",
-      "height": 852.95,
-      "overflow": false
+      "body_sha256": "57841baf4e5d05d1e030f2d0d585aa8954cfacb1e53dd2707468214586394c40"
     },
     {
       "path": "guides/canny/contract.html",
@@ -918,10 +920,10 @@
       "overflow": false
     },
     {
+      "height": 1531.15625,
+      "overflow": false,
       "path": "guides/gaussian/principle.html",
-      "body_sha256": "c05868859a10466dd48e532aca53a1343acd03067a1b4f65b3738951d25ae30f",
-      "height": 823.02,
-      "overflow": false
+      "body_sha256": "01f12733c579edd7c32cb98c67dda941469f62202a209140d52730c7889d897b"
     },
     {
       "path": "guides/gaussian/parameters.html",
@@ -984,10 +986,10 @@
       "overflow": false
     },
     {
+      "height": 1408.46875,
+      "overflow": false,
       "path": "guides/morphology/size.html",
-      "body_sha256": "0e0e18c6254f23621b39e0bf7598257bce83e85dc0490cef8e9514fbf8e586f5",
-      "height": 714.33,
-      "overflow": false
+      "body_sha256": "5bb36fe425d17fd384fdc235c2129cd5f87f34bf9f52e7e4a1e9194c1a40ad61"
     },
     {
       "path": "guides/morphology/api.html",
@@ -1068,10 +1070,10 @@
       "overflow": false
     },
     {
+      "height": 1895.890625,
+      "overflow": false,
       "path": "guides/threshold/detail-threshold.html",
-      "body_sha256": "d964198f4147e4395cde2cbf53d05cdb5d8c35963b2d3452515983153cb6e5f7",
-      "height": 1187.75,
-      "overflow": false
+      "body_sha256": "91cf008e591c54944722ac47d5a3100124b9fa8a2ec3f5234a2e73064a5c7ba1"
     },
     {
       "path": "guides/threshold/options-lifetime.html",
@@ -1404,10 +1406,10 @@
       "overflow": false
     },
     {
+      "height": 1914.671875,
+      "overflow": false,
       "path": "guides/matching-ncc/principle.html",
-      "body_sha256": "4ae9c1f7622bce7f68e91f74caf229048d52393540f6e9f93b7bd6ebada3f7ef",
-      "height": 1206.53,
-      "overflow": false
+      "body_sha256": "f51acc569a92b76244a544a47751c883ce232d275026a6e226fdcf9d214ec46d"
     },
     {
       "path": "guides/matching-ncc/contract.html",
@@ -1416,10 +1418,10 @@
       "overflow": false
     },
     {
+      "height": 2122.546875,
+      "overflow": false,
       "path": "guides/matching-ncc/results.html",
-      "body_sha256": "03d665c8e7297a49468b937d3b0253e062e4d0d7ad33136dec7b5572f6bbdef9",
-      "height": 1056.27,
-      "overflow": false
+      "body_sha256": "9f53cecfe5750d6d0c3e50b4f1ebe4a16dc16bd79f0f1a72f902439ef6b1a40c"
     },
     {
       "path": "guides/matching-ncc/spec.html",
@@ -1434,10 +1436,10 @@
       "overflow": false
     },
     {
+      "height": 2297.375,
+      "overflow": false,
       "path": "guides/matching-ncc/fixture.html",
-      "body_sha256": "49d81bf2f079887ab22df544f9be12914b0e928a3f7843819d2a925ba317e32e",
-      "height": 1233.09,
-      "overflow": false
+      "body_sha256": "6ab62d855b44b0fb4a46f75e765a7dcd73adcb294274bd8b9dfd2a581422647b"
     },
     {
       "path": "guides/matching-ncc/persistence.html",
@@ -1560,10 +1562,10 @@
       "overflow": false
     },
     {
+      "height": 1572.28125,
+      "overflow": false,
       "path": "guides/image-io/overview-1.html",
-      "body_sha256": "bbe17c80fa4c32e4db3493684dd0e0b20cd7453a3815cd49c8d53e3a6309e134",
-      "height": 878.14,
-      "overflow": false
+      "body_sha256": "755dde24d18b29b30a3a24d389870f6facae27f8fac0c014fe3873f584d121e1"
     },
     {
       "path": "guides/image-io/overview-2.html",
@@ -1776,10 +1778,10 @@
       "overflow": false
     },
     {
+      "height": 2156.984375,
+      "overflow": false,
       "path": "concepts/coordinate-systems/roi-world-example.html",
-      "body_sha256": "91cdbe24f7cef69d93a3d9df6206cd73a3d02339a2844694eec90546856565ab",
-      "height": 1119.19,
-      "overflow": false
+      "body_sha256": "ea3b22fc4393ae3d5a1c82b51366a57d5aa90675dc7867219b236d1f74f1da56"
     },
     {
       "path": "concepts/coordinate-systems/verification-cases.html",
@@ -1794,10 +1796,10 @@
       "overflow": false
     },
     {
+      "height": 2047.015625,
+      "overflow": false,
       "path": "guides/calibration/planar-contract.html",
-      "body_sha256": "963e710deb518bbe0f7f50bfc22bdad9f369d045f42688a5be54df0622861eee",
-      "height": 859.72,
-      "overflow": false
+      "body_sha256": "5838cea21b439cd887297befa4e5da9508f4aec384b1550701666f36da94dc7f"
     },
     {
       "path": "guides/calibration/validation-fields.html",
@@ -1806,10 +1808,10 @@
       "overflow": false
     },
     {
+      "height": 2606.609375,
+      "overflow": false,
       "path": "guides/calibration/roi-world-example.html",
-      "body_sha256": "89f030ce406f7cb858f131b3ab539c81c3b81ee380d4ad933eb39cbdd306a2c0",
-      "height": 957.56,
-      "overflow": false
+      "body_sha256": "ee51abd02f6b3bbd7facbe19a82c58d3b834764fd772a4627c47a3332e4e45f0"
     },
     {
       "path": "guides/calibration/calibration-fields.html",
@@ -1818,10 +1820,10 @@
       "overflow": false
     },
     {
+      "height": 1922.265625,
+      "overflow": false,
       "path": "guides/calibration/verification-cases.html",
-      "body_sha256": "87b562979ff879b6b8dd347d629389bcb5108601567a019705a11b8547a2ba75",
-      "height": 734.97,
-      "overflow": false
+      "body_sha256": "a9c6e302196e0c9c75574eba05bae6387ad2001175ead77836fffb259483cea9"
     },
     {
       "path": "guides/calibration/related-api.html",
@@ -1914,22 +1916,22 @@
       "overflow": false
     },
     {
+      "height": 2447.890625,
+      "overflow": false,
       "path": "guides/profile-caliper/strip-math.html",
-      "body_sha256": "7729766971a33bb0002750e501dab4d41f7d0883c162146f740601eb16f4ce14",
-      "height": 770.36,
-      "overflow": false
+      "body_sha256": "5b4405d6f30da2877c6b062a68d5931fea740fa31f0b11fcecc033f4f6706a67"
     },
     {
+      "height": 1938.046875,
+      "overflow": false,
       "path": "guides/profile-caliper/basic-params.html",
-      "body_sha256": "04458c1dea0b76766ef1bbc855ec9be045352aab7a72bab4894e9b8b2a655d9f",
-      "height": 871.77,
-      "overflow": false
+      "body_sha256": "0fb31ac5ac212fbb721cdf9e591a1d2cf7f5571c065f7d11517d2595e81e0894"
     },
     {
+      "height": 1670.890625,
+      "overflow": false,
       "path": "guides/profile-caliper/basic-field-table.html",
-      "body_sha256": "82a10b3172a7c1a9aabd07b2bc13b820c7a939f6b969bd3b5b723f42e6e33aef",
-      "height": 725.64,
-      "overflow": false
+      "body_sha256": "5aee78076887d795044ce662e79f74859cb5f4d90e4b853fb57d7ee7358e001a"
     },
     {
       "path": "guides/profile-caliper/profile-call.html",
@@ -1950,10 +1952,10 @@
       "overflow": false
     },
     {
+      "height": 1804.96875,
+      "overflow": false,
       "path": "guides/profile-caliper/related-api.html",
-      "body_sha256": "8fdcd6aab5ccb981ac3382517a4e10475244412c73ba95ccd330bc1526993122",
-      "height": 859.72,
-      "overflow": false
+      "body_sha256": "2b26bf05e055b1ced122ca1a3d35bdffc5fac98a88af86ff775b6920cf2af554"
     },
     {
       "path": "examples/planar-calibration/fixture.html",
@@ -1998,10 +2000,10 @@
       "overflow": false
     },
     {
+      "height": 3550.59375,
+      "overflow": false,
       "path": "concepts/query/architecture.html",
-      "body_sha256": "d8ba0cf9404ce94cc6f93e47b4bd9097b0c23589aafb2e6bae9c66250212b8fd",
-      "height": 929.66,
-      "overflow": false
+      "body_sha256": "d6a336ef267230c3f0c270260b6db6a79430dacc6920de7d3bf4aad0c0ad8d9b"
     },
     {
       "path": "concepts/query/rust.html",
@@ -2022,16 +2024,16 @@
       "overflow": false
     },
     {
+      "height": 2250.390625,
+      "overflow": false,
       "path": "concepts/query/verified-execution-types.html",
-      "body_sha256": "a2c8e4e6f125c56c3aebf73b3a8fdcc1f55d842f83a87ef6f68b9f4c9a3b6470",
-      "height": 1063.09,
-      "overflow": false
+      "body_sha256": "0eb4b03f1be404b7234a385645686f858c7e9269363e5babc35e7c4e14b992dc"
     },
     {
+      "height": 1927.3125,
+      "overflow": false,
       "path": "concepts/query/verified-close-races.html",
-      "body_sha256": "b788c7bbf62c4603bc3dc4c7e171b7a3329d2f6d5379f3cb93a14e3c3b6a5e5f",
-      "height": 886.41,
-      "overflow": false
+      "body_sha256": "671e94d4d1702c42b1588428f504aad943ecf28d8d665ff64865abe012d5f47c"
     },
     {
       "path": "concepts/query/verification-cases.html",
@@ -2070,10 +2072,10 @@
       "overflow": false
     },
     {
+      "height": 1590.5,
+      "overflow": false,
       "path": "guides/frequency/detail-frequency.html",
-      "body_sha256": "3a0e4d548eec323f52543fb3102effb489fd1c47b9e0206ade78642a711eecdd",
-      "height": 884.36,
-      "overflow": false
+      "body_sha256": "97a020a5a6a6a2673d7fa6fd467c389567ecc07cd720bc5140a3f3b80b5bb76a"
     },
     {
       "path": "guides/frequency/fixture-example.html",
@@ -2340,10 +2342,10 @@
       "overflow": false
     },
     {
+      "height": 1781.984375,
+      "overflow": false,
       "path": "guides/difference-inspection/algorithm.html",
-      "body_sha256": "e3bb55bd71c0ee376c1838042ae892b31fff0e86303b8a2f7e0c9a6e4e10e17b",
-      "height": 1073.84,
-      "overflow": false
+      "body_sha256": "b6e3e7b7bf7b0c9090fc3961acea79b3e431f57391965aaf0f73a43ae31bc348"
     },
     {
       "path": "guides/difference-inspection/parameters.html",
@@ -2382,10 +2384,10 @@
       "overflow": false
     },
     {
+      "height": 1763.984375,
+      "overflow": false,
       "path": "guides/inspection-framework/coordinates.html",
-      "body_sha256": "b6471f0ab3acae5bc436c54e96f0c52e636d0063a12f2ab827becb4e6147fbb5",
-      "height": 1055.84,
-      "overflow": false
+      "body_sha256": "e38b30d8b16288d9f324650732c5cd91077163cb9d95fc988f2141064886d76e"
     },
     {
       "path": "guides/inspection-framework/algorithm.html",
@@ -2406,16 +2408,16 @@
       "overflow": false
     },
     {
+      "height": 2176.6875,
+      "overflow": false,
       "path": "guides/inspection-framework/input-output-contract.html",
-      "body_sha256": "f9f6769616ec0dab4586f4f7e2ac660eb29e3d049c73a6263c6a2fb79c313642",
-      "height": 1110.41,
-      "overflow": false
+      "body_sha256": "117525ba83e48cadd47628386e866cc1edf1c5ff77e2cd41378d6d5f5102c606"
     },
     {
+      "height": 1769.046875,
+      "overflow": false,
       "path": "guides/inspection-framework/error-lifetime-contract.html",
-      "body_sha256": "3107045a8f59a7aa98e1c8e635ca466d70192a13c430de77447b8faf68fb1878",
-      "height": 702.77,
-      "overflow": false
+      "body_sha256": "22e61c899543283a5bc065b7d926a706126d3a92599dae8541da9a8b02a0e173"
     },
     {
       "path": "guides/inspection-framework/verification-cases.html",
@@ -2748,10 +2750,10 @@
       "overflow": false
     },
     {
+      "height": 2095.4375,
+      "overflow": false,
       "path": "api/rust/spatial3d/grid-contract.html",
-      "body_sha256": "6caf746d7c537fb96bab57145a1a898a65cc110874f8b4b014dfda4688368f88",
-      "height": 1029.16,
-      "overflow": false
+      "body_sha256": "3368ad489d571b757bbacaf5d3f1b06fff7f61a320c360a1212af940836dae92"
     },
     {
       "path": "api/rust/spatial3d/point-contract.html",
@@ -2772,10 +2774,10 @@
       "overflow": false
     },
     {
+      "height": 1903.359375,
+      "overflow": false,
       "path": "api/rust/spatial3d/rust-depth-example.html",
-      "body_sha256": "a17dfcfa4b4474ca4fa840a4511fb842bd04b410b55729593491ec2c214beacb",
-      "height": 839.08,
-      "overflow": false
+      "body_sha256": "f6a305b032f8bee3bca63d520dbe13f04850548e3d224d100f8c681f2c9f05f9"
     },
     {
       "path": "api/rust/spatial3d/related-api.html",
@@ -2790,16 +2792,16 @@
       "overflow": false
     },
     {
+      "height": 3074.703125,
+      "overflow": false,
       "path": "guides/acquisition/overview-2.html",
-      "body_sha256": "1240706201833d25add525ff6f712be67bfd41200d89337d651ae048aab29ba4",
-      "height": 1064.41,
-      "overflow": false
+      "body_sha256": "e110074ce7c20cb4b512ccf21b02625920ed2cb6453937fbb3f399ed6fd93dfa"
     },
     {
+      "height": 1821.5,
+      "overflow": false,
       "path": "guides/acquisition/overview-3.html",
-      "body_sha256": "2ca99d7f52889b44a0aacdb488fba29c360b8db6fd4e1f73c60287987ee4c82d",
-      "height": 806.34,
-      "overflow": false
+      "body_sha256": "36c0795b5681997557de3040b5f413698251dad90a657861d09455d1a7fbc025"
     },
     {
       "path": "guides/acquisition/overview-4.html",
@@ -2808,10 +2810,10 @@
       "overflow": false
     },
     {
+      "height": 1881.6875,
+      "overflow": false,
       "path": "guides/acquisition/sim-state.html",
-      "body_sha256": "7770cf52bf3e23a8b2ef31203bbff79fd4eb11af9e81490d48b78baf41aff4f8",
-      "height": 1173.55,
-      "overflow": false
+      "body_sha256": "8eb29aa4a38ce6849f02edd4e6fb39bb008292eb557cb80180c2a7732e4f02f6"
     },
     {
       "path": "guides/acquisition/camera-example.html",
@@ -2820,16 +2822,16 @@
       "overflow": false
     },
     {
+      "height": 1803.5,
+      "overflow": false,
       "path": "guides/acquisition/verification-cases.html",
-      "body_sha256": "afeb97d685f980dae42e95a336fcbeb6c3437aad4d25156929981c5778dafb59",
-      "height": 788.34,
-      "overflow": false
+      "body_sha256": "6bf608d24affb017b447818c09e1702b05504115f4292f178bde410914d0cd5a"
     },
     {
+      "height": 1827.9375,
+      "overflow": false,
       "path": "guides/acquisition/related-api.html",
-      "body_sha256": "8b83b62faa7b67aa72bdf8b2d7e057d7d85f86ed7273a55e97feac01251c2491",
-      "height": 761.66,
-      "overflow": false
+      "body_sha256": "9367c7c7a8f5de3edc3402e1ddf91a948fc62218ae49b1bc1185fd3bba348801"
     },
     {
       "path": "guides/depth-map/overview-1.html",
@@ -2856,10 +2858,10 @@
       "overflow": false
     },
     {
+      "height": 1527.53125,
+      "overflow": false,
       "path": "guides/depth-map/grid-contract.html",
-      "body_sha256": "5fb8b73423a824a8d9b22d1766d6b9898cbf33a1ec069176f88a171bb9719b62",
-      "height": 819.39,
-      "overflow": false
+      "body_sha256": "31fda3f3631d50547460773874ac83e21ada4541e10f1d4a9660f27162275d67"
     },
     {
       "path": "guides/depth-map/grid-example.html",
@@ -2916,10 +2918,10 @@
       "overflow": false
     },
     {
+      "height": 1597.90625,
+      "overflow": false,
       "path": "guides/inference/output-coordinates.html",
-      "body_sha256": "0aff61af19948ccae072e00fc11ecd022acfe8ef28430d43b530998b6949b501",
-      "height": 889.77,
-      "overflow": false
+      "body_sha256": "7d83b0630bc089ff25355874e6313b57511c832feb1040b4aed77242b812a930"
     },
     {
       "path": "guides/inference/ai-fixture.html",
@@ -2976,10 +2978,10 @@
       "overflow": false
     },
     {
+      "height": 1606.59375,
+      "overflow": false,
       "path": "guides/point-cloud/fit-details.html",
-      "body_sha256": "03f467d2a302dbb224d2538b9cd922e91a2ee1f29cc8b97630548a4f51302c54",
-      "height": 898.45,
-      "overflow": false
+      "body_sha256": "acdb7e22e370763000745393c775c493d6c449dfc98abbef420cd2247154e177"
     },
     {
       "path": "guides/point-cloud/fit-options.html",
@@ -3030,16 +3032,16 @@
       "overflow": false
     },
     {
+      "height": 1553.21875,
+      "overflow": false,
       "path": "guides/recognition/ocr-region.html",
-      "body_sha256": "ab23ba8f6ca2bd713c3cdfa1a4533fd1a4ba2b0a1cfede8bc16c8ad3b426adfe",
-      "height": 845.08,
-      "overflow": false
+      "body_sha256": "45f2372c411deadc4721e80fa47d8e74afc89b8f1d8850b10a57386de69b8f0f"
     },
     {
+      "height": 1821.734375,
+      "overflow": false,
       "path": "guides/recognition/font-training.html",
-      "body_sha256": "a917c41285b8ef801f84bbfe6ff8135986f8479bcbb3957f15dcd57e64ca61c1",
-      "height": 898.45,
-      "overflow": false
+      "body_sha256": "6d77f62aa289d86a426a8efeedfc12de4d6606c66e3e91911622de0b28d082b6"
     },
     {
       "path": "guides/recognition/barcode-no-read.html",
@@ -3048,10 +3050,10 @@
       "overflow": false
     },
     {
+      "height": 1868.671875,
+      "overflow": false,
       "path": "guides/recognition/font-example.html",
-      "body_sha256": "1397a7346e9cf3cd0e319cd6be14ddec8f5050616d8f036a357781a8d227d908",
-      "height": 947.39,
-      "overflow": false
+      "body_sha256": "f9f07ae1e80580497878485420602ee138a93038397ec1736f729f5bacf56436"
     },
     {
       "path": "guides/recognition/verification-cases.html",
@@ -3132,10 +3134,10 @@
       "overflow": false
     },
     {
+      "height": 1837.484375,
+      "overflow": false,
       "path": "guides/color-processing/detail-color.html",
-      "body_sha256": "dc672e9fb4012840d33fea5bc60e0699a2227db8cfe8d32c9304547917e4d9a8",
-      "height": 1131.34,
-      "overflow": false
+      "body_sha256": "464d11b03d36bb38240e86ae1c68f739701afbe45904f07ddf534bba4223c272"
     },
     {
       "path": "guides/color-processing/fixture-example.html",
@@ -22666,6 +22668,276 @@
       "body_sha256": "968d7ab7c1824845dabd5f79811898049f40cebd6b6307693d0c5191712fa988",
       "height": 1498.48,
       "overflow": false
+    },
+    {
+      "height": 1413.265625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-first-pipeline.html",
+      "body_sha256": "b785d2c7aa8af6b35e04f2eedf729c129bbf34fb2395676570ac0eaa5658d775"
+    },
+    {
+      "height": 1439.953125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-blob-connectivity.html",
+      "body_sha256": "e918c17d8fe85a2c21370817ea4a3ee8b352d308117fbf6cf31f386bfffe5b0b"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-image-lifetime.html",
+      "body_sha256": "b88f91ca826c8b2ad149c8ffe3626de9bcc42e9d29dc49c2bb7009061d98e1b4"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-roi-coordinates.html",
+      "body_sha256": "680ca597e09a7b4d99ff8729865e75601fce6dc4dc8d2e092aadd8a3f32a76bd"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-query-execution.html",
+      "body_sha256": "67614aa88d99017b29c1c4a1a2d0e196a8caf776b9aabb1812c416c923381059"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-pixel-formats.html",
+      "body_sha256": "b3ee24672c0f4b0441c61daca63709db0cc16daa64232ca7a53439f13d50cbba"
+    },
+    {
+      "height": 1297.203125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-histogram-bins.html",
+      "body_sha256": "27a7e756733a43cb09e0de541b18913c5c9782c370ebe9f1fc3817a6eef436d8"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-gaussian-filter.html",
+      "body_sha256": "e5f6ddb5f03f08354e1a9c1759329a6f4e5feaac09f89edadb59e7ed457a3eed"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-morphology.html",
+      "body_sha256": "9bd9cfcf2a94f9bfc92af9f09e3c1513d55c45655d7d950f464f0642902858e2"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-canny-edges.html",
+      "body_sha256": "f951445de6efa6acfa94fb1d4cb826870a54e46f0a54b82b8a9422167f5517fd"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-ncc-matching.html",
+      "body_sha256": "7f2bd25f5c39a91cec50e5e4f6b8f55a9dfea2b0751e2f1c69ddafeb07ed7f4e"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-caliper-profile.html",
+      "body_sha256": "968708d3e2730820cb2a723721b42b49053a1ed16df13dfeda5e666cf11436e9"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-lab-distance.html",
+      "body_sha256": "4bd80ca8afafe3d163937b52c279c0f02890d508f7ed6af1a032fbcd5c456553"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-ocr-region.html",
+      "body_sha256": "7d3157fab0b66473dd759088f12791a6068ef864a1d2e21845c2c01149f71aa8"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-depth-grid.html",
+      "body_sha256": "57f2e50187d1f583189240a83dd6aa21ec1311960430b256c45aa46509575b4e"
+    },
+    {
+      "height": 1403.953125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-point-cloud-fit.html",
+      "body_sha256": "40a92d8484751408232b94c593aec7b059ff0768bfd7ba11d700203a0fb5e8f6"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-ai-coordinates.html",
+      "body_sha256": "b87a20ddfb74ab1190f6299959da80f7ffb960c6814f39e6490ea2a6efa94b4a"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-acquisition-flow.html",
+      "body_sha256": "7dcb41afed88bbaa746e1072cbe26451e5f4426ac424f8a880cbd1f99b3103e9"
+    },
+    {
+      "height": 1330.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-plc-simulation.html",
+      "body_sha256": "7f6e8a681d6c5b639c5ed66d116030118e9695333869793283e083eb60f4f130"
+    },
+    {
+      "height": 1377.265625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-inspection-alignment.html",
+      "body_sha256": "679ccb2754d4947cee1e0d73884fd4f404d31fc33e6bd19e3048d4afe3c40ce0"
+    },
+    {
+      "height": 1350.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-calibration-transform.html",
+      "body_sha256": "591783bb71ff6ea96e4c1336bf36aab6363e40ec889fb4885396e661ea635569"
+    },
+    {
+      "height": 1323.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-frequency-roundtrip.html",
+      "body_sha256": "26e425efaac3057ec6a0855d9631a184dcea23de295805da7225643b4a555419"
+    },
+    {
+      "height": 1297.203125,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-deployment-check.html",
+      "body_sha256": "124c25edcbfa6a7b0660bc6a4aa53f52a809c783a493b6613f375428ff044bcf"
+    },
+    {
+      "height": 1377.265625,
+      "overflow": false,
+      "path": "labs/visual-guide/infographic-difference-inspection.html",
+      "body_sha256": "51e289ab33c9538d765ca2f5645ca1a40d4a2ce5b24c6f830ee643b1f1969f0c"
+    },
+    {
+      "height": 1530.515625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-sdk-layers.html",
+      "body_sha256": "36c423826a6d214b7344015dd05775dbac715890efa837bdc7ef7e9bf6bd139b"
+    },
+    {
+      "height": 1530.515625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-image-ownership.html",
+      "body_sha256": "c6ffacd37b4004094d2f01c0a2be18d97b0a5289b74f115b27854b4d761c2d46"
+    },
+    {
+      "height": 1821.21875,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-query-execution.html",
+      "body_sha256": "9a3e2afc18b7a77012d791db3ce1ffb030749f128b6ee796153b4c51487b8eab"
+    },
+    {
+      "height": 1698.40625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-coordinates.html",
+      "body_sha256": "dd3f42096a50c4021817a22c88a02a5c903f71673c79f4c6344dfcdb0aafe955"
+    },
+    {
+      "height": 1726.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-matching-inspection.html",
+      "body_sha256": "c673054d1ab5fb322ce3ca73283f4d9206d081b6c5e4ae547777b6f3cb1892f3"
+    },
+    {
+      "height": 1753.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-caliper-flow.html",
+      "body_sha256": "0b370a6fe45a6a967665df649a81923d1669c6d7015d3aa36edecf37e3da3908"
+    },
+    {
+      "height": 1579.171875,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-geometric-models.html",
+      "body_sha256": "52faa3dfe04a5f661ae2d2c6e8de050f35bd00dc14f17c66d879a3d1e9cefc8d"
+    },
+    {
+      "height": 1821.21875,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-calibration.html",
+      "body_sha256": "48d0fccb2aa02d4899303d1e50eda1643b226aefe2597beb2816e4ad9a554edf"
+    },
+    {
+      "height": 1726.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-frame-queue.html",
+      "body_sha256": "45104f8349608773793793e2bf724a665aefb2ac9a4e23886293335b14ce1994"
+    },
+    {
+      "height": 1622.390625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-plc-simulation.html",
+      "body_sha256": "1a1917709f55e46df00160104e2a4c3ab80167c8f36fdc71d02071ac896e8e67"
+    },
+    {
+      "height": 1753.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-inspection-extension.html",
+      "body_sha256": "4533395e424e3275893533528a20fb81f9dd75b64e3f3a28007870f264e22964"
+    },
+    {
+      "height": 1646.828125,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-depth-to-cloud.html",
+      "body_sha256": "bf354d97d6f6ead443d9bdb8828e6d620aa10420cf76b831a2d8b8e4c146839a"
+    },
+    {
+      "height": 1610.578125,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-font-ocr.html",
+      "body_sha256": "19399581a7170704755cc1c5ed35a25acd47421e9e6bb884fc989176ee3cc033"
+    },
+    {
+      "height": 1754.890625,
+      "overflow": false,
+      "path": "labs/visual-guide/drawio-queue-shutdown.html",
+      "body_sha256": "c119d8745434a8c536f300c169afce34f65550f909dcb8dac2021c63281b520b"
+    },
+    {
+      "height": 4026.546875,
+      "overflow": false,
+      "path": "labs/measurement/coins-blob.html",
+      "body_sha256": "d0300fbb4b7d86bc633aa004d361b7c36b0464b5b4fe84cc06f4719ed00b1059"
+    },
+    {
+      "height": 4005.296875,
+      "overflow": false,
+      "path": "labs/measurement/coins-circle.html",
+      "body_sha256": "6ff7a1db06bb35f1321c0b3518030c59498f6ecd24f36bc7bac1b1070c1a0eee"
+    },
+    {
+      "height": 4901.3125,
+      "overflow": false,
+      "path": "labs/measurement/camera-profile.html",
+      "body_sha256": "b87233c41772ed786b62e1b5afbdb87219dbca7855dc8f04d0c9405b70c7a69c"
+    },
+    {
+      "height": 3300.359375,
+      "overflow": false,
+      "path": "labs/measurement/text-components.html",
+      "body_sha256": "57afda2d6038ebd7e33852e31632ad8855b86b319db0d54a362068e47db300cd"
+    },
+    {
+      "height": 3767.953125,
+      "overflow": false,
+      "path": "labs/measurement/coffee-color.html",
+      "body_sha256": "1145a60f1e0010c2fba5b65cd41db5688c39a146d2cb53bd5728e5b0a9ffed64"
+    },
+    {
+      "height": 4413.703125,
+      "overflow": false,
+      "path": "labs/measurement/camera-controlled-difference.html",
+      "body_sha256": "8e807fde9f606ed7432f2cfd13d7880e45c7f7e10721cb1cb0b180619997299b"
+    },
+    {
+      "height": 4082.4375,
+      "overflow": false,
+      "path": "labs/measurement/camera-statistics.html",
+      "body_sha256": "72a88a8dff7c1d65b563eae4d0dd6faf0ab61f091232a40d04f91595f9fa8256"
     }
   ]
 }

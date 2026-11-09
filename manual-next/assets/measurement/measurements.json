@@ -1,0 +1,848 @@
+{
+  "version": 1,
+  "sdk_revision": "ce902e85c3405eb63df40c699ddbdf70ee1d03bd",
+  "cases": [
+    {
+      "id": "coins-blob",
+      "title": "동전 사진의 연결 성분",
+      "description": "실제 사진을 고정 문턱으로 이진화한 뒤 8연결 영역의 면적과 경계를 측정합니다.",
+      "category": "blob",
+      "source": {
+        "label": "scikit-image coins — Brooklyn Museum collection",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.coins",
+        "license": "no known copyright restrictions",
+        "author": "Brooklyn Museum"
+      },
+      "image": {
+        "original": "input/coins.png",
+        "width": 384,
+        "height": 303
+      },
+      "roi": {
+        "x": 311,
+        "y": 152,
+        "width": 73,
+        "height": 70
+      },
+      "steps": [
+        {
+          "label": "원본",
+          "api": "ZImage.from_gray8",
+          "description": "공개 동전 사진을 Gray8로 입력합니다.",
+          "image": "input/coins.png"
+        },
+        {
+          "label": "이진화",
+          "api": "ZImage.threshold",
+          "description": "110 이상인 픽셀을 전경으로 만듭니다.",
+          "image": "stage/coins-threshold.png"
+        },
+        {
+          "label": "연결 성분",
+          "api": "ZImage.find_blobs(8)",
+          "description": "후보 중 고립된 대략 원형 성분을 선택합니다.",
+          "image": "overlay/coins-blob.png"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "면적",
+          "value": 3048,
+          "unit": "px²",
+          "meaning": "선택된 연결 성분의 픽셀 수"
+        },
+        {
+          "label": "중심 x",
+          "value": 347.4209317585302,
+          "unit": "px",
+          "meaning": "전체 영상 좌표"
+        },
+        {
+          "label": "중심 y",
+          "value": 186.20177165354332,
+          "unit": "px",
+          "meaning": "전체 영상 좌표"
+        },
+        {
+          "label": "경계 폭",
+          "value": 65,
+          "unit": "px",
+          "meaning": "축 정렬 경계 폭"
+        },
+        {
+          "label": "경계 높이",
+          "value": 62,
+          "unit": "px",
+          "meaning": "축 정렬 경계 높이"
+        }
+      ],
+      "geometry": {
+        "circles": [],
+        "lines": [],
+        "boxes": [
+          {
+            "x": 315,
+            "y": 156,
+            "width": 65,
+            "height": 62,
+            "label": "연결 성분 경계"
+          }
+        ],
+        "points": [
+          {
+            "x": 347.4209317585302,
+            "y": 186.20177165354332,
+            "label": "블롭 중심"
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "threshold",
+          "value": 110,
+          "meaning": "이상(≥)이면 전경"
+        },
+        {
+          "name": "connectivity",
+          "value": 8,
+          "meaning": "대각선도 연결"
+        }
+      ],
+      "api_links": [
+        {
+          "label": "Python ZImage.find_blobs",
+          "path": "reference/python/image-zimage.html"
+        },
+        {
+          "label": "Blob 데이터",
+          "path": "reference/python/api-blob.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "NumPy >= 및 SciPy ndimage 8연결: 모든 마스크 픽셀, 모든 성분의 면적·경계와 중심 대조",
+        "mask_exact": true,
+        "all_components_match": true,
+        "component_count": 85
+      },
+      "roi_label": "선택 성분 표시 영역",
+      "processing_region": "전체 원본 영상에서 이진화와 8연결 성분 분석을 수행합니다. 사각형은 선택 성분 주변 표시 영역이며 분석 ROI가 아닙니다."
+    },
+    {
+      "id": "coins-circle",
+      "title": "동전 경계의 원 피팅",
+      "description": "선택 성분의 채워진 픽셀 경계를 ROI 로컬 좌표로 피팅합니다.",
+      "category": "circle",
+      "source": {
+        "label": "scikit-image coins — Brooklyn Museum collection",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.coins",
+        "license": "no known copyright restrictions",
+        "author": "Brooklyn Museum"
+      },
+      "image": {
+        "original": "input/coins.png",
+        "width": 384,
+        "height": 303
+      },
+      "roi": {
+        "x": 311,
+        "y": 152,
+        "width": 73,
+        "height": 70
+      },
+      "steps": [
+        {
+          "label": "경계 추출",
+          "api": "SciPy binary_fill_holes / binary_erosion",
+          "description": "이진 성분의 경계 픽셀 중심을 만듭니다.",
+          "image": "stage/coins-threshold.png"
+        },
+        {
+          "label": "원 피팅",
+          "api": "zvision.fit_circle",
+          "description": "ROI 로컬 점으로 원을 적합하고 전체 영상 좌표로 표시합니다.",
+          "image": "overlay/coins-circle.png"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "중심 x",
+          "value": 347.2575741726326,
+          "unit": "px",
+          "meaning": "ROI 원점을 더한 글로벌 중심"
+        },
+        {
+          "label": "중심 y",
+          "value": 186.38382486456686,
+          "unit": "px",
+          "meaning": "ROI 원점을 더한 글로벌 중심"
+        },
+        {
+          "label": "반경",
+          "value": 30.755823613475435,
+          "unit": "px",
+          "meaning": "피팅 원 반경"
+        },
+        {
+          "label": "직경",
+          "value": 61.51164722695087,
+          "unit": "px",
+          "meaning": "반경의 두 배"
+        },
+        {
+          "label": "채택 수",
+          "value": 258,
+          "unit": "points",
+          "meaning": "SDK 허용 잔차 안의 점"
+        },
+        {
+          "label": "RMS",
+          "value": 0.7772093428250167,
+          "unit": "px",
+          "meaning": "SDK가 반환한 채택점 반경 잔차"
+        }
+      ],
+      "geometry": {
+        "circles": [
+          {
+            "cx": 347.2575741726326,
+            "cy": 186.38382486456686,
+            "radius": 30.755823613475435,
+            "label": "SDK 피팅 원"
+          }
+        ],
+        "lines": [],
+        "boxes": [],
+        "points": [
+          {
+            "x": 347.2575741726326,
+            "y": 186.38382486456686,
+            "label": "원 중심"
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "inlier_threshold",
+          "value": 4.0,
+          "meaning": "반경 잔차 한계(픽셀)"
+        },
+        {
+          "name": "boundary_points",
+          "value": 258,
+          "meaning": "경계 픽셀 중심 수"
+        }
+      ],
+      "api_links": [
+        {
+          "label": "Python fit_circle",
+          "path": "reference/python/api-fit_circle.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "NumPy로 각 경계점의 |hypot(x−cx,y−cy)−r|와 채택 수 및 RMS 재계산",
+        "independent_inliers": 258,
+        "independent_rms_px": 0.7772093428250169,
+        "sdk_rms_px": 0.7772093428250167
+      },
+      "roi_label": "피팅 점 추출 영역",
+      "processing_region": "선택 성분 주변 영역의 경계 점을 ROI 로컬 좌표로 원 피팅하고, 결과 중심에 영역 원점을 더해 전체 영상 좌표로 표시합니다."
+    },
+    {
+      "id": "camera-profile",
+      "title": "실제 사진의 프로파일과 에지",
+      "description": "중앙 가로 줄의 강도 표본과 SDK의 부호 있는 에지 위치를 확인합니다.",
+      "category": "profile",
+      "source": {
+        "label": "scikit-image camera — cameraman",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.camera",
+        "license": "CC0",
+        "author": "Lav Varshney"
+      },
+      "image": {
+        "original": "input/camera.png",
+        "width": 512,
+        "height": 512
+      },
+      "roi": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "steps": [
+        {
+          "label": "프로파일",
+          "api": "ZImage.profile",
+          "description": "폭 1, 양 끝 포함 표본을 원본 배열과 대조합니다.",
+          "image": "overlay/camera-profile.png"
+        },
+        {
+          "label": "에지",
+          "api": "ZImage.caliper",
+          "description": "양쪽 극성의 에지 중 강도 절댓값이 가장 큰 결과를 표시합니다."
+        }
+      ],
+      "metrics": [
+        {
+          "label": "표본 수",
+          "value": 512,
+          "unit": "samples",
+          "meaning": "양 끝 포함"
+        },
+        {
+          "label": "에지 수",
+          "value": 23,
+          "unit": "edges",
+          "meaning": "SDK가 찾은 후보 수"
+        },
+        {
+          "label": "에지 x",
+          "value": 277.9593023255814,
+          "unit": "px",
+          "meaning": "전체 영상의 보간 위치"
+        },
+        {
+          "label": "에지 거리",
+          "value": 277.9593023255814,
+          "unit": "px",
+          "meaning": "프로파일 시작점부터의 거리"
+        },
+        {
+          "label": "에지 강도",
+          "value": 90.07122093023256,
+          "unit": "intensity/px",
+          "meaning": "부호 있는 보간 기울기"
+        }
+      ],
+      "geometry": {
+        "circles": [],
+        "lines": [
+          {
+            "x1": 0,
+            "y1": 256,
+            "x2": 511,
+            "y2": 256,
+            "label": "프로파일"
+          }
+        ],
+        "boxes": [],
+        "points": [
+          {
+            "x": 277.9593023255814,
+            "y": 256.0,
+            "label": "최강 검출 에지"
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "row",
+          "value": 256,
+          "meaning": "가로 프로파일의 영상 y"
+        },
+        {
+          "name": "width",
+          "value": 1,
+          "meaning": "수직 횡단 표본 수"
+        },
+        {
+          "name": "threshold",
+          "value": 5,
+          "meaning": "기울기 한계"
+        }
+      ],
+      "api_links": [
+        {
+          "label": "Python ZImage.profile",
+          "path": "reference/python/image-zimage.html"
+        },
+        {
+          "label": "CaliperSpec",
+          "path": "reference/python/api-caliperspec.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "NumPy 원본 행과 SDK 전체 표본을 요소별 비교; 선택 위치 부근 중앙차분을 별도 기록",
+        "profile_exact": true,
+        "nearest_discrete_gradient": 90.0,
+        "nearest_sample_x": 278
+      },
+      "plots": [
+        {
+          "image": "plots/camera-profile.png",
+          "title": "SDK 강도 프로파일과 에지",
+          "description": "SDK가 반환한 512개 강도 표본과 가장 강한 SDK 에지 위치를 표시합니다. 에지 위치의 독립적인 정확도 검증은 아닙니다."
+        }
+      ],
+      "roi_label": "전체 영상 표시 범위",
+      "processing_region": "전체 영상에 중앙 가로 한 줄의 양 끝과 표본 수를 지정하여 프로파일과 에지를 계산합니다. 사각형은 전체 영상 표시 범위입니다."
+    },
+    {
+      "id": "text-components",
+      "title": "텍스트 사진의 어두운 연결 성분",
+      "description": "텍스트 사진의 어두운 부분을 반전하고 임계값을 적용해 연결 성분을 측정합니다. 여러 획이나 선이 이어질 수 있으며 OCR이나 문자 단위 분할이 아닙니다.",
+      "category": "blob",
+      "source": {
+        "label": "scikit-image text — Wikipedia Corner.png",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.text",
+        "license": "public domain / no known restrictions",
+        "author": "Wikipedia Corner.png contributors"
+      },
+      "image": {
+        "original": "input/text.png",
+        "width": 448,
+        "height": 172
+      },
+      "roi": {
+        "x": 0,
+        "y": 0,
+        "width": 448,
+        "height": 172
+      },
+      "steps": [
+        {
+          "label": "반전과 이진화",
+          "api": "ZImage.invert / ZImage.threshold",
+          "description": "반전값 160 이상을 전경으로 만듭니다.",
+          "image": "stage/text-mask.png"
+        },
+        {
+          "label": "성분 분석",
+          "api": "ZImage.find_blobs(8)",
+          "description": "면적 10 이상 중 가장 큰 성분을 표시합니다. 여러 획이나 선이 하나의 성분으로 이어질 수 있습니다.",
+          "image": "overlay/text-components.png"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "전경 픽셀",
+          "value": 6056,
+          "unit": "px",
+          "meaning": "SDK 마스크의 선택 픽셀 수"
+        },
+        {
+          "label": "전체 성분",
+          "value": 128,
+          "unit": "components",
+          "meaning": "8연결 성분 수"
+        },
+        {
+          "label": "선택 면적",
+          "value": 598,
+          "unit": "px²",
+          "meaning": "선택된 성분 픽셀 수"
+        },
+        {
+          "label": "중심 x",
+          "value": 225.14046822742475,
+          "unit": "px",
+          "meaning": "영상 로컬 좌표"
+        },
+        {
+          "label": "중심 y",
+          "value": 43.3561872909699,
+          "unit": "px",
+          "meaning": "영상 로컬 좌표"
+        }
+      ],
+      "geometry": {
+        "circles": [],
+        "lines": [],
+        "boxes": [
+          {
+            "x": 112,
+            "y": 0,
+            "width": 209,
+            "height": 82
+          }
+        ],
+        "points": [
+          {
+            "x": 225.14046822742475,
+            "y": 43.3561872909699,
+            "label": "중심"
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "name": "threshold",
+          "value": 160,
+          "meaning": "반전 Gray8에서 이상인 값을 선택"
+        },
+        {
+          "name": "connectivity",
+          "value": 8,
+          "meaning": "대각 포함 연결"
+        }
+      ],
+      "api_links": [
+        {
+          "label": "Python 이미지 API",
+          "path": "reference/python/image-zimage.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "NumPy 반전·임계와 SciPy 8연결의 전 픽셀 및 성분 대조",
+        "mask_exact": true,
+        "all_components_match": true
+      },
+      "roi_label": "전체 영상 표시 범위",
+      "processing_region": "전체 원본 영상의 반전과 이진화 결과에서 8연결 성분을 분석합니다. 선택 성분의 경계는 별도 검출 상자로 표시합니다."
+    },
+    {
+      "id": "coffee-color",
+      "title": "커피 사진 ROI의 RGB 통계",
+      "description": "고정 ROI의 정규화 인코딩 RGB 평균과 모집단 표준편차를 비교합니다.",
+      "category": "color",
+      "source": {
+        "label": "scikit-image coffee",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.coffee",
+        "license": "CC0",
+        "author": "Rachel Michetti"
+      },
+      "image": {
+        "original": "input/coffee.png",
+        "width": 600,
+        "height": 400
+      },
+      "roi": {
+        "x": 160,
+        "y": 100,
+        "width": 160,
+        "height": 120
+      },
+      "steps": [
+        {
+          "label": "ROI 선택",
+          "api": "ZImage.roi",
+          "description": "원본 컬러 영상의 실제 픽셀을 선택합니다.",
+          "image": "overlay/coffee-color.png"
+        },
+        {
+          "label": "RGB 통계",
+          "api": "ZImage.color_statistics",
+          "description": "채널별 정규화 인코딩 RGB 통계를 계산합니다."
+        }
+      ],
+      "metrics": [
+        {
+          "label": "픽셀 수",
+          "value": 19200,
+          "unit": "px",
+          "meaning": "ROI 내부 표본 수"
+        },
+        {
+          "label": "R 평균",
+          "value": 0.7500849673202629,
+          "unit": "0–1",
+          "meaning": "정규화 인코딩 sRGB"
+        },
+        {
+          "label": "G 평균",
+          "value": 0.43745792483659984,
+          "unit": "0–1",
+          "meaning": "정규화 인코딩 sRGB"
+        },
+        {
+          "label": "B 평균",
+          "value": 0.2520796568627453,
+          "unit": "0–1",
+          "meaning": "정규화 인코딩 sRGB"
+        },
+        {
+          "label": "R 표준편차",
+          "value": 0.19350987781990692,
+          "unit": "0–1",
+          "meaning": "모집단 표준편차"
+        },
+        {
+          "label": "G 표준편차",
+          "value": 0.2793219247549583,
+          "unit": "0–1",
+          "meaning": "모집단 표준편차"
+        },
+        {
+          "label": "B 표준편차",
+          "value": 0.27881827716027024,
+          "unit": "0–1",
+          "meaning": "모집단 표준편차"
+        }
+      ],
+      "geometry": {
+        "circles": [],
+        "lines": [],
+        "boxes": [],
+        "points": []
+      },
+      "parameters": [
+        {
+          "name": "ROI",
+          "value": "(160, 100, 160, 120)",
+          "meaning": "(x,y,width,height) 픽셀"
+        }
+      ],
+      "api_links": [
+        {
+          "label": "Python 색 통계",
+          "path": "reference/python/api-colorstatistics.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "NumPy RGB/255 평균 및 ddof=0 표준편차와 비교",
+        "numpy_mean": [
+          0.7500849673202133,
+          0.43745792483668516,
+          0.2520796568627171
+        ],
+        "numpy_population_std": [
+          0.19350987781990742,
+          0.279321924754958,
+          0.27881827716026997
+        ]
+      },
+      "roi_label": "색상 통계 ROI",
+      "processing_region": "원본의 (160, 100)을 원점으로 하는 160×120 ROI를 SDK에 전달하여 색상 통계를 계산합니다."
+    },
+    {
+      "id": "camera-controlled-difference",
+      "title": "사진에 통제 변화를 넣은 차분",
+      "description": "실제 사진의 지정 24×16 영역을 인위적으로 바꿔 차분 마스크를 검증합니다.",
+      "category": "inspection",
+      "source": {
+        "label": "scikit-image camera — cameraman",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.camera",
+        "license": "CC0",
+        "author": "Lav Varshney"
+      },
+      "image": {
+        "original": "input/camera.png",
+        "width": 512,
+        "height": 512
+      },
+      "roi": {
+        "x": 220,
+        "y": 180,
+        "width": 24,
+        "height": 16
+      },
+      "steps": [
+        {
+          "label": "통제 수정",
+          "api": "NumPy 조건부 반전",
+          "description": "명시된 24×16 영역만 0 또는 255로 바꾼 합성 결함입니다.",
+          "image": "stage/camera-controlled-modification.png"
+        },
+        {
+          "label": "SDK 차분",
+          "api": "ZImage.inspection_difference",
+          "description": "보정 없음, 절댓값 및 한계 32를 사용합니다.",
+          "image": "stage/camera-difference-mask.png"
+        },
+        {
+          "label": "결과 위치",
+          "api": "SDK 마스크 / 독립 픽셀 비교",
+          "description": "삽입 영역과 검출 마스크를 비교합니다.",
+          "image": "overlay/camera-controlled-difference.png"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "통제 수정 면적",
+          "value": 384,
+          "unit": "px²",
+          "meaning": "의도적으로 변경한 픽셀 수"
+        },
+        {
+          "label": "검출 픽셀",
+          "value": 384,
+          "unit": "px",
+          "meaning": "SDK 차분 마스크 전경"
+        },
+        {
+          "label": "검사 픽셀",
+          "value": 262144,
+          "unit": "px",
+          "meaning": "전체 입력"
+        },
+        {
+          "label": "최대 점수",
+          "value": 7.53125,
+          "unit": "ratio",
+          "meaning": "절대 차이를 32로 나눈 점수"
+        }
+      ],
+      "geometry": {
+        "circles": [],
+        "lines": [],
+        "boxes": [
+          {
+            "x": 220,
+            "y": 180,
+            "width": 24,
+            "height": 16,
+            "label": "통제 수정 영역"
+          }
+        ],
+        "points": []
+      },
+      "parameters": [
+        {
+          "name": "threshold",
+          "value": 32,
+          "meaning": "원시 밝기 허용치"
+        },
+        {
+          "name": "correction",
+          "value": "NONE",
+          "meaning": "전역 밝기 보정 없음"
+        },
+        {
+          "name": "injected_region",
+          "value": "(220, 180, 24, 16)",
+          "meaning": "인위적 변화; 실제 결함 아님"
+        }
+      ],
+      "api_links": [
+        {
+          "label": "Python DifferenceSpec",
+          "path": "reference/python/api-differencespec.html"
+        },
+        {
+          "label": "검사 차분",
+          "path": "guides/difference-inspection.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "NumPy int16 절대 차이 >=32와 SDK 마스크의 전 픽셀 일치; 24×16=384",
+        "mask_exact": true,
+        "expected_changed_pixels": 384
+      },
+      "roi_label": "인위적 수정 영역",
+      "processing_region": "표시된 24×16 사각형만 인위적으로 수정했습니다. SDK 차분 검사는 마스크 없이 512×512 전체 영상에서 수행합니다."
+    },
+    {
+      "id": "camera-statistics",
+      "title": "사진의 전체 밝기 통계",
+      "description": "실제 Gray8 영상의 픽셀 수·최소·최대·평균·분산을 원본 배열과 비교합니다.",
+      "category": "statistics",
+      "source": {
+        "label": "scikit-image camera — cameraman",
+        "url": "https://scikit-image.org/docs/stable/api/skimage.data#skimage.data.camera",
+        "license": "CC0",
+        "author": "Lav Varshney"
+      },
+      "image": {
+        "original": "input/camera.png",
+        "width": 512,
+        "height": 512
+      },
+      "roi": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "steps": [
+        {
+          "label": "전체 영상",
+          "api": "ZImage.from_gray8",
+          "description": "공개 사진을 원본 Gray8 픽셀로 전달합니다.",
+          "image": "overlay/camera-statistics.png"
+        },
+        {
+          "label": "통계",
+          "api": "ZImage.statistics",
+          "description": "전체 보이는 픽셀의 통계를 구합니다."
+        }
+      ],
+      "metrics": [
+        {
+          "label": "픽셀 수",
+          "value": 262144,
+          "unit": "px",
+          "meaning": "폭×높이"
+        },
+        {
+          "label": "최솟값",
+          "value": 0,
+          "unit": "intensity",
+          "meaning": "Gray8 원시 강도"
+        },
+        {
+          "label": "최댓값",
+          "value": 255,
+          "unit": "intensity",
+          "meaning": "Gray8 원시 강도"
+        },
+        {
+          "label": "평균",
+          "value": 129.06072616577148,
+          "unit": "intensity",
+          "meaning": "모집단 평균"
+        },
+        {
+          "label": "분산",
+          "value": 5423.563424301786,
+          "unit": "intensity²",
+          "meaning": "모집단 분산"
+        }
+      ],
+      "geometry": {
+        "circles": [],
+        "lines": [],
+        "boxes": [],
+        "points": []
+      },
+      "parameters": [],
+      "api_links": [
+        {
+          "label": "Python 이미지 통계",
+          "path": "reference/python/image-zimage.html"
+        }
+      ],
+      "status": "SDK 실행 결과 · 독립 계산 확인",
+      "warnings": [
+        "공개 예제 사진을 입력으로 사용한 재현 예시입니다. 사용자 생산 영상이 아닙니다.",
+        "길이와 면적은 픽셀 및 픽셀 제곱입니다. 실제 치수·장비 정확도·생산 합격 판정이 아닙니다."
+      ],
+      "verification": {
+        "method": "원본 NumPy 배열의 count/min/max/mean/var(ddof=0) 대조",
+        "numpy_mean": 129.06072616577148,
+        "numpy_variance": 5423.563424301785
+      },
+      "roi_label": "통계 입력 범위",
+      "processing_region": "ROI를 따로 자르지 않고 전체 원본 영상의 밝기 통계를 계산합니다."
+    }
+  ]
+}

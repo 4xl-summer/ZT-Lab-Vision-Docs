@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 캘리퍼 프로파일
+  desc 선분을 따라 샘플링해 경계 후보를 찾습니다.
+  lists
+    - label 선분 지정
+      desc 시작점과 끝점
+    - label 표본 중심
+      desc 선분 위의 일정 간격
+    - label 스트립 평균
+      desc 법선 방향의 밝기 통합
+    - label 미분과 피크
+      desc 변화 방향과 경계 후보
+

@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 영상 객체와 수명
+  desc 원본과 결과의 사용 범위를 구분합니다.
+  lists
+    - label 원본 영상
+      desc 생성 후 유효 범위 확인
+    - label ROI 또는 공유
+      desc 같은 저장소를 참조할 수 있음
+    - label 깊은 복사
+      desc 독립 저장소로 분리
+    - label 사용 종료
+      desc 언어별 해제 규칙 적용
+

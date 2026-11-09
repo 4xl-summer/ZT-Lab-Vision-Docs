@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 가우시안 평활화
+  desc 커널 폭과 시그마가 이웃 기여를 바꿉니다.
+  lists
+    - label 입력
+      desc 가까운 점과 먼 점
+    - label 가중치
+      desc 가까울수록 영향 증가
+    - label 정규화
+      desc 가중치의 합은 1
+    - label 판독
+      desc 잡음과 작은 결함 모두 약화 가능
+

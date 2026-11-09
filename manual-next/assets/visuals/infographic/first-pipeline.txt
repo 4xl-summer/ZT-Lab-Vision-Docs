@@ -1,0 +1,13 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 첫 영상 처리 흐름
+  desc 숫자 예시는 설명을 위한 합성 입력
+  lists
+    - label 회색 입력
+      desc 픽셀 값 9, 10, 11
+    - label 임계값 10
+      desc 기준 이상을 전경으로
+    - label Gray8 마스크
+      desc 결과 0, 255, 255
+    - label 연결 성분
+      desc 면적과 중심을 판독

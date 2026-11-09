@@ -1,0 +1,7 @@
+{
+  "name": "zvision-manual-visuals",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Reproducible AntV SVG rendering for the ZVision manual",
+  "dependencies": {"@antv/infographic": "0.2.20"}
+}

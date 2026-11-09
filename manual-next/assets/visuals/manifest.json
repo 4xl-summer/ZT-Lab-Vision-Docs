@@ -1,0 +1,809 @@
+{
+  "tools": {
+    "antv": "0.2.20",
+    "drawio": "32.6.10"
+  },
+  "diagrams": [
+    {
+      "id": "first-pipeline",
+      "title": "첫 영상 처리 흐름",
+      "caption": "입력에서 마스크와 측정 결과까지 자료형과 결과를 따라갑니다.",
+      "alt": "회색 영상에서 임계값 마스크를 만들고 연결 성분의 면적과 중심을 읽는 네 단계",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 첫 영상 처리 흐름\n  desc 숫자 예시는 설명을 위한 합성 입력\n  lists\n    - label 회색 입력\n      desc 픽셀 값 9, 10, 11\n    - label 임계값 10\n      desc 기준 이상을 전경으로\n    - label Gray8 마스크\n      desc 결과 0, 255, 255\n    - label 연결 성분\n      desc 면적과 중심을 판독",
+      "targets": [
+        "guides/threshold/detail-threshold.html",
+        "guides/blob-analysis/result.html"
+      ],
+      "principle": "p ≥ T이면 255, 아니면 0이며 연결된 전경 픽셀을 성분으로 묶는다.",
+      "reading_notes": [
+        "임계값과 같은 10도 전경이다.",
+        "블롭 결과의 면적은 연결된 전경 픽셀 수다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/first-pipeline.svg",
+      "source": "assets/visuals/infographic/first-pipeline.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-first-pipeline.html"
+    },
+    {
+      "id": "blob-connectivity",
+      "title": "대각선과 연결성",
+      "caption": "같은 두 전경 픽셀도 연결 규칙에 따라 다른 객체가 됩니다.",
+      "alt": "대각으로 닿은 두 픽셀을 4연결에서는 두 객체, 8연결에서는 면적 2인 한 객체로 판독하는 그림",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 대각선과 연결성\n  desc 2×2 입력에서 대각 픽셀 두 개만 전경\n  lists\n    - label 4연결\n      desc 성분 2개, 면적 각 1\n    - label 8연결\n      desc 성분 1개, 면적 2\n    - label 중심 좌표\n      desc 8연결 중심 0.5, 0.5\n    - label 확인할 조건\n      desc 전경과 연결 규칙 기록",
+      "targets": [
+        "guides/blob-analysis/connectivity.html",
+        "guides/blob-analysis/result.html"
+      ],
+      "principle": "연결 규칙에 따라 대각선 이웃의 결합 여부가 달라진다.",
+      "reading_notes": [
+        "중심은 (0,0), (1,1)의 좌표 평균이다.",
+        "면적의 단위는 픽셀 수이며 물리 면적이 아니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/blob-connectivity.svg",
+      "source": "assets/visuals/infographic/blob-connectivity.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-blob-connectivity.html"
+    },
+    {
+      "id": "image-lifetime",
+      "title": "영상 객체와 수명",
+      "caption": "원본과 결과의 사용 범위를 구분합니다.",
+      "alt": "영상 객체와 수명: 원본 영상 (생성 후 유효 범위 확인) → ROI 또는 공유 (같은 저장소를 참조할 수 있음) → 깊은 복사 (독립 저장소로 분리) → 사용 종료 (언어별 해제 규칙 적용)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 영상 객체와 수명\n  desc 원본과 결과의 사용 범위를 구분합니다.\n  lists\n    - label 원본 영상\n      desc 생성 후 유효 범위 확인\n    - label ROI 또는 공유\n      desc 같은 저장소를 참조할 수 있음\n    - label 깊은 복사\n      desc 독립 저장소로 분리\n    - label 사용 종료\n      desc 언어별 해제 규칙 적용\n",
+      "targets": [
+        "concepts/lifetime/matrix.html"
+      ],
+      "principle": "객체 소유권과 데이터 저장소 공유는 다른 관계입니다.",
+      "reading_notes": [
+        "ROI를 독립 복사본으로 가정하지 않습니다.",
+        "사용이 끝난 소유 객체는 각 언어의 규칙에 따라 정리합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/image-lifetime.svg",
+      "source": "assets/visuals/infographic/image-lifetime.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-image-lifetime.html"
+    },
+    {
+      "id": "roi-coordinates",
+      "title": "ROI와 영상 좌표",
+      "caption": "부분 영상의 로컬 좌표를 원본 좌표로 옮깁니다.",
+      "alt": "ROI와 영상 좌표: ROI 원점 (전체 영상의 100, 200) → 로컬 점 (부분 영상의 10, 20) → 전역 점 (110, 220 픽셀) → 변환 추적 (회전과 재표본화는 별도 처리)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title ROI와 영상 좌표\n  desc 부분 영상의 로컬 좌표를 원본 좌표로 옮깁니다.\n  lists\n    - label ROI 원점\n      desc 전체 영상의 100, 200\n    - label 로컬 점\n      desc 부분 영상의 10, 20\n    - label 전역 점\n      desc 110, 220 픽셀\n    - label 변환 추적\n      desc 회전과 재표본화는 별도 처리\n",
+      "targets": [
+        "concepts/roi/local.html"
+      ],
+      "principle": "변환 없는 ROI에서는 원점과 로컬 좌표를 한 번 더합니다.",
+      "reading_notes": [
+        "이 수치는 설명용 합성 좌표입니다.",
+        "원점을 두 번 더하거나 빠뜨리지 않도록 좌표계를 표시합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/roi-coordinates.svg",
+      "source": "assets/visuals/infographic/roi-coordinates.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-roi-coordinates.html"
+    },
+    {
+      "id": "query-execution",
+      "title": "쿼리 구성과 실행",
+      "caption": "연산을 구성하고 실행 결과를 읽는 순서를 보여 줍니다.",
+      "alt": "쿼리 구성과 실행: 입력 영상 (영상과 ROI를 선택) → 연산 구성 (원하는 측정 또는 처리 지정) → 실행 (지원되는 실행 경로 사용) → 결과 확인 (실패와 정상 결과 구분)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 쿼리 구성과 실행\n  desc 연산을 구성하고 실행 결과를 읽는 순서를 보여 줍니다.\n  lists\n    - label 입력 영상\n      desc 영상과 ROI를 선택\n    - label 연산 구성\n      desc 원하는 측정 또는 처리 지정\n    - label 실행\n      desc 지원되는 실행 경로 사용\n    - label 결과 확인\n      desc 실패와 정상 결과 구분\n",
+      "targets": [
+        "concepts/query/architecture.html"
+      ],
+      "principle": "쿼리의 구성과 결과의 획득은 구분하여 이해합니다.",
+      "reading_notes": [
+        "결과 객체와 영상의 소유 및 해제 규칙을 확인합니다.",
+        "언어별 실행 API와 결과 타입은 연결된 설명을 따릅니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/query-execution.svg",
+      "source": "assets/visuals/infographic/query-execution.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-query-execution.html"
+    },
+    {
+      "id": "pixel-formats",
+      "title": "픽셀 형식 선택",
+      "caption": "저장 형식과 연산의 허용 형식을 분리해 읽습니다.",
+      "alt": "픽셀 형식 선택: 채널 (Gray와 RGB 구분) → 수치 형식 (정수 또는 부동소수) → 연산 계약 (해당 함수 허용 형식 확인) → 마스크 결과 (임계값 출력은 Gray8)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 픽셀 형식 선택\n  desc 저장 형식과 연산의 허용 형식을 분리해 읽습니다.\n  lists\n    - label 채널\n      desc Gray와 RGB 구분\n    - label 수치 형식\n      desc 정수 또는 부동소수\n    - label 연산 계약\n      desc 해당 함수 허용 형식 확인\n    - label 마스크 결과\n      desc 임계값 출력은 Gray8\n",
+      "targets": [
+        "concepts/pixel-formats/per-function.html"
+      ],
+      "principle": "영상에서 표현할 수 있는 형식 전체가 각 연산의 입력 집합은 아닙니다.",
+      "reading_notes": [
+        "임계값 입력은 지원되는 7종 Gray 형식입니다.",
+        "컬러 순서와 부동소수 범위는 연산별로 확인합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/pixel-formats.svg",
+      "source": "assets/visuals/infographic/pixel-formats.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-pixel-formats.html"
+    },
+    {
+      "id": "histogram-bins",
+      "title": "히스토그램 읽기",
+      "caption": "값을 구간에 배치해 분포를 확인합니다.",
+      "alt": "히스토그램 읽기: 입력 값 (0, 0, 1, 3) → 구간 구성 (0부터 4까지 폭 1) → 빈도 (각 구간 2, 1, 0, 1) → 판독 (총 빈도 4개)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 히스토그램 읽기\n  desc 값을 구간에 배치해 분포를 확인합니다.\n  lists\n    - label 입력 값\n      desc 0, 0, 1, 3\n    - label 구간 구성\n      desc 0부터 4까지 폭 1\n    - label 빈도\n      desc 각 구간 2, 1, 0, 1\n    - label 판독\n      desc 총 빈도 4개\n",
+      "targets": [
+        "reference/python/api-histogramspec.html"
+      ],
+      "principle": "히스토그램은 밝기 값의 공간 위치가 아니라 구간별 빈도입니다.",
+      "reading_notes": [
+        "예시는 구간 [0,1), [1,2), [2,3), [3,4)로 계산한 합성 예입니다.",
+        "실제 함수의 범위와 경계 조건은 해당 API 계약을 따릅니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/histogram-bins.svg",
+      "source": "assets/visuals/infographic/histogram-bins.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-histogram-bins.html"
+    },
+    {
+      "id": "gaussian-filter",
+      "title": "가우시안 평활화",
+      "caption": "커널 폭과 시그마가 이웃 기여를 바꿉니다.",
+      "alt": "가우시안 평활화: 입력 (가까운 점과 먼 점) → 가중치 (가까울수록 영향 증가) → 정규화 (가중치의 합은 1) → 판독 (잡음과 작은 결함 모두 약화 가능)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 가우시안 평활화\n  desc 커널 폭과 시그마가 이웃 기여를 바꿉니다.\n  lists\n    - label 입력\n      desc 가까운 점과 먼 점\n    - label 가중치\n      desc 가까울수록 영향 증가\n    - label 정규화\n      desc 가중치의 합은 1\n    - label 판독\n      desc 잡음과 작은 결함 모두 약화 가능\n",
+      "targets": [
+        "guides/gaussian/principle.html"
+      ],
+      "principle": "거리별 가중치를 정규화해 이웃의 밝기를 섞습니다.",
+      "reading_notes": [
+        "상수 영상은 정규화된 가중 평균에서 같은 값을 유지합니다.",
+        "커널 폭과 시그마를 함께 선택하고 경계 조건을 확인합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/gaussian-filter.svg",
+      "source": "assets/visuals/infographic/gaussian-filter.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-gaussian-filter.html"
+    },
+    {
+      "id": "morphology",
+      "title": "형태학의 폭과 반복",
+      "caption": "구조 요소와 반복 적용이 마스크를 바꾸는 과정을 봅니다.",
+      "alt": "형태학의 폭과 반복: 입력 마스크 (전경과 배경 준비) → 구조 요소 (형태와 폭을 지정) → 연산 선택 (팽창 또는 침식) → 결과 판독 (틈과 작은 영역의 변화 확인)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 형태학의 폭과 반복\n  desc 구조 요소와 반복 적용이 마스크를 바꾸는 과정을 봅니다.\n  lists\n    - label 입력 마스크\n      desc 전경과 배경 준비\n    - label 구조 요소\n      desc 형태와 폭을 지정\n    - label 연산 선택\n      desc 팽창 또는 침식\n    - label 결과 판독\n      desc 틈과 작은 영역의 변화 확인\n",
+      "targets": [
+        "guides/morphology/size.html"
+      ],
+      "principle": "팽창과 침식의 효과는 전경 형태와 구조 요소에 의해 결정됩니다.",
+      "reading_notes": [
+        "구조 요소의 폭과 연산 반복 횟수는 서로 다른 개념입니다.",
+        "잡음 제거로 필요한 작은 객체도 사라질 수 있습니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/morphology.svg",
+      "source": "assets/visuals/infographic/morphology.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-morphology.html"
+    },
+    {
+      "id": "canny-edges",
+      "title": "Canny 경계 단계",
+      "caption": "평활화부터 이중 임계값 연결까지 살핍니다.",
+      "alt": "Canny 경계 단계: 평활화 (잡음에 의한 변화 완화) → 기울기 (밝기 변화의 크기와 방향) → 비최대 억제 (방향을 따라 경계 후보 얇게) → 이중 임계값 (강한 경계와 연결된 약한 경계)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title Canny 경계 단계\n  desc 평활화부터 이중 임계값 연결까지 살핍니다.\n  lists\n    - label 평활화\n      desc 잡음에 의한 변화 완화\n    - label 기울기\n      desc 밝기 변화의 크기와 방향\n    - label 비최대 억제\n      desc 방향을 따라 경계 후보 얇게\n    - label 이중 임계값\n      desc 강한 경계와 연결된 약한 경계\n",
+      "targets": [
+        "guides/canny/pipeline.html"
+      ],
+      "principle": "기울기와 비최대 억제, 두 임계값 연결로 경계 후보를 선택합니다.",
+      "reading_notes": [
+        "임계값과 평활화에 따라 끊어진 경계가 달라집니다.",
+        "결과는 경계 마스크이며 객체 면적 그 자체가 아닙니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/canny-edges.svg",
+      "source": "assets/visuals/infographic/canny-edges.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-canny-edges.html"
+    },
+    {
+      "id": "ncc-matching",
+      "title": "NCC 점수 판독",
+      "caption": "평균 제거와 정규화 상관의 의미를 살펴봅니다.",
+      "alt": "NCC 점수 판독: 모델 (밝기 변화가 있는 무늬) → 평균 제거 (상수 밝기 오프셋 제거) → 정규화 (두 패턴의 상대적 변화 비교) → 점수 판독 (유사도이며 확률은 아님)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title NCC 점수 판독\n  desc 평균 제거와 정규화 상관의 의미를 살펴봅니다.\n  lists\n    - label 모델\n      desc 밝기 변화가 있는 무늬\n    - label 평균 제거\n      desc 상수 밝기 오프셋 제거\n    - label 정규화\n      desc 두 패턴의 상대적 변화 비교\n    - label 점수 판독\n      desc 유사도이며 확률은 아님\n",
+      "targets": [
+        "guides/matching-ncc/principle.html"
+      ],
+      "principle": "정규화 상관은 밝기 패턴의 유사도를 나타내며 확률이 아닙니다.",
+      "reading_notes": [
+        "모델이 상수이면 정규화 분모가 성립하지 않습니다.",
+        "검색 ROI와 원본의 좌표계를 함께 확인합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/ncc-matching.svg",
+      "source": "assets/visuals/infographic/ncc-matching.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-ncc-matching.html"
+    },
+    {
+      "id": "caliper-profile",
+      "title": "캘리퍼 프로파일",
+      "caption": "선분을 따라 샘플링해 경계 후보를 찾습니다.",
+      "alt": "캘리퍼 프로파일: 선분 지정 (시작점과 끝점) → 표본 중심 (선분 위의 일정 간격) → 스트립 평균 (법선 방향의 밝기 통합) → 미분과 피크 (변화 방향과 경계 후보)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 캘리퍼 프로파일\n  desc 선분을 따라 샘플링해 경계 후보를 찾습니다.\n  lists\n    - label 선분 지정\n      desc 시작점과 끝점\n    - label 표본 중심\n      desc 선분 위의 일정 간격\n    - label 스트립 평균\n      desc 법선 방향의 밝기 통합\n    - label 미분과 피크\n      desc 변화 방향과 경계 후보\n",
+      "targets": [
+        "guides/profile-caliper/strip-math.html"
+      ],
+      "principle": "선분의 중심들과 법선 방향 스트립으로 1차원 밝기 변화를 만듭니다.",
+      "reading_notes": [
+        "프로파일의 거리와 영상 좌표는 단위가 다를 수 있습니다.",
+        "극성이나 폭이 바뀌면 선택되는 경계도 바뀝니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/caliper-profile.svg",
+      "source": "assets/visuals/infographic/caliper-profile.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-caliper-profile.html"
+    },
+    {
+      "id": "lab-distance",
+      "title": "Lab 색차 계산",
+      "caption": "변환 조건을 맞춘 두 색의 거리를 계산합니다.",
+      "alt": "Lab 색차 계산: 색 입력 (채널 순서와 범위 확인) → Lab 변환 (L, a, b 세 채널) → 성분 차 (3, 4, 0이라는 가상 예) → ΔE76 (제곱합의 제곱근 5)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title Lab 색차 계산\n  desc 변환 조건을 맞춘 두 색의 거리를 계산합니다.\n  lists\n    - label 색 입력\n      desc 채널 순서와 범위 확인\n    - label Lab 변환\n      desc L, a, b 세 채널\n    - label 성분 차\n      desc 3, 4, 0이라는 가상 예\n    - label ΔE76\n      desc 제곱합의 제곱근 5\n",
+      "targets": [
+        "guides/color-processing/detail-color.html"
+      ],
+      "principle": "기본 Lab 경로는 인코딩된 sRGB에서 D50 기준 Lab을 구합니다.",
+      "reading_notes": [
+        "ΔE76은 Lab 좌표의 유클리드 거리입니다.",
+        "허용 기준은 실제 조명과 샘플에 맞춰 별도로 정합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/lab-distance.svg",
+      "source": "assets/visuals/infographic/lab-distance.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-lab-distance.html"
+    },
+    {
+      "id": "ocr-region",
+      "title": "OCR 영역과 판독",
+      "caption": "문자 인식 전에 영역과 방향을 정하고 결과를 확인합니다.",
+      "alt": "OCR 영역과 판독: 입력 영상 (문자 크기와 대비 확인) → 영역 지정 (관심 영역 및 좌표 확인) → 인식 실행 (준비된 인식 경로 사용) → 판독 (문자와 위치를 함께 검사)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title OCR 영역과 판독\n  desc 문자 인식 전에 영역과 방향을 정하고 결과를 확인합니다.\n  lists\n    - label 입력 영상\n      desc 문자 크기와 대비 확인\n    - label 영역 지정\n      desc 관심 영역 및 좌표 확인\n    - label 인식 실행\n      desc 준비된 인식 경로 사용\n    - label 판독\n      desc 문자와 위치를 함께 검사\n",
+      "targets": [
+        "guides/recognition/ocr-region.html"
+      ],
+      "principle": "검출 또는 지정한 영역에서 문자 결과와 위치를 함께 읽습니다.",
+      "reading_notes": [
+        "인식되지 않은 경우를 빈 문자열의 의미와 혼동하지 않습니다.",
+        "영역의 좌표계와 모델 또는 글꼴 준비 상태를 확인합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/ocr-region.svg",
+      "source": "assets/visuals/infographic/ocr-region.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-ocr-region.html"
+    },
+    {
+      "id": "depth-grid",
+      "title": "깊이 격자와 좌표",
+      "caption": "깊이 격자의 표본과 3차원 위치를 구분합니다.",
+      "alt": "깊이 격자와 좌표: 깊이 표본 (행과 열의 값) → 유효성 (누락과 유효 표본 구분) → 투영 조건 (격자 및 변환 설정) → 공간 좌표 (점의 위치와 단위 확인)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 깊이 격자와 좌표\n  desc 깊이 격자의 표본과 3차원 위치를 구분합니다.\n  lists\n    - label 깊이 표본\n      desc 행과 열의 값\n    - label 유효성\n      desc 누락과 유효 표본 구분\n    - label 투영 조건\n      desc 격자 및 변환 설정\n    - label 공간 좌표\n      desc 점의 위치와 단위 확인\n",
+      "targets": [
+        "guides/depth-map/grid-contract.html"
+      ],
+      "principle": "격자 인덱스와 깊이 값은 좌표 변환 설정을 거쳐 공간 점으로 해석합니다.",
+      "reading_notes": [
+        "좌표 단위는 사용한 설정의 단위에 의존합니다.",
+        "유효하지 않은 깊이를 실제 물체 표면으로 취급하지 않습니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/depth-grid.svg",
+      "source": "assets/visuals/infographic/depth-grid.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-depth-grid.html"
+    },
+    {
+      "id": "point-cloud-fit",
+      "title": "점군과 기하 피팅",
+      "caption": "3차원 점의 집합에서 형상을 추정합니다.",
+      "alt": "점군과 기하 피팅: 점군 입력 (3차원 표본의 집합) → 유효점 선택 (비유효 또는 불필요 점 확인) → 형상 피팅 (선택한 모델과 옵션) → 잔차 판독 (적합 오차와 외란 검토)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 점군과 기하 피팅\n  desc 3차원 점의 집합에서 형상을 추정합니다.\n  lists\n    - label 점군 입력\n      desc 3차원 표본의 집합\n    - label 유효점 선택\n      desc 비유효 또는 불필요 점 확인\n    - label 형상 피팅\n      desc 선택한 모델과 옵션\n    - label 잔차 판독\n      desc 적합 오차와 외란 검토\n",
+      "targets": [
+        "guides/point-cloud/fit-details.html"
+      ],
+      "principle": "점군 피팅 결과는 입력 점과 적용된 옵션에 의존합니다.",
+      "reading_notes": [
+        "점이 적거나 한쪽에만 몰리면 결과 해석이 어려울 수 있습니다.",
+        "피팅 결과를 제품 합격 판정으로 자동 해석하지 않습니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/point-cloud-fit.svg",
+      "source": "assets/visuals/infographic/point-cloud-fit.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-point-cloud-fit.html"
+    },
+    {
+      "id": "ai-coordinates",
+      "title": "AI 추론 좌표",
+      "caption": "모델 입력과 출력 좌표의 기준을 확인합니다.",
+      "alt": "AI 추론 좌표: 원본 (영상 크기와 ROI 기록) → 모델 입력 (전처리와 입력 텐서) → 추론 출력 (점수와 위치 판독) → 좌표 대응 (전처리 변환을 반영)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title AI 추론 좌표\n  desc 모델 입력과 출력 좌표의 기준을 확인합니다.\n  lists\n    - label 원본\n      desc 영상 크기와 ROI 기록\n    - label 모델 입력\n      desc 전처리와 입력 텐서\n    - label 추론 출력\n      desc 점수와 위치 판독\n    - label 좌표 대응\n      desc 전처리 변환을 반영\n",
+      "targets": [
+        "guides/inference/output-coordinates.html"
+      ],
+      "principle": "모델 전처리의 크기 변환과 원본 좌표 복원은 별도 단계입니다.",
+      "reading_notes": [
+        "모델마다 입력 형상과 출력 의미가 다릅니다.",
+        "점수만으로 물리 치수 또는 합격 여부를 확정하지 않습니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/ai-coordinates.svg",
+      "source": "assets/visuals/infographic/ai-coordinates.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-ai-coordinates.html"
+    },
+    {
+      "id": "acquisition-flow",
+      "title": "영상 취득 흐름",
+      "caption": "카메라 또는 시뮬레이터의 상태와 프레임을 구분합니다.",
+      "alt": "영상 취득 흐름: 장치 선택 (사용 가능한 소스 확인) → 연결과 설정 (취득 조건 준비) → 프레임 수집 (결과와 시간 정보 확인) → 중지와 해제 (장치 및 프레임 수명 관리)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 영상 취득 흐름\n  desc 카메라 또는 시뮬레이터의 상태와 프레임을 구분합니다.\n  lists\n    - label 장치 선택\n      desc 사용 가능한 소스 확인\n    - label 연결과 설정\n      desc 취득 조건 준비\n    - label 프레임 수집\n      desc 결과와 시간 정보 확인\n    - label 중지와 해제\n      desc 장치 및 프레임 수명 관리\n",
+      "targets": [
+        "guides/acquisition/sim-state.html"
+      ],
+      "principle": "장치 연결과 취득 상태가 준비된 뒤 프레임을 가져옵니다.",
+      "reading_notes": [
+        "시뮬레이터 결과는 실제 카메라 성능 검증이 아닙니다.",
+        "타임아웃과 연결 오류는 빈 영상과 구분합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/acquisition-flow.svg",
+      "source": "assets/visuals/infographic/acquisition-flow.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-acquisition-flow.html"
+    },
+    {
+      "id": "plc-simulation",
+      "title": "PLC 요청과 결과 시뮬레이션",
+      "caption": "요청 ID로 결과를 연결하고 확인하며, Poll의 시간 초과와 Reset을 구분합니다.",
+      "alt": "양의 제한 시간으로 준비한 시뮬레이터에서 Request ID 1로 Waiting, Publish로 ResultReady, Ack로 Idle로 돌아간다. Poll 시간 초과 시 Faulted로 전환되고 Reset으로 Idle로 복귀한다.",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title PLC 요청과 결과 시뮬레이션\n  desc 실제 PLC 통신이 없는 요청과 결과 핸드셰이크\n  lists\n    - label Request\n      desc ID 1 요청, Idle에서 Waiting\n    - label Publish\n      desc 같은 ID의 결과, ResultReady\n    - label Ack\n      desc 같은 ID 확인 후 Idle\n    - label Poll · Reset\n      desc 시간 초과면 Faulted, Reset으로 복귀\n",
+      "targets": [
+        "reference/python/acquisition-simulatedplc.html"
+      ],
+      "principle": "요청과 결과를 같은 요청 ID로 묶고, 명령으로 상태를 전이하는 결정적 시뮬레이터입니다.",
+      "reading_notes": [
+        "Request는 0이 아닌 ID와 결과 코드 0을 사용하며 Publish와 Ack는 현재 요청 ID에 일치해야 합니다.",
+        "시간 초과는 Poll에서 판정하며 Waiting 또는 ResultReady에서 제한 시간 이상이면 Faulted가 됩니다. Reset은 Faulted에서만 허용됩니다.",
+        "호출자가 전달하는 시간은 나노초이고 감소할 수 없습니다. 실제 PLC 통신이나 설비 인터록 검증은 수행하지 않습니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/plc-simulation.svg",
+      "source": "assets/visuals/infographic/plc-simulation.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-plc-simulation.html"
+    },
+    {
+      "id": "inspection-alignment",
+      "title": "검사 정렬과 유효 마스크",
+      "caption": "기준 격자에 맞춘 뒤 유효한 위치만 비교합니다.",
+      "alt": "검사 정렬과 유효 마스크: 기준 패턴 (밝기 변화가 있는 ROI) → 정렬 (기준과 검사 좌표 대응) → 유효 마스크 (보간 가능한 위치 표시) → 차이 비교 (유효 픽셀을 사용)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 검사 정렬과 유효 마스크\n  desc 기준 격자에 맞춘 뒤 유효한 위치만 비교합니다.\n  lists\n    - label 기준 패턴\n      desc 밝기 변화가 있는 ROI\n    - label 정렬\n      desc 기준과 검사 좌표 대응\n    - label 유효 마스크\n      desc 보간 가능한 위치 표시\n    - label 차이 비교\n      desc 유효 픽셀을 사용\n",
+      "targets": [
+        "guides/inspection-framework/coordinates.html"
+      ],
+      "principle": "정렬 결과와 유효 마스크는 같은 기준 격자에 놓입니다.",
+      "reading_notes": [
+        "Aligned는 GrayF64이고 ValidMask는 Gray8입니다.",
+        "25개 중 유효 20개는 유효 비율 0.8입니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/inspection-alignment.svg",
+      "source": "assets/visuals/infographic/inspection-alignment.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-inspection-alignment.html"
+    },
+    {
+      "id": "calibration-transform",
+      "title": "ROI에서 세계 좌표",
+      "caption": "원점 이동과 보정 변환의 순서를 계산합니다.",
+      "alt": "ROI에서 세계 좌표: ROI 로컬 (10, 20 픽셀) → 원점 더하기 (100, 200을 더해 110, 220) → 가상 보정식 (X=0.1x+1, Y=0.2y−2) → 세계 좌표 (예시 결과 12, 42)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title ROI에서 세계 좌표\n  desc 원점 이동과 보정 변환의 순서를 계산합니다.\n  lists\n    - label ROI 로컬\n      desc 10, 20 픽셀\n    - label 원점 더하기\n      desc 100, 200을 더해 110, 220\n    - label 가상 보정식\n      desc X=0.1x+1, Y=0.2y−2\n    - label 세계 좌표\n      desc 예시 결과 12, 42\n",
+      "targets": [
+        "guides/calibration/roi-world-example.html"
+      ],
+      "principle": "ROI 로컬 좌표를 전역 픽셀로 옮긴 뒤 보정식을 적용합니다.",
+      "reading_notes": [
+        "수식과 단위는 설명용 가상 보정값입니다.",
+        "실제 장비의 보정 및 검증 잔차를 따로 확인합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/calibration-transform.svg",
+      "source": "assets/visuals/infographic/calibration-transform.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-calibration-transform.html"
+    },
+    {
+      "id": "frequency-roundtrip",
+      "title": "주파수 변환 왕복",
+      "caption": "복소 성분과 역변환 정규화를 함께 보존합니다.",
+      "alt": "주파수 변환 왕복: 2×2 상수 영상 (모든 픽셀 값이 1) → 순변환 (DC 4, 다른 성분 0) → 복소수 보존 (실수부와 허수부 유지) → 역변환 (배율 1/4, 원래 값 1)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 주파수 변환 왕복\n  desc 복소 성분과 역변환 정규화를 함께 보존합니다.\n  lists\n    - label 2×2 상수 영상\n      desc 모든 픽셀 값이 1\n    - label 순변환\n      desc DC 4, 다른 성분 0\n    - label 복소수 보존\n      desc 실수부와 허수부 유지\n    - label 역변환\n      desc 배율 1/4, 원래 값 1\n",
+      "targets": [
+        "guides/frequency/detail-frequency.html"
+      ],
+      "principle": "Backward 정규화는 순변환 배율 1, 역변환 배율 1/(W×H)입니다.",
+      "reading_notes": [
+        "DC는 이동하지 않은 배열의 (0,0)입니다.",
+        "크기 영상만으로 위상을 복원할 수 없습니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/frequency-roundtrip.svg",
+      "source": "assets/visuals/infographic/frequency-roundtrip.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-frequency-roundtrip.html"
+    },
+    {
+      "id": "deployment-check",
+      "title": "실행 환경과 배포",
+      "caption": "개발 환경에서 운영 환경으로 넘어갈 때 확인할 항목입니다.",
+      "alt": "실행 환경과 배포: 실행 환경 (언어와 아키텍처 확인) → 네이티브 구성 (필요한 라이브러리 준비) → 입력과 모델 (경로 및 접근 권한 확인) → 현장 검증 (장치와 데이터로 재확인)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 실행 환경과 배포\n  desc 개발 환경에서 운영 환경으로 넘어갈 때 확인할 항목입니다.\n  lists\n    - label 실행 환경\n      desc 언어와 아키텍처 확인\n    - label 네이티브 구성\n      desc 필요한 라이브러리 준비\n    - label 입력과 모델\n      desc 경로 및 접근 권한 확인\n    - label 현장 검증\n      desc 장치와 데이터로 재확인\n",
+      "targets": [
+        "guides/image-io/overview-1.html"
+      ],
+      "principle": "영상 파일 경로와 런타임 의존성은 배포 환경에서 다시 확인해야 합니다.",
+      "reading_notes": [
+        "예제 실행 성공은 설비 환경의 운영 검증을 대신하지 않습니다.",
+        "장치 드라이버와 모델 파일은 사용 구성에 맞춰 준비합니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/deployment-check.svg",
+      "source": "assets/visuals/infographic/deployment-check.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-deployment-check.html"
+    },
+    {
+      "id": "difference-inspection",
+      "title": "기준 영상과 차분",
+      "caption": "정렬 후 유효 영역의 차이를 판독합니다.",
+      "alt": "기준 영상과 차분: 기준 영상 (비교 기준과 ROI) → 검사 영상 (좌표와 정렬 확인) → 차이 계산 (유효 대응 화소 비교) → 후보 해석 (크기와 위치를 함께 확인)",
+      "syntax": "infographic list-row-simple-horizontal-arrow\ndata\n  title 기준 영상과 차분\n  desc 정렬 후 유효 영역의 차이를 판독합니다.\n  lists\n    - label 기준 영상\n      desc 비교 기준과 ROI\n    - label 검사 영상\n      desc 좌표와 정렬 확인\n    - label 차이 계산\n      desc 유효 대응 화소 비교\n    - label 후보 해석\n      desc 크기와 위치를 함께 확인\n",
+      "targets": [
+        "guides/difference-inspection/algorithm.html"
+      ],
+      "principle": "영상 사이의 위치 차이를 처리한 뒤 유효한 대응 화소를 비교합니다.",
+      "reading_notes": [
+        "정렬 오차는 차이 후보로 보일 수 있습니다.",
+        "차이 후보와 생산 합격 판정은 다른 단계입니다."
+      ],
+      "kind": "infographic",
+      "image": "assets/visuals/infographic/difference-inspection.svg",
+      "source": "assets/visuals/infographic/difference-inspection.txt",
+      "width": 624,
+      "height": 325,
+      "page": "labs/visual-guide/infographic-difference-inspection.html"
+    },
+    {
+      "id": "sdk-layers",
+      "title": "언어별 API와 네이티브 경계",
+      "caption": "C#과 Python은 C ABI를 통해 Rust 구현에 접근하고 Rust는 공개 API를 직접 사용합니다.",
+      "alt": "언어별 API와 네이티브 경계 흐름도. C#과 Python은 C ABI를 통해 Rust 구현에 접근하고 Rust는 공개 API를 직접 사용합니다.",
+      "source": "assets/visuals/drawio/sdk-layers.drawio",
+      "targets": [
+        "concepts/query/architecture.html",
+        "concepts/object-model/ownership.html"
+      ],
+      "reading_notes": [
+        "C#과 Python은 각자의 소유 객체를 해제합니다.",
+        "모든 연산이 동일한 입력 형식과 옵션을 지원하는 것은 아닙니다."
+      ],
+      "evidence": "docs/ZVISION_DESIGN.md; docs/WRAPPER_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/sdk-layers.svg",
+      "width": 1481,
+      "height": 1148,
+      "page": "labs/visual-guide/drawio-sdk-layers.html"
+    },
+    {
+      "id": "image-ownership",
+      "title": "이미지 공유와 ROI의 수명",
+      "caption": "Share와 ROI는 저장소를 공유하고 깊은 복사는 독립 버퍼를 만듭니다.",
+      "alt": "이미지 공유와 ROI의 수명 흐름도. Share와 ROI는 저장소를 공유하고 깊은 복사는 독립 버퍼를 만듭니다.",
+      "source": "assets/visuals/drawio/image-ownership.drawio",
+      "targets": [
+        "concepts/roi/ownership.html",
+        "concepts/object-model/ownership.html"
+      ],
+      "reading_notes": [
+        "ROI의 사각형 유효성은 적용 시 검사합니다.",
+        "공유와 깊은 복사의 차이는 픽셀 저장소이며 객체 해제 책임은 각각 남습니다."
+      ],
+      "evidence": "docs/API_CONTRACT.md; docs/WRAPPER_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/image-ownership.svg",
+      "width": 1481,
+      "height": 1148,
+      "page": "labs/visual-guide/drawio-image-ownership.html"
+    },
+    {
+      "id": "query-execution",
+      "title": "지연 쿼리의 구성과 실행",
+      "caption": "단계를 정의하고 명시적인 실행에서 결과를 얻습니다.",
+      "alt": "지연 쿼리의 구성과 실행 흐름도. 단계를 정의하고 명시적인 실행에서 결과를 얻습니다.",
+      "source": "assets/visuals/drawio/query-execution.drawio",
+      "targets": [
+        "concepts/query/architecture.html",
+        "concepts/query/verified-execution-types.html"
+      ],
+      "reading_notes": [
+        "정확한 실행 메서드와 반환형은 언어별 API에서 확인합니다.",
+        "구성 성공만으로 실행 성공이나 특정 입력 형식의 지원이 보장되지는 않습니다."
+      ],
+      "evidence": "docs/API_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/query-execution.svg",
+      "width": 1433,
+      "height": 1558,
+      "page": "labs/visual-guide/drawio-query-execution.html"
+    },
+    {
+      "id": "coordinates",
+      "title": "ROI 로컬, 전역, 월드 좌표",
+      "caption": "ROI 원점을 더해 전역 픽셀 좌표로 바꾸고 보정을 별도 적용합니다.",
+      "alt": "ROI 로컬, 전역, 월드 좌표 흐름도. ROI 원점을 더해 전역 픽셀 좌표로 바꾸고 보정을 별도 적용합니다.",
+      "source": "assets/visuals/drawio/coordinates.drawio",
+      "targets": [
+        "concepts/coordinate-systems/roi-world-example.html",
+        "guides/calibration/roi-world-example.html"
+      ],
+      "reading_notes": [
+        "전역에서 로컬로 돌아갈 때는 ROI 원점을 뺍니다.",
+        "픽셀에서 실제 단위로 바뀌는 값은 보정 결과에 달려 있습니다."
+      ],
+      "evidence": "docs/CALIBRATION_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/coordinates.svg",
+      "width": 1486,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-coordinates.html"
+    },
+    {
+      "id": "matching-inspection",
+      "title": "매칭 결과로 검사 영역 정렬",
+      "caption": "기준 대상을 찾은 뒤 위치에 맞춰 검사 영역을 해석합니다.",
+      "alt": "매칭 결과로 검사 영역 정렬 흐름도. 기준 대상을 찾은 뒤 위치에 맞춰 검사 영역을 해석합니다.",
+      "source": "assets/visuals/drawio/matching-inspection.drawio",
+      "targets": [
+        "guides/matching-ncc/fixture.html",
+        "guides/matching-ncc/results.html"
+      ],
+      "reading_notes": [
+        "매칭 점수만으로 최종 제품 합격이 결정되지는 않습니다.",
+        "좌표계와 적용 가능한 회전·크기 범위는 사용하는 API의 계약을 확인합니다."
+      ],
+      "evidence": "docs/API_CONTRACT.md; docs/MATCHING_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/matching-inspection.svg",
+      "width": 1433,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-matching-inspection.html"
+    },
+    {
+      "id": "caliper-flow",
+      "title": "캘리퍼: 프로브부터 측정까지",
+      "caption": "프로브에서 에지 후보를 구하고 측정 모델을 피팅합니다.",
+      "alt": "캘리퍼: 프로브부터 측정까지 흐름도. 프로브에서 에지 후보를 구하고 측정 모델을 피팅합니다.",
+      "source": "assets/visuals/drawio/caliper-flow.drawio",
+      "targets": [
+        "guides/profile-caliper/basic-params.html",
+        "guides/profile-caliper/strip-math.html"
+      ],
+      "reading_notes": [
+        "에지 후보가 충분하지 않으면 유효한 피팅을 얻지 못할 수 있습니다.",
+        "픽셀 측정값을 실제 길이로 사용하려면 적절한 보정이 필요합니다."
+      ],
+      "evidence": "docs/MEASUREMENT_MODEL_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/caliper-flow.svg",
+      "width": 1433,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-caliper-flow.html"
+    },
+    {
+      "id": "geometric-models",
+      "title": "선·원·사각형 모델의 해석",
+      "caption": "측정점의 공간 배치에 맞는 형상을 선택하고 결과와 잔차를 함께 봅니다.",
+      "alt": "선·원·사각형 모델의 해석 흐름도. 측정점의 공간 배치에 맞는 형상을 선택하고 결과와 잔차를 함께 봅니다.",
+      "source": "assets/visuals/drawio/geometric-models.drawio",
+      "targets": [
+        "guides/profile-caliper/basic-field-table.html",
+        "guides/profile-caliper/related-api.html"
+      ],
+      "reading_notes": [
+        "모델마다 필요한 입력과 옵션이 다르므로 해당 API를 따릅니다.",
+        "불충분한 점이나 가려진 경계에서는 결과가 불안정하거나 실패할 수 있습니다."
+      ],
+      "evidence": "docs/MEASUREMENT_MODEL_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/geometric-models.svg",
+      "width": 1433,
+      "height": 1148,
+      "page": "labs/visual-guide/drawio-geometric-models.html"
+    },
+    {
+      "id": "calibration",
+      "title": "평면 보정의 준비와 검증",
+      "caption": "픽셀과 기준 평면의 대응점을 이용해 변환을 만들고 독립 점으로 확인합니다.",
+      "alt": "평면 보정의 준비와 검증 흐름도. 픽셀과 기준 평면의 대응점을 이용해 변환을 만들고 독립 점으로 확인합니다.",
+      "source": "assets/visuals/drawio/calibration.drawio",
+      "targets": [
+        "guides/calibration/planar-contract.html",
+        "guides/calibration/verification-cases.html"
+      ],
+      "reading_notes": [
+        "ROI 로컬 점이면 먼저 원점을 더해 전역 픽셀 좌표로 바꿉니다.",
+        "실제 장치 정확도는 기준물과 촬영 조건을 포함한 검증이 필요합니다."
+      ],
+      "evidence": "docs/CALIBRATION_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/calibration.svg",
+      "width": 1433,
+      "height": 1558,
+      "page": "labs/visual-guide/drawio-calibration.html"
+    },
+    {
+      "id": "frame-queue",
+      "title": "프레임 큐의 소유권과 대기",
+      "caption": "큐에 공유 이미지를 넣고 꺼낸 독립 핸들을 사용하는 흐름입니다.",
+      "alt": "프레임 큐의 소유권과 대기 흐름도. 큐에 공유 이미지를 넣고 꺼낸 독립 핸들을 사용하는 흐름입니다.",
+      "source": "assets/visuals/drawio/frame-queue.drawio",
+      "targets": [
+        "guides/acquisition/overview-2.html",
+        "guides/acquisition/related-api.html"
+      ],
+      "reading_notes": [
+        "큐의 share는 원본 핸들이 해제되어도 유효합니다.",
+        "이는 소프트웨어 프레임 전달이며 실제 카메라 취득을 의미하지 않습니다."
+      ],
+      "evidence": "docs/ACQUISITION_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/frame-queue.svg",
+      "width": 1433,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-frame-queue.html"
+    },
+    {
+      "id": "plc-simulation",
+      "title": "모의 PLC 요청과 결과 확인",
+      "caption": "명시된 명령과 시간으로 동작하는 SimPlc 상태 흐름입니다.",
+      "alt": "모의 PLC 요청과 결과 확인 흐름도. 명시된 명령과 시간으로 동작하는 SimPlc 상태 흐름입니다.",
+      "source": "assets/visuals/drawio/plc-simulation.drawio",
+      "targets": [
+        "guides/acquisition/overview-3.html",
+        "guides/acquisition/verification-cases.html"
+      ],
+      "reading_notes": [
+        "기한은 Poll에서 명시적으로 평가하며 Request나 Publish가 자동 평가하지 않습니다.",
+        "SimPlc는 장치 I/O가 아닙니다. 실제 Modbus TCP 통신은 별도입니다."
+      ],
+      "evidence": "docs/ACQUISITION_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/plc-simulation.svg",
+      "width": 1531,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-plc-simulation.html"
+    },
+    {
+      "id": "inspection-extension",
+      "title": "검사 확장의 입출력 경계",
+      "caption": "입력, 파라미터, 결과와 오류를 분리해 검사 단계를 연결합니다.",
+      "alt": "검사 확장의 입출력 경계 흐름도. 입력, 파라미터, 결과와 오류를 분리해 검사 단계를 연결합니다.",
+      "source": "assets/visuals/drawio/inspection-extension.drawio",
+      "targets": [
+        "guides/inspection-framework/input-output-contract.html",
+        "guides/inspection-framework/error-lifetime-contract.html"
+      ],
+      "reading_notes": [
+        "결과의 의미와 허용 기준은 각 검사 도구의 계약을 따릅니다.",
+        "실행 오류와 검사 결과에 대한 업무 판정은 구분합니다."
+      ],
+      "evidence": "guides/inspection-framework/input-output-contract.html; guides/inspection-framework/error-lifetime-contract.html",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/inspection-extension.svg",
+      "width": 1433,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-inspection-extension.html"
+    },
+    {
+      "id": "depth-to-cloud",
+      "title": "높이 맵에서 점 구름으로",
+      "caption": "격자 셀과 높이를 원점 및 간격으로 3차원 점에 대응합니다.",
+      "alt": "높이 맵에서 점 구름으로 흐름도. 격자 셀과 높이를 원점 및 간격으로 3차원 점에 대응합니다.",
+      "source": "assets/visuals/drawio/depth-to-cloud.drawio",
+      "targets": [
+        "api/rust/spatial3d/grid-contract.html",
+        "api/rust/spatial3d/rust-depth-example.html"
+      ],
+      "reading_notes": [
+        "기본 변환은 직교 격자의 높이를 사용하며 카메라 거리 영상을 자동 해석하지 않습니다.",
+        "좌표와 단위는 입력 DepthMap의 계약을 따릅니다."
+      ],
+      "evidence": "docs/SPATIAL3D_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/depth-to-cloud.svg",
+      "width": 1433,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-depth-to-cloud.html"
+    },
+    {
+      "id": "font-ocr",
+      "title": "글꼴 예제 학습과 판독",
+      "caption": "라벨이 있는 글자 셀로 모델을 학습하고 읽은 결과를 확인합니다.",
+      "alt": "글꼴 예제 학습과 판독 흐름도. 라벨이 있는 글자 셀로 모델을 학습하고 읽은 결과를 확인합니다.",
+      "source": "assets/visuals/drawio/font-ocr.drawio",
+      "targets": [
+        "guides/recognition/font-training.html",
+        "guides/recognition/font-example.html"
+      ],
+      "reading_notes": [
+        "점수는 유사도이며 보정된 성공 확률이 아닙니다.",
+        "동일 영상을 학습과 시험에 사용하면 새로운 영상의 정확도를 입증하지 못합니다."
+      ],
+      "evidence": "docs/RECOGNITION_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/font-ocr.svg",
+      "width": 1481,
+      "height": 1148,
+      "page": "labs/visual-guide/drawio-font-ocr.html"
+    },
+    {
+      "id": "queue-shutdown",
+      "title": "대기 작업과 안전한 종료 순서",
+      "caption": "큐를 닫아 대기자를 깨우고 작업과 보유 객체를 정리합니다.",
+      "alt": "대기 작업과 안전한 종료 순서 흐름도. 큐를 닫아 대기자를 깨우고 작업과 보유 객체를 정리합니다.",
+      "source": "assets/visuals/drawio/queue-shutdown.drawio",
+      "targets": [
+        "guides/acquisition/overview-2.html",
+        "concepts/query/verified-close-races.html"
+      ],
+      "reading_notes": [
+        "큐 close는 보관 중인 항목을 폐기하며 꺼낸 이미지는 별도로 해제합니다.",
+        "작업자 관리와 합류는 애플리케이션의 책임입니다."
+      ],
+      "evidence": "docs/ACQUISITION_CONTRACT.md; docs/WRAPPER_CONTRACT.md",
+      "kind": "drawio",
+      "image": "assets/visuals/drawio/queue-shutdown.svg",
+      "width": 1480,
+      "height": 1353,
+      "page": "labs/visual-guide/drawio-queue-shutdown.html"
+    }
+  ]
+}

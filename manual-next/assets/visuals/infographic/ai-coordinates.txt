@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title AI 추론 좌표
+  desc 모델 입력과 출력 좌표의 기준을 확인합니다.
+  lists
+    - label 원본
+      desc 영상 크기와 ROI 기록
+    - label 모델 입력
+      desc 전처리와 입력 텐서
+    - label 추론 출력
+      desc 점수와 위치 판독
+    - label 좌표 대응
+      desc 전처리 변환을 반영
+

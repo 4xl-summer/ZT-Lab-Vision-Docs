@@ -261,10 +261,13 @@ def render(page,index,by_page,report,version=''):
         for key,label in [('previous_topic','이전 소주제'),('next_topic','다음 소주제')]:
             if page.get(key):body+='<a href="'+H(relurl(path,page[key]['path']),quote=True)+'">'+label+' · '+H(page[key]['title'])+'</a>'
         body+='</nav>'
+    extra_head='<link rel="stylesheet" href="'+H(root,quote=True)+'assets/manual-visuals.css?v='+version+'">'
+    if page.get('measurement_lab'):
+        extra_head+='<link rel="stylesheet" href="'+H(root,quote=True)+'assets/measurement-lab.css?v='+version+'"><script defer src="'+H(root,quote=True)+'assets/measurement-lab.js?v='+version+'"></script>'
     return '''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="manual-root" content="{root}"><meta name="manual-path" content="{path}"><meta name="description" content="{description}"><title>{title} · ZVision Manual</title><link rel="stylesheet" href="{root}assets/manual.css"><link rel="stylesheet" href="{root}assets/manual-extra.css"><script defer src="{root}assets/manual-data.js"></script><script defer src="{root}assets/manual.js"></script></head>
 <body><a class="skip" href="#main">본문으로 이동</a><div class="layout"><aside class="sidebar"><a class="brand" href="{root}index.html"><span class="logo">ZV</span><span><strong>ZVision</strong><small>DEVELOPER MANUAL</small></span></a><nav id="site-nav" aria-label="문서 전체 목차"></nav></aside><div class="workspace"><header class="topbar"><button id="menu-toggle" class="control toggle-menu" type="button" aria-label="목차 열기">☰</button><span class="top-id">ZVISION / ENGINEERING REFERENCE</span><div class="top-btns"><button id="search-open" class="control" type="button">⌕ 검색 /</button><button id="theme-toggle" class="control" type="button" aria-label="화면 테마 전환">◐</button></div></header><main id="main" class="main"><div class="crumb"><a href="{root}index.html">매뉴얼 홈</a> / {group} / <b>{title}</b></div><header class="page-head"><h1>{title}</h1><p class="lede">{description}</p></header><article class="doc">{body}</article><footer class="footer">ZVision 기술 매뉴얼 · <a href="{root}index.html">매뉴얼 홈</a></footer></main></div></div><dialog id="search-dialog" class="search-modal" aria-label="문서 검색"><div class="search-line"><input id="search-input" type="search" aria-label="검색어" placeholder="API, 알고리즘, 개념 검색"><button id="search-close" type="button">닫기</button></div><ol class="search-list" id="search-results"></ol></dialog></body></html>
-'''.format(root=H(root,quote=True),path=H(path,quote=True),title=H(title),description=H(description,quote=True),group=H(page.get('group') or '문서'),body=body).replace('assets/manual.css"','assets/manual.css?v='+version+'"').replace('assets/manual-extra.css"','assets/manual-extra.css?v='+version+'"').replace('assets/manual-data.js"','assets/manual-data.js?v='+version+'"').replace('assets/manual.js"','assets/manual.js?v='+version+'"').replace('</body>','<script type="application/json" id="page-redirects">'+json.dumps(page.get('topic_redirects',{}),ensure_ascii=False).replace('</','<\\/')+'</script></body>')
+'''.format(root=H(root,quote=True),path=H(path,quote=True),title=H(title),description=H(description,quote=True),group=H(page.get('group') or '문서'),body=body).replace('<body>','<body class="measurement-page">'if page.get('measurement_lab')else'<body>').replace('</head>',extra_head+'</head>').replace('assets/manual.css"','assets/manual.css?v='+version+'"').replace('assets/manual-extra.css"','assets/manual-extra.css?v='+version+'"').replace('assets/manual-data.js"','assets/manual-data.js?v='+version+'"').replace('assets/manual.js"','assets/manual.js?v='+version+'"').replace('</body>','<script type="application/json" id="page-redirects">'+json.dumps(page.get('topic_redirects',{}),ensure_ascii=False).replace('</','<\\/')+'</script></body>')
 
 def nav_records(pages,nav):
     rows=[]; seen=set()
@@ -318,7 +321,7 @@ def main():
     rows=nav_records(pages,nav); index,by_page=build_index(catalog)
     version_hash=hashlib.sha256(json.dumps([pages,catalog],ensure_ascii=False,sort_keys=True).encode())
     version_hash.update(Path(__file__).read_bytes())
-    for name in ('manual.js','manual.css','manual-extra.css'):
+    for name in ('manual.js','manual.css','manual-extra.css','manual-visuals.css','measurement-lab.js','measurement-lab.css'):
         asset=manual/'assets'/name
         if asset.exists():version_hash.update(asset.read_bytes())
     version=version_hash.hexdigest()[:12]

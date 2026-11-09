@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title Canny 경계 단계
+  desc 평활화부터 이중 임계값 연결까지 살핍니다.
+  lists
+    - label 평활화
+      desc 잡음에 의한 변화 완화
+    - label 기울기
+      desc 밝기 변화의 크기와 방향
+    - label 비최대 억제
+      desc 방향을 따라 경계 후보 얇게
+    - label 이중 임계값
+      desc 강한 경계와 연결된 약한 경계
+

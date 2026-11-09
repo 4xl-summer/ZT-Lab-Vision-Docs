@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 깊이 격자와 좌표
+  desc 깊이 격자의 표본과 3차원 위치를 구분합니다.
+  lists
+    - label 깊이 표본
+      desc 행과 열의 값
+    - label 유효성
+      desc 누락과 유효 표본 구분
+    - label 투영 조건
+      desc 격자 및 변환 설정
+    - label 공간 좌표
+      desc 점의 위치와 단위 확인
+

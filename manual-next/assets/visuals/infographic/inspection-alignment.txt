@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 검사 정렬과 유효 마스크
+  desc 기준 격자에 맞춘 뒤 유효한 위치만 비교합니다.
+  lists
+    - label 기준 패턴
+      desc 밝기 변화가 있는 ROI
+    - label 정렬
+      desc 기준과 검사 좌표 대응
+    - label 유효 마스크
+      desc 보간 가능한 위치 표시
+    - label 차이 비교
+      desc 유효 픽셀을 사용
+

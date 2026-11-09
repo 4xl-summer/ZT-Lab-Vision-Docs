@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title 점군과 기하 피팅
+  desc 3차원 점의 집합에서 형상을 추정합니다.
+  lists
+    - label 점군 입력
+      desc 3차원 표본의 집합
+    - label 유효점 선택
+      desc 비유효 또는 불필요 점 확인
+    - label 형상 피팅
+      desc 선택한 모델과 옵션
+    - label 잔차 판독
+      desc 적합 오차와 외란 검토
+

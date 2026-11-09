@@ -1,0 +1,14 @@
+infographic list-row-simple-horizontal-arrow
+data
+  title OCR 영역과 판독
+  desc 문자 인식 전에 영역과 방향을 정하고 결과를 확인합니다.
+  lists
+    - label 입력 영상
+      desc 문자 크기와 대비 확인
+    - label 영역 지정
+      desc 관심 영역 및 좌표 확인
+    - label 인식 실행
+      desc 준비된 인식 경로 사용
+    - label 판독
+      desc 문자와 위치를 함께 검사
+
