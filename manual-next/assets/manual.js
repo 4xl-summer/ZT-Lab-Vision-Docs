@@ -75,41 +75,74 @@
       const map = lang ? references : groups, key = lang || page.group || '기타';
       if (!map.has(key)) map.set(key,[]); map.get(key).push(page);
     }
-    const linkFor = page => {
-      const link=make('a','nav-a'+(page.path===current?' active':''),page.nav_label || page.title);
+    const numberedLabel = (label, depth, index) => {
+      const text = String(label).replace(/^(?:\d+[.)]|\(\d+\))\s+/, '');
+      const prefix = depth === 1 ? `${index}.` : depth === 2 ? `${index})` : `(${index})`;
+      return `${prefix} ${text}`;
+    };
+    const numberedItem = (tag, cls, label, depth, index) => {
+      const item = make(tag, cls), caption = make('span', 'nav-caption');
+      const text = numberedLabel(label, depth, index), split = text.indexOf(' ');
+      caption.append(make('span', 'nav-number', text.slice(0, split) + ' '), make('span', 'nav-label', text.slice(split + 1)));
+      item.append(caption);
+      return item;
+    };
+    const sizeNumberColumn = (container, depth, count) => {
+      container.style.setProperty('--nav-number-width', `${(String(count).length + (depth < 3 ? 1 : 2)) * 8}px`);
+    };
+    const appendToc = (parent, path, depth) => {
+      const list=make('div','nav-toc');list.setAttribute('aria-label','이 페이지 목차');
+      sizeNumberColumn(list,depth,currentHeadings.length);
+      let section = 0, subsection = 0;
+      for(const h of currentHeadings){
+        if(h.level === 'H2') { section++; subsection = 0; }
+        const headingDepth = depth + (h.level === 'H3' ? 1 : 0);
+        const index = h.level === 'H3' ? ++subsection : section;
+        const item=numberedItem('a','nav-toc-link '+h.level.toLowerCase(),h.text,headingDepth,index);
+        item.href=href(path)+'#'+encodeURIComponent(h.id);list.append(item);
+      }
+      parent.append(list);
+      return list;
+    };
+    const linkFor = (page, depth, index) => {
+      const link=numberedItem('a','nav-a'+(page.path===current?' active':''),page.nav_label || page.title,depth,index);
+      link.dataset.navDepth=depth;
       pageLinks.set(page.path,link); link.dataset.manualPath=page.path;
       link.href=href(page.path); if(page.path===current)link.setAttribute('aria-current','page'); return link;
     };
-    const appendPage=(parent,page)=>{
+    const appendPage=(parent,page,depth,index)=>{
       const kids=childPages.get(page.path)||[];
       if(kids.length){
         const detail=make('details','nav-topic-parent');detail.open=lineage.has(page.path);
         detail.dataset.navKey='page:'+page.path; keyedDetails.set(detail.dataset.navKey,detail); pageDetails.set(page.path,detail);
-        const summary=make('summary','nav-parent-summary');summary.append(linkFor(page));detail.append(summary);
+        const summary=make('summary','nav-parent-summary');summary.append(linkFor(page,depth,index));detail.append(summary);
         const content=make('div','nav-topic-children');
+        sizeNumberColumn(content,depth+1,kids.length);
         let rendered=false;
-        const renderChildren=()=>{if(rendered)return;rendered=true;for(const child of kids)appendPage(content,child);};
+        const renderChildren=()=>{if(rendered)return;rendered=true;kids.forEach((child,i)=>appendPage(content,child,depth+1,i+1));};
         renderers.set(detail, renderChildren);
         if(detail.open)renderChildren();
         detail.addEventListener('toggle',()=>{if(detail.open)renderChildren();});
         detail.append(content);parent.append(detail);
       } else {
-        parent.append(linkFor(page));
+        parent.append(linkFor(page,depth,index));
         // Leaf headings describe the same topic; peer topics always open actual files.
         if(page.path===current && !page.topic_leaf && currentHeadings.length){
-          const list=make('div','nav-toc');list.setAttribute('aria-label','이 페이지 목차');
-          for(const h of currentHeadings){const item=make('a','nav-toc-link '+h.level.toLowerCase(),h.text);item.href='#'+encodeURIComponent(h.id);list.append(item);}parent.append(list);
+          appendToc(parent,page.path,depth+1);
         }
       }
     };
-    const appendGroup=(target,name,items)=>{
+    const appendGroup=(target,name,items,depth,index)=>{
       const detail=make('details','nav-details');detail.open=items.some(p=>lineage.has(p.path));
       detail.dataset.navKey='group:'+name+':'+items[0].path;keyedDetails.set(detail.dataset.navKey,detail);
-      detail.append(make('summary','nav-summary',`${name} (${items.length})`));const content=make('div','nav-group');
-      for(const p of items)appendPage(content,p);detail.append(content);target.append(detail);
+      detail.append(numberedItem('summary','nav-summary',`${name} (${items.length})`,depth,index));const content=make('div','nav-group');
+      sizeNumberColumn(content,depth+1,items.length);
+      items.forEach((p,i)=>appendPage(content,p,depth+1,i+1));detail.append(content);target.append(detail);
     };
-    for(const [name,items]of groups)appendGroup(nav,name,items);
-    if(references.size){const outer=make('details','nav-details nav-reference');outer.dataset.navKey='reference:all';keyedDetails.set(outer.dataset.navKey,outer);outer.open=[...references.values()].some(xs=>xs.some(p=>lineage.has(p.path)));outer.append(make('summary','nav-summary','언어별 API 참조'));for(const [lang,items]of references)appendGroup(outer,languageLabel(lang),items);nav.append(outer);}
+    let groupNumber = 0;
+    sizeNumberColumn(nav,1,groups.size+(references.size?1:0));
+    for(const [name,items]of groups)appendGroup(nav,name,items,1,++groupNumber);
+    if(references.size){const outer=make('details','nav-details nav-reference');outer.dataset.navKey='reference:all';keyedDetails.set(outer.dataset.navKey,outer);outer.open=[...references.values()].some(xs=>xs.some(p=>lineage.has(p.path)));outer.append(numberedItem('summary','nav-summary','언어별 API 참조',1,++groupNumber));let languageNumber=0;for(const [lang,items]of references)appendGroup(outer,languageLabel(lang),items,2,++languageNumber);nav.append(outer);}
     const openEveryLevel = () => {
       const pending = [nav];
       while (pending.length) {
@@ -174,11 +207,7 @@
       nav.querySelectorAll('.nav-toc').forEach(node => node.remove());
       const page = byPath.get(path), link = pageLinks.get(path);
       if (page && link && !page.topic_leaf && !childPages.get(path)?.length && currentHeadings.length) {
-        const list = make('div','nav-toc'); list.setAttribute('aria-label','이 페이지 목차');
-        for (const h of currentHeadings) {
-          const item = make('a','nav-toc-link '+h.level.toLowerCase(),h.text);
-          item.href = href(path)+'#'+encodeURIComponent(h.id); list.append(item);
-        }
+        const list = appendToc(document.createDocumentFragment(),path,Number(link.dataset.navDepth)+1);
         link.after(list);
       }
       if (panel) panel.scrollTop = top;

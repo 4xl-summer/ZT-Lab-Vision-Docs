@@ -70,13 +70,38 @@
     "native_fallback": {
       "status": "pass",
       "observation": "Controlled fetch 503 was followed by native document navigation 200. Sidebar state survived that full reload."
+    },
+    "numbered_menu": {
+      "status": "pass",
+      "entries": 6038,
+      "formats": [
+        "1.",
+        "1)",
+        "(1)"
+      ],
+      "indent_px_per_level": 16,
+      "sibling_number_drift_px": 0,
+      "sibling_title_drift_px": 0,
+      "desktop_state_preserved": true,
+      "mobile_state_preserved": true,
+      "refresh_and_history_preserved": true,
+      "horizontal_overflow": false
     }
   },
   "source_sha256": {
-    "assets/manual.js": "06702043c6293d4f8fa99e361f2ebb9fec8c17b6d1bd77a0b682648a6e4e2bdf",
+    "assets/manual.js": "76079999937827e454aa705b9c5a660fedefe43357ac88cc68cfff83cbc18ccd",
     "assets/manual-navigation.js": "27a1bbc7fdaf02c99638228b9910af5eb92b2e581e7cfaee96ca43f8408cbbe3",
     "assets/measurement-lab.js": "0cd66ec85d31d7fc4a9d0b3403c3e64403a5a795ba074a0492dc3598b3994898",
-    "assets/manual-extra.css": "0430d0f218ab02890a255e13789ab3345543f787cf7399f70c48c2a668270ae3",
+    "assets/manual-extra.css": "cf7a6098cffcbe1cde3232ba956739d8a214b21673681fa504951b6c3bfda72d",
     "scripts/build_manual.py": "ba2387fe595849a91bdab1511b560c993b335267313f626b1ba34875b5f3b16f"
+  },
+  "numbered_menu_revision": {
+    "recorded_utc": "2026-11-09T08:20:33.861060+00:00",
+    "base_commit": "7eed0d16294725454de865cba40b51d49d313391",
+    "scope": "Menu labels and sidebar layout only. Original 12 scenario results are retained from the base commit. Current browser regression rechecked all 6038 labels, sibling alignment, nesting, partial navigation, refresh, back/forward and mobile navigation.",
+    "previous_source_sha256": {
+      "assets/manual.js": "06702043c6293d4f8fa99e361f2ebb9fec8c17b6d1bd77a0b682648a6e4e2bdf",
+      "assets/manual-extra.css": "0430d0f218ab02890a255e13789ab3345543f787cf7399f70c48c2a668270ae3"
+    }
   }
 }

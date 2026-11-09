@@ -175,7 +175,7 @@
     "assets/visuals/tables/deployment-check.html.txt": "5eb34d20cbee2b0690fc6f52ed33b7f53609bf60f7c9ae2bcd2e7172fdf8269f",
     "assets/visuals/tables/pixel-formats.html.txt": "ebeb249053eb4ea4611fa12e4de05c2c02d16529657cff4bf5f9b9f887340a6b",
     "examples/generate-visual-plots.py": "15ce14220b9dcb41468a19e6e6c97f3d84fbc41aa79df086c7b992403895390f",
-    "assets/manual.js": "06702043c6293d4f8fa99e361f2ebb9fec8c17b6d1bd77a0b682648a6e4e2bdf",
+    "assets/manual.js": "76079999937827e454aa705b9c5a660fedefe43357ac88cc68cfff83cbc18ccd",
     "content/page-moves.json": "a786326993522d2a461b2f368373cf573086e9300c3dcab819b1fa5ae6f77862",
     "content/feature-photo-examples.json": "aa155cca9938289b5ee419d24395f1f8f6db2bb401bd79a098e693c7e46a0491",
     "content/retired-topics.json": "5eaa36b25fb1a5a006de8d670a495490a3568f3aa854e387f57b259c017c0a2e",
@@ -271,5 +271,6 @@
     "photo_examples": 7,
     "displayed_values_checked": 37,
     "measurement_data_unchanged": true
-  }
+  },
+  "numbered_menu_revision": "Sidebar-only number and indent update; image inputs, measurement data, widget calculations and all visual outputs are unchanged."
 }
